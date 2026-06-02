@@ -1,0 +1,40 @@
+# NexT theme configuration.
+# See: https://theme-next.js.org/docs/getting-started/configuration
+
+scheme: Gemini
+darkmode: true
+
+menu:
+  home: / || fa fa-home
+  archives: /archives/ || fa fa-archive
+
+social:
+  GitHub: https://github.com/Sunshine0912-love || fab fa-github
+
+codeblock:
+  theme:
+    light: github
+    dark: github-dark
+  prism:
+    light: prism
+    dark: prism-dark
+  copy_button:
+    enable: true
+    style: mac
+  language: true
+
+mermaid:
+  enable: true
+  theme:
+    light: default
+    dark: dark
+
+creative_commons:
+  license: by-nc-sa
+  size: small
+  sidebar: false
+  post: true
+
+footer:
+  since: 2026
+  powered: true
