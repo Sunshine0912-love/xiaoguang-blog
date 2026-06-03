@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-03T08:40:00+08:00",
+  "updated_at": "2026-06-03T16:07:00+08:00",
   "sources": [
     {
       "title": "Agentic AI in Industry: Adoption Level and Deployment Barriers",
@@ -36,6 +36,87 @@
       "tier": "A",
       "used_in": [
         "source/_posts/2026-06-03-agent-adoption-second-stage.md"
+      ]
+    },
+    {
+      "title": "Building for the Rising Complexity of Agentic Systems with Extreme Co-Design",
+      "url": "https://developer.nvidia.com/blog/building-for-the-rising-complexity-of-agentic-systems-with-extreme-co-design/",
+      "type": "technical blog",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-03-agentic-inference-cost-curve.md"
+      ]
+    },
+    {
+      "title": "Full-Stack Optimizations for Agentic Inference with NVIDIA Dynamo",
+      "url": "https://developer.nvidia.com/blog/full-stack-optimizations-for-agentic-inference-with-nvidia-dynamo/",
+      "type": "technical blog",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-03-agentic-inference-cost-curve.md"
+      ]
+    },
+    {
+      "title": "Building a Multi-Agent Research System",
+      "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
+      "type": "engineering blog",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-03-agentic-inference-cost-curve.md"
+      ]
+    },
+    {
+      "title": "NeMo Agent Toolkit Dynamo Integration",
+      "url": "https://github.com/NVIDIA/NeMo-Agent-Toolkit/tree/develop/examples/dynamo_integration",
+      "type": "github repository",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-03-agentic-inference-cost-curve.md"
+      ]
+    },
+    {
+      "title": "vLLM Documentation",
+      "url": "https://docs.vllm.ai/en/latest/",
+      "type": "official documentation",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-03-agentic-inference-cost-curve.md"
+      ]
+    },
+    {
+      "title": "NVIDIA Vera CPU Sets a New Standard for Agentic Workloads in AI Factories",
+      "url": "https://developer.nvidia.com/blog/nvidia-vera-cpu-sets-a-new-standard-for-agentic-workloads-in-ai-factories/",
+      "type": "technical blog",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-03-agentic-inference-cost-curve.md"
+      ]
+    },
+    {
+      "title": "Minions: Stripe's One-Shot, End-to-End Coding Agents",
+      "url": "https://stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents",
+      "type": "engineering blog",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-03-agentic-inference-cost-curve.md"
+      ]
+    },
+    {
+      "title": "PEEK: Context Map as an Orientation Cache for Long-Context LLM Agents",
+      "url": "https://arxiv.org/abs/2605.10332",
+      "type": "paper",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-03-agentic-inference-cost-curve.md"
+      ]
+    },
+    {
+      "title": "DynoSim: Simulating the Pareto Frontier",
+      "url": "https://developer.nvidia.com/blog/dynosim-simulating-the-pareto-frontier/",
+      "type": "technical blog",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-03-agentic-inference-cost-curve.md"
       ]
     }
   ]
