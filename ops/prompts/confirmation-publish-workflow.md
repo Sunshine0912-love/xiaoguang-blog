@@ -2,9 +2,18 @@
 
 你不能依赖聊天上下文记忆来判断主人确认了哪个选题。必须从本地索引和日志恢复选题状态。
 
+硬性安全规则：
+
+- 只有主人明确回复 `确认 TOPIC-YYYYMMDD-XX` 才算确认选题。
+- “今天发一篇”“按你推荐的写”“希望完成发布”“cron 是否执行”等泛化表达都不是选题确认。
+- 不允许根据“首选推荐”自动推断用户确认了首选。
+- 不允许把“用户希望今天发布一篇文章”解释为“确认 TOPIC-YYYYMMDD-01”。
+- 如果用户想在当天已发布一篇后继续发布第二篇，必须额外收到 `继续发布 TOPIC-YYYYMMDD-XX`。
+- 写正文前必须加载并遵守 OpenClaw Skill `ai_knowledge_blog_writer`；发布前必须加载并遵守 OpenClaw Skill `github_blog_publisher`。
+
 ## 1. 识别确认指令
 
-当主人回复：
+只有当主人回复以下明确格式时，才允许进入写作发布流程：
 
 - 确认 TOPIC-YYYYMMDD-01
 - 确认 TOPIC-YYYYMMDD-02
@@ -14,6 +23,15 @@
 
 - 确认 TOPIC-YYYYMMDD-02，偏工程实践，代码示例多一点
 - 确认 TOPIC-YYYYMMDD-01，但不要写成新闻解读，写成论文精读
+
+以下表达必须视为无效确认，只能追问，不得写作或发布：
+
+- 今天发布一篇
+- 按你推荐的写
+- 你决定
+- 先发一篇
+- cron 是否已经执行
+- 完成今天的小光 AI 选题任务
 
 你必须执行：
 
@@ -26,6 +44,8 @@ cd /home/xujiaz/xiaoguang-blog
  - ops/logs/topic-candidates/YYYY-MM-DD.md
  - ops/prompts/confirmation-publish-workflow.md
  - ops/prompts/writing-guidelines.md
+ - OpenClaw Skill: ai_knowledge_blog_writer
+ - OpenClaw Skill: github_blog_publisher
 
 3. 根据确认编号查找对应候选选题。
 
@@ -45,6 +65,12 @@ cd /home/xujiaz/xiaoguang-blog
  - user_instruction: 主人补充的角度要求
 
 6. 然后自动执行写作发布流程。
+
+如果收到的是无效确认表达，必须回复主人：
+
+“我还没有收到明确选题确认。请回复 `确认 TOPIC-YYYYMMDD-01/02/03` 中的一个编号；确认前我不会开始检索、写作或发布。”
+
+然后停止。
 
 如果主人回复：
 
@@ -87,15 +113,41 @@ cd /home/xujiaz/xiaoguang-blog
 
 确认选题后，你不需要再问“是否开始”。你应该直接进入：
 
-1. 检索资料
-2. 学习整理
-3. 写大纲
-4. 写正文
-5. 保存文章
-6. 构建验证
-7. commit
-8. push
-9. 通知主人发布结果
+1. 加载并遵守 OpenClaw Skill `ai_knowledge_blog_writer`
+2. 检索资料
+3. 学习整理
+4. 写大纲
+5. 写正文
+6. 加载并遵守 OpenClaw Skill `github_blog_publisher`
+7. 保存文章
+8. 构建验证
+9. commit
+10. push
+11. 验证 GitHub Actions 或文章 URL
+12. 通知主人发布结果
+
+写正文时必须同时遵守：
+
+- `ai_knowledge_blog_writer` 的可靠来源、引用、长度、质量自检要求
+- `ops/prompts/writing-guidelines.md` 的 Hexo front matter、分类、标签和博客风格要求
+
+如果两者有冲突，优先采用更严格的真实性、引用和安全要求。
+
+写作质量门槛：
+
+- 普通科普文章至少 5 个可靠来源。
+- 前沿调研或技术深度文章需要 8-12 个来源；如果无法达到，必须在发布前说明降级为技术札记或暂停。
+- 论文解读需要 1 篇主论文 + 3-6 个相关资料。
+- 产业分析至少 5 个来源，且包含官方信息或权威媒体。
+- 文章必须区分事实、引用、小光判断和推测。
+- 如果没有满足 `ai_knowledge_blog_writer` 的质量自检清单，禁止 commit 和 push。
+
+发布到 GitHub 时必须同时遵守：
+
+- `github_blog_publisher` 的仓库状态检查、构建验证、commit/push、部署验证和微信通知要求
+- 本文件的重复发布保护、发布日志和高风险暂停规则
+
+如果两者有冲突，优先采用更严格的凭据安全、非覆盖、非 force push 和通知目标校验要求。
 
 ## 6. 资料检索要求
 
@@ -165,6 +217,8 @@ publish_decision:
 
 ## 9. 构建验证
 
+构建验证前必须加载并遵守 OpenClaw Skill `github_blog_publisher`。
+
 执行：
 
 npx hexo clean
@@ -178,6 +232,8 @@ npx hexo generate
 4. 修复不了则写入错误日志并暂停。
 
 ## 10. 提交与发布
+
+提交和发布前必须加载并遵守 OpenClaw Skill `github_blog_publisher`。
 
 构建成功后执行：
 

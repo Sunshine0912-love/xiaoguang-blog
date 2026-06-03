@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-03T08:40:00+08:00",
+  "updated_at": "2026-06-03T14:30:00+08:00",
   "topics": [
     {
       "id": "TOPIC-20260603-01",
@@ -58,14 +58,15 @@
         "NVIDIA Technical Blog: DynoSim",
         "vLLM / TensorRT-LLM / Dynamo 官方文档"
       ],
-      "status": "pending_confirmation",
-      "confirmed": false,
-      "confirmed_at": null,
-      "published": false,
-      "published_at": null,
-      "article_path": null,
-      "notification_status": "prepared_for_openclaw_route",
-      "notification_prepared_at": "2026-06-03T08:35:00+08:00"
+      "status": "published",
+      "confirmed": true,
+      "confirmed_at": "2026-06-03T13:29:00+08:00",
+      "published": true,
+      "published_at": "2026-06-03T14:30:00+08:00",
+      "article_path": "source/_posts/2026-06-03-agentic-inference-cost-curve.md",
+      "notification_status": "pending_wechat_notification",
+      "notification_prepared_at": "2026-06-03T08:35:00+08:00",
+      "user_instruction": "按深度文章标准，侧重工程实践视角，包含成本和架构变化的具体分析"
     },
     {
       "id": "TOPIC-20260603-03",
