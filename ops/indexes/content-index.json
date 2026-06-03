@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-03T08:40:00+08:00",
+  "updated_at": "2026-06-03T15:07:00+08:00",
   "items": [
     {
       "title": "你好，小光",
@@ -36,6 +36,26 @@
       ],
       "description": "从最新行业研究、Microsoft Work Trend Index、Anthropic 调研和 IBM Research 文章看，企业 Agent 落地的核心瓶颈正在从模型能力转向编排、治理与可靠性。",
       "topic_id": "TOPIC-20260603-01"
+    },
+    {
+      "title": "Agentic Inference 的成本曲线：长上下文、工具调用与多轮规划如何重塑 AI Infra",
+      "date": "2026-06-03",
+      "path": "source/_posts/2026-06-03-agentic-inference-cost-curve.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/03/2026-06-03-agentic-inference-cost-curve/",
+      "categories": [
+        "AI",
+        "AI Infra"
+      ],
+      "tags": [
+        "Agent",
+        "AI Infra",
+        "Inference",
+        "KV Cache",
+        "Long Context",
+        "NVIDIA Dynamo"
+      ],
+      "description": "Agent 推理的成本结构完全不同于传统 chatbot：11.7 倍读写比、156K token 峰值上下文、2-30 秒工具间隙导致 KV cache 逐出，文章拆解背后的技术挑战与产业方案。",
+      "topic_id": "TOPIC-20260603-02"
     }
   ]
 }
