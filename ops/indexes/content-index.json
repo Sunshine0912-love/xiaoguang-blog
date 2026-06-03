@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "updated_at": "2026-06-03T08:40:00+08:00",
+  "items": [
+    {
+      "title": "你好，小光",
+      "date": "2026-06-02",
+      "path": "source/_posts/hello-xiaoguang.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/02/hello-xiaoguang/",
+      "categories": [
+        "技术博客"
+      ],
+      "tags": [
+        "Hexo",
+        "NexT",
+        "GitHub Pages",
+        "AI Engineering"
+      ],
+      "description": "小光技术博客的第一篇测试文章。"
+    },
+    {
+      "title": "Agent 落地进入第二阶段：企业真正卡住的不是模型",
+      "date": "2026-06-03",
+      "path": "source/_posts/2026-06-03-agent-adoption-second-stage.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/03/2026-06-03-agent-adoption-second-stage/",
+      "categories": [
+        "AI",
+        "Industry"
+      ],
+      "tags": [
+        "Agent",
+        "AI Adoption",
+        "Enterprise AI",
+        "Orchestration",
+        "Governance"
+      ],
+      "description": "从最新行业研究、Microsoft Work Trend Index、Anthropic 调研和 IBM Research 文章看，企业 Agent 落地的核心瓶颈正在从模型能力转向编排、治理与可靠性。",
+      "topic_id": "TOPIC-20260603-01"
+    }
+  ]
+}

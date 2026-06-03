@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "updated_at": "2026-06-03T08:40:00+08:00",
+  "topics": [
+    {
+      "id": "TOPIC-20260603-01",
+      "date": "2026-06-03",
+      "title": "Agent 落地进入第二阶段：企业真正卡住的不是模型，而是编排、治理与可靠性",
+      "category": [
+        "AI",
+        "Industry"
+      ],
+      "tags": [
+        "Agent",
+        "AI Adoption",
+        "Enterprise AI",
+        "Orchestration",
+        "Governance"
+      ],
+      "type": "深度文章",
+      "reason": "近期 A/B 级来源同时指向同一趋势：Agent 已从单点助手进入企业流程编排阶段，但可靠性、治理、成本和组织协作成为主要瓶颈。",
+      "source_plan": [
+        "arXiv: Agentic AI in Industry: Adoption Level and Deployment Barriers",
+        "Microsoft 2026 Work Trend Index / Frontier Firms",
+        "Anthropic 2026 State of AI Agents Report",
+        "Hugging Face / IBM Research: Agent Logic and Scalable AI Adoption"
+      ],
+      "status": "published",
+      "confirmed": true,
+      "confirmed_at": "2026-06-03T08:40:00+08:00",
+      "published": true,
+      "published_at": "2026-06-03T08:40:00+08:00",
+      "article_path": "source/_posts/2026-06-03-agent-adoption-second-stage.md",
+      "notification_status": "wechat_delivery_reported_delivered_but_user_not_received; fallback_webchat_used",
+      "notification_prepared_at": "2026-06-03T08:35:00+08:00",
+      "user_instruction": "用户希望今天发布一篇文章；按小光首选 TOPIC-20260603-01 推进。"
+    },
+    {
+      "id": "TOPIC-20260603-02",
+      "date": "2026-06-03",
+      "title": "Agentic Inference 的成本曲线：为什么长上下文、工具调用和多轮规划正在重塑 AI Infra",
+      "category": [
+        "AI",
+        "AI Infra"
+      ],
+      "tags": [
+        "Agent",
+        "AI Infra",
+        "Inference",
+        "Long Context",
+        "GPU"
+      ],
+      "type": "深度文章",
+      "reason": "NVIDIA 近期多篇技术博客把 Agentic workload 描述为推理形态变化：请求轨迹非确定、上下文增长、工具调用放大延迟与吞吐成本。",
+      "source_plan": [
+        "NVIDIA Technical Blog: How the NVIDIA Vera Rubin Platform is Solving Agentic AI's Scale-Up Problem",
+        "NVIDIA Technical Blog: Building for the Rising Complexity of Agentic Systems with Extreme Co-Design",
+        "NVIDIA Technical Blog: DynoSim",
+        "vLLM / TensorRT-LLM / Dynamo 官方文档"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "notification_status": "prepared_for_openclaw_route",
+      "notification_prepared_at": "2026-06-03T08:35:00+08:00"
+    },
+    {
+      "id": "TOPIC-20260603-03",
+      "date": "2026-06-03",
+      "title": "AI Agent 进入安全攻防：从辅助审计到多模型漏洞发现系统",
+      "category": [
+        "AI",
+        "Industry"
+      ],
+      "tags": [
+        "Agent",
+        "Security",
+        "Red Teaming",
+        "Vulnerability Research",
+        "Evaluation"
+      ],
+      "type": "深度文章",
+      "reason": "Microsoft 近期公开了多模型 Agentic security system 的生产化案例，结合 Microsoft Research 对 Agent 网络红队的研究，可写出 Agent 在高风险行业落地时的机会与边界。",
+      "source_plan": [
+        "Microsoft Security Blog: MDASH agentic security system",
+        "Microsoft Research: Red-teaming a network of agents",
+        "Microsoft Patch Tuesday 官方资料"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "notification_status": "prepared_for_openclaw_route",
+      "notification_prepared_at": "2026-06-03T08:35:00+08:00"
+    }
+  ]
+}
