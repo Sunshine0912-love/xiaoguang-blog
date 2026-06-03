@@ -202,6 +202,16 @@ description: "一句话摘要"
 - ops/indexes/topic-index.json
 - ops/indexes/source-index.json
 
+这些不是可选维护项。对每篇正式发布文章，发布前必须确认：
+
+- `topic-index.json` 中对应 `topic_id` 已写入 `status`、`confirmed`、`published`、`published_at`、`article_path`。
+- `content-index.json` 已新增或更新文章标题、日期、路径、URL、分类、标签、摘要和 `topic_id`。
+- `source-index.json` 已记录正文使用的核心来源、URL、类型、等级和 `used_in`。
+- `ops/logs/publish/YYYY-MM-DD.md` 已记录发布过程、构建结果、commit/push、质量评估和通知状态。
+- `ops/plans/content-plan.md` 已补充发布记录或内容计划变化。
+
+如果上述任一项缺失，禁止 commit 和 push；先补齐再继续。
+
 同时在发布日志中记录最小质量评估表：
 
 ```text
