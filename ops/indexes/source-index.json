@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-03T16:07:00+08:00",
+  "updated_at": "2026-06-04T09:28:08+08:00",
   "sources": [
     {
       "title": "Agentic AI in Industry: Adoption Level and Deployment Barriers",
@@ -117,6 +117,162 @@
       "tier": "A",
       "used_in": [
         "source/_posts/2026-06-03-agentic-inference-cost-curve.md"
+      ]
+    },
+    {
+      "title": "NVIDIA Dynamo Documentation: Disaggregated Serving",
+      "url": "https://docs.dynamo.nvidia.com/dynamo/design-docs/disaggregated-serving",
+      "type": "official documentation",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-04-prefill-decode-disaggregation.md"
+      ]
+    },
+    {
+      "title": "vLLM Documentation: Disaggregated Prefilling",
+      "url": "https://docs.vllm.ai/en/latest/usage/disagg_prefill.html",
+      "type": "official documentation",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-04-prefill-decode-disaggregation.md"
+      ]
+    },
+    {
+      "title": "NVIDIA Dynamo Documentation: Disaggregation with SGLang",
+      "url": "https://docs.dynamo.nvidia.com/dynamo/dev/backends/sg-lang/disaggregation",
+      "type": "official documentation",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-04-prefill-decode-disaggregation.md"
+      ]
+    },
+    {
+      "title": "NVIDIA Dynamo Documentation: KV Cache Transfer in Disaggregated Serving",
+      "url": "https://docs.nvidia.com/dynamo/archive/0.8.1/backends/trtllm/kv-cache-transfer.html",
+      "type": "official documentation",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-04-prefill-decode-disaggregation.md"
+      ]
+    },
+    {
+      "title": "vLLM Blog: Inside vLLM's New KV Offloading Connector",
+      "url": "https://vllm.ai/blog/kv-offloading-connector",
+      "type": "technical blog",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-04-prefill-decode-disaggregation.md"
+      ]
+    },
+    {
+      "title": "vLLM Blog: PegaFlow for Production-Grade External KV Cache",
+      "url": "https://vllm.ai/blog/2026-05-18-pegaflow",
+      "type": "technical blog",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-04-prefill-decode-disaggregation.md"
+      ]
+    },
+    {
+      "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
+      "url": "https://arxiv.org/abs/2309.06180",
+      "type": "paper",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-04-prefill-decode-disaggregation.md",
+        "source/_posts/2026-06-04-mla-attention-kv-cache.md"
+      ]
+    },
+    {
+      "title": "Fast Transformer Decoding: One Write-Head is All You Need",
+      "url": "https://arxiv.org/abs/1911.02150",
+      "type": "paper",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-04-prefill-decode-disaggregation.md",
+        "source/_posts/2026-06-04-mla-attention-kv-cache.md"
+      ]
+    },
+    {
+      "title": "GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints",
+      "url": "https://arxiv.org/abs/2305.13245",
+      "type": "paper",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-04-prefill-decode-disaggregation.md",
+        "source/_posts/2026-06-04-mla-attention-kv-cache.md"
+      ]
+    },
+    {
+      "title": "NVIDIA Dynamo Documentation: Introduction",
+      "url": "https://docs.dynamo.nvidia.com/dynamo/getting-started/introduction",
+      "type": "official documentation",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-04-prefill-decode-disaggregation.md"
+      ]
+    },
+    {
+      "title": "Attention Is All You Need",
+      "url": "https://arxiv.org/abs/1706.03762",
+      "type": "paper",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-04-mla-attention-kv-cache.md"
+      ]
+    },
+    {
+      "title": "DeepSeek-V2 Technical Report",
+      "url": "https://arxiv.org/abs/2405.04434",
+      "type": "paper",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-04-mla-attention-kv-cache.md"
+      ]
+    },
+    {
+      "title": "DeepSeek-V3 Technical Report",
+      "url": "https://arxiv.org/abs/2412.19437",
+      "type": "paper",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-04-mla-attention-kv-cache.md"
+      ]
+    },
+    {
+      "title": "Hardware-Centric Analysis of DeepSeek's Multi-Head Latent Attention",
+      "url": "https://arxiv.org/abs/2506.02523",
+      "type": "paper",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-04-mla-attention-kv-cache.md"
+      ]
+    },
+    {
+      "title": "DeepSeek-V3 GitHub Repository",
+      "url": "https://github.com/deepseek-ai/DeepSeek-V3",
+      "type": "github repository",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-04-mla-attention-kv-cache.md"
+      ]
+    },
+    {
+      "title": "DeepWiki: Multi-head Latent Attention in DeepSeek-V3",
+      "url": "https://deepwiki.com/deepseek-ai/DeepSeek-V3/4.2-multi-head-latent-attention-%28mla%29",
+      "type": "technical documentation",
+      "tier": "B",
+      "used_in": [
+        "source/_posts/2026-06-04-mla-attention-kv-cache.md"
+      ]
+    },
+    {
+      "title": "NVIDIA Megatron-Core: core.transformer.multi_latent_attention",
+      "url": "https://docs.nvidia.com/megatron-core/developer-guide/nightly/apidocs/core/core.transformer.multi_latent_attention.html",
+      "type": "official documentation",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-04-mla-attention-kv-cache.md"
       ]
     }
   ]

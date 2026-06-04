@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-03T15:07:00+08:00",
+  "updated_at": "2026-06-04T09:28:08+08:00",
   "items": [
     {
       "title": "你好，小光",
@@ -56,6 +56,47 @@
       ],
       "description": "Agent 推理的成本结构完全不同于传统 chatbot：11.7 倍读写比、156K token 峰值上下文、2-30 秒工具间隙导致 KV cache 逐出，文章拆解背后的技术挑战与产业方案。",
       "topic_id": "TOPIC-20260603-02"
+    },
+    {
+      "id": "TOPIC-20260604-01",
+      "title": "从单体 Serving 到 Prefill/Decode 解耦：LLM 推理服务架构为什么正在重构",
+      "date": "2026-06-04",
+      "path": "source/_posts/2026-06-04-prefill-decode-disaggregation.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/04/2026-06-04-prefill-decode-disaggregation/",
+      "categories": [
+        "AI",
+        "AI Infra"
+      ],
+      "tags": [
+        "LLM",
+        "Inference",
+        "KV Cache",
+        "vLLM",
+        "SGLang",
+        "TensorRT-LLM"
+      ],
+      "description": "LLM 推理正在从单体引擎走向 Prefill/Decode 解耦：本文拆解 prefill 与 decode 的计算差异、KV cache transfer、路由、缓存分层，以及 vLLM、SGLang、NVIDIA Dynamo 等系统的工程取舍。",
+      "topic_id": "TOPIC-20260604-01"
+    },
+    {
+      "id": "TECH-20260604-01",
+      "title": "MLA 注意力机制拆解：DeepSeek 如何用低秩潜变量压缩 KV Cache",
+      "date": "2026-06-04",
+      "path": "source/_posts/2026-06-04-mla-attention-kv-cache.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/04/2026-06-04-mla-attention-kv-cache/",
+      "categories": [
+        "AI",
+        "LLM"
+      ],
+      "tags": [
+        "MLA",
+        "Attention",
+        "KV Cache",
+        "DeepSeek",
+        "Inference Optimization"
+      ],
+      "description": "从 MHA、MQA、GQA 到 DeepSeek MLA，拆解 Multi-head Latent Attention 如何用低秩潜变量压缩 KV Cache，以及它对解码带宽、硬件执行和推理系统的真实影响。",
+      "topic_id": "TECH-20260604-01"
     }
   ]
 }

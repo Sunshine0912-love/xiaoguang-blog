@@ -4,11 +4,12 @@
 
 硬性安全规则：
 
-- 只有主人明确回复 `确认 TOPIC-YYYYMMDD-XX` 才算确认选题。
+- 只有主人明确回复 `确认 TOPIC-YYYYMMDD-XX` 或 `确认 TECH-YYYYMMDD-XX` 才算确认选题。
 - “今天发一篇”“按你推荐的写”“希望完成发布”“cron 是否执行”等泛化表达都不是选题确认。
 - 不允许根据“首选推荐”自动推断用户确认了首选。
 - 不允许把“用户希望今天发布一篇文章”解释为“确认 TOPIC-YYYYMMDD-01”。
-- 如果用户想在当天已发布一篇后继续发布第二篇，必须额外收到 `继续发布 TOPIC-YYYYMMDD-XX`。
+- 每天允许两条独立发布线：`TOPIC-YYYYMMDD-XX` 对应每日主选题，`TECH-YYYYMMDD-XX` 对应新增技术点讲解选题。当天已发布主选题后，仍可在明确确认 `TECH-...` 后发布技术点文章；当天已发布技术点文章后，仍可在明确确认 `TOPIC-...` 后发布主选题文章。
+- 如果用户想在同一发布线当天发布第二篇，例如已经发布一个 `TOPIC-...` 后又想发另一个 `TOPIC-...`，必须额外收到 `继续发布 TOPIC-YYYYMMDD-XX`；`TECH-...` 同理。
 - 写正文前必须加载并遵守 OpenClaw Skill `ai_knowledge_blog_writer`；发布前必须加载并遵守 OpenClaw Skill `github_blog_publisher`。
 
 ## 1. 识别确认指令
@@ -18,11 +19,16 @@
 - 确认 TOPIC-YYYYMMDD-01
 - 确认 TOPIC-YYYYMMDD-02
 - 确认 TOPIC-YYYYMMDD-03
+- 确认 TECH-YYYYMMDD-01
+- 确认 TECH-YYYYMMDD-02
+- 确认 TECH-YYYYMMDD-03
 
 或者补充角度，例如：
 
 - 确认 TOPIC-YYYYMMDD-02，偏工程实践，代码示例多一点
 - 确认 TOPIC-YYYYMMDD-01，但不要写成新闻解读，写成论文精读
+- 确认 TECH-YYYYMMDD-01，公式推导少一点，工程实现多一点
+- 确认 TECH-YYYYMMDD-02，面向 AI 工程师，配系统图和伪代码
 
 以下表达必须视为无效确认，只能追问，不得写作或发布：
 
@@ -68,7 +74,7 @@ cd /home/xujiaz/xiaoguang-blog
 
 如果收到的是无效确认表达，必须回复主人：
 
-“我还没有收到明确选题确认。请回复 `确认 TOPIC-YYYYMMDD-01/02/03` 中的一个编号；确认前我不会开始检索、写作或发布。”
+“我还没有收到明确选题确认。请回复 `确认 TOPIC-YYYYMMDD-01/02/03` 或 `确认 TECH-YYYYMMDD-01/02/03` 中的一个编号；确认前我不会开始检索、写作或发布。”
 
 然后停止。
 
@@ -103,11 +109,11 @@ cd /home/xujiaz/xiaoguang-blog
 
 确认后写作前，必须检查：
 
-1. 今天是否已经有正式文章发布。
+1. 今天该发布线是否已经有正式文章发布：`TOPIC-...` 属于每日主选题发布线，`TECH-...` 属于技术点讲解发布线。
 2. `topic-index.json` 中该选题是否已经 `published: true`。
 3. `source/_posts/` 是否已有同主题或同 slug 文章。
 
-如果可能重复发布，必须暂停问主人。
+如果同一发布线可能重复发布，必须暂停问主人。不同发布线各发布一篇属于正常流程，不要误判为重复发布。
 
 ## 5. 确认后无需再次询问，直接自动执行
 

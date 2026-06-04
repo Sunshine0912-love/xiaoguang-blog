@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-03T14:30:00+08:00",
+  "updated_at": "2026-06-04T09:28:08+08:00",
   "topics": [
     {
       "id": "TOPIC-20260603-01",
@@ -98,6 +98,218 @@
       "article_path": null,
       "notification_status": "prepared_for_openclaw_route",
       "notification_prepared_at": "2026-06-03T08:35:00+08:00"
+    },
+    {
+      "id": "TOPIC-20260604-01",
+      "date": "2026-06-04",
+      "title": "从单体 Serving 到 Prefill/Decode 解耦：LLM 推理服务架构为什么正在重构",
+      "category": [
+        "AI",
+        "AI Infra"
+      ],
+      "tags": [
+        "LLM",
+        "Inference",
+        "KV Cache",
+        "vLLM",
+        "SGLang",
+        "TensorRT-LLM"
+      ],
+      "type": "深度文章",
+      "reason": "vLLM、SGLang、TensorRT-LLM/NVIDIA Dynamo 都在围绕 Prefill/Decode 解耦、KV cache 传输和分层缓存推进，适合写成一篇系统架构解析。",
+      "source_plan": [
+        "vLLM Disaggregated Prefilling/Serving 官方文档",
+        "SGLang PD Disaggregation 官方文档",
+        "NVIDIA Dynamo/TensorRT-LLM KV Cache Transfer 官方文档",
+        "vLLM KV Offloading Connector 博客",
+        "NVIDIA disaggregated LLM inference on Kubernetes 技术博客"
+      ],
+      "status": "published",
+      "confirmed": true,
+      "confirmed_at": "2026-06-04T09:28:08+08:00",
+      "published": true,
+      "published_at": "2026-06-04T09:28:08+08:00",
+      "article_path": "source/_posts/2026-06-04-prefill-decode-disaggregation.md",
+      "notification_status": "pending_wechat_notification",
+      "notification_prepared_at": "2026-06-04T08:30:00+08:00",
+      "slot": "daily_main",
+      "user_instruction": "用户明确回复确认 TOPIC-20260604-01"
+    },
+    {
+      "id": "TOPIC-20260604-02",
+      "date": "2026-06-04",
+      "title": "AI Factory 的安全架构：当模型、数据、Agent 和基础设施变成同一个攻击面",
+      "category": [
+        "AI",
+        "AI Infra"
+      ],
+      "tags": [
+        "AI Infra",
+        "Agent",
+        "Security",
+        "NVIDIA",
+        "Governance"
+      ],
+      "type": "深度文章",
+      "reason": "NVIDIA 近期围绕 agentic AI infrastructure、DOCA in-silicon security、Vera CPU、BlueField/CMX 等发布了多篇技术博客，可从 AI Factory 安全边界变化切入。",
+      "source_plan": [
+        "NVIDIA DOCA In-Silicon Security 技术博客",
+        "NVIDIA Vera CPU agentic workload 博客",
+        "NVIDIA BlueField/CMX Context Memory Storage 博客",
+        "Microsoft Research 多 Agent 红队研究",
+        "OpenAI 内部 data agent 安全经验文章"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "notification_status": "prepared_for_openclaw_route",
+      "notification_prepared_at": "2026-06-04T08:30:00+08:00",
+      "slot": "daily_main"
+    },
+    {
+      "id": "TOPIC-20260604-03",
+      "date": "2026-06-04",
+      "title": "从中心化 GPU 集群到 AI Grid：分布式推理的控制面、路由与边缘部署架构",
+      "category": [
+        "AI",
+        "AI Infra"
+      ],
+      "tags": [
+        "AI Infra",
+        "Edge AI",
+        "Inference",
+        "Routing",
+        "Kubernetes"
+      ],
+      "type": "深度文章",
+      "reason": "NVIDIA AI Grid、Microsoft Azure/Foundry Local、边缘和主权环境部署共同指向跨区域、边缘和受监管环境的推理控制面与资源路由趋势。",
+      "source_plan": [
+        "NVIDIA AI Grid reference design 技术博客",
+        "Microsoft Azure AI infrastructure / Foundry Local 官方文章",
+        "NVIDIA Dynamo routing / Kubernetes 资料",
+        "Ray Serve 或 KServe 官方架构资料"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "notification_status": "prepared_for_openclaw_route",
+      "notification_prepared_at": "2026-06-04T08:30:00+08:00",
+      "slot": "daily_main"
+    },
+    {
+      "id": "TECH-20260604-01",
+      "date": "2026-06-04",
+      "slot": "technical_explainer",
+      "title": "MLA 注意力机制拆解：DeepSeek 如何用低秩潜变量压缩 KV Cache",
+      "category": [
+        "AI",
+        "LLM"
+      ],
+      "tags": [
+        "MLA",
+        "Attention",
+        "KV Cache",
+        "DeepSeek",
+        "Inference Optimization"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "架构解析",
+      "reader_takeaway": "理解 MHA、MQA、GQA 到 MLA 的演进，掌握 MLA 如何通过潜变量压缩 KV Cache，以及它对解码阶段带宽、算力和硬件执行策略的影响。",
+      "reason": "MLA 是 DeepSeek 系列模型中最值得拆解的架构创新之一，既连接 Transformer 注意力基础，又直接影响推理成本和硬件友好性；近期还有硬件视角分析与 NVIDIA Megatron-Core 文档可交叉参考。",
+      "source_plan": [
+        "DeepSeek-V2 Technical Report / DeepSeek-V3 Technical Report",
+        "Hardware-Centric Analysis of DeepSeek's Multi-Head Latent Attention, arXiv:2506.02523",
+        "NVIDIA Megatron-Core Multi-Latent Attention documentation",
+        "Attention Is All You Need",
+        "Multi-Query Attention / Grouped-Query Attention 相关论文或技术资料"
+      ],
+      "status": "published",
+      "confirmed": true,
+      "confirmed_at": "2026-06-04T09:28:08+08:00",
+      "published": true,
+      "published_at": "2026-06-04T09:28:08+08:00",
+      "article_path": "source/_posts/2026-06-04-mla-attention-kv-cache.md",
+      "notification_status": "pending_wechat_notification",
+      "notification_prepared_at": "2026-06-04T09:10:00+08:00",
+      "user_instruction": "用户明确回复确认 TECH-20260604-01"
+    },
+    {
+      "id": "TECH-20260604-02",
+      "date": "2026-06-04",
+      "slot": "technical_explainer",
+      "title": "从 PPO 到 GRPO：为什么大模型推理强化学习开始弱化 critic",
+      "category": [
+        "AI",
+        "强化学习"
+      ],
+      "tags": [
+        "PPO",
+        "GRPO",
+        "RLHF",
+        "Reasoning Models",
+        "DeepSeek"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "算法推导",
+      "reader_takeaway": "理解 PPO 的 actor-critic 框架、GRPO 的 group relative reward 思路、为什么省掉 value model 会影响显存与训练流程，以及它在 reasoning model 训练中的适用边界。",
+      "reason": "GRPO 已成为 reasoning model 后训练的高频关键词，但很多解读停留在“省掉 critic”。这篇可以把 PPO、reward normalization、group sampling、优势估计和稳定性风险讲清楚。",
+      "source_plan": [
+        "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models, arXiv:2402.03300",
+        "Demystifying Group Relative Policy Optimization: Its Policy Gradient is a U-Statistic, arXiv:2603.01162",
+        "Proximal Policy Optimization Algorithms, arXiv:1707.06347",
+        "DeepSeek-R1 technical report",
+        "TRL / verl / OpenRLHF 等开源 RLHF 框架文档"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "notification_status": "prepared_for_openclaw_route",
+      "notification_prepared_at": "2026-06-04T09:10:00+08:00"
+    },
+    {
+      "id": "TECH-20260604-03",
+      "date": "2026-06-04",
+      "slot": "technical_explainer",
+      "title": "FlashAttention-3 与算子优化：从 IO-aware attention 到 Hopper 异步流水线",
+      "category": [
+        "AI",
+        "AI Infra"
+      ],
+      "tags": [
+        "FlashAttention",
+        "CUDA",
+        "H100",
+        "Attention Kernel",
+        "Operator Optimization"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "工程优化",
+      "reader_takeaway": "理解标准 attention 为什么受 HBM 读写限制，FlashAttention 如何用 tiling 降低 IO，FlashAttention-3 如何利用 Hopper 的 TMA、warp specialization、FP8 和异步流水线继续提升吞吐。",
+      "reason": "FlashAttention 是现代 Transformer 训练和推理的基础优化之一，FlashAttention-3 又把问题推进到硬件特性与 CUDA kernel 设计层，适合写给希望理解底层性能瓶颈的工程师。",
+      "source_plan": [
+        "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+        "FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning",
+        "FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision, arXiv:2407.08608 / NeurIPS 2024",
+        "NVIDIA Hopper Architecture / TMA / FP8 官方资料",
+        "flash-attention GitHub repository"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "notification_status": "prepared_for_openclaw_route",
+      "notification_prepared_at": "2026-06-04T09:10:00+08:00"
     }
   ]
 }
