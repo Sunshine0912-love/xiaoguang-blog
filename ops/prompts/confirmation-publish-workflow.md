@@ -10,7 +10,7 @@
 - 不允许把“用户希望今天发布一篇文章”解释为“确认 TOPIC-YYYYMMDD-01”。
 - 每天允许两条独立发布线：`TOPIC-YYYYMMDD-XX` 对应每日主选题，`TECH-YYYYMMDD-XX` 对应新增技术点讲解选题。当天已发布主选题后，仍可在明确确认 `TECH-...` 后发布技术点文章；当天已发布技术点文章后，仍可在明确确认 `TOPIC-...` 后发布主选题文章。
 - 如果用户想在同一发布线当天发布第二篇，例如已经发布一个 `TOPIC-...` 后又想发另一个 `TOPIC-...`，必须额外收到 `继续发布 TOPIC-YYYYMMDD-XX`；`TECH-...` 同理。
-- 写正文前必须加载并遵守 OpenClaw Skill `ai_knowledge_blog_writer`；发布前必须加载并遵守 OpenClaw Skill `github_blog_publisher`。
+- 写正文前必须加载并遵守 OpenClaw Skill `ai_knowledge_blog_writer`；如果确认编号是 `TECH-...`，还必须加载并遵守 OpenClaw Skill `tech-research-blog-writer`；发布前必须加载并遵守 OpenClaw Skill `github_blog_publisher`。
 
 ## 1. 识别确认指令
 
@@ -51,6 +51,7 @@ cd /home/xujiaz/xiaoguang-blog
  - ops/prompts/confirmation-publish-workflow.md
  - ops/prompts/writing-guidelines.md
  - OpenClaw Skill: ai_knowledge_blog_writer
+ - OpenClaw Skill: tech-research-blog-writer（仅 `TECH-...` 必须）
  - OpenClaw Skill: github_blog_publisher
 
 3. 根据确认编号查找对应候选选题。
@@ -120,21 +121,23 @@ cd /home/xujiaz/xiaoguang-blog
 确认选题后，你不需要再问“是否开始”。你应该直接进入：
 
 1. 加载并遵守 OpenClaw Skill `ai_knowledge_blog_writer`
-2. 检索资料
-3. 学习整理
-4. 写大纲
-5. 写正文
-6. 加载并遵守 OpenClaw Skill `github_blog_publisher`
-7. 保存文章
-8. 构建验证
-9. commit
-10. push
-11. 验证 GitHub Actions 或文章 URL
-12. 通知主人发布结果
+2. 如果是 `TECH-...`，加载并遵守 OpenClaw Skill `tech-research-blog-writer`
+3. 检索资料
+4. 学习整理
+5. 写大纲
+6. 写正文
+7. 加载并遵守 OpenClaw Skill `github_blog_publisher`
+8. 保存文章
+9. 构建验证
+10. commit
+11. push
+12. 验证 GitHub Actions 或文章 URL
+13. 通知主人发布结果
 
 写正文时必须同时遵守：
 
 - `ai_knowledge_blog_writer` 的可靠来源、引用、长度、质量自检要求
+- `tech-research-blog-writer` 的研究级 TECH、单点技术综述、原始来源、源码讲解和公式渲染要求（仅 `TECH-...`）
 - `ops/prompts/writing-guidelines.md` 的 Hexo front matter、分类、标签和博客风格要求
 
 如果两者有冲突，优先采用更严格的真实性、引用和安全要求。

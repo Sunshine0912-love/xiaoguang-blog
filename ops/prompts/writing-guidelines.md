@@ -4,11 +4,13 @@
 
 确认 AI 相关选题并进入正式写作时，必须先加载并遵守 OpenClaw Skill `ai_knowledge_blog_writer`。
 
+确认或重写 `TECH-YYYYMMDD-XX` 技术点文章时，必须额外加载并遵守 OpenClaw Skill `tech-research-blog-writer`。TECH 文章的研究级单点综述、原始来源、源码讲解和公式渲染要求，以 `tech-research-blog-writer` 为更具体标准。
+
 文章写完并进入 GitHub 发布、构建、commit、push、部署验证或微信通知阶段时，必须加载并遵守 OpenClaw Skill `github_blog_publisher`。
 
 只有主人明确回复 `确认 TOPIC-YYYYMMDD-XX` 才能进入写作发布流程；不要根据“首选推荐”“今天发一篇”“你决定”等泛化表达自动确认选题。
 
-本文件负责补充 `xiaoguang-blog` 仓库内的 Hexo front matter、分类、标签和项目风格要求。若本文件与 `ai_knowledge_blog_writer` 冲突，优先采用更严格的真实性、引用和安全要求。
+本文件负责补充 `xiaoguang-blog` 仓库内的 Hexo front matter、分类、标签和项目风格要求。若本文件与 `ai_knowledge_blog_writer` 或 `tech-research-blog-writer` 冲突，优先采用更严格的真实性、引用、研究深度和发布校验要求。
 
 ## 角色定位
 
