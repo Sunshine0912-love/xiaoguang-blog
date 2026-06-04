@@ -143,6 +143,11 @@ cd /home/xujiaz/xiaoguang-blog
 
 - 普通科普文章至少 5 个可靠来源。
 - 前沿调研或技术深度文章需要 8-12 个来源；如果无法达到，必须在发布前说明降级为技术札记或暂停。
+- `TECH-...` 技术点讲解文章必须比普通科普更专业，默认面向 AI 专业研究生、AI 研究员、AI 工程师和 AI 学者；目标不是“知道这个名词”，而是让读者能由浅入深理解技术机制，并学到可复用的知识。
+- `TECH-...` 技术点讲解文章必须包含“学习路径”：问题背景、数学/系统定义、核心公式或伪代码、机制直觉、最小例子、工程或研究意义、局限与常见误解。
+- `TECH-...` 技术点讲解文章应尽量加入公式推导、复杂度或显存/通信/算力分析、模块输入输出关系、伪代码、对比表格或系统结构图；如果某个技术点无法支撑这些内容，不应按 TECH 发布。
+- `TECH-...` 技术点讲解文章要控制推导密度：公式要服务理解，每个关键公式后必须解释符号含义、直觉和它解决的问题，避免只堆公式。
+- `TECH-...` 技术点讲解文章的质量评估还必须检查：technical_depth、formula_clarity、step_by_step_learning、graduate_readability。
 - 论文解读需要 1 篇主论文 + 3-6 个相关资料。
 - 产业分析至少 5 个来源，且包含官方信息或权威媒体。
 - 文章必须区分事实、引用、小光判断和推测。
@@ -226,6 +231,10 @@ source_count:
 fact_accuracy:
 source_traceability:
 claim_boundaries:
+technical_depth:
+formula_clarity:
+step_by_step_learning:
+graduate_readability:
 publish_decision:
 ```
 
