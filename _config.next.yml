@@ -29,6 +29,14 @@ mermaid:
     light: default
     dark: dark
 
+math:
+  every_page: false
+  mathjax:
+    enable: false
+    tags: none
+  katex:
+    enable: false
+
 creative_commons:
   license: by-nc-sa
   size: small
