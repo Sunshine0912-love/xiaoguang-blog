@@ -145,6 +145,12 @@ for (const file of postFilesFromArgs()) {
     if (katexCount === 0 && hasMath) {
       failures.push(`${rel}: generated HTML has no katex-display output (KaTeX formulas not rendered)`);
     }
+    if (hasMath && !/href="[^"]*\/lib\/katex\/katex\.min\.css"/.test(html)) {
+      failures.push(`${rel}: generated HTML is missing local KaTeX CSS (/lib/katex/katex.min.css)`);
+    }
+    if (/cdnjs\.cloudflare\.com\/ajax\/libs\/KaTeX/i.test(html)) {
+      failures.push(`${rel}: generated HTML still depends on external cdnjs KaTeX CSS`);
+    }
     // Check for mangled formulas (<em> containing LaTeX)
     const htmlNoKatex = html.replace(/<section>[\s\S]*?<\/section>/g, '').replace(/<span class="katex[\s\S]*?<\/span>/g, '');
     const badEms = (htmlNoKatex.match(/<em>[^<]*?\\[^<]*?<\/em>/g) || []);

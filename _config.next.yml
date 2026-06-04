@@ -1,6 +1,9 @@
 # NexT theme configuration.
 # See: https://theme-next.js.org/docs/getting-started/configuration
 
+custom_file_path:
+  head: source/_data/head.njk
+
 scheme: Gemini
 darkmode: true
 
@@ -35,7 +38,7 @@ math:
     enable: false
     tags: none
   katex:
-    enable: true
+    enable: false
 
 creative_commons:
   license: by-nc-sa

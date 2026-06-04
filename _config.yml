@@ -74,7 +74,6 @@ markdown:
   plugins:
     - name: 'markdown-it-texmath'
       options:
-        engine: 'mathjax'
         delimiters: ['dollars']
   anchors:
     level: 2
