@@ -1,3 +1,23 @@
 {%- if page.mathjax or theme.math.every_page %}
   <link rel="stylesheet" href="{{ url_for('/lib/katex/katex.min.css') }}">
+  <style>
+    .post-body section,
+    .post-body eqn,
+    .post-body .katex-display {
+      max-width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+    .post-body .katex-display {
+      padding-bottom: 0.25rem;
+    }
+    .post-body .katex-display > .katex {
+      max-width: 100%;
+    }
+    .post-body table {
+      display: block;
+      max-width: 100%;
+      overflow-x: auto;
+    }
+  </style>
 {%- endif %}
