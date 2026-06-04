@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-04T09:28:08+08:00",
+  "updated_at": "2026-06-04T10:48:00+08:00",
   "topics": [
     {
       "id": "TOPIC-20260603-01",
@@ -237,7 +237,8 @@
       "article_path": "source/_posts/2026-06-04-mla-attention-kv-cache.md",
       "notification_status": "pending_wechat_notification",
       "notification_prepared_at": "2026-06-04T09:10:00+08:00",
-      "user_instruction": "用户明确回复确认 TECH-20260604-01"
+      "user_instruction": "用户要求按新版 TECH 标准重写：更关注技术点，更专业，使用更多公式由浅入深，让 AI 专业研究生也能看懂并真正学到知识。",
+      "updated_at": "2026-06-04T10:48:00+08:00"
     },
     {
       "id": "TECH-20260604-02",

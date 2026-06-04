@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-04T09:28:08+08:00",
+  "updated_at": "2026-06-04T10:48:00+08:00",
   "items": [
     {
       "title": "你好，小光",
@@ -95,8 +95,9 @@
         "DeepSeek",
         "Inference Optimization"
       ],
-      "description": "从 MHA、MQA、GQA 到 DeepSeek MLA，拆解 Multi-head Latent Attention 如何用低秩潜变量压缩 KV Cache，以及它对解码带宽、硬件执行和推理系统的真实影响。",
-      "topic_id": "TECH-20260604-01"
+      "description": "从 MHA、MQA、GQA 到 DeepSeek MLA，按公式、张量形状、最小例子和官方实现拆解 Multi-head Latent Attention 如何压缩 KV Cache，以及为什么它会改变推理系统的瓶颈。",
+      "topic_id": "TECH-20260604-01",
+      "updated_at": "2026-06-04T10:48:00+08:00"
     }
   ]
 }
