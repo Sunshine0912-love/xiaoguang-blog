@@ -141,9 +141,15 @@ for (const file of postFilesFromArgs()) {
     }
 
     const html = read(htmlPath);
-    const mjxCount = (html.match(/mjx-container/g) || []).length;
-    if (mjxCount === 0) {
-      failures.push(`${rel}: generated HTML has no mjx-container output`);
+    const katexCount = (html.match(/katex-display/g) || []).length;
+    if (katexCount === 0 && hasMath) {
+      failures.push(`${rel}: generated HTML has no katex-display output (KaTeX formulas not rendered)`);
+    }
+    // Check for mangled formulas (<em> containing LaTeX)
+    const htmlNoKatex = html.replace(/<section>[\s\S]*?<\/section>/g, '').replace(/<span class="katex[\s\S]*?<\/span>/g, '');
+    const badEms = (htmlNoKatex.match(/<em>[^<]*?\\[^<]*?<\/em>/g) || []);
+    if (badEms.length) {
+      failures.push(`${rel}: mangled formulas found (${badEms.length} LaTeX fragments in <em> tags)`);
     }
     if (/nav-text">\$\$/.test(html)) {
       failures.push(`${rel}: generated TOC contains formula fragments`);

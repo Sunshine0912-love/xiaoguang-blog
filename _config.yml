@@ -60,13 +60,31 @@ prismjs:
   line_number: true
   tab_replace: ''
 
-mathjax:
-  tags: none
-  single_dollars: true
-  cjk_width: 0.9
-  normal_width: 0.6
-  append_css: true
-  every_page: false
+# Markdown-it renderer (replaces hexo-renderer-marked)
+# Uses markdown-it-texmath plugin to protect $$...$$ and $...$ blocks
+# from markdown emphasis processing, ensuring formulas render correctly
+markdown:
+  preset: 'default'
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: true
+    linkify: true
+    typographer: false
+  plugins:
+    - name: 'markdown-it-texmath'
+      options:
+        engine: 'mathjax'
+        delimiters: ['dollars']
+  anchors:
+    level: 2
+    collisionSuffix: ''
+    permalink: true
+    permalinkClass: 'header-anchor'
+    permalinkSide: 'left'
+    permalinkSymbol: '¶'
+    case: 0
+    separator: ''
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
