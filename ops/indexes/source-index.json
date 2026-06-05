@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-05T10:12:00+08:00",
+  "updated_at": "2026-06-05T11:00:00+08:00",
   "sources": [
     {
       "title": "Agentic AI in Industry: Adoption Level and Deployment Barriers",
@@ -391,6 +391,42 @@
       "tier": "A",
       "used_in": [
         "source/_posts/2026-06-05-headroom-context-compression-agent.md"
+      ]
+    },
+    {
+      "title": "Using LLMs to secure source code",
+      "url": "https://claude.com/blog/using-llms-to-secure-source-code",
+      "type": "official blog",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-05-anthropic-defending-code-harness.md"
+      ]
+    },
+    {
+      "title": "Anthropic defending-code-reference-harness",
+      "url": "https://github.com/anthropics/defending-code-reference-harness",
+      "type": "github repository",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-05-anthropic-defending-code-harness.md"
+      ]
+    },
+    {
+      "title": "Claude Cookbook: The vulnerability detection agent",
+      "url": "https://platform.claude.com/cookbook/claude-agent-sdk-06-the-vulnerability-detection-agent",
+      "type": "official cookbook",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-05-anthropic-defending-code-harness.md"
+      ]
+    },
+    {
+      "title": "Expanding Project Glasswing",
+      "url": "https://www.anthropic.com/news/expanding-project-glasswing",
+      "type": "official news",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-05-anthropic-defending-code-harness.md"
       ]
     }
   ]

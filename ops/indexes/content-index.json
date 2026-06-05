@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-05T10:12:00+08:00",
+  "updated_at": "2026-06-05T11:00:00+08:00",
   "items": [
     {
       "title": "你好，小光",
@@ -142,6 +142,28 @@
       "description": "Headroom 把上下文压缩做成 library、proxy、CLI wrapper 和 MCP server：文章拆解它适合压缩什么、不适合压缩什么，如何评估 token savings、任务成功率和可逆检索风险。",
       "topic_id": "TOPIC-20260605-02",
       "updated_at": "2026-06-05T10:12:00+08:00"
+    },
+    {
+      "id": "TOPIC-20260605-03",
+      "title": "AI 辅助代码安全工具链：Anthropic Defending Code Reference Harness 解析",
+      "date": "2026-06-05",
+      "path": "source/_posts/2026-06-05-anthropic-defending-code-harness.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/05/2026-06-05-anthropic-defending-code-harness/",
+      "categories": [
+        "AI",
+        "Agent"
+      ],
+      "tags": [
+        "Agent",
+        "Security",
+        "Vulnerability",
+        "Anthropic",
+        "Code Analysis",
+        "Open Source"
+      ],
+      "description": "Anthropic 的 Defending Code Reference Harness 把漏洞发现做成 threat model、sandbox、find、verify、triage、patch 的防御流水线。本文从安全边界、工程结构和落地风险出发，分析 AI 安全 Agent 应该怎么用。",
+      "topic_id": "TOPIC-20260605-03",
+      "updated_at": "2026-06-05T11:00:00+08:00"
     }
   ]
 }
