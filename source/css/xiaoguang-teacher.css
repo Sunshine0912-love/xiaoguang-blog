@@ -77,12 +77,22 @@
 /* carrot */
 .sam-carrot {
   transition: transform 200ms ease;
-  transform-origin: 40px 74px;
+  transform-origin: 50px 58px;
 }
 
 .sam-carrot-green {
   transition: transform 200ms ease, opacity 200ms ease;
-  transform-origin: 20px 82px;
+  transform-origin: 22px 56px;
+}
+
+.sam-glasses {
+  transition: transform 200ms ease;
+  transform-origin: 50px 40px;
+}
+
+.sam-sun-badge {
+  transition: filter 200ms ease, transform 200ms ease;
+  transform-origin: 50px 84px;
 }
 
 /* eyes */
@@ -146,6 +156,10 @@
   animation: xg-carrot-bounce 1.2s ease-in-out infinite;
 }
 
+.xg-teacher__orb:hover .sam-glasses {
+  transform: translateY(-0.8px);
+}
+
 /* ── orb state: active (dialog open) ── */
 .xg-teacher.is-open .xg-teacher__orb {
   animation: xg-sam-bounce 0.5s ease;
@@ -159,6 +173,11 @@
 
 .xg-teacher.is-open .sam-blush {
   opacity: 0.7;
+}
+
+.xg-teacher.is-open .sam-sun-badge {
+  filter: drop-shadow(0 0 4px rgba(255, 215, 87, 0.72));
+  transform: scale(1.05);
 }
 
 /* ── orb state: thinking (streaming) ── */
@@ -260,8 +279,10 @@
 }
 
 .xg-teacher__mini {
-  background: conic-gradient(from 210deg, #76e0d4, #9dc7ff, #d5bbff, #76e0d4);
+  background: #fff url("../images/xiaoguang-teacher-samoyed.svg") center 45% / 122% no-repeat;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 999px;
+  box-shadow: inset 0 -2px 7px rgba(16, 30, 48, 0.1);
   flex: 0 0 auto;
   height: 32px;
   position: relative;
@@ -270,21 +291,7 @@
 
 .xg-teacher__mini::before,
 .xg-teacher__mini::after {
-  background: rgba(255, 255, 255, 0.88);
-  border-radius: 999px;
-  content: "";
-  height: 3px;
-  position: absolute;
-  top: 11px;
-  width: 3px;
-}
-
-.xg-teacher__mini::before {
-  left: 10px;
-}
-
-.xg-teacher__mini::after {
-  right: 10px;
+  content: none;
 }
 
 .xg-teacher__title {
@@ -533,5 +540,4 @@
     max-height: min(620px, calc(100vh - 104px));
     width: calc(100vw - 28px);
   }
-}
 }
