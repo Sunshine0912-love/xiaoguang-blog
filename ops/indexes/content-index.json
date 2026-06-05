@@ -1,7 +1,28 @@
 {
   "version": 1,
-  "updated_at": "2026-06-05T11:19:38+08:00",
+  "updated_at": "2026-06-05T12:45:00+08:00",
   "items": [
+    {
+      "title": "【ML 2026 Spring 第3讲】深入模型内部架构：如何加快模型推理速度",
+      "date": "2026-06-05",
+      "path": "source/_posts/2026-06-05-hylee-ml2026-lecture-03-inference-optimization.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/05/hylee-ml2026-lecture-03-inference-optimization/",
+      "categories": [
+        "hylee ML 2026 Spring"
+      ],
+      "tags": [
+        "ML2026",
+        "Flash Attention",
+        "KV Cache",
+        "MQA",
+        "GQA",
+        "MLA",
+        "Inference Optimization"
+      ],
+      "description": "李宏毅 ML 2026 Spring 第3讲：Flash Attention、KV Cache 等推理加速方法全解析。",
+      "series": "hylee-ml-2026-spring",
+      "lecture": 3
+    },
     {
       "title": "【ML 2026 Spring 第2講】Context Engineering、Multi-Agent 互動與學術工作的未來",
       "date": "2026-06-05",

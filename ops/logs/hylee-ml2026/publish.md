@@ -16,3 +16,8 @@
 **URL:** https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/05/2026-06-05-hylee-ml2026-lecture-02-context-engineering-multi-agent/
 **Sources:** 6+ (講義 PDF, ACON, SUPO, AgentFold, MCP-Zero, Multi-Agent 等)
 **Category:** hylee ML 2026 Spring
+
+## Lecture 3 | 2026-06-05T12:45:00+08:00
+
+**Topics:** Flash Attention, KV Cache, MQA/GQA/MLA, Sliding Window, Streaming LLM, Pruning, Prompt Caching
+**Path:** source/_posts/2026-06-05-hylee-ml2026-lecture-03-inference-optimization.md
