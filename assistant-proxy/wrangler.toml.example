@@ -1,0 +1,7 @@
+name = "xiaoguang-teacher"
+main = "worker.js"
+compatibility_date = "2026-06-05"
+
+[vars]
+DEEPSEEK_MODEL = "deepseek-v4-pro"
+ALLOWED_ORIGIN = "https://sunshine0912-love.github.io"

@@ -128,6 +128,14 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: next
 
+# Xiaoguang Teacher AI assistant.
+# Keep api_url empty until a server-side proxy is deployed; never expose
+# DeepSeek API keys in this public static site.
+ai_assistant:
+  enabled: true
+  api_url: 'https://xiaoguang-teacher.xiaoguang-teacher.workers.dev'
+  model_label: DeepSeek V4 Pro
+
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:

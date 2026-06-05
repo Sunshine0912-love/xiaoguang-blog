@@ -21,3 +21,15 @@
     }
   </style>
 {%- endif %}
+
+{%- if config.ai_assistant and config.ai_assistant.enabled %}
+  <link rel="stylesheet" href="{{ url_for('/css/xiaoguang-teacher.css') }}">
+  <script>
+    window.XIAOGUANG_TEACHER_CONFIG = {
+      apiUrl: "{{ config.ai_assistant.api_url | default('') }}",
+      modelLabel: "{{ config.ai_assistant.model_label | default('DeepSeek V4 Pro') }}",
+      siteRoot: "{{ config.root | default('/') }}"
+    };
+  </script>
+  <script defer src="{{ url_for('/js/xiaoguang-teacher.js') }}"></script>
+{%- endif %}
