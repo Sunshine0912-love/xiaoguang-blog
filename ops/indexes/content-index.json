@@ -1,7 +1,28 @@
 {
   "version": 1,
-  "updated_at": "2026-06-05T10:12:01+08:00",
+  "updated_at": "2026-06-05T11:15:51+08:00",
   "items": [
+    {
+      "title": "【ML 2026 Spring 第1講】AI Agent — 解剖小龍蝦",
+      "date": "2026-06-05",
+      "path": "source/_posts/hylee-ml2026-lecture-01-ai-agent-openclaw.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/05/hylee-ml2026-lecture-01-ai-agent-openclaw/",
+      "categories": [
+        "hylee ML 2026 Spring"
+      ],
+      "tags": [
+        "ML2026",
+        "AI Agent",
+        "OpenClaw",
+        "System Prompt",
+        "Tool Use",
+        "Memory",
+        "Context Engineering"
+      ],
+      "description": "李宏毅 ML 2026 Spring 第1講：以 OpenClaw 為例，拆解 AI Agent 的五大核心機制。",
+      "series": "hylee-ml-2026-spring",
+      "lecture": 1
+    },
     {
       "title": "投机采样原理与工程实现：如何用小模型无损加速大模型的自回归解码",
       "date": "2026-06-05",

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-05T10:12:01+08:00",
+  "updated_at": "2026-06-05T11:15:51+08:00",
   "sources": [
     {
       "title": "Agentic AI in Industry: Adoption Level and Deployment Barriers",
@@ -540,6 +540,60 @@
       "article_id": "TECH-20260605-03",
       "article_path": "source/_posts/2026-06-05-speculative-decoding-principles.md",
       "added_at": "2026-06-05T10:12:01+08:00"
+    },
+    {
+      "ref": "video",
+      "title": "解剖小龍蝦 — 以 OpenClaw 為例介紹 AI Agent 的運作原理",
+      "url": "https://youtu.be/2rcJdFuNbZQ",
+      "type": "video",
+      "article_id": "hylee-ml2026-lecture-01",
+      "article_path": "source/_posts/hylee-ml2026-lecture-01-ai-agent-openclaw.md",
+      "added_at": "2026-06-05T11:15:51+08:00"
+    },
+    {
+      "ref": "bg-video",
+      "title": "【生成式AI導論2025】第1講：一堂課搞懂生成式人工智慧的原理",
+      "url": "https://youtu.be/TigfpYPJk1s",
+      "type": "video",
+      "article_id": "hylee-ml2026-lecture-01",
+      "article_path": "source/_posts/hylee-ml2026-lecture-01-ai-agent-openclaw.md",
+      "added_at": "2026-06-05T11:15:51+08:00"
+    },
+    {
+      "ref": "slides",
+      "title": "intro.pdf — AI Agent OpenClaw 課程講義",
+      "url": "https://speech.ee.ntu.edu.tw/~hylee/ml/ml2026-course-data/intro.pdf",
+      "type": "slides",
+      "article_id": "hylee-ml2026-lecture-01",
+      "article_path": "source/_posts/hylee-ml2026-lecture-01-ai-agent-openclaw.md",
+      "added_at": "2026-06-05T11:15:51+08:00"
+    },
+    {
+      "ref": "project",
+      "title": "OpenClaw 官方網站",
+      "url": "https://openclaw.ai",
+      "type": "website",
+      "article_id": "hylee-ml2026-lecture-01",
+      "article_path": "source/_posts/hylee-ml2026-lecture-01-ai-agent-openclaw.md",
+      "added_at": "2026-06-05T11:15:51+08:00"
+    },
+    {
+      "ref": "platform",
+      "title": "ClawHub — SKILL 市集",
+      "url": "https://clawhub.ai",
+      "type": "website",
+      "article_id": "hylee-ml2026-lecture-01",
+      "article_path": "source/_posts/hylee-ml2026-lecture-01-ai-agent-openclaw.md",
+      "added_at": "2026-06-05T11:15:51+08:00"
+    },
+    {
+      "ref": "security",
+      "title": "Koi Security: ClawHavoc — 341 Malicious Skills",
+      "url": "https://www.koi.ai/blog/clawhavoc-341-malicious-clawedbot-skills-found-by-the-bot-they-were-targeting",
+      "type": "article",
+      "article_id": "hylee-ml2026-lecture-01",
+      "article_path": "source/_posts/hylee-ml2026-lecture-01-ai-agent-openclaw.md",
+      "added_at": "2026-06-05T11:15:51+08:00"
     }
   ]
 }
