@@ -25,3 +25,4 @@
 - 2026-06-04：MLA 注意力机制拆解：DeepSeek 如何用低秩潜变量压缩 KV Cache。
 
 - 2026-06-05：KVarN 深度评测：vLLM 原生 KV Cache 量化后端能不能进生产。
+- 2026-06-05：Headroom 实战：LLM 上下文压缩工具如何给 Agent 省 token。
