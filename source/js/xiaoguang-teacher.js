@@ -16,58 +16,75 @@
     '  <defs>',
     '    <radialGradient id="xgs-face" cx="50%" cy="35%" r="55%">',
     '      <stop offset="0%" stop-color="#FFF"/>',
-    '      <stop offset="85%" stop-color="#F8F8F8"/>',
+    '      <stop offset="80%" stop-color="#F9F9F9"/>',
     '      <stop offset="100%" stop-color="#F0F0F2"/>',
     '    </radialGradient>',
     '  </defs>',
-    /* body / chest fluff — gives context that this is an animal */
-    '  <ellipse cx="50" cy="82" rx="34" ry="22" fill="#FAFAFA" stroke="#EEE" stroke-width="0.4"/>',
-    '  <circle cx="34" cy="78" r="16" fill="#FDFDFD" opacity="0.8"/>',
-    '  <circle cx="66" cy="78" r="16" fill="#FDFDFD" opacity="0.8"/>',
-    /* main face — wider ellipse for dog proportions */
-    '  <ellipse cx="50" cy="48" rx="32" ry="28" fill="url(#xgs-face)"/>',
-    /* fluffy fur edges */
-    '  <circle cx="24" cy="46" r="18" fill="#FDFDFD" opacity="0.7"/>',
-    '  <circle cx="76" cy="46" r="18" fill="#FDFDFD" opacity="0.7"/>',
-    '  <circle cx="30" cy="32" r="14" fill="#FEFEFE" opacity="0.7"/>',
-    '  <circle cx="70" cy="32" r="14" fill="#FEFEFE" opacity="0.7"/>',
-    /* muzzle — the key dog feature */
-    '  <ellipse cx="50" cy="60" rx="18" ry="14" fill="#FEFEFE" stroke="#F0F0F0" stroke-width="0.5"/>',
-    /* erect triangular ears — Samoyed hallmark, wide-set, pointing up */
+    /* carrot — behind face, emerges below */
+    /* green tops */
+    '  <path class="sam-carrot-green" d="M18,82 Q10,74 14,66" fill="none" stroke="#5DAB38" stroke-width="2.2" stroke-linecap="round"/>',
+    '  <path class="sam-carrot-green" d="M18,82 Q14,70 20,62" fill="none" stroke="#6CB848" stroke-width="2" stroke-linecap="round"/>',
+    '  <path class="sam-carrot-green" d="M20,81 Q24,66 30,60" fill="none" stroke="#5DAB38" stroke-width="2.2" stroke-linecap="round"/>',
+    /* carrot body */
+    '  <polygon class="sam-carrot" points="16,82 62,56 70,64 20,90" fill="#FF9837" rx="3"/>',
+    '  <polygon class="sam-carrot" points="16,82 62,56 70,64 20,90" fill="url(#xgs-carrot)" opacity="0.4"/>',
+    '  <defs>',
+    '    <linearGradient id="xgs-carrot" x1="0%" y1="0%" x2="100%" y2="100%">',
+    '      <stop offset="0%" stop-color="#FFB060" stop-opacity="0.6"/>',
+    '      <stop offset="100%" stop-color="#E07020" stop-opacity="0.3"/>',
+    '    </linearGradient>',
+    '  </defs>',
+    /* carrot grooves */
+    '  <line x1="28" y1="83" x2="62" y2="59" stroke="#E88020" stroke-width="0.6" opacity="0.45"/>',
+    '  <line x1="34" y1="85" x2="65" y2="62" stroke="#E88020" stroke-width="0.6" opacity="0.4"/>',
+    '  <line x1="22" y1="86" x2="60" y2="58" stroke="#E88020" stroke-width="0.5" opacity="0.35"/>',
+    /* ── chest fluff ── */
+    '  <ellipse cx="50" cy="78" rx="28" ry="18" fill="#FBFBFB"/>',
+    '  <circle cx="36" cy="74" r="14" fill="#FEFEFE" opacity="0.7"/>',
+    '  <circle cx="64" cy="74" r="14" fill="#FEFEFE" opacity="0.7"/>',
+    /* ── fluffy face layers ── */
+    '  <circle cx="26" cy="40" r="20" fill="#FEFEFE" opacity="0.8"/>',
+    '  <circle cx="74" cy="40" r="20" fill="#FEFEFE" opacity="0.8"/>',
+    '  <circle cx="32" cy="28" r="16" fill="#FDFDFD" opacity="0.75"/>',
+    '  <circle cx="68" cy="28" r="16" fill="#FDFDFD" opacity="0.75"/>',
+    '  <circle cx="50" cy="28" r="18" fill="#FEFEFE" opacity="0.7"/>',
+    /* main face */
+    '  <ellipse cx="50" cy="42" rx="32" ry="28" fill="url(#xgs-face)"/>',
+    /* ── ears (softer, rounded tips for cuteness) ── */
     '  <g class="sam-ear sam-ear--left">',
-    '    <polygon points="24,28 16,6 38,24" fill="#F5F5F5" stroke="#E8E8E8" stroke-width="0.5" stroke-linejoin="round"/>',
-    '    <polygon points="26,26 20,10 36,24" fill="#FDD" opacity="0.4"/>',
+    '    <path d="M24,24 Q14,10 24,14 Q30,12 32,20 Q28,25 24,24Z" fill="#F5F5F5" stroke="#E8E8E8" stroke-width="0.5"/>',
+    '    <path d="M26,20 Q18,12 26,15" fill="#FDD" opacity="0.3"/>',
     '  </g>',
     '  <g class="sam-ear sam-ear--right">',
-    '    <polygon points="76,28 84,6 62,24" fill="#F5F5F5" stroke="#E8E8E8" stroke-width="0.5" stroke-linejoin="round"/>',
-    '    <polygon points="74,26 80,10 64,24" fill="#FDD" opacity="0.4"/>',
+    '    <path d="M76,24 Q86,10 76,14 Q70,12 68,20 Q72,25 76,24Z" fill="#F5F5F5" stroke="#E8E8E8" stroke-width="0.5"/>',
+    '    <path d="M74,20 Q82,12 74,15" fill="#FDD" opacity="0.3"/>',
     '  </g>',
-    /* almond eyes — dark, wide-set, with catchlights */
+    /* ── round puppy eyes (cute, wide) ── */
     '  <g class="sam-eye">',
-    '    <ellipse cx="37" cy="43" rx="4.5" ry="5" fill="#111"/>',
-    '    <circle class="sam-eye-pupil" cx="35.5" cy="41.5" r="2" fill="#FFF"/>',
-    '    <circle cx="38.5" cy="44" r="0.8" fill="#FFF" opacity="0.4"/>',
+    '    <circle cx="37" cy="40" r="4.8" fill="#1A1A1A"/>',
+    '    <circle class="sam-eye-pupil" cx="35.5" cy="38.5" r="2.2" fill="#FFF"/>',
+    '    <circle cx="38.5" cy="42" r="0.9" fill="#FFF" opacity="0.35"/>',
     '  </g>',
     '  <g class="sam-eye">',
-    '    <ellipse cx="63" cy="43" rx="4.5" ry="5" fill="#111"/>',
-    '    <circle class="sam-eye-pupil" cx="61.5" cy="41.5" r="2" fill="#FFF"/>',
-    '    <circle cx="64.5" cy="44" r="0.8" fill="#FFF" opacity="0.4"/>',
+    '    <circle cx="63" cy="40" r="4.8" fill="#1A1A1A"/>',
+    '    <circle class="sam-eye-pupil" cx="61.5" cy="38.5" r="2.2" fill="#FFF"/>',
+    '    <circle cx="64.5" cy="42" r="0.9" fill="#FFF" opacity="0.35"/>',
     '  </g>',
-    /* subtle eyebrows */
-    '  <path d="M33,37 Q37,35 42,37.5" fill="none" stroke="#E2E2E2" stroke-width="0.7" stroke-linecap="round"/>',
-    '  <path d="M58,37.5 Q63,35 67,37" fill="none" stroke="#E2E2E2" stroke-width="0.7" stroke-linecap="round"/>',
-    /* black nose */
-    '  <ellipse cx="50" cy="57" rx="5.5" ry="4" fill="#1A1A1A"/>',
-    '  <ellipse cx="48.5" cy="56" rx="2" ry="1.2" fill="#444" transform="rotate(-10 48.5 56)"/>',
-    /* Sammy smile + muzzle line */
-    '  <path d="M50,61 L50,64" stroke="#BBB" stroke-width="0.7" stroke-linecap="round"/>',
-    '  <path d="M42,64 Q46,66 50,64.5 Q54,66 58,64" fill="none" stroke="#AAA" stroke-width="0.9" stroke-linecap="round"/>',
-    /* tongue — hidden by default */
-    '  <ellipse class="sam-tongue" cx="50" cy="69" rx="3.2" ry="5.5" fill="#FF8DA8"/>',
-    '  <line class="sam-tongue" x1="50" y1="65" x2="50" y2="73" stroke="#EE6A80" stroke-width="0.6" stroke-linecap="round"/>',
-    /* rosy cheeks */
-    '  <ellipse class="sam-blush" cx="30" cy="51" rx="6" ry="3.5" fill="#FFCAD5" opacity="0.3"/>',
-    '  <ellipse class="sam-blush" cx="70" cy="51" rx="6" ry="3.5" fill="#FFCAD5" opacity="0.3"/>',
+    /* ── eyebrows ── */
+    '  <path d="M32,34 Q37,32 42,35" fill="none" stroke="#E0E0E0" stroke-width="0.8" stroke-linecap="round"/>',
+    '  <path d="M58,35 Q63,32 68,34" fill="none" stroke="#E0E0E0" stroke-width="0.8" stroke-linecap="round"/>',
+    /* ── nose ── */
+    '  <ellipse cx="50" cy="52" rx="5.5" ry="4.2" fill="#222"/>',
+    '  <ellipse cx="48" cy="51" rx="2.2" ry="1.4" fill="#555" transform="rotate(-12 48 51)"/>',
+    /* ── Sammy smile ── */
+    '  <path d="M44,57 Q47,60 50,58.5 Q53,60 56,57" fill="none" stroke="#AAA" stroke-width="0.8" stroke-linecap="round"/>',
+    '  <line x1="50" y1="56.5" x2="50" y2="58.5" stroke="#AAA" stroke-width="0.6" stroke-linecap="round"/>',
+    /* ── tongue │ hidden default ── */
+    '  <ellipse class="sam-tongue" cx="50" cy="63" rx="3.2" ry="5.5" fill="#FF8DA8"/>',
+    '  <line class="sam-tongue" x1="50" y1="59" x2="50" y2="67" stroke="#EE6A80" stroke-width="0.6" stroke-linecap="round"/>',
+    /* ── blush ── */
+    '  <ellipse class="sam-blush" cx="28" cy="49" rx="7" ry="4" fill="#FFC5D0" opacity="0.3"/>',
+    '  <ellipse class="sam-blush" cx="72" cy="49" rx="7" ry="4" fill="#FFC5D0" opacity="0.3"/>',
     '</svg>'
   ].join("");
 

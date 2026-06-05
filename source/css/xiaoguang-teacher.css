@@ -71,8 +71,19 @@
 .sam-ear {
   transition: transform 250ms ease;
 }
-.sam-ear--left  { transform-origin: 28px 28px; }
-.sam-ear--right { transform-origin: 72px 28px; }
+.sam-ear--left  { transform-origin: 26px 24px; }
+.sam-ear--right { transform-origin: 74px 24px; }
+
+/* carrot */
+.sam-carrot {
+  transition: transform 200ms ease;
+  transform-origin: 40px 74px;
+}
+
+.sam-carrot-green {
+  transition: transform 200ms ease, opacity 200ms ease;
+  transform-origin: 20px 82px;
+}
 
 /* eyes */
 .sam-eye-pupil {
@@ -128,8 +139,12 @@
   border-color: rgba(160, 190, 220, 0.5);
 }
 
-.xg-teacher__orb:hover .sam-ear--left  { transform: rotate(-5deg); }
-.xg-teacher__orb:hover .sam-ear--right { transform: rotate(5deg); }
+.xg-teacher__orb:hover .sam-ear--left  { transform: rotate(-6deg); }
+.xg-teacher__orb:hover .sam-ear--right { transform: rotate(6deg); }
+
+.xg-teacher__orb:hover .sam-carrot {
+  animation: xg-carrot-bounce 1.2s ease-in-out infinite;
+}
 
 /* ── orb state: active (dialog open) ── */
 .xg-teacher.is-open .xg-teacher__orb {
@@ -174,6 +189,12 @@
 @keyframes xg-sam-breathe {
   0%, 100% { transform: scale(1); }
   50%      { transform: scale(1.04); }
+}
+
+@keyframes xg-carrot-bounce {
+  0%, 100% { transform: translateY(0); }
+  30%      { transform: translateY(-1px); }
+  60%      { transform: translateY(0.5px); }
 }
 
 @keyframes xg-sam-bounce {
