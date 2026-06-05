@@ -23,74 +23,205 @@
   box-sizing: border-box;
 }
 
+/* ── orb ── */
 .xg-teacher__orb {
   align-items: center;
-  background:
-    radial-gradient(circle at 36% 30%, rgba(255, 255, 255, 0.96) 0 4px, transparent 5px),
-    radial-gradient(circle at 64% 33%, rgba(255, 255, 255, 0.8) 0 3px, transparent 4px),
-    radial-gradient(circle at 50% 58%, rgba(14, 18, 26, 0.35) 0 5px, transparent 6px),
+  background: radial-gradient(ellipse at 50% 38%, rgba(255, 255, 255, 0.12) 0%, transparent 60%),
     conic-gradient(from 210deg, #76e0d4, #9dc7ff, #d5bbff, #76e0d4);
   border: 0;
   border-radius: 999px;
   box-shadow: 0 0 0 0 rgba(118, 224, 212, 0.35), 0 14px 36px rgba(0, 0, 0, 0.28);
   cursor: grab;
   display: flex;
-  height: 64px;
+  height: 74px;
   justify-content: center;
+  overflow: visible;
   padding: 0;
   position: relative;
-  transition: transform 180ms ease, filter 180ms ease;
+  transition: transform 200ms ease, filter 200ms ease, box-shadow 200ms ease;
   user-select: none;
-  width: 64px;
+  width: 74px;
 }
 
 .xg-teacher__orb::before {
   animation: xg-breathe 3.8s ease-in-out infinite;
-  border: 1px solid rgba(118, 224, 212, 0.38);
+  border: 1.5px solid rgba(118, 224, 212, 0.3);
   border-radius: inherit;
   content: "";
-  inset: -8px;
+  inset: -6px;
   position: absolute;
+  transition: border-color 250ms ease, opacity 250ms ease;
+  z-index: 0;
 }
 
-.xg-teacher__orb::after {
-  background: rgba(14, 18, 26, 0.42);
-  border-radius: 999px;
-  content: "";
-  height: 6px;
-  position: absolute;
-  top: 40px;
-  width: 18px;
+/* ── Samoyed SVG ── */
+.xg-teacher__samoyed {
+  display: block;
+  height: 68px;
+  position: relative;
+  width: 68px;
+  z-index: 1;
 }
 
-.xg-teacher__orb:hover,
-.xg-teacher__orb:focus-visible {
-  filter: saturate(1.1);
-  outline: none;
-  transform: translateY(-2px) scale(1.03);
+.xg-teacher__samoyed .sam-face {
+  animation: xg-sam-breathe 3.8s ease-in-out infinite;
+  transform-origin: center center;
 }
 
+/* ears */
+.sam-ear {
+  transition: transform 250ms ease;
+}
+.sam-ear--left  { transform-origin: 28px 20px; }
+.sam-ear--right { transform-origin: 72px 20px; }
+
+/* eyes */
+.sam-eye-pupil {
+  transition: transform 200ms ease;
+}
+
+/* tail — hidden by default, slides out on hover */
+.sam-tail {
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 220ms ease, transform 220ms ease;
+  transform-origin: 68px 88px;
+}
+
+/* tongue */
+.sam-tongue {
+  opacity: 0;
+  transform: translateY(2px);
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+/* blush */
+.sam-blush {
+  transition: opacity 300ms ease;
+}
+
+/* ── orb label ── */
 .xg-teacher__orb-label {
   background: var(--xg-teacher-bg);
   border: 1px solid var(--xg-teacher-line);
   border-radius: 999px;
   box-shadow: var(--xg-teacher-shadow);
   color: var(--xg-teacher-text);
+  font-size: 12px;
   opacity: 0;
   padding: 6px 10px;
   pointer-events: none;
   position: absolute;
-  right: 74px;
-  top: 15px;
-  transform: translateX(6px);
+  right: 82px;
+  top: 50%;
+  transform: translateY(-50%) translateX(6px);
   transition: opacity 180ms ease, transform 180ms ease;
   white-space: nowrap;
+  z-index: 2;
 }
 
 .xg-teacher__orb:hover .xg-teacher__orb-label,
 .xg-teacher__orb:focus-visible .xg-teacher__orb-label {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(-50%) translateX(0);
+}
+
+/* ── orb state: hover ── */
+.xg-teacher__orb:hover,
+.xg-teacher__orb:focus-visible {
+  filter: saturate(1.15);
+  outline: none;
+  transform: translateY(-2px) scale(1.04);
+}
+
+.xg-teacher__orb:hover::before {
+  border-color: rgba(118, 224, 212, 0.55);
+}
+
+.xg-teacher__orb:hover .sam-ear--left  { transform: rotate(-12deg) translateY(-2px); }
+.xg-teacher__orb:hover .sam-ear--right { transform: rotate(12deg) translateY(-2px); }
+
+.xg-teacher__orb:hover .sam-tail {
+  animation: xg-tail-wag 0.6s ease-in-out infinite;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── orb state: active (dialog open) ── */
+.xg-teacher.is-open .xg-teacher__orb {
+  animation: xg-sam-bounce 0.5s ease;
+  box-shadow: 0 0 18px rgba(118, 224, 212, 0.3), 0 14px 36px rgba(0, 0, 0, 0.28);
+}
+
+.xg-teacher.is-open .sam-tongue {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.xg-teacher.is-open .sam-blush {
+  opacity: 0.7;
+}
+
+/* ── orb state: thinking (streaming) ── */
+.xg-teacher__orb.is-thinking .sam-eye-pupil {
+  animation: xg-eyes-think 1.2s ease-in-out infinite;
+}
+
+.xg-teacher__orb.is-thinking .sam-ear--left {
+  animation: xg-ear-wiggle 0.8s ease-in-out infinite;
+}
+
+/* ── orb state: dragging ── */
+.xg-teacher__orb.is-dragging .sam-face {
+  transform: scale(0.92);
+  transition: transform 150ms ease;
+}
+
+.xg-teacher__orb.is-dragging .sam-eye-pupil {
+  transform: scale(1.3);
+}
+
+/* ── orb state: stream done, return to active ── */
+.xg-teacher.is-open .xg-teacher__orb:not(.is-thinking) .sam-eye-pupil {
+  animation: xg-eyes-happy 0.4s ease forwards;
+}
+
+/* ── animations ── */
+@keyframes xg-sam-breathe {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.04); }
+}
+
+@keyframes xg-sam-bounce {
+  0%   { transform: translateY(0) scale(1); }
+  30%  { transform: translateY(-8px) scale(1.06); }
+  50%  { transform: translateY(0) scale(0.97); }
+  70%  { transform: translateY(-3px) scale(1.02); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+@keyframes xg-tail-wag {
+  0%, 100% { transform: rotate(-8deg); }
+  50%      { transform: rotate(8deg); }
+}
+
+@keyframes xg-eyes-think {
+  0%   { transform: translate(0, 0); }
+  30%  { transform: translate(-1.5px, -2px); }
+  60%  { transform: translate(1.5px, -1.5px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes xg-eyes-happy {
+  0%   { transform: scaleY(1); }
+  50%  { transform: scaleY(0.35); }
+  100% { transform: scaleY(1); }
+}
+
+@keyframes xg-ear-wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25%      { transform: rotate(-6deg); }
+  75%      { transform: rotate(6deg); }
 }
 
 .xg-teacher__panel {
@@ -384,13 +515,23 @@
   }
 
   .xg-teacher__orb {
+    height: 64px;
+    width: 64px;
+  }
+
+  .xg-teacher__samoyed {
     height: 58px;
     width: 58px;
   }
 
+  .xg-teacher__orb-label {
+    right: 72px;
+  }
+
   .xg-teacher__panel {
-    bottom: 76px;
+    bottom: 80px;
     max-height: min(620px, calc(100vh - 104px));
     width: calc(100vw - 28px);
   }
+}
 }

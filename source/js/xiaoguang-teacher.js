@@ -10,6 +10,62 @@
   var dragState = { active: false, startX: 0, startY: 0, offsetX: 0, offsetY: 0, moved: false };
   var DRAG_THRESHOLD = 4;
 
+  /* ── Samoyed SVG template ── */
+  var SAMOYED_SVG = [
+    '<svg viewBox="0 0 100 100" class="xg-teacher__samoyed" aria-hidden="true">',
+    /* fluffy face layers */
+    '  <circle cx="50" cy="54" r="36" fill="#FAFAFA" class="sam-face"/>',
+    '  <circle cx="28" cy="48" r="22" fill="#F8F8F8" opacity="0.75"/>',
+    '  <circle cx="72" cy="48" r="22" fill="#F8F8F8" opacity="0.75"/>',
+    '  <circle cx="50" cy="36" r="18" fill="#FCFCFC" opacity="0.7"/>',
+    '  <circle cx="38" cy="68" r="16" fill="#F8F8F8" opacity="0.7"/>',
+    '  <circle cx="62" cy="68" r="16" fill="#F8F8F8" opacity="0.7"/>',
+    /* ears */
+    '  <g class="sam-ear sam-ear--left">',
+    '    <path d="M22,24 Q16,2 30,16 Q24,26 22,24Z" fill="#F2F2F2" stroke="#E0E0E0" stroke-width="0.8"/>',
+    '    <path d="M24,22 Q20,8 28,18" fill="#FDD" opacity="0.5"/>',
+    '  </g>',
+    '  <g class="sam-ear sam-ear--right">',
+    '    <path d="M78,24 Q84,2 70,16 Q76,26 78,24Z" fill="#F2F2F2" stroke="#E0E0E0" stroke-width="0.8"/>',
+    '    <path d="M76,22 Q80,8 72,18" fill="#FDD" opacity="0.5"/>',
+    '  </g>',
+    /* tail — behind the face */
+    '  <path class="sam-tail" d="M88,82 Q96,70 92,62 Q98,66 94,78 Q94,86 88,82Z" fill="#F4F4F4" stroke="#E8E8E8" stroke-width="0.6"/>',
+    /* eyes */
+    '  <g class="sam-eye">',
+    '    <ellipse cx="36" cy="42" rx="5.5" ry="6" fill="#222"/>',
+    '    <circle class="sam-eye-pupil" cx="34" cy="40" r="2.2" fill="#FFF"/>',
+    '    <circle class="sam-eye-pupil" cx="38" cy="43" r="1" fill="#FFF" opacity="0.5"/>',
+    '  </g>',
+    '  <g class="sam-eye">',
+    '    <ellipse cx="64" cy="42" rx="5.5" ry="6" fill="#222"/>',
+    '    <circle class="sam-eye-pupil" cx="62" cy="40" r="2.2" fill="#FFF"/>',
+    '    <circle class="sam-eye-pupil" cx="66" cy="43" r="1" fill="#FFF" opacity="0.5"/>',
+    '  </g>',
+    /* eyebrows */
+    '  <path d="M30,33 Q36,31 42,34" fill="none" stroke="#D8D8D8" stroke-width="1.2" stroke-linecap="round"/>',
+    '  <path d="M58,34 Q64,31 70,33" fill="none" stroke="#D8D8D8" stroke-width="1.2" stroke-linecap="round"/>',
+    /* nose */
+    '  <ellipse cx="50" cy="56" rx="6.5" ry="5" fill="#333"/>',
+    '  <ellipse cx="48" cy="54.5" rx="2.8" ry="1.6" fill="#555" transform="rotate(-15 48 54.5)"/>',
+    /* mouth */
+    '  <path d="M44,61 Q47,66 50,63.5 Q53,66 56,61" fill="none" stroke="#AAA" stroke-width="0.9" stroke-linecap="round"/>',
+    '  <line x1="50" y1="61" x2="50" y2="63.5" stroke="#AAA" stroke-width="0.7" stroke-linecap="round"/>',
+    /* tongue */
+    '  <ellipse class="sam-tongue" cx="50" cy="68" rx="5.5" ry="7.5" fill="#FF90A8"/>',
+    '  <line class="sam-tongue" x1="50" y1="63" x2="50" y2="73" stroke="#EE7088" stroke-width="0.8" stroke-linecap="round"/>',
+    /* blush */
+    '  <ellipse class="sam-blush" cx="26" cy="54" rx="8" ry="5" fill="#FFC0CF" opacity="0.4"/>',
+    '  <ellipse class="sam-blush" cx="74" cy="54" rx="8" ry="5" fill="#FFC0CF" opacity="0.4"/>',
+    '</svg>'
+  ].join("");
+
+  function setOrbState(orb, state) {
+    orb.classList.remove("is-thinking", "is-dragging");
+    if (state === "thinking") orb.classList.add("is-thinking");
+    if (state === "dragging") orb.classList.add("is-dragging");
+  }
+
   /* ── article context ── */
 
   function textOf(selector) {
@@ -135,6 +191,7 @@
 
     root.innerHTML = [
       '<button class="xg-teacher__orb" type="button" aria-label="打开小光老师">',
+      SAMOYED_SVG,
       '  <span class="xg-teacher__orb-label">问问小光老师</span>',
       '</button>',
       '<div class="xg-teacher__panel" role="dialog" aria-label="小光老师对话栏">',
@@ -188,7 +245,7 @@
 
   /* ── API call ── */
 
-  async function askTeacher(question, messagesNode, form) {
+  async function askTeacher(question, messagesNode, form, orb) {
     if (!config.apiUrl) {
       appendMessage(messagesNode, "assistant", "后端代理还没有配置。需要先部署 assistant-proxy/worker.js，并把 _config.yml 里的 ai_assistant.api_url 指到代理地址。", "xg-teacher__msg--error");
       return;
@@ -196,6 +253,7 @@
 
     messages.push({ role: "user", content: question });
     currentAssistantMessage = appendMessage(messagesNode, "assistant", "");
+    setOrbState(orb, "thinking");
 
     var response = await fetch(config.apiUrl, {
       method: "POST",
@@ -232,6 +290,7 @@
     }
 
     messages.push({ role: "assistant", content: finalText });
+    setOrbState(orb, "active");
     form.querySelector(".xg-teacher__input").focus();
   }
 
@@ -256,11 +315,17 @@
     orb.addEventListener("click", function () {
       if (dragState.moved) return;
       root.classList.toggle("is-open");
-      if (root.classList.contains("is-open")) input.focus();
+      if (root.classList.contains("is-open")) {
+        setOrbState(orb, "active");
+        input.focus();
+      } else {
+        setOrbState(orb, "idle");
+      }
     });
 
     close.addEventListener("click", function () {
       root.classList.remove("is-open");
+      setOrbState(orb, "idle");
       orb.focus();
     });
 
@@ -273,6 +338,7 @@
       dragState.startY = point.clientY - dragState.offsetY;
       orb.style.cursor = "grabbing";
       orb.style.transition = "none";
+      setOrbState(orb, "dragging");
     }
 
     function onDragMove(e) {
@@ -295,6 +361,7 @@
       dragState.active = false;
       orb.style.cursor = "";
       orb.style.transition = "";
+      setOrbState(orb, root.classList.contains("is-open") ? "active" : "idle");
     }
 
     orb.addEventListener("mousedown", onDragStart);
@@ -322,8 +389,9 @@
       appendMessage(messagesNode, "user", question);
 
       try {
-        await askTeacher(question, messagesNode, form);
+        await askTeacher(question, messagesNode, form, orb);
       } catch (error) {
+        setOrbState(orb, "active");
         if (currentAssistantMessage && !currentAssistantMessage.textContent) {
           currentAssistantMessage.remove();
         }
