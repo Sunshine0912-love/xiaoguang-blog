@@ -274,6 +274,4 @@ $$\alpha_i=\min\left(1,\frac{p_p(x_i)}{p_q(x_i)}\right)$$
 
 [4] NVIDIA TensorRT-LLM. *Speculative Decoding*. https://github.com/NVIDIA/TensorRT-LLM/tree/main/docs/source/blogs/tech_blog/speculative_decoding.md
 
-[5] Charlie Chen, Sebastian Borgeaud, Geoffrey Irving, Jean-Baptiste Lespiau, Laurent Sifre, John Jumper. *Accelerating Large Language Model Decoding with Speculative Sampling*, arXiv:2302.01318, 2023. (Note: same paper as [1], different author ordering by convention)
 
-[6] Yuhui Li, Fangyun Wei, Chao Zhang, Hongyang Zhang. *EAGLE: Speculative Sampling Requires Rethinking Feature-level Uncertainty*, 2024. https://sites.google.com/view/eagle-llm
