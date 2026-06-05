@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-05T11:00:00+08:00",
+  "updated_at": "2026-06-05T11:45:00+08:00",
   "topics": [
     {
       "id": "TOPIC-20260603-01",
@@ -445,17 +445,18 @@
         "MQA/GQA 原论文",
         "DeepSeek MLA 技术报告"
       ],
-      "status": "confirmed",
+      "status": "published",
       "confirmed": true,
       "confirmed_at": "2026-06-05T08:58:00+08:00",
-      "published": false,
-      "published_at": null,
-      "article_path": null,
+      "published": true,
+      "published_at": "2026-06-05T11:45:00+08:00",
+      "article_path": "source/_posts/2026-06-05-qkv-projection-sharing-attention.md",
       "technical_level": "架构解析",
       "reader_takeaway": "理解 Q、K、V 三投影各自的功能与冗余性；掌握三种投影共享方案的数学形式和注意力计算含义；理解 Q-K=V 为什么效果好且可与 GQA/MQA 叠加达到极致压缩；掌握注意力低秩性与投影共享的理论联系。",
-      "notification_status": "prepared_for_manual_wechat_delivery",
+      "notification_status": "pending_wechat_notification",
       "notification_prepared_at": "2026-06-05T08:50:00+08:00",
-      "user_instruction": "用户明确确认；等待三篇 TOPIC 完成后再写。"
+      "user_instruction": "用户明确确认；等待三篇 TOPIC 完成后再写。",
+      "updated_at": "2026-06-05T11:45:00+08:00"
     },
     {
       "id": "TECH-20260605-02",

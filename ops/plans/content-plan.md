@@ -27,3 +27,4 @@
 - 2026-06-05：KVarN 深度评测：vLLM 原生 KV Cache 量化后端能不能进生产。
 - 2026-06-05：Headroom 实战：LLM 上下文压缩工具如何给 Agent 省 token。
 - 2026-06-05：AI 辅助代码安全工具链：Anthropic Defending Code Reference Harness 解析。
+- 2026-06-05：Q、K、V 投影共享：Transformer 注意力机制真的需要三个投影矩阵吗？

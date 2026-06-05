@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-05T11:00:00+08:00",
+  "updated_at": "2026-06-05T11:45:00+08:00",
   "sources": [
     {
       "title": "Agentic AI in Industry: Adoption Level and Deployment Barriers",
@@ -191,7 +191,8 @@
       "tier": "A",
       "used_in": [
         "source/_posts/2026-06-04-prefill-decode-disaggregation.md",
-        "source/_posts/2026-06-04-mla-attention-kv-cache.md"
+        "source/_posts/2026-06-04-mla-attention-kv-cache.md",
+        "source/_posts/2026-06-05-qkv-projection-sharing-attention.md"
       ]
     },
     {
@@ -201,7 +202,8 @@
       "tier": "A",
       "used_in": [
         "source/_posts/2026-06-04-prefill-decode-disaggregation.md",
-        "source/_posts/2026-06-04-mla-attention-kv-cache.md"
+        "source/_posts/2026-06-04-mla-attention-kv-cache.md",
+        "source/_posts/2026-06-05-qkv-projection-sharing-attention.md"
       ]
     },
     {
@@ -219,16 +221,18 @@
       "type": "paper",
       "tier": "A",
       "used_in": [
-        "source/_posts/2026-06-04-mla-attention-kv-cache.md"
+        "source/_posts/2026-06-04-mla-attention-kv-cache.md",
+        "source/_posts/2026-06-05-qkv-projection-sharing-attention.md"
       ]
     },
     {
-      "title": "DeepSeek-V2 Technical Report",
+      "title": "DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model",
       "url": "https://arxiv.org/abs/2405.04434",
       "type": "paper",
       "tier": "A",
       "used_in": [
-        "source/_posts/2026-06-04-mla-attention-kv-cache.md"
+        "source/_posts/2026-06-04-mla-attention-kv-cache.md",
+        "source/_posts/2026-06-05-qkv-projection-sharing-attention.md"
       ]
     },
     {
@@ -427,6 +431,24 @@
       "tier": "A",
       "used_in": [
         "source/_posts/2026-06-05-anthropic-defending-code-harness.md"
+      ]
+    },
+    {
+      "title": "Do Transformers Need Three Projections? Systematic Study of QKV Variants",
+      "url": "https://arxiv.org/abs/2606.04032",
+      "type": "paper",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-05-qkv-projection-sharing-attention.md"
+      ]
+    },
+    {
+      "title": "Do-Transformers-Need-3-Projections official code repository",
+      "url": "https://github.com/anushamadan02/Do-Transformers-Need-3-Projections",
+      "type": "github repository",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-05-qkv-projection-sharing-attention.md"
       ]
     }
   ]

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-05T11:00:00+08:00",
+  "updated_at": "2026-06-05T11:45:00+08:00",
   "items": [
     {
       "title": "你好，小光",
@@ -164,6 +164,28 @@
       "description": "Anthropic 的 Defending Code Reference Harness 把漏洞发现做成 threat model、sandbox、find、verify、triage、patch 的防御流水线。本文从安全边界、工程结构和落地风险出发，分析 AI 安全 Agent 应该怎么用。",
       "topic_id": "TOPIC-20260605-03",
       "updated_at": "2026-06-05T11:00:00+08:00"
+    },
+    {
+      "id": "TECH-20260605-01",
+      "title": "Q、K、V 投影共享：Transformer 注意力机制真的需要三个投影矩阵吗？",
+      "date": "2026-06-05",
+      "path": "source/_posts/2026-06-05-qkv-projection-sharing-attention.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/05/2026-06-05-qkv-projection-sharing-attention/",
+      "categories": [
+        "AI",
+        "LLM"
+      ],
+      "tags": [
+        "Transformer",
+        "Attention",
+        "QKV",
+        "Weight Tying",
+        "KV Cache",
+        "ICML 2026"
+      ],
+      "description": "ICML 2026 论文系统研究 Q/K/V 投影共享：为什么 Q-K=V 能在保留注意力方向性的同时把 KV Cache 减半，以及它如何与 GQA/MQA 叠加。",
+      "topic_id": "TECH-20260605-01",
+      "updated_at": "2026-06-05T11:45:00+08:00"
     }
   ]
 }
