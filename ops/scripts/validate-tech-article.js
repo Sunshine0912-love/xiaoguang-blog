@@ -22,6 +22,12 @@ const ALLOWED_CODE_IDENTIFIERS = new Set([
   'qk_rope_head_dim',
   'cache.kv',
   'cache.pe',
+  'kv_cache_dtype',
+  'kvarn_k4v2_g128',
+  'block_size',
+  'k4v2',
+  'kv_cache_dtype="kvarn_k4v2_g128"',
+  'block_size=128',
 ]);
 
 function read(file) {
