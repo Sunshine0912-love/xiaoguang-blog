@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-05T10:07:34+08:00",
+  "updated_at": "2026-06-05T10:12:01+08:00",
   "topics": [
     {
       "id": "TOPIC-20260603-01",
@@ -492,7 +492,7 @@
       "article_path": "source/_posts/2026-06-05-kv-cache-quantization-varn.md",
       "technical_level": "工程优化",
       "reader_takeaway": "理解 KV Cache 量化中误差累积的数学模型；掌握 Hadamard 旋转消除 outlier 和方差归一化抑制误差的原理；能够评估不同量化方案在精度、吞吐、容量间的权衡。",
-      "notification_status": "pending_wechat_notification",
+      "notification_status": "wechat_delivered",
       "notification_prepared_at": "2026-06-05T08:50:00+08:00",
       "user_instruction": "用户明确继续发布；等待 TECH-20260605-01 完成后再写。"
     },
@@ -521,15 +521,15 @@
         "vLLM speculative decoding 文档与源码",
         "TensorRT-LLM speculative decoding 文档"
       ],
-      "status": "confirmed",
+      "status": "published",
       "confirmed": true,
       "confirmed_at": "2026-06-05T08:58:00+08:00",
-      "published": false,
-      "published_at": null,
-      "article_path": null,
+      "published": true,
+      "published_at": "2026-06-05T10:12:01+08:00",
+      "article_path": "source/_posts/2026-06-05-speculative-decoding-principles.md",
       "technical_level": "算法推导",
       "reader_takeaway": "掌握投机采样的 draft-verify 两阶段框架和接受/拒绝采样的数学保证；理解 draft model 选择的最优 trade-off；了解 vLLM 生产级实现和自投机解码变体（Medusa/EAGLE）。",
-      "notification_status": "prepared_for_manual_wechat_delivery",
+      "notification_status": "pending_wechat_notification",
       "notification_prepared_at": "2026-06-05T08:50:00+08:00",
       "user_instruction": "用户明确继续发布；等待 TECH-20260605-02 完成后再写。"
     }

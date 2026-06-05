@@ -1,7 +1,27 @@
 {
   "version": 1,
-  "updated_at": "2026-06-05T10:07:45+08:00",
+  "updated_at": "2026-06-05T10:12:01+08:00",
   "items": [
+    {
+      "title": "投机采样原理与工程实现：如何用小模型无损加速大模型的自回归解码",
+      "date": "2026-06-05",
+      "path": "source/_posts/2026-06-05-speculative-decoding-principles.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/05/2026-06-05-speculative-decoding-principles/",
+      "categories": [
+        "AI",
+        "推理优化"
+      ],
+      "tags": [
+        "Speculative Decoding",
+        "LLM Inference",
+        "Draft Model",
+        "Self-Speculation",
+        "vLLM",
+        "Rejection Sampling"
+      ],
+      "description": "从自回归解码的 memory-bandwidth 瓶颈出发，推导投机采样的 draft-verify 两阶段框架与修正拒绝采样的概率保证，分析 draft model 选择的数学 trade-off 与 vLLM 生产级实现要点。",
+      "topic_id": "TECH-20260605-03"
+    },
     {
       "title": "KV Cache 量化技术解析：从均匀量化到方差归一化",
       "date": "2026-06-05",
