@@ -43,7 +43,7 @@ $$T_{step}\approx \frac{P\cdot bytes_{dtype}}{BW_{HBM}}$$
 
 投机采样的想法直接来自这个瓶颈：大模型反正要把参数搬进 SRAM 一次，让它顺便多验证几个候选 token，计算量几乎不增加。只要 draft model 足够小，猜 $k$ 个 token 的总延迟远低于大模型生成 $k$ 个 token 的延迟 [1]。
 
-以 Leviathan et al. (2023) 在 Chinchilla 70B 上的实验为例：draft model 比 target model 约小 100 倍，猜 $k=4$ 个 token 的成本约等于 target model 生成一个 token 的成本，接受率约 0.8，最终加速 2-2.5x [1]。
+以 Chen et al. (2023) 在 Chinchilla 70B 上的实验为例：draft model 比 target model 约小 100 倍，猜 $k=4$ 个 token 的成本约等于 target model 生成一个 token 的成本，接受率约 0.8，最终加速 2-2.5x [2]。
 
 ## 两阶段框架
 
@@ -108,7 +108,7 @@ $$T_{step}=k\cdot T_{draft}+T_{verify}$$
 
 其中 $T_{verify}\approx T_{target}$（因为一次 forward 的计算量和一个 token 差不多）。
 
-期望生成的 token 数（每步"净产出"）是 acceptance rate $\alpha$ 的函数，Leviathan et al. 推导出每步期望接受 token 数为 [1]：
+期望生成的 token 数（每步"净产出"）是 acceptance rate $\alpha$ 的函数，Leviathan et al. [1] 推导出每步期望接受 token 数为：
 
 $$\mathbb{E}[\#accepted]=\frac{1-\alpha^{k+1}}{1-\alpha}$$
 
@@ -116,7 +116,7 @@ $$\mathbb{E}[\#accepted]=\frac{1-\alpha^{k+1}}{1-\alpha}$$
 
 $$speedup=\frac{\mathbb{E}[\#accepted]\cdot T_{target}}{k\cdot T_{draft}+T_{target}}$$
 
-最优的 $k$ 不是越大越好：draft 成本随 $k$ 线性增长，而接受率会随 $k$ 下降（因为越往后 draft 越容易偏离 target 分布）。Leviathan et al. 在实验中常用 $k\in[3,8]$ [1]。
+最优的 $k$ 不是越大越好：draft 成本随 $k$ 线性增长，而接受率会随 $k$ 下降（因为越往后 draft 越容易偏离 target 分布）。实践中常用 $k\in[3,8]$ [1][2]。
 
 当 $T_{draft}\ll T_{target}$ 且 $\alpha$ 较高时，加速比趋近于每步接受 token 数。理解这一点就够了：**加速取决于 draft 的接受率，而接受率是 draft-target 分布匹配质量的可度量代理**。
 
@@ -139,21 +139,21 @@ $$speedup=\frac{\mathbb{E}[\#accepted]\cdot T_{target}}{k\cdot T_{draft}+T_{targ
 
 ### Medusa：多个解码头同时猜
 
-Medusa 在 backbone LLM 的最后隐藏层上挂多个轻量 FFN 头，每个头负责预测第 $i$ 步之后的 token [2]：
+Medusa 在 backbone LLM 的最后隐藏层上挂多个轻量 FFN 头，每个头负责预测第 $i$ 步之后的 token [3]：
 
 - Head 1：预测 $x_{t+1}$
 - Head 2：预测 $x_{t+2}$
 - …
 
-训练时只训这些 head，backbone 冻结（Medusa-1），或与 backbone 联合训练但要保持 backbone 质量（Medusa-2）[2]。
+训练时只训这些 head，backbone 冻结（Medusa-1），或与 backbone 联合训练但要保持 backbone 质量（Medusa-2）[3]。
 
 Medusa 把多个头的预测组织成 tree attention：每个位置可能有多条候选分支，一次 verify forward 验证整棵树。这比逐 token draft 多了有效并行度。
 
-论文报告 Medusa-1 可到 2.2x，Medusa-2 可到 2.3-3.6x [2]。代价是需要针对每个 backbone fine-tune Medusa heads。
+论文报告 Medusa-1 可到 2.2x，Medusa-2 可到 2.3-3.6x [3]。代价是需要针对每个 backbone fine-tune Medusa heads。
 
 ### n-gram / prompt lookup 投机
 
-这是最简单的 self-speculation：用 prompt 里已经出现的 n-gram 当作草稿 [1]。不需要任何额外模型或训练，但接受率比训练好的 draft 低很多。
+这是最简单的 self-speculation：用 prompt 里已经出现的 n-gram 当作草稿 [2]。不需要任何额外模型或训练，但接受率比训练好的 draft 低很多。
 
 ### EAGLE 和 EAGLE-2
 
@@ -165,7 +165,7 @@ vLLM 对投机解码的生产化实现有几个关键设计：
 
 **1. 统一的 Spec Decode Worker**
 
-vLLM 的 speculative decoding 支持两种 draft 模式：draft model 和 n-gram。代码在 `vllm/spec_decode/` 下，`SpecDecodeWorker` 协调整个 draft-verify 循环 [3]。
+vLLM 的 speculative decoding 支持两种 draft 模式：draft model 和 n-gram。代码在 `vllm/spec_decode/` 下，`SpecDecodeWorker` 协调整个 draft-verify 循环 [4]。
 
 **2. Draft 与 Target 的 KV Cache 管理**
 
@@ -173,11 +173,11 @@ vLLM 的 speculative decoding 支持两种 draft 模式：draft model 和 n-gram
 - Draft model 自回归 $k$ 步产生 $k$ 个新 KV slot
 - Target model 一次 verify 需要 $k$ 个位置的 KV
 
-vLLM 的 PagedAttention 分页管理天然适配这个场景。Draft slots 可以被复用/丢弃 [3]。
+vLLM 的 PagedAttention 分页管理天然适配这个场景。Draft slots 可以被复用/丢弃 [4]。
 
 **3. Batch expansion**
 
-在线服务中不同请求的接受率不同，vLLM 用 batch expansion 统一处理：把 draft 完成的多个候选路径放进一次 target verify batch，verify 后再根据接受结果删掉拒绝的分支。这比每个请求单独 verify 更高效 [3]。
+在线服务中不同请求的接受率不同，vLLM 用 batch expansion 统一处理：把 draft 完成的多个候选路径放进一次 target verify batch，verify 后再根据接受结果删掉拒绝的分支。这比每个请求单独 verify 更高效 [4]。
 
 从 vLLM CLI 启用投机解码的典型命令：
 
@@ -199,7 +199,7 @@ vllm serve <model> \
 
 **4. 与 prefix caching 的交互**
 
-投机采样新产生的 KV cache 和 prefix KV cache 的交互需要小心处理：如果多个请求共享相同 prefix，draft 路径可能不同，prefix cache 命中会受影响 [3]。
+投机采样新产生的 KV cache 和 prefix KV cache 的交互需要小心处理：如果多个请求共享相同 prefix，draft 路径可能不同，prefix cache 命中会受影响 [4]。
 
 ## 为什么不是万能药
 
@@ -266,12 +266,14 @@ $$\alpha_i=\min\left(1,\frac{p_p(x_i)}{p_q(x_i)}\right)$$
 
 ## 参考资料
 
-[1] Yaniv Leviathan, Matan Kalman, Yossi Matias. *Accelerating Large Language Model Decoding with Speculative Sampling*, arXiv:2302.01318, 2023. https://arxiv.org/abs/2302.01318
+[1] Yaniv Leviathan, Matan Kalman, Yossi Matias. *Fast Inference from Transformers via Speculative Decoding*, ICML 2023 Oral / arXiv:2211.17192, 2022. https://arxiv.org/abs/2211.17192
 
-[2] Tianle Cai, Yuhong Li, Zhengyang Geng, Hongwu Peng, Jason D. Lee, Deming Chen, Tri Dao. *Medusa: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads*, ICML 2024 / arXiv:2401.10774, 2024. https://arxiv.org/abs/2401.10774
+[2] Charlie Chen, Sebastian Borgeaud, Geoffrey Irving, Jean-Baptiste Lespiau, Laurent Sifre, John Jumper. *Accelerating Large Language Model Decoding with Speculative Sampling*, arXiv:2302.01318, 2023. https://arxiv.org/abs/2302.01318
 
-[3] vLLM Project. *Speculative Decoding — vLLM Documentation*. https://docs.vllm.ai/en/latest/features/spec_decode.html — actual content at https://docs.vllm.ai/en/latest/speculative_decoding/
+[3] Tianle Cai, Yuhong Li, Zhengyang Geng, Hongwu Peng, Jason D. Lee, Deming Chen, Tri Dao. *Medusa: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads*, ICML 2024 / arXiv:2401.10774, 2024. https://arxiv.org/abs/2401.10774
 
-[4] NVIDIA TensorRT-LLM. *Speculative Decoding*. https://github.com/NVIDIA/TensorRT-LLM/tree/main/docs/source/blogs/tech_blog/speculative_decoding.md
+[4] vLLM Project. *Speculative Decoding — vLLM Documentation*. https://docs.vllm.ai/en/latest/features/spec_decode.html — actual content at https://docs.vllm.ai/en/latest/speculative_decoding/
+
+[5] NVIDIA TensorRT-LLM. *Speculative Decoding*. https://github.com/NVIDIA/TensorRT-LLM
 
 
