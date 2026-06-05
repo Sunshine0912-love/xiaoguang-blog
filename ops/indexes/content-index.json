@@ -1,7 +1,28 @@
 {
   "version": 1,
-  "updated_at": "2026-06-05T11:15:51+08:00",
+  "updated_at": "2026-06-05T11:19:38+08:00",
   "items": [
+    {
+      "title": "【ML 2026 Spring 第2講】Context Engineering、Multi-Agent 互動與學術工作的未來",
+      "date": "2026-06-05",
+      "path": "source/_posts/hylee-ml2026-lecture-02-context-engineering-multi-agent.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/05/hylee-ml2026-lecture-02-context-engineering-multi-agent/",
+      "categories": [
+        "hylee ML 2026 Spring"
+      ],
+      "tags": [
+        "ML2026",
+        "AI Agent",
+        "Context Engineering",
+        "Multi-Agent",
+        "Memory",
+        "ACON",
+        "MCP"
+      ],
+      "description": "李宏毅 ML 2026 Spring 第2講：Context Engineering 三大技術路線、Multi-Agent 協作機制、AI Agent 對學術研究的衝擊。",
+      "series": "hylee-ml-2026-spring",
+      "lecture": 2
+    },
     {
       "title": "【ML 2026 Spring 第1講】AI Agent — 解剖小龍蝦",
       "date": "2026-06-05",

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-05T11:15:51+08:00",
+  "updated_at": "2026-06-05T11:19:38+08:00",
   "sources": [
     {
       "title": "Agentic AI in Industry: Adoption Level and Deployment Barriers",
@@ -594,6 +594,60 @@
       "article_id": "hylee-ml2026-lecture-01",
       "article_path": "source/_posts/hylee-ml2026-lecture-01-ai-agent-openclaw.md",
       "added_at": "2026-06-05T11:15:51+08:00"
+    },
+    {
+      "ref": "slides",
+      "title": "agent_era.pdf",
+      "url": "https://speech.ee.ntu.edu.tw/~hylee/ml/ml2026-course-data/agent_era.pdf",
+      "type": "slides",
+      "article_id": "hylee-ml2026-lecture-02",
+      "article_path": "source/_posts/hylee-ml2026-lecture-02-context-engineering-multi-agent.md",
+      "added_at": "2026-06-05T11:19:38+08:00"
+    },
+    {
+      "ref": "ACON",
+      "title": "Agent Context Optimization",
+      "url": "https://arxiv.org/abs/2510.00615",
+      "type": "paper",
+      "article_id": "hylee-ml2026-lecture-02",
+      "article_path": "source/_posts/hylee-ml2026-lecture-02-context-engineering-multi-agent.md",
+      "added_at": "2026-06-05T11:19:38+08:00"
+    },
+    {
+      "ref": "SUPO",
+      "title": "Summarization augmented Policy Optimization",
+      "url": "https://arxiv.org/abs/2510.06727",
+      "type": "paper",
+      "article_id": "hylee-ml2026-lecture-02",
+      "article_path": "source/_posts/hylee-ml2026-lecture-02-context-engineering-multi-agent.md",
+      "added_at": "2026-06-05T11:19:38+08:00"
+    },
+    {
+      "ref": "AgentFold",
+      "title": "arXiv:2510.24699",
+      "url": "https://arxiv.org/abs/2510.24699",
+      "type": "paper",
+      "article_id": "hylee-ml2026-lecture-02",
+      "article_path": "source/_posts/hylee-ml2026-lecture-02-context-engineering-multi-agent.md",
+      "added_at": "2026-06-05T11:19:38+08:00"
+    },
+    {
+      "ref": "MCP-Zero",
+      "title": "arXiv:2506.01056",
+      "url": "https://arxiv.org/abs/2506.01056",
+      "type": "paper",
+      "article_id": "hylee-ml2026-lecture-02",
+      "article_path": "source/_posts/hylee-ml2026-lecture-02-context-engineering-multi-agent.md",
+      "added_at": "2026-06-05T11:19:38+08:00"
+    },
+    {
+      "ref": "Multi-Agent",
+      "title": "arXiv:2406.07155",
+      "url": "https://arxiv.org/abs/2406.07155",
+      "type": "paper",
+      "article_id": "hylee-ml2026-lecture-02",
+      "article_path": "source/_posts/hylee-ml2026-lecture-02-context-engineering-multi-agent.md",
+      "added_at": "2026-06-05T11:19:38+08:00"
     }
   ]
 }
