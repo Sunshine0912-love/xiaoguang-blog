@@ -133,7 +133,7 @@ theme: next
 # DeepSeek API keys in this public static site.
 ai_assistant:
   enabled: true
-  api_url: 'https://vercel-api-brown-chi.vercel.app/api/teacher'
+  api_url: 'https://api.yangguang0912.tech'
   model_label: DeepSeek V4 Pro
 
 # Deployment
