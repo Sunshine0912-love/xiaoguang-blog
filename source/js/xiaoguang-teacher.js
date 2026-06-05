@@ -10,82 +10,8 @@
   var dragState = { active: false, startX: 0, startY: 0, offsetX: 0, offsetY: 0, moved: false };
   var DRAG_THRESHOLD = 4;
 
-  /* ── Samoyed SVG template ── */
-  var SAMOYED_SVG = [
-    '<svg viewBox="0 0 100 100" class="xg-teacher__samoyed" aria-hidden="true">',
-    '  <defs>',
-    '    <radialGradient id="xgs-face" cx="50%" cy="32%" r="62%">',
-    '      <stop offset="0%" stop-color="#FFFFFF"/>',
-    '      <stop offset="72%" stop-color="#FBFCFF"/>',
-    '      <stop offset="100%" stop-color="#EDF2F7"/>',
-    '    </radialGradient>',
-    '    <linearGradient id="xgs-carrot" x1="16" x2="84" y1="52" y2="62" gradientUnits="userSpaceOnUse">',
-    '      <stop offset="0%" stop-color="#FFB15F"/>',
-    '      <stop offset="45%" stop-color="#FF8F32"/>',
-    '      <stop offset="100%" stop-color="#EF7421"/>',
-    '    </linearGradient>',
-    '    <linearGradient id="xgs-collar" x1="28" x2="72" y1="78" y2="93" gradientUnits="userSpaceOnUse">',
-    '      <stop offset="0%" stop-color="#67D7D2"/>',
-    '      <stop offset="100%" stop-color="#7EAEFE"/>',
-    '    </linearGradient>',
-    '  </defs>',
-    '  <ellipse cx="50" cy="86" rx="27" ry="8" fill="#1F2937" opacity="0.08"/>',
-    '  <g class="sam-face">',
-    '    <g class="sam-ear sam-ear--left">',
-    '      <path d="M25 27C18 12 22 9 31 21c2 3 2 7 0 11Z" fill="#F4F7FB" stroke="#DFE6EE" stroke-width="0.9"/>',
-    '      <path d="M27 24c-3-5-3-8 1-7 2 1 4 4 4 7Z" fill="#FFDCE5" opacity="0.55"/>',
-    '    </g>',
-    '    <g class="sam-ear sam-ear--right">',
-    '      <path d="M75 27C82 12 78 9 69 21c-2 3-2 7 0 11Z" fill="#F4F7FB" stroke="#DFE6EE" stroke-width="0.9"/>',
-    '      <path d="M73 24c3-5 3-8-1-7-2 1-4 4-4 7Z" fill="#FFDCE5" opacity="0.55"/>',
-    '    </g>',
-    '    <path d="M30 78c6 11 34 11 40 0l4 13c-12 8-36 8-48 0Z" fill="url(#xgs-collar)"/>',
-    '    <g class="sam-sun-badge">',
-    '      <circle cx="50" cy="84" r="5" fill="#FFD757" stroke="#F6A629" stroke-width="0.8"/>',
-    '      <path d="M50 76v3M50 89v3M42 84h3M55 84h3M44.3 78.3l2.1 2.1M53.6 87.6l2.1 2.1M55.7 78.3l-2.1 2.1M46.4 87.6l-2.1 2.1" stroke="#F6A629" stroke-width="1.1" stroke-linecap="round"/>',
-    '    </g>',
-    '    <circle cx="27" cy="43" r="18" fill="#FFFFFF" opacity="0.88"/>',
-    '    <circle cx="73" cy="43" r="18" fill="#FFFFFF" opacity="0.88"/>',
-    '    <circle cx="34" cy="28" r="15" fill="#FFFFFF" opacity="0.82"/>',
-    '    <circle cx="66" cy="28" r="15" fill="#FFFFFF" opacity="0.82"/>',
-    '    <ellipse cx="50" cy="44" rx="32" ry="29" fill="url(#xgs-face)" stroke="#E5EBF2" stroke-width="0.6"/>',
-    '    <circle cx="31" cy="56" r="14" fill="#FFFFFF" opacity="0.72"/>',
-    '    <circle cx="69" cy="56" r="14" fill="#FFFFFF" opacity="0.72"/>',
-    '    <g class="sam-glasses">',
-    '      <circle cx="36" cy="40" r="8.5" fill="none" stroke="#506171" stroke-width="1.9"/>',
-    '      <circle cx="64" cy="40" r="8.5" fill="none" stroke="#506171" stroke-width="1.9"/>',
-    '      <path d="M44.5 40c3.5-1.8 7.5-1.8 11 0" fill="none" stroke="#506171" stroke-width="1.6" stroke-linecap="round"/>',
-    '    </g>',
-    '    <path d="M26.8 37c2.6-2.3 5.7-3.4 9.2-3.3M64 33.7c3.5-0.1 6.6 1 9.2 3.3" fill="none" stroke="#D8E1EA" stroke-width="1" stroke-linecap="round"/>',
-    '    <g class="sam-eye">',
-    '      <circle cx="36" cy="41" r="4.7" fill="#1B2430"/>',
-    '      <circle class="sam-eye-pupil" cx="34.5" cy="39.1" r="1.9" fill="#FFFFFF"/>',
-    '      <circle cx="38" cy="43.2" r="0.9" fill="#FFFFFF" opacity="0.45"/>',
-    '    </g>',
-    '    <g class="sam-eye">',
-    '      <circle cx="64" cy="41" r="4.7" fill="#1B2430"/>',
-    '      <circle class="sam-eye-pupil" cx="62.5" cy="39.1" r="1.9" fill="#FFFFFF"/>',
-    '      <circle cx="66" cy="43.2" r="0.9" fill="#FFFFFF" opacity="0.45"/>',
-    '    </g>',
-    '    <ellipse class="sam-blush" cx="29" cy="50" rx="6.5" ry="3.5" fill="#FFC5D0" opacity="0.34"/>',
-    '    <ellipse class="sam-blush" cx="71" cy="50" rx="6.5" ry="3.5" fill="#FFC5D0" opacity="0.34"/>',
-    '    <ellipse cx="50" cy="50" rx="5.4" ry="4" fill="#20242B"/>',
-    '    <ellipse cx="48" cy="49" rx="2" ry="1.2" fill="#515761" transform="rotate(-14 48 49)"/>',
-    '  </g>',
-    '  <g class="sam-carrot-green">',
-    '    <path d="M18 58c-5-5-5-11 0.4-16" fill="none" stroke="#54A844" stroke-width="2.4" stroke-linecap="round"/>',
-    '    <path d="M20 58c-1-7 1-13 6-18" fill="none" stroke="#62B94D" stroke-width="2.1" stroke-linecap="round"/>',
-    '    <path d="M22 58c4-5 8-9 13-12" fill="none" stroke="#54A844" stroke-width="2.4" stroke-linecap="round"/>',
-    '  </g>',
-    '  <g class="sam-carrot">',
-    '    <path d="M18 56c20-6 43-6 64-2 3 0.6 3.6 6.6 0.5 7.5-21 5.8-44 6-65.2 0.5-3.6-0.9-3-5.1 0.7-6Z" fill="url(#xgs-carrot)" stroke="#E17325" stroke-width="0.7"/>',
-    '    <path d="M31 55.6c1.3 1.2 1.6 2.9 0.8 4.7M48 54.5c1.4 1.5 1.6 3.3 0.5 5.2M66 55c1.4 1.2 1.8 2.9 1 4.7" fill="none" stroke="#C95E1B" stroke-width="1" stroke-linecap="round" opacity="0.45"/>',
-    '  </g>',
-    '  <path d="M45 54c3 2 7 2 10 0" fill="none" stroke="#20242B" stroke-width="1.1" stroke-linecap="round" opacity="0.55"/>',
-    '  <ellipse class="sam-tongue" cx="50" cy="66" rx="3.1" ry="4.4" fill="#FF8DA8"/>',
-    '  <line class="sam-tongue" x1="50" y1="63" x2="50" y2="69" stroke="#EE6A80" stroke-width="0.6" stroke-linecap="round"/>',
-    '</svg>'
-  ].join("");
+  /* ── 小光老师主形象图片路径 ── */
+  var MASCOT_IMAGE = config.imagePath || "/images/xiaoguang-teacher-main.png";
 
   function setOrbState(orb, state) {
     orb.classList.remove("is-thinking", "is-dragging");
@@ -136,7 +62,7 @@
       return "\x00FENCE" + idx + "\x00";
     });
 
-    /* Step 1 — inline code (before bold/italic) */
+    /* Step 1 — inline code */
     html = html.replace(/`([^`\n]+)`/g, function (_, code) {
       return "<code>" + htmlEscape(code) + "</code>";
     });
@@ -156,9 +82,7 @@
 
     /* Step 5 — unordered list items */
     html = html.replace(/^[\-\*] (.+)$/gm, "<li>$1</li>");
-    /* ordered list items */
     html = html.replace(/^\d+\. (.+)$/gm, "<li>$1</li>");
-    /* wrap consecutive <li> lines */
     html = html.replace(/((?:<li>.*<\/li>\n?)+)/g, "<ul>$1</ul>");
 
     /* Step 6 — restore fenced code blocks */
@@ -171,14 +95,11 @@
     html = parts.map(function (p) {
       p = p.trim();
       if (!p) return "";
-      /* already a block element — skip wrapping */
       if (/^<(h[1-6]|ul|ol|pre|blockquote|table|div)/.test(p)) return p;
-      /* replace remaining single newlines with <br> inside paragraph */
       p = p.replace(/\n/g, "<br>");
       return "<p>" + p + "</p>";
     }).join("\n");
 
-    /* clean up empty paragraphs */
     html = html.replace(/<p>\s*<\/p>/g, "");
     html = html.replace(/<p><br\s*\/?><\/p>/g, "");
 
@@ -218,7 +139,7 @@
 
     root.innerHTML = [
       '<button class="xg-teacher__orb" type="button" aria-label="打开小光老师">',
-      SAMOYED_SVG,
+      '  <img class="xg-teacher__mascot" src="' + MASCOT_IMAGE + '" alt="小光老师" draggable="false">',
       '  <span class="xg-teacher__orb-label">问问小光老师</span>',
       '</button>',
       '<div class="xg-teacher__panel" role="dialog" aria-label="小光老师对话栏">',
