@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-05T10:12:01+08:00",
+  "updated_at": "2026-06-05T10:14:00+08:00",
   "topics": [
     {
       "id": "TOPIC-20260603-01",
@@ -529,7 +529,7 @@
       "article_path": "source/_posts/2026-06-05-speculative-decoding-principles.md",
       "technical_level": "算法推导",
       "reader_takeaway": "掌握投机采样的 draft-verify 两阶段框架和接受/拒绝采样的数学保证；理解 draft model 选择的最优 trade-off；了解 vLLM 生产级实现和自投机解码变体（Medusa/EAGLE）。",
-      "notification_status": "pending_wechat_notification",
+      "notification_status": "wechat_delivered",
       "notification_prepared_at": "2026-06-05T08:50:00+08:00",
       "user_instruction": "用户明确继续发布；等待 TECH-20260605-02 完成后再写。"
     }
