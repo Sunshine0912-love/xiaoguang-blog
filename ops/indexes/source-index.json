@@ -147,8 +147,8 @@
       ]
     },
     {
-      "title": "NVIDIA Dynamo Documentation: KV Cache Transfer in Disaggregated Serving",
-      "url": "https://docs.nvidia.com/dynamo/archive/0.8.1/backends/trtllm/kv-cache-transfer.html",
+      "title": "NVIDIA Dynamo Documentation: Disaggregated Serving design notes",
+      "url": "https://docs.dynamo.nvidia.com/dynamo/design-docs/disaggregated-serving",
       "type": "official documentation",
       "tier": "A",
       "used_in": [
@@ -443,15 +443,6 @@
       ]
     },
     {
-      "title": "Do-Transformers-Need-3-Projections official code repository",
-      "url": "https://github.com/anushamadan02/Do-Transformers-Need-3-Projections",
-      "type": "github repository",
-      "tier": "A",
-      "used_in": [
-        "source/_posts/2026-06-05-qkv-projection-sharing-attention.md"
-      ]
-    },
-    {
       "ref": "[1]",
       "title": "KVarN: Variance-Normalized KV-Cache Quantization Mitigates Error Accumulation in Reasoning Tasks",
       "url": "https://arxiv.org/abs/2606.03458",
@@ -472,7 +463,7 @@
     {
       "ref": "[3]",
       "title": "vLLM TurboQuant Documentation",
-      "url": "https://vllm.ai/blog/2026/05/11/turboquant.html",
+      "url": "https://vllm-project.github.io/2026/05/11/turboquant.html",
       "type": "docs",
       "article_id": "TECH-20260605-02",
       "article_path": "source/_posts/2026-06-05-kv-cache-quantization-varn.md",
@@ -679,7 +670,7 @@
     {
       "ref": "[4]",
       "title": "vLLM Speculative Decoding Docs",
-      "url": "https://docs.vllm.ai/en/latest/speculative_decoding/",
+      "url": "https://docs.vllm.ai/en/stable/features/spec_decode/",
       "type": "docs",
       "article_id": "TECH-20260605-03",
       "article_path": "source/_posts/2026-06-05-speculative-decoding-principles.md",

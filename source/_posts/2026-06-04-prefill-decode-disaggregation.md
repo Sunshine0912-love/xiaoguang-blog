@@ -12,8 +12,8 @@ tags:
 description: "LLM 推理正在从单体引擎走向 Prefill/Decode 解耦：本文拆解 prefill 与 decode 的计算差异、KV cache transfer、路由、缓存分层，以及 vLLM、SGLang、NVIDIA Dynamo 等系统的工程取舍。"
 ---
 
-> 阅读时间：约 10-15 分钟  
-> 主题类型：工程实践 / 架构解析  
+> 阅读时间：约 10-15 分钟
+> 主题类型：工程实践 / 架构解析
 > 关键词：LLM Serving、Prefill/Decode Disaggregation、KV Cache、vLLM、SGLang、NVIDIA Dynamo
 
 ## TL;DR
@@ -139,13 +139,13 @@ LLM serving 的下一阶段，不再只是模型引擎竞争，而是围绕 KV c
 
 ## 参考资料
 
-[1] NVIDIA Dynamo Documentation, Disaggregated Serving, https://docs.dynamo.nvidia.com/dynamo/design-docs/disaggregated-serving  
-[2] vLLM Documentation, Disaggregated Prefilling, https://docs.vllm.ai/en/latest/usage/disagg_prefill.html  
-[3] NVIDIA Dynamo Documentation, Disaggregation with SGLang, https://docs.dynamo.nvidia.com/dynamo/dev/backends/sg-lang/disaggregation  
-[4] NVIDIA Dynamo Documentation, KV Cache Transfer in Disaggregated Serving, https://docs.nvidia.com/dynamo/archive/0.8.1/backends/trtllm/kv-cache-transfer.html  
-[5] vLLM Blog, Inside vLLM's New KV Offloading Connector, https://vllm.ai/blog/kv-offloading-connector  
-[6] vLLM Blog, vLLM x Novita AI: PegaFlow for Production-Grade External KV Cache, https://vllm.ai/blog/2026-05-18-pegaflow  
-[7] Kwon et al., Efficient Memory Management for Large Language Model Serving with PagedAttention, arXiv, 2023, https://arxiv.org/abs/2309.06180  
-[8] Shazeer, Fast Transformer Decoding: One Write-Head is All You Need, arXiv, 2019, https://arxiv.org/abs/1911.02150  
-[9] Ainslie et al., GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints, arXiv / EMNLP, 2023, https://arxiv.org/abs/2305.13245  
-[10] NVIDIA Dynamo Documentation, Introduction, https://docs.dynamo.nvidia.com/dynamo/getting-started/introduction
+[1] NVIDIA Dynamo Documentation, [Disaggregated Serving](https://docs.dynamo.nvidia.com/dynamo/design-docs/disaggregated-serving)
+[2] vLLM Documentation, [Disaggregated Prefilling](https://docs.vllm.ai/en/latest/usage/disagg_prefill.html)
+[3] NVIDIA Dynamo Documentation, [Disaggregation with SGLang](https://docs.dynamo.nvidia.com/dynamo/dev/backends/sg-lang/disaggregation)
+[4] NVIDIA Dynamo Documentation, [Disaggregated Serving design notes](https://docs.dynamo.nvidia.com/dynamo/design-docs/disaggregated-serving)
+[5] vLLM Blog, [Inside vLLM's New KV Offloading Connector](https://vllm.ai/blog/kv-offloading-connector)
+[6] vLLM Blog, [vLLM x Novita AI: PegaFlow for Production-Grade External KV Cache](https://vllm.ai/blog/2026-05-18-pegaflow)
+[7] Kwon et al., [Efficient Memory Management for Large Language Model Serving with PagedAttention](https://arxiv.org/abs/2309.06180), arXiv, 2023
+[8] Shazeer, [Fast Transformer Decoding: One Write-Head is All You Need](https://arxiv.org/abs/1911.02150), arXiv, 2019
+[9] Ainslie et al., [GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints](https://arxiv.org/abs/2305.13245), arXiv / EMNLP, 2023
+[10] NVIDIA Dynamo Documentation, [Introduction](https://docs.dynamo.nvidia.com/dynamo/getting-started/introduction)

@@ -354,19 +354,19 @@ A：不只是。Sub-agent 同时是一个**自主压缩机制**——子任务�
 ## 参考资料
 
 1. **课程讲义**：[agent_era.pdf](https://speech.ee.ntu.edu.tw/~hylee/ml/ml2026-course-data/agent_era.pdf)
-2. **ACON**：Agent Context Optimization, arXiv:2510.00615
-3. **SUPO**：Summarization augmented Policy Optimization, arXiv:2510.06727
-4. **AgentFold**：arXiv:2510.24699
-5. **Trajectory elongation**：arXiv:2508.21433
-6. **MCP-Zero**：arXiv:2506.01056
-7. **Agentic Context Engineering**：arXiv:2510.04618
-8. **Dynamic Cheatsheet**：arXiv:2504.07952
-9. **Recursive Language Models**：arXiv:2512.24601
-10. **Multi-Agent Collaboration**：arXiv:2406.07155
-11. **MIRAGE（剧本杀）**：arXiv:2501.01652
-12. **Moltbook**：arXiv:2602.07432, 2602.13284
-13. **AI 写论文研究**：arXiv:2409.04109, 2506.20803, 2511.15534
-14. **Context Compression unfriendly**：arXiv:2509.23586
+2. **ACON**：[Agent Context Optimization](https://arxiv.org/abs/2510.00615), arXiv:2510.00615
+3. **SUPO**：[Summarization augmented Policy Optimization](https://arxiv.org/abs/2510.06727), arXiv:2510.06727
+4. **AgentFold**：[arXiv:2510.24699](https://arxiv.org/abs/2510.24699)
+5. **Trajectory elongation**：[arXiv:2508.21433](https://arxiv.org/abs/2508.21433)
+6. **MCP-Zero**：[arXiv:2506.01056](https://arxiv.org/abs/2506.01056)
+7. **Agentic Context Engineering**：[arXiv:2510.04618](https://arxiv.org/abs/2510.04618)
+8. **Dynamic Cheatsheet**：[arXiv:2504.07952](https://arxiv.org/abs/2504.07952)
+9. **Recursive Language Models**：[arXiv:2512.24601](https://arxiv.org/abs/2512.24601)
+10. **Multi-Agent Collaboration**：[arXiv:2406.07155](https://arxiv.org/abs/2406.07155)
+11. **MIRAGE（剧本杀）**：[arXiv:2501.01652](https://arxiv.org/abs/2501.01652)
+12. **Moltbook**：[arXiv:2602.07432](https://arxiv.org/abs/2602.07432), [arXiv:2602.13284](https://arxiv.org/abs/2602.13284)
+13. **AI 写论文研究**：[arXiv:2409.04109](https://arxiv.org/abs/2409.04109), [arXiv:2506.20803](https://arxiv.org/abs/2506.20803), [arXiv:2511.15534](https://arxiv.org/abs/2511.15534)
+14. **Context Compression unfriendly**：[arXiv:2509.23586](https://arxiv.org/abs/2509.23586)
 15. **Manus Context Engineering 博客**：[manus.im](https://manus.im/blog/Context-Engineering-for-AI-Agents-Lessons-from-Building-Manus)
 16. **Autoresearch (Karpathy)**：[github.com/karpathy/autoresearch](https://github.com/karpathy/autoresearch)
 17. **100x Research Institution**：[freesystems.substack.com](https://freesystems.substack.com/p/the-100x-research-institution)

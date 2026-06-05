@@ -379,10 +379,10 @@ System Prompt:
 ## 参考资料
 
 1. **课程讲议**：[inference.pdf](https://speech.ee.ntu.edu.tw/~hylee/ml/ml2026-course-data/inference.pdf)，李宏毅，NTU ML 2026 Spring
-2. **Flash Attention**：Dao et al., *FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness*, NeurIPS 2022, arXiv:2205.14135
-3. **Streaming LLM**：Xiao et al., *Efficient Streaming Language Models with Attention Sinks*, arXiv:2309.17453
-4. **Scissorhands**：Liu et al., *Scissorhands: Exploiting the Persistence of Importance Hypothesis for LLM KV Cache Compression at Test Time*, arXiv:2305.17118
-5. **H2O**：Zhang et al., *H2O: Heavy-Hitter Oracle for Efficient Generative Inference of Large Language Models*, arXiv:2306.14048
-6. **DeepSeek-V2 MLA**：DeepSeek-AI, arXiv:2405.04434
+2. **Flash Attention**：Dao et al., [*FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness*](https://arxiv.org/abs/2205.14135), NeurIPS 2022, arXiv:2205.14135
+3. **Streaming LLM**：Xiao et al., [*Efficient Streaming Language Models with Attention Sinks*](https://arxiv.org/abs/2309.17453), arXiv:2309.17453
+4. **Scissorhands**：Liu et al., [*Scissorhands: Exploiting the Persistence of Importance Hypothesis for LLM KV Cache Compression at Test Time*](https://arxiv.org/abs/2305.17118), arXiv:2305.17118
+5. **H2O**：Zhang et al., [*H2O: Heavy-Hitter Oracle for Efficient Generative Inference of Large Language Models*](https://arxiv.org/abs/2306.14048), arXiv:2306.14048
+6. **DeepSeek-V2 MLA**：[DeepSeek-AI, arXiv:2405.04434](https://arxiv.org/abs/2405.04434)
 7. **Prompt Caching**：OpenAI API Documentation, [prompt-caching](https://developers.openai.com/api/docs/guides/prompt-caching/)
 8. **Colab 示例**：Flash Attention 代码示例，[链接](https://colab.research.google.com/drive/1KoeKKIXSXI9b-pYg0kun3-uLQkP6p_hC)

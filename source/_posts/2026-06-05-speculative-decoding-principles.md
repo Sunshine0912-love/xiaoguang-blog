@@ -264,14 +264,12 @@ $$\alpha_i=\min\left(1,\frac{p_p(x_i)}{p_q(x_i)}\right)$$
 
 ## 参考资料
 
-[1] Yaniv Leviathan, Matan Kalman, Yossi Matias. *Fast Inference from Transformers via Speculative Decoding*, ICML 2023 Oral / arXiv:2211.17192, 2022. https://arxiv.org/abs/2211.17192
+[1] Yaniv Leviathan, Matan Kalman, Yossi Matias. [*Fast Inference from Transformers via Speculative Decoding*](https://arxiv.org/abs/2211.17192), ICML 2023 Oral / arXiv:2211.17192, 2022.
 
-[2] Charlie Chen, Sebastian Borgeaud, Geoffrey Irving, Jean-Baptiste Lespiau, Laurent Sifre, John Jumper. *Accelerating Large Language Model Decoding with Speculative Sampling*, arXiv:2302.01318, 2023. https://arxiv.org/abs/2302.01318
+[2] Charlie Chen, Sebastian Borgeaud, Geoffrey Irving, Jean-Baptiste Lespiau, Laurent Sifre, John Jumper. [*Accelerating Large Language Model Decoding with Speculative Sampling*](https://arxiv.org/abs/2302.01318), arXiv:2302.01318, 2023.
 
-[3] Tianle Cai, Yuhong Li, Zhengyang Geng, Hongwu Peng, Jason D. Lee, Deming Chen, Tri Dao. *Medusa: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads*, ICML 2024 / arXiv:2401.10774, 2024. https://arxiv.org/abs/2401.10774
+[3] Tianle Cai, Yuhong Li, Zhengyang Geng, Hongwu Peng, Jason D. Lee, Deming Chen, Tri Dao. [*Medusa: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads*](https://arxiv.org/abs/2401.10774), ICML 2024 / arXiv:2401.10774, 2024.
 
-[4] vLLM Project. *Speculative Decoding — vLLM Documentation*. https://docs.vllm.ai/en/latest/features/spec_decode.html — actual content at https://docs.vllm.ai/en/latest/speculative_decoding/
+[4] vLLM Project. [*Speculative Decoding — vLLM Documentation*](https://docs.vllm.ai/en/stable/features/spec_decode/).
 
-[5] NVIDIA TensorRT-LLM. *Speculative Decoding*. https://github.com/NVIDIA/TensorRT-LLM
-
-
+[5] NVIDIA TensorRT-LLM. [*Speculative Decoding*](https://github.com/NVIDIA/TensorRT-LLM).
