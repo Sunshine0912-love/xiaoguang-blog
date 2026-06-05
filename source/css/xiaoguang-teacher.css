@@ -33,13 +33,14 @@
   border: 0;
   border-radius: 999px;
   box-shadow: 0 0 0 0 rgba(118, 224, 212, 0.35), 0 14px 36px rgba(0, 0, 0, 0.28);
-  cursor: pointer;
+  cursor: grab;
   display: flex;
   height: 64px;
   justify-content: center;
   padding: 0;
   position: relative;
   transition: transform 180ms ease, filter 180ms ease;
+  user-select: none;
   width: 64px;
 }
 
@@ -206,6 +207,90 @@
   max-width: 92%;
   padding: 10px 12px;
   white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* ── markdown body ── */
+.xg-teacher__body {
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.xg-teacher__body > *:first-child { margin-top: 0; }
+.xg-teacher__body > *:last-child { margin-bottom: 0; }
+
+.xg-teacher__body p {
+  margin: 0 0 0.6em;
+}
+
+.xg-teacher__body h1,
+.xg-teacher__body h2,
+.xg-teacher__body h3 {
+  color: var(--xg-teacher-accent);
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.45;
+  margin: 1em 0 0.35em;
+}
+
+.xg-teacher__body h1 { font-size: 15px; }
+.xg-teacher__body h3 { color: var(--xg-teacher-text); }
+
+.xg-teacher__body code {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 5px;
+  color: var(--xg-teacher-accent-2);
+  font-family: "SF Mono", "Fira Code", "Cascadia Code", Consolas, monospace;
+  font-size: 0.88em;
+  padding: 1px 5px;
+}
+
+.xg-teacher__body pre {
+  background: rgba(0, 0, 0, 0.32);
+  border: 1px solid var(--xg-teacher-line);
+  border-radius: 10px;
+  margin: 0.6em 0;
+  overflow-x: auto;
+  padding: 10px 12px;
+}
+
+.xg-teacher__body pre code {
+  background: none;
+  border: 0;
+  color: var(--xg-teacher-text);
+  font-size: 0.84em;
+  line-height: 1.6;
+  padding: 0;
+}
+
+.xg-teacher__body ul,
+.xg-teacher__body ol {
+  margin: 0.35em 0;
+  padding-left: 1.3em;
+}
+
+.xg-teacher__body li {
+  margin-bottom: 0.15em;
+}
+
+.xg-teacher__body strong {
+  color: #fff;
+  font-weight: 650;
+}
+
+.xg-teacher__body em {
+  color: var(--xg-teacher-accent);
+}
+
+.xg-teacher__body a {
+  color: var(--xg-teacher-accent-2);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.xg-teacher__body a:hover {
+  color: var(--xg-teacher-accent);
 }
 
 .xg-teacher__msg--assistant {

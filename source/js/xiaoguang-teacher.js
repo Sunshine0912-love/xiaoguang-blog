@@ -6,6 +6,12 @@
   var messages = [];
   var currentAssistantMessage = null;
 
+  /* ── drag state ── */
+  var dragState = { active: false, startX: 0, startY: 0, offsetX: 0, offsetY: 0, moved: false };
+  var DRAG_THRESHOLD = 4;
+
+  /* ── article context ── */
+
   function textOf(selector) {
     var node = document.querySelector(selector);
     return node ? node.textContent.replace(/\s+/g, " ").trim() : "";
@@ -28,10 +34,84 @@
     };
   }
 
-  function createMessage(role, text, extraClass) {
+  /* ── markdown → HTML ── */
+
+  function htmlEscape(s) {
+    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+
+  function renderMarkdown(text) {
+    /* Step 0 — protect fenced code blocks */
+    var fenceBlocks = [];
+    var html = text.replace(/```(\w*)\n([\s\S]*?)```/g, function (_, lang, code) {
+      var idx = fenceBlocks.length;
+      fenceBlocks.push(
+        '<pre><code class="language-' + (lang || "text") + '">' +
+        htmlEscape(code.replace(/\n$/, "")) +
+        '</code></pre>'
+      );
+      return "\x00FENCE" + idx + "\x00";
+    });
+
+    /* Step 1 — inline code (before bold/italic) */
+    html = html.replace(/`([^`\n]+)`/g, function (_, code) {
+      return "<code>" + htmlEscape(code) + "</code>";
+    });
+
+    /* Step 2 — headers */
+    html = html.replace(/^### (.+)$/gm, "<h3>$1</h3>");
+    html = html.replace(/^## (.+)$/gm, "<h2>$1</h2>");
+    html = html.replace(/^# (.+)$/gm, "<h1>$1</h1>");
+
+    /* Step 3 — bold / italic */
+    html = html.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+    html = html.replace(/\*(.+?)\*/g, "<em>$1</em>");
+
+    /* Step 4 — links */
+    html = html.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g,
+      '<a href="$2" target="_blank" rel="noopener">$1</a>');
+
+    /* Step 5 — unordered list items */
+    html = html.replace(/^[\-\*] (.+)$/gm, "<li>$1</li>");
+    /* ordered list items */
+    html = html.replace(/^\d+\. (.+)$/gm, "<li>$1</li>");
+    /* wrap consecutive <li> lines */
+    html = html.replace(/((?:<li>.*<\/li>\n?)+)/g, "<ul>$1</ul>");
+
+    /* Step 6 — restore fenced code blocks */
+    html = html.replace(/\x00FENCE(\d+)\x00/g, function (_, idx) {
+      return fenceBlocks[+idx] || "";
+    });
+
+    /* Step 7 — paragraph splitting */
+    var parts = html.split(/\n\n+/);
+    html = parts.map(function (p) {
+      p = p.trim();
+      if (!p) return "";
+      /* already a block element — skip wrapping */
+      if (/^<(h[1-6]|ul|ol|pre|blockquote|table|div)/.test(p)) return p;
+      /* replace remaining single newlines with <br> inside paragraph */
+      p = p.replace(/\n/g, "<br>");
+      return "<p>" + p + "</p>";
+    }).join("\n");
+
+    /* clean up empty paragraphs */
+    html = html.replace(/<p>\s*<\/p>/g, "");
+    html = html.replace(/<p><br\s*\/?><\/p>/g, "");
+
+    return html;
+  }
+
+  /* ── DOM helpers ── */
+
+  function createMessage(role, html, extraClass) {
     var node = document.createElement("div");
     node.className = "xg-teacher__msg xg-teacher__msg--" + role + (extraClass ? " " + extraClass : "");
-    node.textContent = text;
+    if (role === "assistant" && html) {
+      node.innerHTML = "<div class=\"xg-teacher__body\">" + html + "</div>";
+    } else {
+      node.textContent = html || "";
+    }
     return node;
   }
 
@@ -39,12 +119,14 @@
     messagesNode.scrollTop = messagesNode.scrollHeight;
   }
 
-  function appendMessage(messagesNode, role, text, extraClass) {
-    var node = createMessage(role, text, extraClass);
+  function appendMessage(messagesNode, role, html, extraClass) {
+    var node = createMessage(role, html, extraClass);
     messagesNode.appendChild(node);
     scrollToEnd(messagesNode);
     return node;
   }
+
+  /* ── build widget ── */
 
   function buildWidget() {
     var root = document.createElement("section");
@@ -79,6 +161,8 @@
     return root;
   }
 
+  /* ── SSE streaming ── */
+
   function extractSseText(buffer, onText) {
     var parts = buffer.split("\n\n");
     var rest = parts.pop() || "";
@@ -101,6 +185,8 @@
 
     return rest;
   }
+
+  /* ── API call ── */
 
   async function askTeacher(question, messagesNode, form) {
     if (!config.apiUrl) {
@@ -136,18 +222,20 @@
       buffer += decoder.decode(result.value, { stream: true });
       buffer = extractSseText(buffer, function (text) {
         finalText += text;
-        currentAssistantMessage.textContent = finalText;
+        currentAssistantMessage.innerHTML = '<div class="xg-teacher__body">' + renderMarkdown(finalText) + '</div>';
         scrollToEnd(messagesNode);
       });
     }
 
     if (!finalText) {
-      currentAssistantMessage.textContent = "我没有收到有效回复，可以换个问法再试一次。";
+      currentAssistantMessage.innerHTML = '<div class="xg-teacher__body"><p>我没有收到有效回复，可以换个问法再试一次。</p></div>';
     }
 
-    messages.push({ role: "assistant", content: currentAssistantMessage.textContent });
+    messages.push({ role: "assistant", content: finalText });
     form.querySelector(".xg-teacher__input").focus();
   }
+
+  /* ── init ── */
 
   function init() {
     if (!document.querySelector(".post-body")) return;
@@ -164,7 +252,9 @@
     hint.textContent = config.apiUrl ? "由 " + (config.modelLabel || "DeepSeek") + " 流式生成" : "等待安全后端代理配置";
     appendMessage(messagesNode, "assistant", "我会先读当前文章，再帮你拆概念、补背景、讲公式或检查理解。");
 
+    /* ── orb click vs drag ── */
     orb.addEventListener("click", function () {
+      if (dragState.moved) return;
       root.classList.toggle("is-open");
       if (root.classList.contains("is-open")) input.focus();
     });
@@ -174,6 +264,47 @@
       orb.focus();
     });
 
+    /* ── drag ── */
+    function onDragStart(e) {
+      dragState.active = true;
+      dragState.moved = false;
+      var point = e.touches ? e.touches[0] : e;
+      dragState.startX = point.clientX - dragState.offsetX;
+      dragState.startY = point.clientY - dragState.offsetY;
+      orb.style.cursor = "grabbing";
+      orb.style.transition = "none";
+    }
+
+    function onDragMove(e) {
+      if (!dragState.active) return;
+      e.preventDefault();
+      var point = e.touches ? e.touches[0] : e;
+      var dx = point.clientX - dragState.startX;
+      var dy = point.clientY - dragState.startY;
+
+      if (Math.abs(dx) > DRAG_THRESHOLD || Math.abs(dy) > DRAG_THRESHOLD) {
+        dragState.moved = true;
+      }
+
+      dragState.offsetX = dx;
+      dragState.offsetY = dy;
+      root.style.transform = "translate(" + dx + "px, " + dy + "px)";
+    }
+
+    function onDragEnd() {
+      dragState.active = false;
+      orb.style.cursor = "";
+      orb.style.transition = "";
+    }
+
+    orb.addEventListener("mousedown", onDragStart);
+    orb.addEventListener("touchstart", onDragStart, { passive: false });
+    document.addEventListener("mousemove", onDragMove);
+    document.addEventListener("touchmove", onDragMove, { passive: false });
+    document.addEventListener("mouseup", onDragEnd);
+    document.addEventListener("touchend", onDragEnd);
+
+    /* ── input ── */
     input.addEventListener("keydown", function (event) {
       if (event.key === "Enter" && !event.shiftKey) {
         event.preventDefault();
