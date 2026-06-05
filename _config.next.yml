@@ -9,7 +9,6 @@ darkmode: true
 
 menu:
   home: / || fa fa-home
-  categories: /categories/ || fa fa-th || 分类
   archives: /archives/ || fa fa-archive || 归档
 
 social:
