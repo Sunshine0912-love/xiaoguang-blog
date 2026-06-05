@@ -56,21 +56,35 @@ hexo.extend.filter.register('theme_inject', injects => {
 
 <script>
 (function(){
+  function toggleCat(arrow, sub) {
+    var isOpen = sub.style.display !== 'none';
+    sub.style.display = isOpen ? 'none' : '';
+    arrow.textContent = isOpen ? '▶' : '▼';
+    arrow.parentElement.style.background = isOpen ? 'rgba(255,255,255,0.05)' : 'rgba(255,255,255,0.08)';
+  }
   document.querySelectorAll('.cat-arrow').forEach(function(arr){
     arr.addEventListener('click', function(e){
       e.stopPropagation();
       e.preventDefault();
-      var id = this.dataset.cat;
-      var sub = document.getElementById(id);
-      if (!sub) return;
-      var isOpen = sub.style.display !== 'none';
-      sub.style.display = isOpen ? 'none' : '';
-      this.textContent = isOpen ? '▶' : '▼';
-      // Update background of parent
-      var parent = this.parentElement;
-      parent.style.background = isOpen ? 'rgba(255,255,255,0.05)' : 'rgba(255,255,255,0.08)';
+      var sub = document.getElementById(this.dataset.cat);
+      if (sub) toggleCat(this, sub);
     });
   });
+  // Auto-expand current category based on URL
+  var path = window.location.pathname;
+  var map = {
+    '/categories/Topic/': 'cat-topic',
+    '/categories/TECH/': 'cat-tech',
+    '/categories/hylee-ML-2026-Spring/': 'cat-hylee'
+  };
+  for (var key in map) {
+    if (path.indexOf(key) !== -1) {
+      var arrow = document.querySelector('[data-cat="' + map[key] + '"]');
+      var sub = document.getElementById(map[key]);
+      if (arrow && sub) toggleCat(arrow, sub);
+      break;
+    }
+  }
 })();
 </script>
   `, {}, {cache: true});
