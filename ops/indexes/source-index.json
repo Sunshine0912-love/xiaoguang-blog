@@ -614,6 +614,42 @@
       "added_at": "2026-06-05T11:19:38+08:00"
     },
     {
+      "ref": "video-1",
+      "title": "加快語言模型生成速度 (1/2)：Flash Attention",
+      "url": "https://youtu.be/vXb2QYOUzl4",
+      "type": "video",
+      "article_id": "hylee-ml2026-lecture-03",
+      "article_path": "source/_posts/2026-06-05-hylee-ml2026-lecture-03-inference-optimization.md",
+      "added_at": "2026-06-05T14:58:00+08:00"
+    },
+    {
+      "ref": "video-2",
+      "title": "加快語言模型生成速度 (2/2)：KV Cache",
+      "url": "https://youtu.be/fDQaadKysSA",
+      "type": "video",
+      "article_id": "hylee-ml2026-lecture-03",
+      "article_path": "source/_posts/2026-06-05-hylee-ml2026-lecture-03-inference-optimization.md",
+      "added_at": "2026-06-05T14:58:00+08:00"
+    },
+    {
+      "ref": "slides",
+      "title": "inference.pdf",
+      "url": "https://speech.ee.ntu.edu.tw/~hylee/ml/ml2026-course-data/inference.pdf",
+      "type": "slides",
+      "article_id": "hylee-ml2026-lecture-03",
+      "article_path": "source/_posts/2026-06-05-hylee-ml2026-lecture-03-inference-optimization.md",
+      "added_at": "2026-06-05T14:58:00+08:00"
+    },
+    {
+      "ref": "code",
+      "title": "Flash Attention Colab 示例",
+      "url": "https://colab.research.google.com/drive/1KoeKKIXSXI9b-pYg0kun3-uLQkP6p_hC",
+      "type": "code",
+      "article_id": "hylee-ml2026-lecture-03",
+      "article_path": "source/_posts/2026-06-05-hylee-ml2026-lecture-03-inference-optimization.md",
+      "added_at": "2026-06-05T14:58:00+08:00"
+    },
+    {
       "ref": "[1]",
       "title": "Fast Inference from Transformers via Speculative Decoding",
       "url": "https://arxiv.org/abs/2211.17192",

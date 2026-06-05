@@ -328,6 +328,20 @@ System Prompt:
 
 ---
 
+## 代码示例：Flash Attention Colab 怎么读
+
+课程资料提供了一个 [Flash Attention 代码示例 Colab](https://colab.research.google.com/drive/1KoeKKIXSXI9b-pYg0kun3-uLQkP6p_hC)。这类 notebook 的重点通常不是让你从零实现一个生产级 CUDA kernel，而是把“标准 attention 为什么会慢”和“Flash Attention 为什么少搬资料”用可运行的小实验展示出来。
+
+读这个 Colab 时，我建议重点看三件事：
+
+1. **输入张量形状**：确认 Q、K、V 的 batch size、sequence length、head 数和 head dimension。Flash Attention 的优化对象不是抽象公式，而是这些张量在 GPU memory hierarchy 里的读写路径。
+2. **标准 attention baseline**：找到普通实现里是否显式构造了 $QK^\top$ 和 softmax 后的 attention matrix。只要中间矩阵真实 materialize，就会产生 $L^2$ 级别的显存读写压力。
+3. **Flash Attention 调用或分块实现**：观察它如何避免把完整 attention matrix 写回 HBM。即使 notebook 只是调用库函数，也要对照输入输出：数学结果仍是 attention，但中间内存访问模式变了。
+
+运行时不要只看最终答案对不对，更要看 sequence length 增大时的 memory footprint 和 latency 变化。Flash Attention 的价值恰好体现在这里：它不是改变模型能力，而是把同一个 attention 计算改写成更适合 GPU 的 IO 模式。
+
+---
+
 ## 与系列其他讲的关联
 
 | 相关讲次 | 关联点 |
@@ -336,6 +350,21 @@ System Prompt:
 | 第 2 讲（Context Engineering） | Context Window 限制是 Context Engineering 存在的根本原因 |
 | 第 4 讲（Positional Encoding） | RoPE 等位置编码影响 KV Cache 的外推能力 |
 | 投机采样（TECH） | Speculative Decoding 是本讲提及的第 6 种加速方法 |
+
+---
+
+## 小光总结：推理优化的核心是重新分配瓶颈
+
+这节课的主线不是“背一串加速方法”，而是理解 LLM 推理瓶颈如何在不同阶段转移：
+
+1. Prefill 阶段并行度高，Flash Attention 主要通过减少 HBM 读写来提升效率。
+2. Decode 阶段每次只生成一个 token，计算量小但要反复读取模型权重和 KV Cache，因此更容易被 memory bandwidth 卡住。
+3. KV Cache 用空间换时间，但长上下文和大 batch 会把显存吃满，于是 MQA/GQA/MLA、Sliding Window、Streaming LLM、Pruning 等方法都在围绕“缓存变小”做文章。
+4. Prompt Caching 把同一段 system prompt 的 KV Cache 跨请求复用，对 Agent 系统特别重要，因为 Agent 的稳定前缀通常很长。
+
+我的判断是：推理优化不能孤立看单个算法，要按 workload 拆。聊天、RAG、代码生成、长文总结、Agent 工具循环，对 latency、throughput、KV Cache、prefix cache 命中率的敏感性完全不同。Flash Attention 很重要，但它不是所有阶段的答案；KV Cache 量化也很重要，但它可能改变误差模式；Prompt Caching 对短问答可能只是省钱，对长 system prompt Agent 则可能直接决定产品成本结构。
+
+这节课最实用的工程启发是：先量测瓶颈，再选优化。看 prefill/decode 分布，看 context length，看 batch size，看 cache hit rate，看显存余量。没有这些指标，讨论“用不用 Flash Attention / GQA / MLA / Prompt Caching”很容易变成技术名词堆叠。
 
 ---
 
