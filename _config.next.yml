@@ -17,10 +17,10 @@ social:
 codeblock:
   theme:
     light: github
-    dark: github-dark
+    dark: github
   prism:
-    light: prism
-    dark: prism-dark
+    light: default
+    dark: default
   copy_button:
     enable: true
     style: mac

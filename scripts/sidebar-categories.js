@@ -62,28 +62,35 @@ hexo.extend.filter.register('theme_inject', injects => {
     arrow.textContent = isOpen ? '▶' : '▼';
     arrow.parentElement.style.background = isOpen ? 'rgba(255,255,255,0.05)' : 'rgba(255,255,255,0.08)';
   }
-  document.querySelectorAll('.cat-arrow').forEach(function(arr){
-    arr.addEventListener('click', function(e){
-      e.stopPropagation();
-      e.preventDefault();
-      var sub = document.getElementById(this.dataset.cat);
-      if (sub) toggleCat(this, sub);
+  function initAccordion() {
+    document.querySelectorAll('.cat-arrow').forEach(function(arr){
+      arr.addEventListener('click', function(e){
+        e.stopPropagation();
+        e.preventDefault();
+        var sub = document.getElementById(this.dataset.cat);
+        if (sub) toggleCat(this, sub);
+      });
     });
-  });
-  // Auto-expand current category based on URL
-  var path = window.location.pathname;
-  var map = {
-    '/categories/Topic/': 'cat-topic',
-    '/categories/TECH/': 'cat-tech',
-    '/categories/hylee-ML-2026-Spring/': 'cat-hylee'
-  };
-  for (var key in map) {
-    if (path.indexOf(key) !== -1) {
-      var arrow = document.querySelector('[data-cat="' + map[key] + '"]');
-      var sub = document.getElementById(map[key]);
-      if (arrow && sub) toggleCat(arrow, sub);
-      break;
+    // Auto-expand current category based on URL
+    var path = window.location.pathname;
+    var map = {
+      '/categories/Topic/': 'cat-topic',
+      '/categories/TECH/': 'cat-tech',
+      '/categories/hylee-ML-2026-Spring/': 'cat-hylee'
+    };
+    for (var key in map) {
+      if (path.indexOf(key) !== -1) {
+        var arrow = document.querySelector('[data-cat="' + map[key] + '"]');
+        var sub = document.getElementById(map[key]);
+        if (arrow && sub) toggleCat(arrow, sub);
+        break;
+      }
     }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAccordion);
+  } else {
+    initAccordion();
   }
 })();
 </script>

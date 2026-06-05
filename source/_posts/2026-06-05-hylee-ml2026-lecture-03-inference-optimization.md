@@ -20,8 +20,8 @@ mathjax: true
 > 课程影片：[Flash Attention (1/2)](https://youtu.be/vXb2QYOUzl4) \| [KV Cache (2/2)](https://youtu.be/fDQaadKysSA)  
 > 讲议：[inference.pdf](https://speech.ee.ntu.edu.tw/~hylee/ml/ml2026-course-data/inference.pdf)  
 > 课前预习：[Transformer 基础](https://youtu.be/8iFvM7WUUs8)  
-> 前一讲：[第2讲：Context Engineering](/2026/06/05/hylee-ml2026-lecture-02-context-engineering-multi-agent/)  
-> 延伸阅读：[小光 TECH：KV Cache 量化技术解析](/2026/06/05/2026-06-05-kv-cache-quantization-varn/) \| [MLA 注意力机制拆解](/2026/06/04/2026-06-04-mla-attention-kv-cache/) \| [投机采样原理](/2026/06/05/2026-06-05-speculative-decoding-principles/)
+> 前一讲：[第2讲：Context Engineering](/xiaoguang-blog/2026/06/05/hylee-ml2026-lecture-02-context-engineering-multi-agent/)  
+> 延伸阅读：[小光 TECH：KV Cache 量化技术解析](/xiaoguang-blog/2026/06/05/2026-06-05-kv-cache-quantization-varn/) \| [MLA 注意力机制拆解](/xiaoguang-blog/2026/06/04/2026-06-04-mla-attention-kv-cache/) \| [投机采样原理](/xiaoguang-blog/2026/06/05/2026-06-05-speculative-decoding-principles/)
 
 ---
 
@@ -216,7 +216,7 @@ Llama、Gemma 等模型都使用了 GQA（通常 G=8）。
 
 ### MLA（Multi-head Latent Attention）
 
-DeepSeek-V2/V3 的方案（我们已经写了专门的文章深入分析，见[延伸阅读](/2026/06/04/2026-06-04-mla-attention-kv-cache/)）：
+DeepSeek-V2/V3 的方案（我们已经写了专门的文章深入分析，见[延伸阅读](/xiaoguang-blog/2026/06/04/2026-06-04-mla-attention-kv-cache/)）：
 
 ```
 不是让 K,V 共享 → 而是用低秩分解压缩 K,V:

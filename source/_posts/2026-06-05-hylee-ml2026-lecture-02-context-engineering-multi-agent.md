@@ -19,7 +19,7 @@ mathjax: true
 > 主题：AI Agent 的核心技术：Context Engineering + Agent 互动 + 工作冲击  
 > 课程影片：[Context Engineering 基本概念](https://youtu.be/urwDLyNa9FU) \| [Agent 互动](https://youtu.be/mmPmNezjCi0) \| [工作冲击](https://youtu.be/VqB8zMujdjM)  
 > 讲义：[agent_era.pdf](https://speech.ee.ntu.edu.tw/~hylee/ml/ml2026-course-data/agent_era.pdf)  
-> 前一讲：[第1讲：AI Agent — 解剖小龙虾](/2026/06/05/hylee-ml2026-lecture-01-ai-agent-openclaw/)
+> 前一讲：[第1讲：AI Agent — 解剖小龙虾](/xiaoguang-blog/2026/06/05/hylee-ml2026-lecture-01-ai-agent-openclaw/)
 
 ---
 
@@ -33,7 +33,7 @@ mathjax: true
 ## 前置知识
 
 需要：第 1 讲的 System Prompt、Tool Use、Context Window 概念  
-建议复习：[第1讲的 LLM 回顾段落](/2026/06/05/hylee-ml2026-lecture-01-ai-agent-openclaw/#2-先复习：语言模型到底在做什么)
+建议复习：[第1讲的 LLM 回顾段落](/xiaoguang-blog/2026/06/05/hylee-ml2026-lecture-01-ai-agent-openclaw/#2-先复习：语言模型到底在做什么)
 
 ---
 
