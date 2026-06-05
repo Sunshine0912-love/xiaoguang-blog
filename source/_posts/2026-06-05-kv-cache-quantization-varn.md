@@ -258,16 +258,16 @@ $$T\rightarrow HT\rightarrow (HT\oslash S_c\oslash S_r)\rightarrow Q_b(\cdot)$$
 
 ## 参考资料
 
-[1] Lorenz K. Muller et al., [*KVarN: Variance-Normalized KV-Cache Quantization Mitigates Error Accumulation in Reasoning Tasks*](https://arxiv.org/abs/2606.03458), arXiv:2606.03458, 2026.
+[1] [Lorenz K. Muller et al., *KVarN: Variance-Normalized KV-Cache Quantization Mitigates Error Accumulation in Reasoning Tasks*, arXiv:2606.03458, 2026.](https://arxiv.org/abs/2606.03458)
 
-[2] Zirui Liu et al., [*KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache*](https://arxiv.org/abs/2402.02750), ICML 2024 / arXiv:2402.02750.
+[2] [Zirui Liu et al., *KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache*, ICML 2024 / arXiv:2402.02750.](https://arxiv.org/abs/2402.02750)
 
-[3] vLLM Project, [*TurboQuant: Accuracy and Performance / vLLM TurboQuant documentation*](https://vllm-project.github.io/2026/05/11/turboquant.html), 2026.
+[3] [vLLM Project, *TurboQuant: Accuracy and Performance / vLLM TurboQuant documentation*, 2026.](https://vllm-project.github.io/2026/05/11/turboquant.html)
 
-[4] Guangxuan Xiao et al., [*SmoothQuant: Accurate and Efficient Post-Training Quantization for Large Language Models*](https://arxiv.org/abs/2211.10438), ICML 2023 / arXiv:2211.10438.
+[4] [Guangxuan Xiao et al., *SmoothQuant: Accurate and Efficient Post-Training Quantization for Large Language Models*, ICML 2023 / arXiv:2211.10438.](https://arxiv.org/abs/2211.10438)
 
-[5] Huawei CSL, [*KVarN GitHub Repository*](https://github.com/huawei-csl/KVarN), 2026.
+[5] [Huawei CSL, *KVarN GitHub Repository*, 2026.](https://github.com/huawei-csl/KVarN)
 
-[6] Woosuk Kwon et al., [*Efficient Memory Management for Large Language Model Serving with PagedAttention*](https://arxiv.org/abs/2309.06180), SOSP 2023 / arXiv:2309.06180.
+[6] [Woosuk Kwon et al., *Efficient Memory Management for Large Language Model Serving with PagedAttention*, SOSP 2023 / arXiv:2309.06180.](https://arxiv.org/abs/2309.06180)
 
-[7] DeepSeek-AI, [*DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model*](https://arxiv.org/abs/2405.04434), arXiv:2405.04434, 2024.
+[7] [DeepSeek-AI, *DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model*, arXiv:2405.04434, 2024.](https://arxiv.org/abs/2405.04434)

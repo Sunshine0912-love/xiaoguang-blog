@@ -196,10 +196,10 @@ Anthropic 的 Defending Code Reference Harness 给出的答案是：把 AI 放�
 
 ## 参考资料
 
-[1] Eugene Yan, Henna Dattani et al., [*Using LLMs to secure source code*](https://claude.com/blog/using-llms-to-secure-source-code), Anthropic / Claude Blog, 2026.
+[1] [Eugene Yan, Henna Dattani et al., *Using LLMs to secure source code*, Anthropic / Claude Blog, 2026.](https://claude.com/blog/using-llms-to-secure-source-code)
 
-[2] Anthropic, [*defending-code-reference-harness*](https://github.com/anthropics/defending-code-reference-harness), GitHub, 2026.
+[2] [Anthropic, *defending-code-reference-harness*, GitHub, 2026.](https://github.com/anthropics/defending-code-reference-harness)
 
-[3] Eugene Yan, [*The vulnerability detection agent*](https://platform.claude.com/cookbook/claude-agent-sdk-06-the-vulnerability-detection-agent), Claude Cookbook, 2026.
+[3] [Eugene Yan, *The vulnerability detection agent*, Claude Cookbook, 2026.](https://platform.claude.com/cookbook/claude-agent-sdk-06-the-vulnerability-detection-agent)
 
-[4] Anthropic, [*Expanding Project Glasswing*](https://www.anthropic.com/news/expanding-project-glasswing), Anthropic News, 2026.
+[4] [Anthropic, *Expanding Project Glasswing*, Anthropic News, 2026.](https://www.anthropic.com/news/expanding-project-glasswing)

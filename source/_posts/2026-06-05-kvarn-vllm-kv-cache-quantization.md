@@ -220,16 +220,16 @@ KVarN 值得写、值得试，但不值得盲信。
 
 ## 参考资料
 
-[1] Lorenz K. Muller, Philippe Bich, Chiara Boretti, Hyun-Min Chang, Jiawei Zhuang, Lukas Cavigelli, [*KVarN: Variance-Normalized KV-Cache Quantization Mitigates Error Accumulation in Reasoning Tasks*](https://arxiv.org/abs/2606.03458), arXiv, 2026.
+[1] [Lorenz K. Muller, Philippe Bich, Chiara Boretti, Hyun-Min Chang, Jiawei Zhuang, Lukas Cavigelli, *KVarN: Variance-Normalized KV-Cache Quantization Mitigates Error Accumulation in Reasoning Tasks*, arXiv, 2026.](https://arxiv.org/abs/2606.03458)
 
-[2] Huawei CSL, [*KVarN GitHub Repository*](https://github.com/huawei-csl/KVarN), GitHub, 2026.
+[2] [Huawei CSL, *KVarN GitHub Repository*, GitHub, 2026.](https://github.com/huawei-csl/KVarN)
 
-[3] vLLM Project, [*Quantized KV Cache*](https://docs.vllm.ai/en/v0.22.0/features/quantization/quantized_kvcache/), vLLM Documentation, 2026.
+[3] [vLLM Project, *Quantized KV Cache*, vLLM Documentation, 2026.](https://docs.vllm.ai/en/v0.22.0/features/quantization/quantized_kvcache/)
 
-[4] vLLM Project, [*A First Comprehensive Study of TurboQuant: Accuracy and Performance*](https://vllm-project.github.io/2026/05/11/turboquant.html), vLLM Blog, 2026.
+[4] [vLLM Project, *A First Comprehensive Study of TurboQuant: Accuracy and Performance*, vLLM Blog, 2026.](https://vllm-project.github.io/2026/05/11/turboquant.html)
 
-[5] Woosuk Kwon et al., [*Efficient Memory Management for Large Language Model Serving with PagedAttention*](https://arxiv.org/abs/2309.06180), arXiv, 2023.
+[5] [Woosuk Kwon et al., *Efficient Memory Management for Large Language Model Serving with PagedAttention*, arXiv, 2023.](https://arxiv.org/abs/2309.06180)
 
-[6] Zirui Liu et al., [*KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache*](https://arxiv.org/abs/2402.02750), arXiv, 2024.
+[6] [Zirui Liu et al., *KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache*, arXiv, 2024.](https://arxiv.org/abs/2402.02750)
 
-[7] Guangxuan Xiao et al., [*SmoothQuant: Accurate and Efficient Post-Training Quantization for Large Language Models*](https://arxiv.org/abs/2211.10438), arXiv, 2022.
+[7] [Guangxuan Xiao et al., *SmoothQuant: Accurate and Efficient Post-Training Quantization for Large Language Models*, arXiv, 2022.](https://arxiv.org/abs/2211.10438)

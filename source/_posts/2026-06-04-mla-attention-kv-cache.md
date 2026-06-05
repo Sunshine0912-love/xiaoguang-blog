@@ -449,13 +449,13 @@ MLA 最值得学习的地方，不是某个单点技巧，而是它展示了一�
 
 ## 参考资料
 
-[1] Vaswani et al., [Attention Is All You Need](https://arxiv.org/abs/1706.03762), arXiv / NeurIPS, 2017
-[2] Noam Shazeer, [Fast Transformer Decoding: One Write-Head is All You Need](https://arxiv.org/abs/1911.02150), arXiv, 2019
-[3] Ainslie et al., [GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints](https://arxiv.org/abs/2305.13245), arXiv / EMNLP, 2023
-[4] DeepSeek-AI, [DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model](https://arxiv.org/abs/2405.04434), arXiv, 2024
-[5] DeepSeek-AI, [DeepSeek-V3 Technical Report](https://arxiv.org/abs/2412.19437), arXiv, 2024
-[6] Geens and Verhelst, [Hardware-Centric Analysis of DeepSeek's Multi-Head Latent Attention](https://arxiv.org/abs/2506.02523), arXiv, 2025
-[7] Kwon et al., [Efficient Memory Management for Large Language Model Serving with PagedAttention](https://arxiv.org/abs/2309.06180), arXiv, 2023
-[8] DeepSeek-AI, [DeepSeek-V3 official inference implementation](https://github.com/deepseek-ai/DeepSeek-V3/blob/main/inference/model.py), GitHub
-[9] DeepWiki, [Multi-head Latent Attention in DeepSeek-V3](https://deepwiki.com/deepseek-ai/DeepSeek-V3/4.2-multi-head-latent-attention-%28mla%29)
-[10] NVIDIA Megatron-Core Documentation, [Multi-Latent Attention](https://docs.nvidia.com/megatron-core/developer-guide/nightly/user-guide/features/multi_latent_attention.html)
+[1] [Vaswani et al., Attention Is All You Need, arXiv / NeurIPS, 2017](https://arxiv.org/abs/1706.03762)
+[2] [Noam Shazeer, Fast Transformer Decoding: One Write-Head is All You Need, arXiv, 2019](https://arxiv.org/abs/1911.02150)
+[3] [Ainslie et al., GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints, arXiv / EMNLP, 2023](https://arxiv.org/abs/2305.13245)
+[4] [DeepSeek-AI, DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model, arXiv, 2024](https://arxiv.org/abs/2405.04434)
+[5] [DeepSeek-AI, DeepSeek-V3 Technical Report, arXiv, 2024](https://arxiv.org/abs/2412.19437)
+[6] [Geens and Verhelst, Hardware-Centric Analysis of DeepSeek's Multi-Head Latent Attention, arXiv, 2025](https://arxiv.org/abs/2506.02523)
+[7] [Kwon et al., Efficient Memory Management for Large Language Model Serving with PagedAttention, arXiv, 2023](https://arxiv.org/abs/2309.06180)
+[8] [DeepSeek-AI, DeepSeek-V3 official inference implementation, GitHub](https://github.com/deepseek-ai/DeepSeek-V3/blob/main/inference/model.py)
+[9] [DeepWiki, Multi-head Latent Attention in DeepSeek-V3](https://deepwiki.com/deepseek-ai/DeepSeek-V3/4.2-multi-head-latent-attention-%28mla%29)
+[10] [NVIDIA Megatron-Core Documentation, Multi-Latent Attention](https://docs.nvidia.com/megatron-core/developer-guide/nightly/user-guide/features/multi_latent_attention.html)

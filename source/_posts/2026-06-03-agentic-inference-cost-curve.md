@@ -231,20 +231,20 @@ Agentic inference 的成本曲线变化不是一个"更快的 GPU"就能解决�
 
 ## 参考资料
 
-[1] NVIDIA, "[Building for the Rising Complexity of Agentic Systems with Extreme Co-Design](https://developer.nvidia.com/blog/building-for-the-rising-complexity-of-agentic-systems-with-extreme-co-design/)," NVIDIA Technical Blog, 2026.
+[1] [NVIDIA, " Building for the Rising Complexity of Agentic Systems with Extreme Co-Design," NVIDIA Technical Blog, 2026.](https://developer.nvidia.com/blog/building-for-the-rising-complexity-of-agentic-systems-with-extreme-co-design/)
 
-[2] NVIDIA, "[Full-Stack Optimizations for Agentic Inference with NVIDIA Dynamo](https://developer.nvidia.com/blog/full-stack-optimizations-for-agentic-inference-with-nvidia-dynamo/)," NVIDIA Technical Blog, April 2026.
+[2] [NVIDIA, " Full-Stack Optimizations for Agentic Inference with NVIDIA Dynamo," NVIDIA Technical Blog, April 2026.](https://developer.nvidia.com/blog/full-stack-optimizations-for-agentic-inference-with-nvidia-dynamo/)
 
-[3] Anthropic, "[Building a Multi-Agent Research System](https://www.anthropic.com/engineering/multi-agent-research-system)," Anthropic Engineering Blog, 2025.
+[3] [Anthropic, " Building a Multi-Agent Research System," Anthropic Engineering Blog, 2025.](https://www.anthropic.com/engineering/multi-agent-research-system)
 
-[4] NVIDIA, "[NeMo Agent Toolkit (NAT) Dynamo Integration](https://github.com/NVIDIA/NeMo-Agent-Toolkit/tree/develop/examples/dynamo_integration)," GitHub.
+[4] [NVIDIA, " NeMo Agent Toolkit (NAT) Dynamo Integration," GitHub.](https://github.com/NVIDIA/NeMo-Agent-Toolkit/tree/develop/examples/dynamo_integration)
 
-[5] vLLM Project, "[vLLM Documentation – Automatic Prefix Caching & Hybrid KV Cache Manager](https://docs.vllm.ai/en/latest/)."
+[5] [vLLM Project, " vLLM Documentation – Automatic Prefix Caching & Hybrid KV Cache Manager."](https://docs.vllm.ai/en/latest/)
 
-[6] NVIDIA, "[NVIDIA Vera CPU Sets a New Standard for Agentic Workloads in AI Factories](https://developer.nvidia.com/blog/nvidia-vera-cpu-sets-a-new-standard-for-agentic-workloads-in-ai-factories/)," NVIDIA Technical Blog, May 2026.
+[6] [NVIDIA, " NVIDIA Vera CPU Sets a New Standard for Agentic Workloads in AI Factories," NVIDIA Technical Blog, May 2026.](https://developer.nvidia.com/blog/nvidia-vera-cpu-sets-a-new-standard-for-agentic-workloads-in-ai-factories/)
 
-[7] Alistair Gray, "[Minions: Stripe's One-Shot, End-to-End Coding Agents](https://stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents)," Stripe Blog, February 2026.
+[7] [Alistair Gray, " Minions: Stripe's One-Shot, End-to-End Coding Agents," Stripe Blog, February 2026.](https://stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents)
 
-[8] Zhuohan Gu et al., "[PEEK: Context Map as an Orientation Cache for Long-Context LLM Agents](https://arxiv.org/abs/2605.10332)," arXiv, May 2026.
+[8] [Zhuohan Gu et al., " PEEK: Context Map as an Orientation Cache for Long-Context LLM Agents," arXiv, May 2026.](https://arxiv.org/abs/2605.10332)
 
-[9] NVIDIA, "[DynoSim: Simulating the Pareto Frontier](https://developer.nvidia.com/blog/dynosim-simulating-the-pareto-frontier/)," NVIDIA Technical Blog, May 2026.
+[9] [NVIDIA, " DynoSim: Simulating the Pareto Frontier," NVIDIA Technical Blog, May 2026.](https://developer.nvidia.com/blog/dynosim-simulating-the-pareto-frontier/)
