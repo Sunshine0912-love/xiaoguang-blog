@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-04T10:48:00+08:00",
+  "updated_at": "2026-06-05T09:15:00+08:00",
   "topics": [
     {
       "id": "TOPIC-20260603-01",
@@ -311,6 +311,224 @@
       "article_path": null,
       "notification_status": "prepared_for_openclaw_route",
       "notification_prepared_at": "2026-06-04T09:10:00+08:00"
+    },
+    {
+      "id": "TOPIC-20260605-01",
+      "date": "2026-06-05",
+      "slot": "daily_main",
+      "title": "KVarN 深度评测：华为开源 vLLM 原生 KV Cache 量化后端的架构、性能与工程实战",
+      "category": [
+        "AI",
+        "AI Infra"
+      ],
+      "tags": [
+        "KV Cache",
+        "Quantization",
+        "vLLM",
+        "KVarN",
+        "Inference Optimization",
+        "Open Source"
+      ],
+      "type": "工程实战",
+      "reason": "KVarN 是华为本周刚开源的 vLLM 原生 KV Cache 量化后端（HN 首页 112 points），声称 3-5x 容量提升且保持 FP16 精度和吞吐，有 arXiv 论文支撑。适合写成原理+评测+部署的工程实战文章，与 LLM 推理系统解析系列完美衔接。",
+      "source_plan": [
+        "KVarN 论文（arXiv 2606.03458）",
+        "KVarN GitHub 仓库",
+        "vLLM TurboQuant 博客",
+        "vLLM KV Cache 量化文档",
+        "SmoothQuant/AWQ 论文"
+      ],
+      "status": "published",
+      "confirmed": true,
+      "confirmed_at": "2026-06-05T08:58:00+08:00",
+      "published": true,
+      "published_at": "2026-06-05T09:15:00+08:00",
+      "article_path": "source/_posts/2026-06-05-kvarn-vllm-kv-cache-quantization.md",
+      "notification_status": "pending_wechat_notification",
+      "notification_prepared_at": "2026-06-05T08:50:00+08:00",
+      "user_instruction": "用户明确确认；按顺序第一篇发布，偏工程实践，需核验论文、仓库、benchmark 与 vLLM 接入。",
+      "updated_at": "2026-06-05T09:15:00+08:00"
+    },
+    {
+      "id": "TOPIC-20260605-02",
+      "date": "2026-06-05",
+      "slot": "daily_main",
+      "title": "Headroom 实战：LLM 上下文压缩工具如何帮 Agent 节省 60-95% token",
+      "category": [
+        "AI",
+        "Agent"
+      ],
+      "tags": [
+        "Agent",
+        "Context Compression",
+        "LLM",
+        "Token Optimization",
+        "RAG",
+        "MCP"
+      ],
+      "type": "短篇技术札记",
+      "reason": "Headroom 本周 GitHub trending 12K+ stars，提供 6 种压缩算法和 library/proxy/MCP 三种部署模式。与已发布的 Agentic Inference 成本文章形成从问题到方案的闭环。",
+      "source_plan": [
+        "Headroom GitHub 仓库",
+        "Headroom 官方文档",
+        "LLMLingua-2 论文",
+        "Selective Context 论文"
+      ],
+      "status": "confirmed",
+      "confirmed": true,
+      "confirmed_at": "2026-06-05T08:58:00+08:00",
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "notification_status": "prepared_for_manual_wechat_delivery",
+      "notification_prepared_at": "2026-06-05T08:50:00+08:00",
+      "user_instruction": "用户明确继续发布；等待 TOPIC-20260605-01 完成后再写。"
+    },
+    {
+      "id": "TOPIC-20260605-03",
+      "date": "2026-06-05",
+      "slot": "daily_main",
+      "title": "AI 辅助代码安全工具链：Anthropic 开源漏洞发现框架 Defending Code Reference Harness 解析",
+      "category": [
+        "AI",
+        "Agent"
+      ],
+      "tags": [
+        "Agent",
+        "Security",
+        "Vulnerability",
+        "Anthropic",
+        "Code Analysis",
+        "Open Source"
+      ],
+      "type": "短篇技术札记",
+      "reason": "Anthropic 6 月 4 日开源了基于 Claude 的自主漏洞发现与修复参考框架（HN 235 points），包含完整的 recon→find→verify→report→patch 流水线。从安全工具视角补充 Agent 工程化话题。",
+      "source_plan": [
+        "Anthropic Defending Code Reference Harness GitHub",
+        "Anthropic Glasswing 博客",
+        "Claude 平台 Vulnerability Detection Agent cookbook"
+      ],
+      "status": "confirmed",
+      "confirmed": true,
+      "confirmed_at": "2026-06-05T08:58:00+08:00",
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "notification_status": "prepared_for_manual_wechat_delivery",
+      "notification_prepared_at": "2026-06-05T08:50:00+08:00",
+      "user_instruction": "用户明确继续发布；等待前两篇 TOPIC 完成后再写。"
+    },
+    {
+      "id": "TECH-20260605-01",
+      "date": "2026-06-05",
+      "slot": "technical_explainer",
+      "title": "Q、K、V 投影共享：Transformer 注意力机制真的需要三个投影矩阵吗？（ICML 2026 论文精讲）",
+      "category": [
+        "AI",
+        "基础模型"
+      ],
+      "tags": [
+        "Transformer",
+        "Attention",
+        "QKV",
+        "Weight Tying",
+        "KV Cache",
+        "ICML 2026"
+      ],
+      "type": "论文精读",
+      "reason": "ICML 2026 正式接收论文，系统研究三种 QKV 投影共享方案。Q-K=V 可达到 50% KV Cache 缩减（质量损失仅 3.1%），叠加 GQA/MQA 可达 87.5%~96.9% 极致压缩。与 MLA 形成 attention 优化的双视角互补。",
+      "source_plan": [
+        "arXiv 2606.04032 论文全文",
+        "GitHub 开源代码",
+        "MQA/GQA 原论文",
+        "DeepSeek MLA 技术报告"
+      ],
+      "status": "confirmed",
+      "confirmed": true,
+      "confirmed_at": "2026-06-05T08:58:00+08:00",
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "technical_level": "架构解析",
+      "reader_takeaway": "理解 Q、K、V 三投影各自的功能与冗余性；掌握三种投影共享方案的数学形式和注意力计算含义；理解 Q-K=V 为什么效果好且可与 GQA/MQA 叠加达到极致压缩；掌握注意力低秩性与投影共享的理论联系。",
+      "notification_status": "prepared_for_manual_wechat_delivery",
+      "notification_prepared_at": "2026-06-05T08:50:00+08:00",
+      "user_instruction": "用户明确确认；等待三篇 TOPIC 完成后再写。"
+    },
+    {
+      "id": "TECH-20260605-02",
+      "date": "2026-06-05",
+      "slot": "technical_explainer",
+      "title": "KV Cache 量化技术解析：从均匀量化到方差归一化，如何在保持精度的同时扩大 4 倍上下文",
+      "category": [
+        "AI",
+        "推理优化"
+      ],
+      "tags": [
+        "KV Cache",
+        "Quantization",
+        "LLM Inference",
+        "KVarN",
+        "TurboQuant",
+        "SmoothQuant"
+      ],
+      "type": "深度文章",
+      "reason": "系统梳理 KV Cache 量化方案演进（均匀量化 → Per-Channel/Per-Token → SmoothQuant → TurboQuant → KVarN），讲清误差累积机制与方差归一化直觉。对推理部署工程师有直接实用价值。",
+      "source_plan": [
+        "KVarN 论文（arXiv 2606.03458）",
+        "KVarN GitHub",
+        "vLLM TurboQuant 博客",
+        "SmoothQuant 论文",
+        "FlexGen 论文"
+      ],
+      "status": "confirmed",
+      "confirmed": true,
+      "confirmed_at": "2026-06-05T08:58:00+08:00",
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "technical_level": "工程优化",
+      "reader_takeaway": "理解 KV Cache 量化中误差累积的数学模型；掌握 Hadamard 旋转消除 outlier 和方差归一化抑制误差的原理；能够评估不同量化方案在精度、吞吐、容量间的权衡。",
+      "notification_status": "prepared_for_manual_wechat_delivery",
+      "notification_prepared_at": "2026-06-05T08:50:00+08:00",
+      "user_instruction": "用户明确继续发布；等待 TECH-20260605-01 完成后再写。"
+    },
+    {
+      "id": "TECH-20260605-03",
+      "date": "2026-06-05",
+      "slot": "technical_explainer",
+      "title": "投机采样（Speculative Decoding）原理与工程实现：如何用小模型加速大模型的自回归解码",
+      "category": [
+        "AI",
+        "推理优化"
+      ],
+      "tags": [
+        "Speculative Decoding",
+        "LLM Inference",
+        "Draft Model",
+        "Self-Speculation",
+        "vLLM",
+        "TensorRT-LLM"
+      ],
+      "type": "深度文章",
+      "reason": "投机采样是 LLM 推理加速的经典优雅技术，vLLM/TensorRT-LLM/SGLang 均已集成。概念优雅（严格无损加速）、数学简洁（拒绝采样）、工程价值高（2-3x 加速）。适合作为 LLM 推理系统解析系列的基础算法篇。",
+      "source_plan": [
+        "Leviathan et al. 2023 原论文",
+        "Medusa/EAGLE 论文",
+        "vLLM speculative decoding 文档与源码",
+        "TensorRT-LLM speculative decoding 文档"
+      ],
+      "status": "confirmed",
+      "confirmed": true,
+      "confirmed_at": "2026-06-05T08:58:00+08:00",
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "technical_level": "算法推导",
+      "reader_takeaway": "掌握投机采样的 draft-verify 两阶段框架和接受/拒绝采样的数学保证；理解 draft model 选择的最优 trade-off；了解 vLLM 生产级实现和自投机解码变体（Medusa/EAGLE）。",
+      "notification_status": "prepared_for_manual_wechat_delivery",
+      "notification_prepared_at": "2026-06-05T08:50:00+08:00",
+      "user_instruction": "用户明确继续发布；等待 TECH-20260605-02 完成后再写。"
     }
   ]
 }

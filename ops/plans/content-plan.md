@@ -23,3 +23,5 @@
 - 2026-06-03：Agentic Inference 的成本曲线：长上下文、工具调用与多轮规划如何重塑 AI Infra。
 - 2026-06-04：从单体 Serving 到 Prefill/Decode 解耦：LLM 推理服务架构为什么正在重构。
 - 2026-06-04：MLA 注意力机制拆解：DeepSeek 如何用低秩潜变量压缩 KV Cache。
+
+- 2026-06-05：KVarN 深度评测：vLLM 原生 KV Cache 量化后端能不能进生产。

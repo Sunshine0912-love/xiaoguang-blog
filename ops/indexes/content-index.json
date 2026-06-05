@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-04T10:48:00+08:00",
+  "updated_at": "2026-06-05T09:15:00+08:00",
   "items": [
     {
       "title": "你好，小光",
@@ -98,6 +98,28 @@
       "description": "从 MHA、MQA、GQA 到 DeepSeek MLA，按公式、张量形状、最小例子和官方实现拆解 Multi-head Latent Attention 如何压缩 KV Cache，以及为什么它会改变推理系统的瓶颈。",
       "topic_id": "TECH-20260604-01",
       "updated_at": "2026-06-04T10:48:00+08:00"
+    },
+    {
+      "id": "TOPIC-20260605-01",
+      "title": "KVarN 深度评测：vLLM 原生 KV Cache 量化后端能不能进生产",
+      "date": "2026-06-05",
+      "path": "source/_posts/2026-06-05-kvarn-vllm-kv-cache-quantization.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/05/2026-06-05-kvarn-vllm-kv-cache-quantization/",
+      "categories": [
+        "AI",
+        "AI Infra"
+      ],
+      "tags": [
+        "KV Cache",
+        "Quantization",
+        "vLLM",
+        "KVarN",
+        "Inference Optimization",
+        "Open Source"
+      ],
+      "description": "KVarN 把 KV Cache 量化做成 vLLM attention backend：文章从 KV Cache 瓶颈、KVarN 的 Hadamard rotation 与 variance normalization、vLLM 接入方式、benchmark 设计和生产风险出发，判断它适合怎样的长上下文推理场景。",
+      "topic_id": "TOPIC-20260605-01",
+      "updated_at": "2026-06-05T09:15:00+08:00"
     }
   ]
 }
