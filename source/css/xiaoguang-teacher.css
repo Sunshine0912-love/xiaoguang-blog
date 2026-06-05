@@ -26,11 +26,11 @@
 /* ── orb ── */
 .xg-teacher__orb {
   align-items: center;
-  background: radial-gradient(ellipse at 50% 38%, rgba(255, 255, 255, 0.12) 0%, transparent 60%),
-    conic-gradient(from 210deg, #76e0d4, #9dc7ff, #d5bbff, #76e0d4);
+  background: radial-gradient(ellipse at 50% 70%, rgba(200, 200, 210, 0.2) 0%, transparent 65%),
+    radial-gradient(circle at 50% 50%, #FFF 0%, #F5F5F7 100%);
   border: 0;
   border-radius: 999px;
-  box-shadow: 0 0 0 0 rgba(118, 224, 212, 0.35), 0 14px 36px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 0 0 0 rgba(150, 180, 210, 0.25), 0 10px 30px rgba(0, 0, 0, 0.18);
   cursor: grab;
   display: flex;
   height: 74px;
@@ -38,14 +38,14 @@
   overflow: visible;
   padding: 0;
   position: relative;
-  transition: transform 200ms ease, filter 200ms ease, box-shadow 200ms ease;
+  transition: transform 200ms ease, box-shadow 200ms ease;
   user-select: none;
   width: 74px;
 }
 
 .xg-teacher__orb::before {
   animation: xg-breathe 3.8s ease-in-out infinite;
-  border: 1.5px solid rgba(118, 224, 212, 0.3);
+  border: 1.5px solid rgba(160, 190, 220, 0.25);
   border-radius: inherit;
   content: "";
   inset: -6px;
@@ -68,24 +68,16 @@
   transform-origin: center center;
 }
 
-/* ears */
+/* ears — erect, triangular */
 .sam-ear {
   transition: transform 250ms ease;
 }
-.sam-ear--left  { transform-origin: 28px 20px; }
-.sam-ear--right { transform-origin: 72px 20px; }
+.sam-ear--left  { transform-origin: 28px 28px; }
+.sam-ear--right { transform-origin: 72px 28px; }
 
 /* eyes */
 .sam-eye-pupil {
   transition: transform 200ms ease;
-}
-
-/* tail — hidden by default, slides out on hover */
-.sam-tail {
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity 220ms ease, transform 220ms ease;
-  transform-origin: 68px 88px;
 }
 
 /* tongue */
@@ -129,28 +121,21 @@
 /* ── orb state: hover ── */
 .xg-teacher__orb:hover,
 .xg-teacher__orb:focus-visible {
-  filter: saturate(1.15);
   outline: none;
   transform: translateY(-2px) scale(1.04);
 }
 
 .xg-teacher__orb:hover::before {
-  border-color: rgba(118, 224, 212, 0.55);
+  border-color: rgba(160, 190, 220, 0.5);
 }
 
-.xg-teacher__orb:hover .sam-ear--left  { transform: rotate(-12deg) translateY(-2px); }
-.xg-teacher__orb:hover .sam-ear--right { transform: rotate(12deg) translateY(-2px); }
-
-.xg-teacher__orb:hover .sam-tail {
-  animation: xg-tail-wag 0.6s ease-in-out infinite;
-  opacity: 1;
-  transform: translateY(0);
-}
+.xg-teacher__orb:hover .sam-ear--left  { transform: rotate(-5deg); }
+.xg-teacher__orb:hover .sam-ear--right { transform: rotate(5deg); }
 
 /* ── orb state: active (dialog open) ── */
 .xg-teacher.is-open .xg-teacher__orb {
   animation: xg-sam-bounce 0.5s ease;
-  box-shadow: 0 0 18px rgba(118, 224, 212, 0.3), 0 14px 36px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 0 18px rgba(160, 190, 220, 0.35), 0 10px 30px rgba(0, 0, 0, 0.18);
 }
 
 .xg-teacher.is-open .sam-tongue {
@@ -200,11 +185,6 @@
   100% { transform: translateY(0) scale(1); }
 }
 
-@keyframes xg-tail-wag {
-  0%, 100% { transform: rotate(-8deg); }
-  50%      { transform: rotate(8deg); }
-}
-
 @keyframes xg-eyes-think {
   0%   { transform: translate(0, 0); }
   30%  { transform: translate(-1.5px, -2px); }
@@ -220,8 +200,8 @@
 
 @keyframes xg-ear-wiggle {
   0%, 100% { transform: rotate(0deg); }
-  25%      { transform: rotate(-6deg); }
-  75%      { transform: rotate(6deg); }
+  30%      { transform: rotate(-4deg); }
+  70%      { transform: rotate(4deg); }
 }
 
 .xg-teacher__panel {
