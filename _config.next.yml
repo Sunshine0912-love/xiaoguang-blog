@@ -14,6 +14,9 @@ menu:
 social:
   GitHub: https://github.com/Sunshine0912-love || fab fa-github
 
+toc:
+  number: false
+
 codeblock:
   theme:
     light: github
