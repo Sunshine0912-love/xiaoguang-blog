@@ -1,9 +1,7 @@
 ---
 title: "从单体 Serving 到 Prefill/Decode 解耦：LLM 推理服务架构为什么正在重构"
 date: 2026-06-04 09:08:08
-categories:
- - AI
- - AI Infra
+categories: ["Topic", "AI", "AI Infra"]
 tags:
  - LLM
  - Inference

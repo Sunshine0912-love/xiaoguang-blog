@@ -1,9 +1,7 @@
 ---
 title: "KV Cache 量化技术解析：从均匀量化到方差归一化"
 date: 2026-06-05 12:45:00
-categories:
- - AI
- - AI Infra
+categories: ["TECH", "AI", "AI Infra"]
 tags:
  - KV Cache
  - Quantization

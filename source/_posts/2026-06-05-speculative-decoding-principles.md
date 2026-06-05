@@ -1,9 +1,7 @@
 ---
 title: "投机采样原理与工程实现：如何用小模型无损加速大模型的自回归解码"
 date: 2026-06-05 13:15:00
-categories:
- - AI
- - 推理优化
+categories: ["TECH", "AI", "推理优化"]
 tags:
  - Speculative Decoding
  - LLM Inference

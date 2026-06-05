@@ -1,9 +1,7 @@
 ---
 title: "AI 辅助代码安全工具链：Anthropic Defending Code Reference Harness 解析"
 date: 2026-06-05 11:00:00
-categories:
- - AI
- - Agent
+categories: ["Topic", "AI", "Agent"]
 tags:
  - Agent
  - Security

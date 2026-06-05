@@ -1,9 +1,7 @@
 ---
 title: "Agentic Inference 的成本曲线：长上下文、工具调用与多轮规划如何重塑 AI Infra"
 date: 2026-06-03 14:30:00
-categories:
-  - AI
-  - AI Infra
+categories: ["Topic", "AI", "AI Infra"]
 tags:
   - Agent
   - AI Infra

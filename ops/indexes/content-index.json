@@ -71,6 +71,7 @@
       "path": "source/_posts/2026-06-05-speculative-decoding-principles.md",
       "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/05/2026-06-05-speculative-decoding-principles/",
       "categories": [
+        "TECH",
         "AI",
         "推理优化"
       ],
@@ -91,6 +92,7 @@
       "path": "source/_posts/2026-06-05-kv-cache-quantization-varn.md",
       "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/05/2026-06-05-kv-cache-quantization-varn/",
       "categories": [
+        "TECH",
         "AI",
         "AI Infra"
       ],
@@ -127,6 +129,7 @@
       "path": "source/_posts/2026-06-03-agent-adoption-second-stage.md",
       "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/03/2026-06-03-agent-adoption-second-stage/",
       "categories": [
+        "Topic",
         "AI",
         "Industry"
       ],
@@ -146,6 +149,7 @@
       "path": "source/_posts/2026-06-03-agentic-inference-cost-curve.md",
       "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/03/2026-06-03-agentic-inference-cost-curve/",
       "categories": [
+        "Topic",
         "AI",
         "AI Infra"
       ],
@@ -167,6 +171,7 @@
       "path": "source/_posts/2026-06-04-prefill-decode-disaggregation.md",
       "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/04/2026-06-04-prefill-decode-disaggregation/",
       "categories": [
+        "Topic",
         "AI",
         "AI Infra"
       ],
@@ -188,6 +193,7 @@
       "path": "source/_posts/2026-06-04-mla-attention-kv-cache.md",
       "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/04/2026-06-04-mla-attention-kv-cache/",
       "categories": [
+        "TECH",
         "AI",
         "LLM"
       ],
@@ -209,6 +215,7 @@
       "path": "source/_posts/2026-06-05-kvarn-vllm-kv-cache-quantization.md",
       "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/05/2026-06-05-kvarn-vllm-kv-cache-quantization/",
       "categories": [
+        "Topic",
         "AI",
         "AI Infra"
       ],
@@ -231,6 +238,7 @@
       "path": "source/_posts/2026-06-05-headroom-context-compression-agent.md",
       "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/05/2026-06-05-headroom-context-compression-agent/",
       "categories": [
+        "Topic",
         "AI",
         "Agent"
       ],
@@ -253,6 +261,7 @@
       "path": "source/_posts/2026-06-05-anthropic-defending-code-harness.md",
       "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/05/2026-06-05-anthropic-defending-code-harness/",
       "categories": [
+        "Topic",
         "AI",
         "Agent"
       ],
@@ -275,6 +284,7 @@
       "path": "source/_posts/2026-06-05-qkv-projection-sharing-attention.md",
       "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/05/2026-06-05-qkv-projection-sharing-attention/",
       "categories": [
+        "TECH",
         "AI",
         "LLM"
       ],

@@ -1,9 +1,7 @@
 ---
 title: "Agent 落地进入第二阶段：企业真正卡住的不是模型"
 date: 2026-06-03 08:38:00
-categories:
-  - AI
-  - Industry
+categories: ["Topic", "AI", "Industry"]
 tags:
   - Agent
   - AI Adoption

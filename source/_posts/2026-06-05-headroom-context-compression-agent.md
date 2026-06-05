@@ -1,9 +1,7 @@
 ---
 title: "Headroom 实战：LLM 上下文压缩工具如何给 Agent 省 token"
 date: 2026-06-05 10:05:00
-categories:
- - AI
- - Agent
+categories: ["Topic", "AI", "Agent"]
 tags:
  - Agent
  - Context Compression

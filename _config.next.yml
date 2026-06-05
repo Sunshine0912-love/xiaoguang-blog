@@ -9,6 +9,9 @@ darkmode: true
 
 menu:
   home: / || fa fa-home
+  categories/Topic: /categories/Topic/ || fa fa-newspaper
+  categories/TECH: /categories/TECH/ || fa fa-microchip
+  categories/hylee-ML-2026-Spring: /categories/hylee-ML-2026-Spring/ || fa fa-graduation-cap
   archives: /archives/ || fa fa-archive
 
 social:
