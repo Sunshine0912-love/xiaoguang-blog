@@ -26,11 +26,10 @@
 /* ── orb ── */
 .xg-teacher__orb {
   align-items: center;
-  background: radial-gradient(ellipse at 50% 70%, rgba(200, 200, 210, 0.2) 0%, transparent 65%),
-    radial-gradient(circle at 50% 50%, #FFF 0%, #F5F5F7 100%);
+  background: radial-gradient(circle at 50% 40%, #FFF 0%, #F6F6F8 100%);
   border: 0;
   border-radius: 999px;
-  box-shadow: 0 0 0 0 rgba(150, 180, 210, 0.25), 0 10px 30px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 0 0 0 rgba(150, 180, 210, 0.2), 0 8px 24px rgba(0, 0, 0, 0.14);
   cursor: grab;
   display: flex;
   height: 74px;
@@ -57,9 +56,9 @@
 /* ── Samoyed SVG ── */
 .xg-teacher__samoyed {
   display: block;
-  height: 68px;
+  height: 72px;
   position: relative;
-  width: 68px;
+  width: 72px;
   z-index: 1;
 }
 
@@ -500,8 +499,8 @@
   }
 
   .xg-teacher__samoyed {
-    height: 58px;
-    width: 58px;
+    height: 62px;
+    width: 62px;
   }
 
   .xg-teacher__orb-label {

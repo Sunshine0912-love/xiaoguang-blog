@@ -13,59 +13,61 @@
   /* ── Samoyed SVG template ── */
   var SAMOYED_SVG = [
     '<svg viewBox="0 0 100 100" class="xg-teacher__samoyed" aria-hidden="true">',
-    /* fluffy cloud face — layered circles for fur texture */
-    '  <circle cx="22" cy="55" r="22" fill="#FDFDFD" opacity="0.8"/>',
-    '  <circle cx="78" cy="55" r="22" fill="#FDFDFD" opacity="0.8"/>',
-    '  <circle cx="22" cy="50" r="20" fill="#FEFEFE" opacity="0.85"/>',
-    '  <circle cx="78" cy="50" r="20" fill="#FEFEFE" opacity="0.85"/>',
-    '  <circle cx="18" cy="58" r="18" fill="#FCFCFC" opacity="0.7"/>',
-    '  <circle cx="82" cy="58" r="18" fill="#FCFCFC" opacity="0.7"/>',
-    '  <circle cx="36" cy="28" r="16" fill="#FDFDFD" opacity="0.75"/>',
-    '  <circle cx="64" cy="28" r="16" fill="#FDFDFD" opacity="0.75"/>',
-    /* main face */
-    '  <ellipse cx="50" cy="50" rx="30" ry="31" fill="#FEFEFE"/>',
-    '  <ellipse cx="50" cy="50" rx="30" ry="31" fill="url(#xg-sam-gradient)"/>',
-    /* erect ears — Samoyed hallmark */
     '  <defs>',
-    '    <radialGradient id="xg-sam-gradient" cx="50%" cy="40%" r="55%">',
-    '      <stop offset="0%" stop-color="#FFF" stop-opacity="1"/>',
-    '      <stop offset="100%" stop-color="#F2F2F2" stop-opacity="0.3"/>',
+    '    <radialGradient id="xgs-face" cx="50%" cy="35%" r="55%">',
+    '      <stop offset="0%" stop-color="#FFF"/>',
+    '      <stop offset="85%" stop-color="#F8F8F8"/>',
+    '      <stop offset="100%" stop-color="#F0F0F2"/>',
     '    </radialGradient>',
     '  </defs>',
+    /* body / chest fluff — gives context that this is an animal */
+    '  <ellipse cx="50" cy="82" rx="34" ry="22" fill="#FAFAFA" stroke="#EEE" stroke-width="0.4"/>',
+    '  <circle cx="34" cy="78" r="16" fill="#FDFDFD" opacity="0.8"/>',
+    '  <circle cx="66" cy="78" r="16" fill="#FDFDFD" opacity="0.8"/>',
+    /* main face — wider ellipse for dog proportions */
+    '  <ellipse cx="50" cy="48" rx="32" ry="28" fill="url(#xgs-face)"/>',
+    /* fluffy fur edges */
+    '  <circle cx="24" cy="46" r="18" fill="#FDFDFD" opacity="0.7"/>',
+    '  <circle cx="76" cy="46" r="18" fill="#FDFDFD" opacity="0.7"/>',
+    '  <circle cx="30" cy="32" r="14" fill="#FEFEFE" opacity="0.7"/>',
+    '  <circle cx="70" cy="32" r="14" fill="#FEFEFE" opacity="0.7"/>',
+    /* muzzle — the key dog feature */
+    '  <ellipse cx="50" cy="60" rx="18" ry="14" fill="#FEFEFE" stroke="#F0F0F0" stroke-width="0.5"/>',
+    /* erect triangular ears — Samoyed hallmark, wide-set, pointing up */
     '  <g class="sam-ear sam-ear--left">',
-    '    <polygon points="28,28 18,8 38,22" fill="#F5F5F5" stroke="#E8E8E8" stroke-width="0.6" stroke-linejoin="round"/>',
-    '    <polygon points="30,26 22,12 36,22" fill="#FDD" opacity="0.45"/>',
+    '    <polygon points="24,28 16,6 38,24" fill="#F5F5F5" stroke="#E8E8E8" stroke-width="0.5" stroke-linejoin="round"/>',
+    '    <polygon points="26,26 20,10 36,24" fill="#FDD" opacity="0.4"/>',
     '  </g>',
     '  <g class="sam-ear sam-ear--right">',
-    '    <polygon points="72,28 82,8 62,22" fill="#F5F5F5" stroke="#E8E8E8" stroke-width="0.6" stroke-linejoin="round"/>',
-    '    <polygon points="70,26 78,12 64,22" fill="#FDD" opacity="0.45"/>',
+    '    <polygon points="76,28 84,6 62,24" fill="#F5F5F5" stroke="#E8E8E8" stroke-width="0.5" stroke-linejoin="round"/>',
+    '    <polygon points="74,26 80,10 64,24" fill="#FDD" opacity="0.4"/>',
     '  </g>',
-    /* almond eyes with catchlights */
+    /* almond eyes — dark, wide-set, with catchlights */
     '  <g class="sam-eye">',
-    '    <ellipse cx="38" cy="43" rx="4.8" ry="5.2" fill="#1A1A1A"/>',
-    '    <circle class="sam-eye-pupil" cx="36.5" cy="41.5" r="2" fill="#FFF"/>',
-    '    <circle class="sam-eye-pupil" cx="39.5" cy="44" r="0.8" fill="#FFF" opacity="0.45"/>',
+    '    <ellipse cx="37" cy="43" rx="4.5" ry="5" fill="#111"/>',
+    '    <circle class="sam-eye-pupil" cx="35.5" cy="41.5" r="2" fill="#FFF"/>',
+    '    <circle cx="38.5" cy="44" r="0.8" fill="#FFF" opacity="0.4"/>',
     '  </g>',
     '  <g class="sam-eye">',
-    '    <ellipse cx="62" cy="43" rx="4.8" ry="5.2" fill="#1A1A1A"/>',
-    '    <circle class="sam-eye-pupil" cx="60.5" cy="41.5" r="2" fill="#FFF"/>',
-    '    <circle class="sam-eye-pupil" cx="63.5" cy="44" r="0.8" fill="#FFF" opacity="0.45"/>',
+    '    <ellipse cx="63" cy="43" rx="4.5" ry="5" fill="#111"/>',
+    '    <circle class="sam-eye-pupil" cx="61.5" cy="41.5" r="2" fill="#FFF"/>',
+    '    <circle cx="64.5" cy="44" r="0.8" fill="#FFF" opacity="0.4"/>',
     '  </g>',
-    /* light eyebrow suggestions */
-    '  <path d="M33,36 Q38,34 43,37" fill="none" stroke="#E0E0E0" stroke-width="0.8" stroke-linecap="round"/>',
-    '  <path d="M57,37 Q62,34 67,36" fill="none" stroke="#E0E0E0" stroke-width="0.8" stroke-linecap="round"/>',
+    /* subtle eyebrows */
+    '  <path d="M33,37 Q37,35 42,37.5" fill="none" stroke="#E2E2E2" stroke-width="0.7" stroke-linecap="round"/>',
+    '  <path d="M58,37.5 Q63,35 67,37" fill="none" stroke="#E2E2E2" stroke-width="0.7" stroke-linecap="round"/>',
     /* black nose */
-    '  <ellipse cx="50" cy="56" rx="6" ry="4.5" fill="#222"/>',
-    '  <ellipse cx="48.5" cy="55" rx="2.2" ry="1.3" fill="#444" transform="rotate(-12 48.5 55)"/>',
-    /* Sammy smile — the iconic upturned mouth */
-    '  <path d="M44,60 L46,59 Q50,57 54,59 L56,60" fill="none" stroke="#999" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>',
-    '  <line x1="50" y1="60.5" x2="50" y2="58" stroke="#999" stroke-width="0.7" stroke-linecap="round"/>',
-    /* tongue */
-    '  <ellipse class="sam-tongue" cx="50" cy="66" rx="3.5" ry="6" fill="#FF8DA8"/>',
-    '  <line class="sam-tongue" x1="50" y1="62" x2="50" y2="70" stroke="#EE6A80" stroke-width="0.7" stroke-linecap="round"/>',
-    /* soft blush */
-    '  <ellipse class="sam-blush" cx="30" cy="51" rx="6" ry="4" fill="#FFCAD5" opacity="0.35"/>',
-    '  <ellipse class="sam-blush" cx="70" cy="51" rx="6" ry="4" fill="#FFCAD5" opacity="0.35"/>',
+    '  <ellipse cx="50" cy="57" rx="5.5" ry="4" fill="#1A1A1A"/>',
+    '  <ellipse cx="48.5" cy="56" rx="2" ry="1.2" fill="#444" transform="rotate(-10 48.5 56)"/>',
+    /* Sammy smile + muzzle line */
+    '  <path d="M50,61 L50,64" stroke="#BBB" stroke-width="0.7" stroke-linecap="round"/>',
+    '  <path d="M42,64 Q46,66 50,64.5 Q54,66 58,64" fill="none" stroke="#AAA" stroke-width="0.9" stroke-linecap="round"/>',
+    /* tongue — hidden by default */
+    '  <ellipse class="sam-tongue" cx="50" cy="69" rx="3.2" ry="5.5" fill="#FF8DA8"/>',
+    '  <line class="sam-tongue" x1="50" y1="65" x2="50" y2="73" stroke="#EE6A80" stroke-width="0.6" stroke-linecap="round"/>',
+    /* rosy cheeks */
+    '  <ellipse class="sam-blush" cx="30" cy="51" rx="6" ry="3.5" fill="#FFCAD5" opacity="0.3"/>',
+    '  <ellipse class="sam-blush" cx="70" cy="51" rx="6" ry="3.5" fill="#FFCAD5" opacity="0.3"/>',
     '</svg>'
   ].join("");
 
