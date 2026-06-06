@@ -302,7 +302,7 @@
   box-shadow: var(--xg-teacher-shadow);
   display: grid;
   grid-template-rows: auto 1fr auto;
-  max-height: min(620px, calc(100vh - 128px));
+  max-height: min(700px, calc(100vh - 140px));
   opacity: 0;
   overflow: hidden;
   position: absolute;
@@ -311,7 +311,7 @@
   transform-origin: bottom right;
   transition: opacity 190ms ease, transform 190ms ease, visibility 190ms ease;
   visibility: hidden;
-  width: min(390px, calc(100vw - 32px));
+  width: min(460px, calc(100vw - 32px));
 }
 
 .xg-teacher.is-open .xg-teacher__panel {
@@ -330,7 +330,7 @@
 
 /* panel mini avatar */
 .xg-teacher__mini {
-  background: #fff url("../images/xiaoguang-teacher-main.png?v=20260606-20260606-20260606-20260606-samoyed-v5") center center / cover no-repeat;
+  background: #fff url("../images/xiaoguang-teacher-main.png?v=20260606-20260606-20260606-20260606-20260606-samoyed-v6") center center / cover no-repeat;
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 9px;
   box-shadow: inset 0 -2px 7px rgba(16, 30, 48, 0.1);
@@ -379,9 +379,9 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  min-height: 260px;
+  min-height: 300px;
   overflow-y: auto;
-  padding: 14px;
+  padding: 16px 14px;
   scroll-behavior: smooth;
 }
 
@@ -389,15 +389,15 @@
   border: 1px solid var(--xg-teacher-line);
   border-radius: 14px;
   max-width: 92%;
-  padding: 10px 12px;
+  padding: 12px 14px;
   white-space: pre-wrap;
   word-break: break-word;
 }
 
 /* ── markdown body ── */
 .xg-teacher__body {
-  font-size: 14px;
-  line-height: 1.75;
+  font-size: 14.5px;
+  line-height: 1.8;
 }
 
 .xg-teacher__body > *:first-child { margin-top: 0; }
@@ -514,7 +514,7 @@
   color: var(--xg-teacher-text);
   flex: 1;
   max-height: 130px;
-  min-height: 46px;
+  min-height: 52px;
   outline: none;
   resize: none;
 }
@@ -558,21 +558,31 @@
 
   .xg-teacher__orb {
     border-radius: 18px;
-    height: 78px;
-    width: 78px;
+    height: 72px;
+    width: 72px;
   }
 
   .xg-teacher__mascot {
     border-radius: 16px;
   }
 
-  .xg-teacher__orb-label {
-    right: 90px;
+  .xg-teacher__panel {
+    bottom: 86px;
+    max-height: min(620px, calc(100vh - 100px));
+    width: calc(100vw - 28px);
   }
 
-  .xg-teacher__panel {
-    bottom: 92px;
-    max-height: min(620px, calc(100vh - 104px));
-    width: calc(100vw - 28px);
+  .xg-teacher__messages {
+    min-height: 220px;
+    padding: 12px;
+  }
+
+  .xg-teacher__msg {
+    padding: 10px 12px;
+  }
+
+  .xg-teacher__body {
+    font-size: 14px;
+    line-height: 1.7;
   }
 }
