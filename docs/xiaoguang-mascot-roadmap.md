@@ -1,6 +1,6 @@
 # 小光老师虚拟形象演进路线图
 
-> 当前版本：Phase 1 — 静态 PNG + CSS 容器级轻动态
+> 当前版本：Phase 1 — 原图 PNG + CSS 容器级轻动态
 > 主形象文件：`source/images/xiaoguang-teacher-main.png`
 > 最后更新：2026-06-06
 
@@ -18,6 +18,8 @@
 
 **已实现。**
 
+当前主图必须使用主人确认的附件原图：1254×1254 PNG，内容为室内背景下的小光萨摩耶叼着巨型胡萝卜。入口按钮应完整显示这张图的主体，不再使用横版替代图或手绘 SVG 作为主展示形象。
+
 ### 能力
 
 | 动画 | 效果 | 触发条件 |
@@ -33,10 +35,11 @@
 
 ### 技术栈
 
-- 单张 PNG 图片（1536×1024 RGBA）
+- 单张 PNG 图片（1254×1254 RGB）
 - CSS `@keyframes`：`xg-float`、`xg-mascot-breathe`、`xg-glow-pulse`、`xg-sparkle-ring`、`xg-bounce-in`、`xg-think-pulse`、`xg-think-glow`、`xg-think-sparkle`、`xg-happy-bounce`
 - `::before` / `::after` 伪元素做光环
 - 无 JS 动画依赖，纯 CSS 驱动
+- 图片路径必须通过 Hexo `url_for('/images/xiaoguang-teacher-main.png')` 或脚本路径推导，不能写死为 `/images/...`，因为线上博客部署在 `/xiaoguang-blog/` 子路径下。
 
 ### 局限性
 
@@ -172,6 +175,7 @@
 |------|------|------|
 | 2026-06-05 | v0 | 初始 SVG 版本，分层动画（耳朵、眼睛、胡萝卜独立运动） |
 | 2026-06-06 | v1 | 换用主形象 PNG（萨摩耶抱胡萝卜卡通版），改为 CSS 容器级轻动态：浮动、光晕、弹跳、思考脉冲 |
+| 2026-06-06 | v1.1 | 修复线上主图路径：`/images/...` 在 GitHub Pages 子路径下会 404；改为 `url_for` 注入 + 脚本路径 fallback，并使用主人确认的 1254×1254 原图 |
 | - | v2 | Phase 2：分层 PNG 逐部件动画（待规划） |
 | - | v3 | Phase 3：Rive/Live2D 全动态虚拟助手（待规划） |
 
@@ -179,6 +183,6 @@
 
 ## 备注
 
-- 主形象 PNG 原始尺寸 1536×1024，建议后续做一个 1:1 或 4:5 竖版裁剪版本，更适配圆形头像场景
-- 当前 CSS 动画在移动端已验证（`prefers-reduced-motion` 未实现，后续可加）
+- 主形象 PNG 原始尺寸 1254×1254，适合圆角方形入口；不建议再裁成纯圆形，否则会丢失胡萝卜和室内背景细节
+- 当前 CSS 动画已实现（`prefers-reduced-motion` 未实现，后续可加）
 - 旧 SVG 文件保留在 `source/images/xiaoguang-teacher-samoyed.svg`，作为历史版本
