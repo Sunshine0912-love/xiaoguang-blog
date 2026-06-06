@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-06T04:08:11.552Z",
+  "updated_at": "2026-06-06T04:10:35.787Z",
   "items": [
     {
       "title": "【ML 2026 Spring 第3讲】深入模型内部架构：如何加快模型推理速度",
@@ -337,6 +337,25 @@
       ],
       "summary": "Gemma 4 12B 以 encoder-free 统一架构、12B 参数密度和 16GB VRAM 即可运行的硬件门槛，首次让本地多模态 Agent 从概念验证进入可用区间",
       "topic_id": "TOPIC-20260606-02"
+    },
+    {
+      "title": "ChatGPT Memory 进化论：长期记忆会不会成为个人 AI Agent 的核心基础设施？",
+      "date": "2026-06-06",
+      "path": "source/_posts/2026-06-06-chatgpt-memory-agent-infrastructure.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/06/2026-06-06-chatgpt-memory-agent-infrastructure/",
+      "categories": [
+        "AI",
+        "Agent"
+      ],
+      "tags": [
+        "Memory",
+        "Agent",
+        "OpenAI",
+        "Personal AI",
+        "RAG"
+      ],
+      "summary": "OpenAI 正在将 ChatGPT Memory 从简单存储快照升级为跨会话的语义理解与关系推理",
+      "topic_id": "TOPIC-20260606-03"
     }
   ]
 }

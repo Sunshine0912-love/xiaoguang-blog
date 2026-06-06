@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-06T04:08:11.553Z",
+  "updated_at": "2026-06-06T04:10:35.788Z",
   "sources": [
     {
       "title": "Agentic AI in Industry: Adoption Level and Deployment Barriers",
@@ -773,6 +773,42 @@
       "tier": "B",
       "used_in": [
         "source/_posts/2026-06-06-gemma-4-12b-local-multimodal.md"
+      ]
+    },
+    {
+      "title": "OpenAI Memory FAQ",
+      "url": "https://help.openai.com/en/articles/8590148-memory-in-chatgpt-faq",
+      "type": "official_docs",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-06-chatgpt-memory-agent-infrastructure.md"
+      ]
+    },
+    {
+      "title": "OpenAI Memory and Controls",
+      "url": "https://openai.com/index/memory-and-new-controls/",
+      "type": "official_blog",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-06-chatgpt-memory-agent-infrastructure.md"
+      ]
+    },
+    {
+      "title": "MemGPT",
+      "url": "https://arxiv.org/abs/2310.08560",
+      "type": "paper",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-06-chatgpt-memory-agent-infrastructure.md"
+      ]
+    },
+    {
+      "title": "Lilian Weng Agent Blog",
+      "url": "https://lilianweng.github.io/posts/2023-06-23-agent/",
+      "type": "blog",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-06-chatgpt-memory-agent-infrastructure.md"
       ]
     }
   ]

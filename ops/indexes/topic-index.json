@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-06T04:08:11.546Z",
+  "updated_at": "2026-06-06T04:10:35.787Z",
   "topics": [
     {
       "id": "TOPIC-20260603-01",
@@ -612,12 +612,12 @@
         "OpenAI Blog",
         "OpenAI Research"
       ],
-      "status": "pending_confirmation",
+      "status": "published",
       "confirmed": true,
       "confirmed_at": "2026-06-06T12:00:00+08:00",
-      "published": false,
-      "published_at": null,
-      "article_path": null
+      "published": true,
+      "published_at": "2026-06-06T12:45:00+08:00",
+      "article_path": "source/_posts/2026-06-06-chatgpt-memory-agent-infrastructure.md"
     },
     {
       "id": "TECH-20260606-01",
