@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-05T10:14:00+08:00",
+  "updated_at": "2026-06-06T04:04:43.354Z",
   "topics": [
     {
       "id": "TOPIC-20260603-01",
@@ -532,6 +532,177 @@
       "notification_status": "wechat_delivered",
       "notification_prepared_at": "2026-06-05T08:50:00+08:00",
       "user_instruction": "用户明确继续发布；等待 TECH-20260605-02 完成后再写。"
+    },
+    {
+      "id": "TOPIC-20260606-01",
+      "date": "2026-06-06",
+      "title": "从 Microsoft Build 2026 看 Agentic Developer Stack：AI 编程从「补全工具」变成「并行工程系统」",
+      "category": [
+        "AI",
+        "Industry"
+      ],
+      "tags": [
+        "Agent",
+        "GitHub Copilot",
+        "Microsoft Build",
+        "Developer Tools",
+        "AI Engineering"
+      ],
+      "type": "深度文章",
+      "reason": "Microsoft Build 2026 系统性地展示了 AI 编程从代码补全到并行工程系统的转变",
+      "source_plan": [
+        "Microsoft Blog",
+        "GitHub Copilot App repo",
+        "Frontier Tuning blog",
+        "Azure Blog"
+      ],
+      "status": "published",
+      "confirmed": true,
+      "confirmed_at": "2026-06-06T12:00:00+08:00",
+      "published": true,
+      "published_at": "2026-06-06T12:15:00+08:00",
+      "article_path": "source/_posts/2026-06-06-microsoft-build-2026-agentic-developer-stack.md"
+    },
+    {
+      "id": "TOPIC-20260606-02",
+      "date": "2026-06-06",
+      "title": "Gemma 4 12B：本地多模态模型为什么开始进入「可用区间」？",
+      "category": [
+        "AI",
+        "LLM"
+      ],
+      "tags": [
+        "Gemma",
+        "Open Source",
+        "Multimodal",
+        "On-Device AI"
+      ],
+      "type": "深度文章",
+      "reason": "Google 新发布 Gemma 4 12B，主打 laptop 级多模态、encoder-free、音频输入和较低显存门槛",
+      "source_plan": [
+        "Google AI Blog",
+        "Gemma 官方文档",
+        "Hugging Face"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": true,
+      "confirmed_at": "2026-06-06T12:00:00+08:00",
+      "published": false,
+      "published_at": null,
+      "article_path": null
+    },
+    {
+      "id": "TOPIC-20260606-03",
+      "date": "2026-06-06",
+      "title": "ChatGPT Memory Dreaming：长期记忆会不会成为个人 AI Agent 的核心基础设施？",
+      "category": [
+        "AI",
+        "Agent"
+      ],
+      "tags": [
+        "Memory",
+        "Agent",
+        "OpenAI",
+        "Long Context",
+        "Personal AI"
+      ],
+      "type": "深度文章",
+      "reason": "OpenAI 6月4日发布更强 memory synthesis，重点是新鲜度、连续性、相关性和多年尺度记忆",
+      "source_plan": [
+        "OpenAI Blog",
+        "OpenAI Research"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": true,
+      "confirmed_at": "2026-06-06T12:00:00+08:00",
+      "published": false,
+      "published_at": null,
+      "article_path": null
+    },
+    {
+      "id": "TECH-20260606-01",
+      "date": "2026-06-06",
+      "title": "Encoder-free 多模态 Transformer：图像、音频、文本如何在一个模型里统一建模？",
+      "category": [
+        "AI",
+        "Multimodal"
+      ],
+      "tags": [
+        "Transformer",
+        "Multimodal",
+        "Encoder-free",
+        "Tokenization"
+      ],
+      "type": "TECH 技术点",
+      "reason": "适合研究生和工程师从架构层真正理解多模态模型",
+      "source_plan": [
+        "arXiv",
+        "Gemma 4 技术报告",
+        "多模态 Transformer 原论文"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": true,
+      "confirmed_at": "2026-06-06T12:00:00+08:00",
+      "published": false,
+      "published_at": null,
+      "article_path": null
+    },
+    {
+      "id": "TECH-20260606-02",
+      "date": "2026-06-06",
+      "title": "AI Agent 的长期记忆机制：从 RAG 到 Memory Synthesis",
+      "category": [
+        "AI",
+        "Agent"
+      ],
+      "tags": [
+        "Memory",
+        "RAG",
+        "Agent",
+        "Memory Synthesis"
+      ],
+      "type": "TECH 技术点",
+      "reason": "和 OpenAI 新 memory 更新强相关，技术与产品都能讲深",
+      "source_plan": [
+        "OpenAI Memory Research",
+        "RAG 原论文",
+        "MemGPT 等记忆系统论文"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": true,
+      "confirmed_at": "2026-06-06T12:00:00+08:00",
+      "published": false,
+      "published_at": null,
+      "article_path": null
+    },
+    {
+      "id": "TECH-20260606-03",
+      "date": "2026-06-06",
+      "title": "MoE 模型为什么适合 Agentic AI：路由、激活参数与推理吞吐的底层逻辑",
+      "category": [
+        "AI",
+        "AI Infra"
+      ],
+      "tags": [
+        "MoE",
+        "Agent",
+        "Inference",
+        "Routing",
+        "Throughput"
+      ],
+      "type": "TECH 技术点",
+      "reason": "适合写成硬核技术科普",
+      "source_plan": [
+        "Switch Transformer",
+        "Mixtral 技术报告",
+        "DeepSeek MoE 论文"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": true,
+      "confirmed_at": "2026-06-06T12:00:00+08:00",
+      "published": false,
+      "published_at": null,
+      "article_path": null
     }
   ]
 }

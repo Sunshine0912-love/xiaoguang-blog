@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-05T12:45:00+08:00",
+  "updated_at": "2026-06-06T04:05:05.711Z",
   "items": [
     {
       "title": "【ML 2026 Spring 第3讲】深入模型内部架构：如何加快模型推理速度",
@@ -299,6 +299,25 @@
       "description": "ICML 2026 论文系统研究 Q/K/V 投影共享：为什么 Q-K=V 能在保留注意力方向性的同时把 KV Cache 减半，以及它如何与 GQA/MQA 叠加。",
       "topic_id": "TECH-20260605-01",
       "updated_at": "2026-06-05T11:45:00+08:00"
+    },
+    {
+      "title": "从 Microsoft Build 2026 看 Agentic Developer Stack：AI 编程从「补全工具」变成「并行工程系统」",
+      "date": "2026-06-06",
+      "path": "source/_posts/2026-06-06-microsoft-build-2026-agentic-developer-stack.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/06/2026-06-06-microsoft-build-2026-agentic-developer-stack/",
+      "categories": [
+        "AI",
+        "Industry"
+      ],
+      "tags": [
+        "Agent",
+        "GitHub Copilot",
+        "Microsoft Build",
+        "Developer Tools",
+        "AI Engineering"
+      ],
+      "summary": "Microsoft Build 2026 系统性地展示了 AI 编程从代码补全到并行工程系统的转变",
+      "topic_id": "TOPIC-20260606-01"
     }
   ]
 }

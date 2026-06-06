@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-05T11:44:00+08:00",
+  "updated_at": "2026-06-06T04:05:05.717Z",
   "sources": [
     {
       "title": "Agentic AI in Industry: Adoption Level and Deployment Barriers",
@@ -684,6 +684,51 @@
       "article_id": "TECH-20260605-03",
       "article_path": "source/_posts/2026-06-05-speculative-decoding-principles.md",
       "added_at": "2026-06-05T11:44:00+08:00"
+    },
+    {
+      "title": "AI alone wont change your business",
+      "url": "https://blogs.microsoft.com/blog/2026/06/02/ai-alone-wont-change-your-business-the-system-running-it-will/",
+      "type": "official_blog",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-06-microsoft-build-2026-agentic-developer-stack.md"
+      ]
+    },
+    {
+      "title": "GitHub Copilot App",
+      "url": "https://github.com/github/app",
+      "type": "official_repo",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-06-microsoft-build-2026-agentic-developer-stack.md"
+      ]
+    },
+    {
+      "title": "Frontier Tuning",
+      "url": "https://devblogs.microsoft.com/microsoft365dev/frontier-tuning-teaching-ai-to-work-the-way-you-do/",
+      "type": "official_blog",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-06-microsoft-build-2026-agentic-developer-stack.md"
+      ]
+    },
+    {
+      "title": "Build 2026 Fabric DB",
+      "url": "https://azure.microsoft.com/en-us/blog/microsoft-build-2026-building-agentic-apps-with-microsoft-fabric-and-microsoft-databases/",
+      "type": "official_blog",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-06-microsoft-build-2026-agentic-developer-stack.md"
+      ]
+    },
+    {
+      "title": "Build 2026 Official",
+      "url": "https://news.microsoft.com/build-2026/",
+      "type": "official_site",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-06-microsoft-build-2026-agentic-developer-stack.md"
+      ]
     }
   ]
 }
