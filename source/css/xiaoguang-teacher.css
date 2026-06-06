@@ -34,6 +34,7 @@
   border-radius: 22px;
   box-shadow:
     0 0 14px rgba(255, 180, 120, 0.22),
+    0 0 0 0 rgba(255, 180, 120, 0),
     0 8px 28px rgba(0, 0, 0, 0.16);
   cursor: grab;
   display: flex;
@@ -42,7 +43,7 @@
   overflow: visible;
   padding: 0;
   position: relative;
-  transition: transform 250ms ease, box-shadow 350ms ease;
+  transition: box-shadow 350ms ease;
   user-select: none;
   width: 92px;
 }
@@ -144,15 +145,12 @@
 /* ── orb state: hover ── */
 .xg-teacher__orb:hover,
 .xg-teacher__orb:focus-visible {
-  animation: xg-float-hover 0.6s ease-out forwards;
+  animation: none;
+  box-shadow:
+    0 0 22px rgba(255, 180, 120, 0.4),
+    0 0 0 18px rgba(255, 180, 120, 0),
+    0 8px 28px rgba(0, 0, 0, 0.16);
   outline: none;
-  transform: translateY(-3px) scale(1.06);
-}
-
-/* Hover ripple: expanding glow ring */
-@keyframes xg-float-hover {
-  0%   { box-shadow: 0 0 14px rgba(255, 180, 120, 0.22), 0 0 0 0 rgba(255, 180, 120, 0.35), 0 8px 28px rgba(0, 0, 0, 0.16); }
-  100% { box-shadow: 0 0 18px rgba(255, 180, 120, 0.35), 0 0 0 22px rgba(255, 180, 120, 0), 0 8px 28px rgba(0, 0, 0, 0.16); }
 }
 
 .xg-teacher__orb:hover .xg-teacher__mascot,
@@ -171,7 +169,7 @@
 
 /* ── orb state: active (dialog open) ── */
 .xg-teacher.is-open .xg-teacher__orb {
-  animation: xg-bounce-in 0.5s ease;
+  animation: xg-orb-open 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
   box-shadow:
     0 0 24px rgba(255, 180, 120, 0.4),
     0 12px 36px rgba(0, 0, 0, 0.2);
@@ -261,12 +259,10 @@
 }
 
 /* Bounce when opening */
-@keyframes xg-bounce-in {
-  0%   { transform: translateY(0) scale(1); }
-  40%  { transform: translateY(-5px) scale(1.03); }
-  70%  { transform: translateY(0) scale(0.97); }
-  85%  { transform: translateY(-2px) scale(1.01); }
-  100% { transform: translateY(0) scale(1); }
+@keyframes xg-orb-open {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.04); }
+  100% { transform: scale(1); }
 }
 
 /* Thinking pulse */
@@ -334,7 +330,7 @@
 
 /* panel mini avatar */
 .xg-teacher__mini {
-  background: #fff url("../images/xiaoguang-teacher-main.png?v=20260606-20260606-20260606-samoyed-v4") center center / cover no-repeat;
+  background: #fff url("../images/xiaoguang-teacher-main.png?v=20260606-20260606-20260606-20260606-samoyed-v5") center center / cover no-repeat;
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 9px;
   box-shadow: inset 0 -2px 7px rgba(16, 30, 48, 0.1);
