@@ -11,7 +11,20 @@
   var DRAG_THRESHOLD = 4;
 
   /* ── 小光老师主形象图片路径 ── */
-  var MASCOT_IMAGE = config.imagePath || "/images/xiaoguang-teacher-main.png";
+  function resolveMascotImage() {
+    if (config.imagePath) return config.imagePath;
+
+    var script = document.currentScript || document.querySelector('script[src*="xiaoguang-teacher.js"]');
+    if (script && script.src) {
+      return new URL("../images/xiaoguang-teacher-main.png?v=20260606-samoyed-v2", script.src).toString();
+    }
+
+    var siteRoot = config.siteRoot || "/";
+    if (siteRoot.charAt(siteRoot.length - 1) !== "/") siteRoot += "/";
+    return siteRoot + "images/xiaoguang-teacher-main.png?v=20260606-samoyed-v2";
+  }
+
+  var MASCOT_IMAGE = resolveMascotImage();
 
   function setOrbState(orb, state) {
     orb.classList.remove("is-thinking", "is-dragging");
@@ -245,10 +258,11 @@
   /* ── init ── */
 
   function init() {
-    if (!document.querySelector(".post-body")) return;
+    var hasArticle = !!document.querySelector(".post-body");
 
     var root = buildWidget();
     var orb = root.querySelector(".xg-teacher__orb");
+    var mascot = root.querySelector(".xg-teacher__mascot");
     var close = root.querySelector(".xg-teacher__close");
     var messagesNode = root.querySelector(".xg-teacher__messages");
     var form = root.querySelector(".xg-teacher__form");
@@ -256,8 +270,31 @@
     var send = root.querySelector(".xg-teacher__send");
     var hint = root.querySelector(".xg-teacher__hint");
 
+    /* ── mascot image error fallback ── */
+    if (mascot) {
+      mascot.addEventListener("error", function () {
+        mascot.style.display = "none";
+        var fb = document.createElement("span");
+        fb.className = "xg-teacher__mascot-fallback";
+        fb.innerHTML = "🐶<br><small>小光老师</small>";
+        mascot.parentNode.insertBefore(fb, mascot.nextSibling);
+      });
+      // Retry once if image hasn't loaded after 3s (e.g. slow CDN)
+      setTimeout(function () {
+        if (!mascot.complete || mascot.naturalWidth === 0) {
+          mascot.src = MASCOT_IMAGE; // retry
+        }
+      }, 3000);
+    }
+
     hint.textContent = config.apiUrl ? "由 " + (config.modelLabel || "DeepSeek") + " 流式生成" : "等待安全后端代理配置";
-    appendMessage(messagesNode, "assistant", "我会先读当前文章，再帮你拆概念、补背景、讲公式或检查理解。");
+    appendMessage(
+      messagesNode,
+      "assistant",
+      hasArticle
+        ? "我会先读当前文章，再帮你拆概念、补背景、讲公式或检查理解。"
+        : "我可以帮你找文章、规划 AI 学习路线，或者解释你正在看的技术概念。"
+    );
 
     /* ── orb click vs drag ── */
     orb.addEventListener("click", function () {
