@@ -1,7 +1,7 @@
 ---
 title: 你好，小光
 date: 2026-06-02 23:59:00
-categories: ["AI"]
+categories: ["hello-xiaoguang"]
 tags:
   - Hexo
   - NexT

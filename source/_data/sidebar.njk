@@ -1,6 +1,6 @@
 <!-- Category tree for sidebar -->
 <div class="sidebar-cat-tree" id="sidebarCatTree">
-  <div class="sidebar-cat-title">📂 文章分类</div>
+  <a class="sidebar-cat-title" href="/xiaoguang-blog/categories/">📂 文章分类</a>
 </div>
 
 <script>
@@ -11,7 +11,12 @@
   var root = '/xiaoguang-blog/';
   var meta = document.querySelector('meta[property="og:url"]');
   if (meta) {
-    try { root = new URL(meta.content).pathname.replace(/\/.*$/, '/'); } catch(e) {}
+    try {
+      var path = new URL(meta.content).pathname;
+      var marker = '/xiaoguang-blog/';
+      var index = path.indexOf(marker);
+      root = index === -1 ? '/' : path.slice(0, index + marker.length);
+    } catch(e) {}
   }
 
   fetch(root + 'categories-data.json')
@@ -34,16 +39,16 @@
         Object.keys(scs).forEach(function(k) { total += scs[k].length; });
 
         html += '<div class="scat-group">';
-        html += '<div class="scat-root" onclick="var g=this.parentElement;g.classList.toggle(\'open\')">';
-        html += '<span>' + rc + '</span><span class="scat-arrow">▶</span></div>';
+        html += '<button class="scat-root" type="button" aria-expanded="false">';
+        html += '<span>' + rc + ' (' + total + ')</span><span class="scat-arrow">▶</span></button>';
         html += '<div class="scat-children">';
 
         Object.keys(scs).sort().forEach(function(sc) {
           var p = scs[sc];
           if (sc !== '_direct') {
             html += '<div class="scat-sub">';
-            html += '<div class="scat-sub-h" onclick="event.stopPropagation();var s=this.parentElement;s.classList.toggle(\'open\')">';
-            html += '<span>' + sc + ' (' + p.length + ')</span><span class="scat-arrow">▶</span></div>';
+            html += '<button class="scat-sub-h" type="button" aria-expanded="false">';
+            html += '<span>' + sc + ' (' + p.length + ')</span><span class="scat-arrow">▶</span></button>';
             html += '<div class="scat-links">';
             p.forEach(function(post) {
               html += '<a href="' + post.u + '" title="' + post.t + '">' + post.t + '</a>';
@@ -67,6 +72,14 @@
         var div = document.createElement('div');
         div.innerHTML = html;
         title.after(div);
+        div.querySelectorAll('.scat-root, .scat-sub-h').forEach(function(button) {
+          button.addEventListener('click', function(event) {
+            event.preventDefault();
+            var group = button.parentElement;
+            var isOpen = group.classList.toggle('open');
+            button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          });
+        });
       }
     });
 })();

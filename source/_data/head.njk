@@ -1,7 +1,7 @@
-  <link rel="stylesheet" href="{{ url_for('/css/sidebar-cat.css') }}">
+  <link rel="stylesheet" href="/xiaoguang-blog/css/sidebar-cat.css">
 
 {%- if page.mathjax or theme.math.every_page %}
-  <link rel="stylesheet" href="{{ url_for('/lib/katex/katex.min.css') }}">
+  <link rel="stylesheet" href="/xiaoguang-blog/lib/katex/katex.min.css">
   <style>
     .post-body section,
     .post-body eqn,
@@ -25,15 +25,15 @@
 {%- endif %}
 
 {%- if config.ai_assistant and config.ai_assistant.enabled %}
-  <link rel="preload" as="image" href="{{ url_for('/images/xiaoguang-teacher-main.png') }}?v=20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-samoyed-v15">
-  <link rel="stylesheet" href="{{ url_for('/css/xiaoguang-teacher.css') }}?v=20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-samoyed-v15">
+  <link rel="preload" as="image" href="/xiaoguang-blog/images/xiaoguang-teacher-main.png?v=20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-samoyed-v15">
+  <link rel="stylesheet" href="/xiaoguang-blog/css/xiaoguang-teacher.css?v=20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-samoyed-v15">
   <script>
     window.XIAOGUANG_TEACHER_CONFIG = {
       apiUrl: "{{ config.ai_assistant.api_url | default('') }}",
       modelLabel: "{{ config.ai_assistant.model_label | default('DeepSeek V4 Pro') }}",
-      imagePath: "{{ url_for('/images/xiaoguang-teacher-main.png') }}?v=20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-samoyed-v15",
+      imagePath: "/xiaoguang-blog/images/xiaoguang-teacher-main.png?v=20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-samoyed-v15",
       siteRoot: "{{ config.root | default('/') }}"
     };
   </script>
-  <script defer src="{{ url_for('/js/xiaoguang-teacher.js') }}?v=20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-samoyed-v15"></script>
+  <script defer src="/xiaoguang-blog/js/xiaoguang-teacher.js?v=20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-samoyed-v15"></script>
 {%- endif %}
