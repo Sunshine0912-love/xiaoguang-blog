@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-06T04:12:52.567Z",
+  "updated_at": "2026-06-06T04:14:38.047Z",
   "sources": [
     {
       "title": "Agentic AI in Industry: Adoption Level and Deployment Barriers",
@@ -836,6 +836,24 @@
       "tier": "A",
       "used_in": [
         "source/_posts/2026-06-06-encoder-free-multimodal-transformer.md"
+      ]
+    },
+    {
+      "title": "RAG",
+      "url": "https://arxiv.org/abs/2005.11401",
+      "type": "paper",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-06-agent-long-term-memory-mechanisms.md"
+      ]
+    },
+    {
+      "title": "MemGPT",
+      "url": "https://arxiv.org/abs/2310.08560",
+      "type": "paper",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-06-agent-long-term-memory-mechanisms.md"
       ]
     }
   ]
