@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-06T04:05:05.717Z",
+  "updated_at": "2026-06-06T04:08:11.553Z",
   "sources": [
     {
       "title": "Agentic AI in Industry: Adoption Level and Deployment Barriers",
@@ -728,6 +728,51 @@
       "tier": "A",
       "used_in": [
         "source/_posts/2026-06-06-microsoft-build-2026-agentic-developer-stack.md"
+      ]
+    },
+    {
+      "title": "Gemma 4 12B Launch",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemma-4-12B/",
+      "type": "official_blog",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-06-gemma-4-12b-local-multimodal.md"
+      ]
+    },
+    {
+      "title": "Gemma 4 12B HF Model Card",
+      "url": "https://huggingface.co/google/gemma-4-12B-it",
+      "type": "model_card",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-06-gemma-4-12b-local-multimodal.md"
+      ]
+    },
+    {
+      "title": "Gemma 4 Docs",
+      "url": "https://ai.google.dev/gemma/docs/core",
+      "type": "official_docs",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-06-gemma-4-12b-local-multimodal.md"
+      ]
+    },
+    {
+      "title": "Gemma 4 Collection",
+      "url": "https://huggingface.co/collections/google/gemma-4",
+      "type": "model_collection",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-06-gemma-4-12b-local-multimodal.md"
+      ]
+    },
+    {
+      "title": "Gemma Skills",
+      "url": "https://github.com/google-gemma/gemma-skills",
+      "type": "official_repo",
+      "tier": "B",
+      "used_in": [
+        "source/_posts/2026-06-06-gemma-4-12b-local-multimodal.md"
       ]
     }
   ]

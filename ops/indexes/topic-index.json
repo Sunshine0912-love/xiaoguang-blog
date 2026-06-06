@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-06T04:04:43.354Z",
+  "updated_at": "2026-06-06T04:08:11.546Z",
   "topics": [
     {
       "id": "TOPIC-20260603-01",
@@ -584,12 +584,12 @@
         "Gemma 官方文档",
         "Hugging Face"
       ],
-      "status": "pending_confirmation",
+      "status": "published",
       "confirmed": true,
       "confirmed_at": "2026-06-06T12:00:00+08:00",
-      "published": false,
-      "published_at": null,
-      "article_path": null
+      "published": true,
+      "published_at": "2026-06-06T12:30:00+08:00",
+      "article_path": "source/_posts/2026-06-06-gemma-4-12b-local-multimodal.md"
     },
     {
       "id": "TOPIC-20260606-03",

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-06T04:05:05.711Z",
+  "updated_at": "2026-06-06T04:08:11.552Z",
   "items": [
     {
       "title": "【ML 2026 Spring 第3讲】深入模型内部架构：如何加快模型推理速度",
@@ -318,6 +318,25 @@
       ],
       "summary": "Microsoft Build 2026 系统性地展示了 AI 编程从代码补全到并行工程系统的转变",
       "topic_id": "TOPIC-20260606-01"
+    },
+    {
+      "title": "Gemma 4 12B：本地多模态模型为什么开始进入「可用区间」？",
+      "date": "2026-06-06",
+      "path": "source/_posts/2026-06-06-gemma-4-12b-local-multimodal.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/06/2026-06-06-gemma-4-12b-local-multimodal/",
+      "categories": [
+        "AI",
+        "LLM"
+      ],
+      "tags": [
+        "Gemma",
+        "Open Source",
+        "Multimodal",
+        "On-Device AI",
+        "Google DeepMind"
+      ],
+      "summary": "Gemma 4 12B 以 encoder-free 统一架构、12B 参数密度和 16GB VRAM 即可运行的硬件门槛，首次让本地多模态 Agent 从概念验证进入可用区间",
+      "topic_id": "TOPIC-20260606-02"
     }
   ]
 }
