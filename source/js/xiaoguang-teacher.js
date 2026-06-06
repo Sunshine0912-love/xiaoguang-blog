@@ -16,12 +16,12 @@
 
     var script = document.currentScript || document.querySelector('script[src*="xiaoguang-teacher.js"]');
     if (script && script.src) {
-      return new URL("../images/xiaoguang-teacher-main.png?v=20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-samoyed-v9", script.src).toString();
+      return new URL("../images/xiaoguang-teacher-main.png?v=20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-samoyed-v10", script.src).toString();
     }
 
     var siteRoot = config.siteRoot || "/";
     if (siteRoot.charAt(siteRoot.length - 1) !== "/") siteRoot += "/";
-    return siteRoot + "images/xiaoguang-teacher-main.png?v=20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-samoyed-v9";
+    return siteRoot + "images/xiaoguang-teacher-main.png?v=20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-20260606-samoyed-v10";
   }
 
   var MASCOT_IMAGE = resolveMascotImage();
