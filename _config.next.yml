@@ -3,6 +3,7 @@
 
 custom_file_path:
   head: source/_data/head.njk
+  sidebar: source/_data/sidebar.njk
 
 scheme: Gemini
 darkmode: true

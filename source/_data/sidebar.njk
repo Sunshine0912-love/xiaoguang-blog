@@ -1,0 +1,73 @@
+<!-- Category tree for sidebar -->
+<div class="sidebar-cat-tree" id="sidebarCatTree">
+  <div class="sidebar-cat-title">📂 文章分类</div>
+</div>
+
+<script>
+(function() {
+  var el = document.getElementById('sidebarCatTree');
+  if (!el) return;
+
+  var root = '/xiaoguang-blog/';
+  var meta = document.querySelector('meta[property="og:url"]');
+  if (meta) {
+    try { root = new URL(meta.content).pathname.replace(/\/.*$/, '/'); } catch(e) {}
+  }
+
+  fetch(root + 'categories-data.json')
+    .then(function(r) { return r.json(); })
+    .then(function(posts) {
+      var tree = {};
+      posts.forEach(function(post) {
+        var rc = post.c[0], sc = post.c.length > 1 ? post.c[1] : null;
+        if (!rc) return;
+        if (!tree[rc]) tree[rc] = {};
+        var k = sc || '_direct';
+        if (!tree[rc][k]) tree[rc][k] = [];
+        tree[rc][k].push(post);
+      });
+
+      var html = '';
+      Object.keys(tree).sort().forEach(function(rc) {
+        var scs = tree[rc];
+        var total = 0;
+        Object.keys(scs).forEach(function(k) { total += scs[k].length; });
+
+        html += '<div class="scat-group">';
+        html += '<div class="scat-root" onclick="var g=this.parentElement;g.classList.toggle(\'open\')">';
+        html += '<span>' + rc + '</span><span class="scat-arrow">▶</span></div>';
+        html += '<div class="scat-children">';
+
+        Object.keys(scs).sort().forEach(function(sc) {
+          var p = scs[sc];
+          if (sc !== '_direct') {
+            html += '<div class="scat-sub">';
+            html += '<div class="scat-sub-h" onclick="event.stopPropagation();var s=this.parentElement;s.classList.toggle(\'open\')">';
+            html += '<span>' + sc + ' (' + p.length + ')</span><span class="scat-arrow">▶</span></div>';
+            html += '<div class="scat-links">';
+            p.forEach(function(post) {
+              html += '<a href="' + post.u + '" title="' + post.t + '">' + post.t + '</a>';
+            });
+            html += '</div></div>';
+          } else {
+            html += '<div class="scat-links scat-links--direct">';
+            p.forEach(function(post) {
+              html += '<a href="' + post.u + '" title="' + post.t + '">' + post.t + '</a>';
+            });
+            html += '</div>';
+          }
+        });
+
+        html += '</div></div>';
+      });
+
+      // Insert after the title
+      var title = el.querySelector('.sidebar-cat-title');
+      if (title) {
+        var div = document.createElement('div');
+        div.innerHTML = html;
+        title.after(div);
+      }
+    });
+})();
+</script>

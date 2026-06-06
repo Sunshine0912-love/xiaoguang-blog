@@ -1,7 +1,7 @@
 ---
 title: "Q、K、V 投影共享：Transformer 注意力机制真的需要三个投影矩阵吗？"
 date: 2026-06-05 11:45:00
-categories: ["TECH", "AI", "LLM"]
+categories: ["AI", "LLM"]
 tags:
  - Transformer
  - Attention

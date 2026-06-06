@@ -79,6 +79,10 @@
   display: none;
   padding: 0 20px 8px 52px;
 }
+.category-tree .sub-posts--direct {
+  display: block;
+  padding: 8px 20px 8px 36px;
+}
 .category-tree .sub-group.open > .sub-posts {
   display: block;
 }

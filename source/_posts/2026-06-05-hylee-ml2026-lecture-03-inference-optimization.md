@@ -1,7 +1,7 @@
 ---
 title: "【ML 2026 Spring 第3讲】深入模型内部架构：如何加快模型推理速度"
 date: 2026-06-05 12:30:00
-categories: ["hylee ML 2026 Spring"]
+categories: ["AI", "Course"]
 tags:
  - ML2026
  - Flash Attention

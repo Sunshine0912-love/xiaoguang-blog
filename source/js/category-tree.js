@@ -16,7 +16,7 @@
         var sub = post.c.length > 1 ? post.c[1] : null;
         if (!rootCat) return;
         if (!tree[rootCat]) tree[rootCat] = {};
-        var key = sub || '_posts';
+        var key = sub || '_direct';
         if (!tree[rootCat][key]) tree[rootCat][key] = [];
         tree[rootCat][key].push(post);
       });
@@ -38,19 +38,29 @@
 
         Object.keys(subCats).sort().forEach(function(subCat) {
           var p = subCats[subCat];
-          html += '<div class="sub-item sub-group">';
-          if (subCat !== '_posts') {
+          
+          if (subCat !== '_direct') {
+            // Has sub-category: collapsible
+            html += '<div class="sub-item sub-group">';
             html += '<div class="sub-header" onclick="event.stopPropagation();this.parentElement.classList.toggle(\'open\')">';
             html += '<span>' + subCat + '</span>';
             html += '<span style="display:flex;align-items:center;gap:12px;">';
             html += '<span class="count">' + p.length + ' 篇</span>';
             html += '<span class="arrow">▶</span></span></div>';
+            html += '<div class="sub-posts">';
+            p.forEach(function(post) {
+              html += '<a href="' + post.u + '"><span class="post-date">' + post.d + '</span>' + post.t + '</a>';
+            });
+            html += '</div></div>';
+          } else {
+            // No sub-category: show posts directly
+            html += '<div class="sub-item">';
+            html += '<div class="sub-posts sub-posts--direct">';
+            p.forEach(function(post) {
+              html += '<a href="' + post.u + '"><span class="post-date">' + post.d + '</span>' + post.t + '</a>';
+            });
+            html += '</div></div>';
           }
-          html += '<div class="sub-posts">';
-          p.forEach(function(post) {
-            html += '<a href="' + post.u + '"><span class="post-date">' + post.d + '</span>' + post.t + '</a>';
-          });
-          html += '</div></div>';
         });
 
         html += '</div></div>';

@@ -1,7 +1,7 @@
 ---
 title: "MLA 注意力机制拆解：DeepSeek 如何用低秩潜变量压缩 KV Cache"
 date: 2026-06-04 09:18:08
-categories: ["TECH", "AI", "LLM"]
+categories: ["AI", "LLM"]
 tags:
  - MLA
  - Attention

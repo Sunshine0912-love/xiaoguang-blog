@@ -1,7 +1,7 @@
 ---
 title: "【ML 2026 Spring 第2讲】AI Agent — Context Engineering、Multi-Agent 互动与学术工作的未来"
 date: 2026-06-05 12:00:00
-categories: ["hylee ML 2026 Spring"]
+categories: ["AI", "Course"]
 tags:
  - ML2026
  - AI Agent

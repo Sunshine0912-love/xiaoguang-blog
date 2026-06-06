@@ -1,7 +1,7 @@
 ---
 title: 你好，小光
 date: 2026-06-02 23:59:00
-categories: ["技术博客"]
+categories: ["AI"]
 tags:
   - Hexo
   - NexT

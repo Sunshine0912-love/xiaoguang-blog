@@ -1,7 +1,7 @@
 ---
 title: "KVarN 深度评测：vLLM 原生 KV Cache 量化后端能不能进生产"
 date: 2026-06-05 09:10:00
-categories: ["Topic", "AI", "AI Infra"]
+categories: ["AI", "AI Infra"]
 tags:
  - KV Cache
  - Quantization

@@ -1,7 +1,7 @@
 ---
 title: "【ML 2026 Spring 第1讲】AI Agent — 解剖小龙虾：以 OpenClaw 为例看 AI Agent 的运作原理"
 date: 2026-06-05 11:30:00
-categories: ["hylee ML 2026 Spring"]
+categories: ["AI", "Course"]
 tags:
  - ML2026
  - AI Agent
