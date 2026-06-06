@@ -9,6 +9,7 @@ darkmode: true
 
 menu:
   home: / || fa fa-home
+  categories: /categories/ || fa fa-th-list || 分类
   archives: /archives/ || fa fa-archive || 归档
 
 social:
@@ -19,8 +20,8 @@ toc:
 
 codeblock:
   theme:
-    light: github
-    dark: github
+    light: atom-one-light
+    dark: atom-one-dark
   prism:
     light: default
     dark: default
