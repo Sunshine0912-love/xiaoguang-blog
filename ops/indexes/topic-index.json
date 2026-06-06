@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-06T04:10:35.787Z",
+  "updated_at": "2026-06-06T04:12:52.566Z",
   "topics": [
     {
       "id": "TOPIC-20260603-01",
@@ -640,12 +640,12 @@
         "Gemma 4 技术报告",
         "多模态 Transformer 原论文"
       ],
-      "status": "pending_confirmation",
+      "status": "published",
       "confirmed": true,
       "confirmed_at": "2026-06-06T12:00:00+08:00",
-      "published": false,
-      "published_at": null,
-      "article_path": null
+      "published": true,
+      "published_at": "2026-06-06T13:00:00+08:00",
+      "article_path": "source/_posts/2026-06-06-encoder-free-multimodal-transformer.md"
     },
     {
       "id": "TECH-20260606-02",

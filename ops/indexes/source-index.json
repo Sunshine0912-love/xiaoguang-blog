@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-06T04:10:35.788Z",
+  "updated_at": "2026-06-06T04:12:52.567Z",
   "sources": [
     {
       "title": "Agentic AI in Industry: Adoption Level and Deployment Barriers",
@@ -809,6 +809,33 @@
       "tier": "A",
       "used_in": [
         "source/_posts/2026-06-06-chatgpt-memory-agent-infrastructure.md"
+      ]
+    },
+    {
+      "title": "LLaVA",
+      "url": "https://arxiv.org/abs/2310.03744",
+      "type": "paper",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-06-encoder-free-multimodal-transformer.md"
+      ]
+    },
+    {
+      "title": "Gemma 4 12B Dev Guide",
+      "url": "https://developers.googleblog.com/gemma-4-12b-the-developer-guide/",
+      "type": "official_docs",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-06-encoder-free-multimodal-transformer.md"
+      ]
+    },
+    {
+      "title": "Chameleon",
+      "url": "https://arxiv.org/abs/2405.09818",
+      "type": "paper",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-06-encoder-free-multimodal-transformer.md"
       ]
     }
   ]
