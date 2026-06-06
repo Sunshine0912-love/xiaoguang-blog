@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-06T04:14:38.047Z",
+  "updated_at": "2026-06-06T04:16:22.730Z",
   "items": [
     {
       "title": "【ML 2026 Spring 第3讲】深入模型内部架构：如何加快模型推理速度",
@@ -394,6 +394,26 @@
       ],
       "summary": "系统讲解 AI Agent 记忆的三种技术范式",
       "topic_id": "TECH-20260606-02"
+    },
+    {
+      "title": "MoE 为什么适合 Agentic AI",
+      "date": "2026-06-06",
+      "path": "source/_posts/2026-06-06-moe-agentic-ai-architecture.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/06/2026-06-06-moe-agentic-ai-architecture/",
+      "categories": [
+        "AI",
+        "AI Infra"
+      ],
+      "tags": [
+        "MoE",
+        "Agent",
+        "Inference",
+        "Routing",
+        "DeepSeek",
+        "Throughput"
+      ],
+      "summary": "MoE 在 Agentic AI 场景中的架构优势解析",
+      "topic_id": "TECH-20260606-03"
     }
   ]
 }

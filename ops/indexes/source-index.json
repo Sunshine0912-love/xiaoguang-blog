@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-06T04:14:38.047Z",
+  "updated_at": "2026-06-06T04:16:22.731Z",
   "sources": [
     {
       "title": "Agentic AI in Industry: Adoption Level and Deployment Barriers",
@@ -854,6 +854,42 @@
       "tier": "A",
       "used_in": [
         "source/_posts/2026-06-06-agent-long-term-memory-mechanisms.md"
+      ]
+    },
+    {
+      "title": "Switch Transformers",
+      "url": "https://arxiv.org/abs/2101.03961",
+      "type": "paper",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-06-moe-agentic-ai-architecture.md"
+      ]
+    },
+    {
+      "title": "Mixtral",
+      "url": "https://arxiv.org/abs/2401.04088",
+      "type": "paper",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-06-moe-agentic-ai-architecture.md"
+      ]
+    },
+    {
+      "title": "DeepSeek-V2",
+      "url": "https://arxiv.org/abs/2405.04434",
+      "type": "paper",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-06-moe-agentic-ai-architecture.md"
+      ]
+    },
+    {
+      "title": "DeepSeek-V3",
+      "url": "https://arxiv.org/abs/2412.19437",
+      "type": "paper",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-06-moe-agentic-ai-architecture.md"
       ]
     }
   ]
