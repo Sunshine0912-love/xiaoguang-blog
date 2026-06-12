@@ -16,3 +16,13 @@
 - 2026-06-03：发布《Agentic Inference 的成本曲线：长上下文、工具调用与多轮规划如何重塑 AI Infra》，定位为 Agent 推理成本和上下文系统总论。
 - 2026-06-04：发布《从单体 Serving 到 Prefill/Decode 解耦：LLM 推理服务架构为什么正在重构》，定位为 LLM serving 架构机制解析。
 - 2026-06-04：发布技术点讲解《MLA 注意力机制拆解：DeepSeek 如何用低秩潜变量压缩 KV Cache》，作为模型内部 KV cache 优化基础篇。
+
+## 李宏毅 ML 2026 Spring 系列
+
+- 2026-06-12：继续发布第4/5/6/7/9讲课程笔记。
+- 系列状态：已发布 8 讲（第1-7, 9讲）
+  - 第4讲：模型如何处理超长输入：位置编码的前世今生
+  - 第5讲：如何教育模型（一）：Harness Engineering 的设计哲学
+  - 第6讲：如何教育模型（二）：Self-Correction 的技术全景
+  - 第7讲：模型的自我成长（一）：Self-Improving 的机制与边界
+  - 第9讲：模型的自我成长（二）：从 Self-Improving 到 AI 的自主进化

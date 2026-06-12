@@ -1,7 +1,92 @@
 {
   "version": 1,
-  "updated_at": "2026-06-12T08:59:39.670552",
+  "updated_at": "2026-06-12T10:29:52.077780",
   "items": [
+    {
+      "title": "【ML 2026 Spring 第9讲】模型的自我成长（二）：从 Self-Improving 到 AI 的自主进化",
+      "date": "2026-06-12",
+      "path": "source/_posts/2026-06-12-hylee-ml2026-lecture-09-self-improving-2.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/12/2026-06-12-hylee-ml2026-lecture-09-self-improving-2/",
+      "categories": [
+        "AI",
+        "Course"
+      ],
+      "tags": [
+        "ML2026"
+      ],
+      "description": "李宏毅 ML 2026 Spring 第9讲课程笔记",
+      "topic_id": null,
+      "series": "hylee-ml-2026-spring",
+      "lecture": 9
+    },
+    {
+      "title": "【ML 2026 Spring 第7讲】模型的自我成长（一）：Self-Improving 的机制与边界",
+      "date": "2026-06-12",
+      "path": "source/_posts/2026-06-12-hylee-ml2026-lecture-07-self-improving-1.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/12/2026-06-12-hylee-ml2026-lecture-07-self-improving-1/",
+      "categories": [
+        "AI",
+        "Course"
+      ],
+      "tags": [
+        "ML2026"
+      ],
+      "description": "李宏毅 ML 2026 Spring 第7讲课程笔记",
+      "topic_id": null,
+      "series": "hylee-ml-2026-spring",
+      "lecture": 7
+    },
+    {
+      "title": "【ML 2026 Spring 第6讲】如何教育模型（二）：Self-Correction 的技术全景",
+      "date": "2026-06-12",
+      "path": "source/_posts/2026-06-12-hylee-ml2026-lecture-06-self-correction.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/12/2026-06-12-hylee-ml2026-lecture-06-self-correction/",
+      "categories": [
+        "AI",
+        "Course"
+      ],
+      "tags": [
+        "ML2026"
+      ],
+      "description": "李宏毅 ML 2026 Spring 第6讲课程笔记",
+      "topic_id": null,
+      "series": "hylee-ml-2026-spring",
+      "lecture": 6
+    },
+    {
+      "title": "【ML 2026 Spring 第5讲】如何教育模型（一）：Harness Engineering 的设计哲学",
+      "date": "2026-06-12",
+      "path": "source/_posts/2026-06-12-hylee-ml2026-lecture-05-harness-engineering.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/12/2026-06-12-hylee-ml2026-lecture-05-harness-engineering/",
+      "categories": [
+        "AI",
+        "Course"
+      ],
+      "tags": [
+        "ML2026"
+      ],
+      "description": "李宏毅 ML 2026 Spring 第5讲课程笔记",
+      "topic_id": null,
+      "series": "hylee-ml-2026-spring",
+      "lecture": 5
+    },
+    {
+      "title": "【ML 2026 Spring 第4讲】模型如何处理超长输入：位置编码的前世今生",
+      "date": "2026-06-12",
+      "path": "source/_posts/2026-06-12-hylee-ml2026-lecture-04-positional-embedding.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/12/2026-06-12-hylee-ml2026-lecture-04-positional-embedding/",
+      "categories": [
+        "AI",
+        "Course"
+      ],
+      "tags": [
+        "ML2026"
+      ],
+      "description": "李宏毅 ML 2026 Spring 第4讲课程笔记",
+      "topic_id": null,
+      "series": "hylee-ml-2026-spring",
+      "lecture": 4
+    },
     {
       "title": "连续批处理(Continuous Batching)机制详解：从静态 Padding 到 Iteration-Level 调度的 GPU 利用率优化",
       "date": "2026-06-12",
