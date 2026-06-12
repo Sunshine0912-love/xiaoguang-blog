@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-06T04:16:22.730Z",
+  "updated_at": "2026-06-12T08:28:13.676610",
   "topics": [
     {
       "id": "TOPIC-20260603-01",
@@ -703,6 +703,415 @@
       "published": true,
       "published_at": "2026-06-06T13:30:00+08:00",
       "article_path": "source/_posts/2026-06-06-moe-agentic-ai-architecture.md"
+    },
+    {
+      "id": "TOPIC-20260607-01",
+      "date": "2026-06-07",
+      "slot": "daily_main",
+      "title": "AI 周回顾 2026W23：Agentic PC 宣言、开源 MoE 模型井喷与代码 Agent 的工程化拐点",
+      "category": [
+        "AI",
+        "Weekly"
+      ],
+      "tags": [
+        "Agent",
+        "Open Source",
+        "MoE",
+        "Computex",
+        "Weekly Review"
+      ],
+      "type": "周报",
+      "reason": "本周事件密度极高：Computex Agentic PC、Mellum2 MoE、OpenAI Harness Engineering、hf CLI for agents",
+      "source_plan": [
+        "NVIDIA Nemotron 3 Ultra 博客",
+        "MS+NVIDIA Agent on Windows 博客",
+        "Mellum2 技术细节",
+        "OpenAI Harness Engineering 原文",
+        "Holo3.1 仓库",
+        "IBM Agent Logic 博客"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "notification_status": "prepared_for_openclaw_route",
+      "notification_prepared_at": "2026-06-07T08:36:00+08:00"
+    },
+    {
+      "id": "TOPIC-20260607-02",
+      "date": "2026-06-07",
+      "slot": "daily_main",
+      "title": "下周看点 2026W24：WWDC 在即、AI 终端计算进入异构混算时代",
+      "category": [
+        "AI",
+        "Industry"
+      ],
+      "tags": [
+        "Edge AI",
+        "NPU",
+        "Apple",
+        "WWDC",
+        "On-Device AI"
+      ],
+      "type": "深度文章",
+      "reason": "Computex 端侧 AI 信号密集，WWDC 下周召开，预测端侧 AI 异构混算趋势",
+      "source_plan": [
+        "NVIDIA+MS Agent on Windows 博客",
+        "Apple Silicon ANE 架构文档",
+        "Core ML 更新",
+        "WWDC 预热报道"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "notification_status": "prepared_for_openclaw_route",
+      "notification_prepared_at": "2026-06-07T08:36:00+08:00"
+    },
+    {
+      "id": "TOPIC-20260607-03",
+      "date": "2026-06-07",
+      "slot": "daily_main",
+      "title": "AI Agent 的工具进化论：从 Function Calling 到 MCP 生态标准化——本周信号与下周方向",
+      "category": [
+        "AI",
+        "Agent"
+      ],
+      "tags": [
+        "Agent",
+        "MCP",
+        "Function Calling",
+        "Tool Use",
+        "Standardization",
+        "Protocol"
+      ],
+      "type": "深度文章",
+      "reason": "本周多个 A/B 级来源同时指向 Agent 工具调用标准化趋势：hf CLI for agents、Reachy MCP、OpenAI Harness Engineering、IBM Agent Logic",
+      "source_plan": [
+        "MCP 官方规范",
+        "HF CLI for Agents 博客",
+        "Reachy Mini MCP 博客",
+        "OpenAI Harness Engineering 原文",
+        "IBM Agent Logic 博客",
+        "Anthropic MCP 资料"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "notification_status": "prepared_for_openclaw_route",
+      "notification_prepared_at": "2026-06-07T08:36:00+08:00"
+    },
+    {
+      "id": "TECH-20260607-01",
+      "date": "2026-06-07",
+      "slot": "technical_explainer",
+      "title": "LoRA 低秩适配原理深度拆解：为什么两个小矩阵就能微调千亿参数大模型",
+      "category": [
+        "AI",
+        "LLM"
+      ],
+      "tags": [
+        "LoRA",
+        "Fine-tuning",
+        "Low-Rank",
+        "PEFT",
+        "QLoRA",
+        "DoRA",
+        "SVD"
+      ],
+      "type": "技术点讲解",
+      "reason": "LoRA 是 PEFT 事实标准，数学路径清晰（SVD→低秩→前向传播），HuggingFace PEFT 官方实现成熟",
+      "source_plan": [
+        "LoRA 原论文 (Hu et al., ICLR 2022)",
+        "QLoRA 论文 (Dettmers et al., NeurIPS 2023)",
+        "DoRA 论文 (Liu et al., ICML 2024)",
+        "HuggingFace PEFT 源码",
+        "LoRA+ 论文"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "technical_level": "算法推导",
+      "reader_takeaway": "理解 LoRA 为何只需要两个低秩矩阵就能高效微调大模型；掌握矩阵低秩分解的数学直觉和 LoRA 前向/反向传播公式；了解 QLoRA/DoRA 改进；能判断何时用 LoRA",
+      "notification_status": "prepared_for_openclaw_route",
+      "notification_prepared_at": "2026-06-07T08:36:00+08:00"
+    },
+    {
+      "id": "TECH-20260607-02",
+      "date": "2026-06-07",
+      "slot": "technical_explainer",
+      "title": "RoPE 旋转位置编码完全解析：从绝对位置到相对位置编码的数学之美",
+      "category": [
+        "AI",
+        "LLM"
+      ],
+      "tags": [
+        "RoPE",
+        "Position Encoding",
+        "Transformer",
+        "YaRN",
+        "Length Extrapolation"
+      ],
+      "type": "技术点讲解",
+      "reason": "RoPE 是 Llama/Mistral/Qwen/DeepSeek/Gemma 的通用位置编码方案，数学优美，与外推和长上下文直接相关",
+      "source_plan": [
+        "RoPE 原论文 (Su et al., arXiv:2104.09864)",
+        "YaRN 论文 (Peng et al., arXiv:2309.00071)",
+        "ALiBi 论文",
+        "HuggingFace LlamaRotaryEmbedding 源码"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "technical_level": "算法推导",
+      "reader_takeaway": "掌握 RoPE 复指数旋转公式、频率分层的物理含义、相对位置性质的数学证明、YaRN 长度外推原理",
+      "notification_status": "prepared_for_openclaw_route",
+      "notification_prepared_at": "2026-06-07T08:36:00+08:00"
+    },
+    {
+      "id": "TECH-20260607-03",
+      "date": "2026-06-07",
+      "slot": "technical_explainer",
+      "title": "Flow Matching 生成模型原理：从概率流 ODE 到现代文生图/视频的统一生成框架",
+      "category": [
+        "AI",
+        "Multimodal"
+      ],
+      "tags": [
+        "Flow Matching",
+        "Diffusion",
+        "Rectified Flow",
+        "Generative Models",
+        "DiT"
+      ],
+      "type": "技术点讲解",
+      "reason": "Flow Matching 正在取代 DDPM 成为生成模型主流训练范式（SD3/Flux/Sora 均基于此），中文系统讲解稀缺，填补博客多模态生成技术线空白",
+      "source_plan": [
+        "Flow Matching 原论文 (Lipman et al., ICLR 2023)",
+        "Rectified Flow 论文 (Liu et al., ICLR 2023)",
+        "Stochastic Interpolants 论文",
+        "SD3 技术报告",
+        "Flux 技术报告",
+        "Diffusers Flow Matching 源码"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "technical_level": "算法推导",
+      "reader_takeaway": "理解 Flow Matching 作为扩散模型泛化框架的数学动机；掌握从概率路径到向量场再到 ODE 采样的完整推导；理解 Conditional Flow Matching 和 Rectified Flow 的核心思想",
+      "notification_status": "prepared_for_openclaw_route",
+      "notification_prepared_at": "2026-06-07T08:36:00+08:00"
+    },
+    {
+      "id": "TOPIC-20260611-01",
+      "date": "2026-06-11",
+      "slot": "daily_main",
+      "title": "Diffusion LLM 架构解析：当文本生成告别自回归解码",
+      "category": [
+        "AI",
+        "LLM"
+      ],
+      "tags": [
+        "Diffusion",
+        "LLM",
+        "Text Generation",
+        "Architecture",
+        "Inference"
+      ],
+      "type": "深度文章",
+      "reason": "NVIDIA 6/10发布DiffusionGemma，扩散文本模型是LLM架构重要创新；周四架构解析主题；可系统对比自回归vs扩散生成",
+      "source_plan": [
+        "NVIDIA DiffusionGemma blog",
+        "DiffusionGemma 技术报告",
+        "LLaDA 论文",
+        "MDLM 论文",
+        "dLLM 相关研究"
+      ],
+      "status": "published",
+      "confirmed": true,
+      "confirmed_at": "2026-06-12T08:22:39+08:00",
+      "published": true,
+      "published_at": "2026-06-12T08:28:13.676610",
+      "article_path": "source/_posts/2026-06-11-diffusion-llm-architecture.md"
+    },
+    {
+      "id": "TOPIC-20260611-02",
+      "date": "2026-06-11",
+      "slot": "daily_main",
+      "title": "AI Agent 失控的架构根源：从沙箱隔离、权限边界到生产级护栏的设计模式",
+      "category": [
+        "AI",
+        "Agent"
+      ],
+      "tags": [
+        "Agent",
+        "Security",
+        "Safety",
+        "Sandbox",
+        "Guardrails"
+      ],
+      "type": "深度文章",
+      "reason": "LWN AI agent runs amok登上HN首页(478pts)；Anthropic Fable安全护栏争议同时发酵",
+      "source_plan": [
+        "LWN原文",
+        "Anthropic safety research",
+        "OpenAI agent safety practices",
+        "E2B/Firecracker/gVisor"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null
+    },
+    {
+      "id": "TOPIC-20260611-03",
+      "date": "2026-06-11",
+      "slot": "daily_main",
+      "title": "AI Factory 的电力调度架构：GPU 集群为什么需要储能系统与能源控制面",
+      "category": [
+        "AI",
+        "AI Infra"
+      ],
+      "tags": [
+        "AI Factory",
+        "GPU",
+        "Energy",
+        "Infrastructure",
+        "Sustainability"
+      ],
+      "type": "深度文章",
+      "reason": "NVIDIA 6/10发布BESS设计博客，电力正成为GPU集群新约束面",
+      "source_plan": [
+        "NVIDIA BESS blog",
+        "AI Factory 参考架构",
+        "数据中心PUE文献"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null
+    },
+    {
+      "id": "TECH-20260611-01",
+      "date": "2026-06-11",
+      "slot": "technical_explainer",
+      "title": "扩散语言模型的数学原理：从连续扩散到离散文本生成的完整推导",
+      "category": [
+        "AI",
+        "LLM"
+      ],
+      "tags": [
+        "Diffusion",
+        "Language Model",
+        "Discrete Diffusion",
+        "Masked Diffusion",
+        "LLaDA"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "算法推导",
+      "reader_takeaway": "理解扩散模型从连续到离散空间的数学迁移；掌握吸收态扩散的核心公式与采样策略；理解CMLM的损失函数和去噪过程；能对比自回归与扩散生成的概率分解差异",
+      "reason": "扩散文本模型是LLM架构最具颠覆性的方向，中文系统性讲解稀缺；与主选题形成双篇组合",
+      "source_plan": [
+        "DiffusionGemma 技术报告",
+        "MDLM 论文",
+        "LLaDA 论文",
+        "DDPM 论文",
+        "D3PM 论文"
+      ],
+      "status": "published",
+      "confirmed": true,
+      "confirmed_at": "2026-06-12T08:22:39+08:00",
+      "published": true,
+      "published_at": "2026-06-12T08:28:13.676610",
+      "article_path": "source/_posts/2026-06-11-diffusion-lm-math.md"
+    },
+    {
+      "id": "TECH-20260611-02",
+      "date": "2026-06-11",
+      "slot": "technical_explainer",
+      "title": "Constitutional AI 训练机制深度拆解：从监督微调到 AI 反馈强化学习的完整推导",
+      "category": [
+        "AI",
+        "强化学习"
+      ],
+      "tags": [
+        "Constitutional AI",
+        "RLHF",
+        "RLAIF",
+        "Alignment",
+        "Anthropic"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "算法推导",
+      "reader_takeaway": "理解CAI两阶段训练的完整流程和数学形式；掌握宪法在生成对比数据中的角色；理解RLAIF与RLHF的核心差异及trade-off；能分析宪法设计如何影响模型行为边界",
+      "reason": "CAI是Anthropic对齐方法论核心，本周Fable/Mythos安全护栏争议的技术基础；中文系统讲解稀缺",
+      "source_plan": [
+        "CAI原论文 (Bai et al. 2022)",
+        "HH-RLHF论文",
+        "Anthropic后续CAI研究",
+        "TRL/OpenRLHF框架"
+      ],
+      "status": "published",
+      "confirmed": true,
+      "confirmed_at": "2026-06-12T08:22:39+08:00",
+      "published": true,
+      "published_at": "2026-06-12T08:28:13.676610",
+      "article_path": "source/_posts/2026-06-11-constitutional-ai.md"
+    },
+    {
+      "id": "TECH-20260611-03",
+      "date": "2026-06-11",
+      "slot": "technical_explainer",
+      "title": "混合精度训练中的数值稳定性：从 FP32 到 FP4 的量化误差传播与补偿策略",
+      "category": [
+        "AI",
+        "AI Infra"
+      ],
+      "tags": [
+        "Mixed Precision",
+        "FP4",
+        "NVFP4",
+        "Training",
+        "Numerical Stability",
+        "Blackwell"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "工程优化",
+      "reader_takeaway": "理解浮点格式的数值表示差异和动态范围；掌握混合精度训练中精度分配策略；理解loss scaling的原理和自动loss scaling算法；了解NVFP4格式设计和Blackwell训练实践",
+      "reason": "训练精度正从BF16→FP8→FP4快速演进，NVIDIA 6/8发布NVFP4博客；与KV Cache量化形成完整低精度全景",
+      "source_plan": [
+        "Mixed Precision Training (Micikevicius 2018)",
+        "NVIDIA FP8白皮书",
+        "NVIDIA NVFP4 blog",
+        "Transformer Engine 文档",
+        "PyTorch AMP"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null
     }
   ]
 }

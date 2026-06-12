@@ -1,7 +1,70 @@
 {
   "version": 1,
-  "updated_at": "2026-06-06T04:16:22.730Z",
+  "updated_at": "2026-06-12T08:28:13.676610",
   "items": [
+    {
+      "title": "Constitutional AI 训练机制深度拆解：从监督微调到 AI 反馈强化学习的完整推导",
+      "date": "2026-06-11",
+      "path": "source/_posts/2026-06-11-constitutional-ai.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/11/2026-06-11-constitutional-ai/",
+      "categories": [
+        "TECH",
+        "AI",
+        "强化学习"
+      ],
+      "tags": [
+        "Constitutional AI",
+        "RLHF",
+        "RLAIF",
+        "Alignment",
+        "Anthropic"
+      ],
+      "description": "从RLHF的人工标注瓶颈出发，深度拆解Constitutional AI两阶段训练机制的完整流程、数学形式和工程实践，理解宪法如何重塑模型对齐。",
+      "topic_id": "TECH-20260611-02",
+      "series": null
+    },
+    {
+      "title": "扩散语言模型的数学原理：从连续扩散到离散文本生成的完整推导",
+      "date": "2026-06-11",
+      "path": "source/_posts/2026-06-11-diffusion-lm-math.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/11/2026-06-11-diffusion-lm-math/",
+      "categories": [
+        "TECH",
+        "AI",
+        "LLM"
+      ],
+      "tags": [
+        "Diffusion",
+        "Language Model",
+        "Discrete Diffusion",
+        "Masked Diffusion",
+        "LLaDA"
+      ],
+      "description": "从DDPM连续扩散出发，完整推导离散扩散语言模型的数学原理：吸收态扩散、CMLM损失函数、采样策略，以及与自回归生成的概率分解对比。",
+      "topic_id": "TECH-20260611-01",
+      "series": null
+    },
+    {
+      "title": "Diffusion LLM 架构解析：当文本生成告别自回归解码",
+      "date": "2026-06-11",
+      "path": "source/_posts/2026-06-11-diffusion-llm-architecture.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/11/2026-06-11-diffusion-llm-architecture/",
+      "categories": [
+        "Topic",
+        "AI",
+        "LLM"
+      ],
+      "tags": [
+        "Diffusion",
+        "LLM",
+        "Text Generation",
+        "Architecture",
+        "Inference"
+      ],
+      "description": "NVIDIA DiffusionGemma 发布标志着扩散文本模型进入工程化阶段。本文从自回归瓶颈出发，系统对比扩散生成与自回归解码的架构差异、关键模型和产业影响。",
+      "topic_id": "TOPIC-20260611-01",
+      "series": null
+    },
     {
       "title": "【ML 2026 Spring 第3讲】深入模型内部架构：如何加快模型推理速度",
       "date": "2026-06-05",

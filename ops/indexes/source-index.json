@@ -1,7 +1,295 @@
 {
   "version": 1,
-  "updated_at": "2026-06-06T04:16:22.731Z",
+  "updated_at": "2026-06-12T08:28:36.762777",
   "sources": [
+    {
+      "topic_id": "TECH-20260611-02",
+      "label": "Anthropic, \"hh-rlhf\", Hugging Face Datasets, 2022",
+      "url": "https://huggingface.co/datasets/Anthropic/hh-rlhf",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TECH-20260611-02"
+    },
+    {
+      "topic_id": "TECH-20260611-02",
+      "label": "Wei et al., \"Chain-of-Thought Prompting Elicits Reasoning in Large Language Models\", NeurIPS, 2022",
+      "url": "https://arxiv.org/abs/2201.11903",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TECH-20260611-02"
+    },
+    {
+      "topic_id": "TECH-20260611-02",
+      "label": "Perez et al., \"Red Teaming Language Models with Language Models\", arXiv, 2022",
+      "url": "https://arxiv.org/abs/2202.03286",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TECH-20260611-02"
+    },
+    {
+      "topic_id": "TECH-20260611-02",
+      "label": "OpenRLHF Team, \"OpenRLHF: An Easy-to-use, Scalable and High-performance RLHF Framework\", GitHub, 2023",
+      "url": "https://github.com/OpenRLHF/OpenRLHF",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TECH-20260611-02"
+    },
+    {
+      "topic_id": "TECH-20260611-02",
+      "label": "von Werra et al., \"TRL: Transformer Reinforcement Learning\", GitHub, 2020",
+      "url": "https://github.com/huggingface/trl",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TECH-20260611-02"
+    },
+    {
+      "topic_id": "TECH-20260611-02",
+      "label": "Anthropic, \"ConstitutionalHarmlessnessPaper\", GitHub, 2022",
+      "url": "https://github.com/anthropics/ConstitutionalHarmlessnessPaper",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TECH-20260611-02"
+    },
+    {
+      "topic_id": "TECH-20260611-02",
+      "label": "Anthropic, \"Teaching Claude Why\", Anthropic Research Blog, 2026",
+      "url": "https://www.anthropic.com/research/teaching-claude-why",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TECH-20260611-02"
+    },
+    {
+      "topic_id": "TECH-20260611-02",
+      "label": "Anthropic, \"Updated Claude Constitution\", Anthropic, 2026",
+      "url": "https://www.anthropic.com/claudes-constitution",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TECH-20260611-02"
+    },
+    {
+      "topic_id": "TECH-20260611-02",
+      "label": "Anthropic, \"Claude's Constitution\", Anthropic Blog, 2023",
+      "url": "https://www.anthropic.com/news/claudes-constitution",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TECH-20260611-02"
+    },
+    {
+      "topic_id": "TECH-20260611-02",
+      "label": "Lambert et al., \"Illustrating Reinforcement Learning from Human Feedback (RLHF)\", Hugging Face Blog, 2022",
+      "url": "https://huggingface.co/blog/rlhf",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TECH-20260611-02"
+    },
+    {
+      "topic_id": "TECH-20260611-02",
+      "label": "Christiano et al., \"Deep Reinforcement Learning from Human Preferences\", NeurIPS, 2017",
+      "url": "https://arxiv.org/abs/1706.03741",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TECH-20260611-02"
+    },
+    {
+      "topic_id": "TECH-20260611-02",
+      "label": "Bai et al., \"Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback\", arXiv, 2022",
+      "url": "https://arxiv.org/abs/2204.05862",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TECH-20260611-02"
+    },
+    {
+      "topic_id": "TECH-20260611-02",
+      "label": "Bai et al., \"Constitutional AI: Harmlessness from AI Feedback\", arXiv, 2022",
+      "url": "https://arxiv.org/abs/2212.08073",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TECH-20260611-02"
+    },
+    {
+      "topic_id": "TECH-20260611-01",
+      "label": "ML-GSAI/LLaDA-demo, GitHub",
+      "url": "https://github.com/ML-GSAI/LLaDA-demo",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TECH-20260611-01"
+    },
+    {
+      "topic_id": "TECH-20260611-01",
+      "label": "kuleshov-group/mdlm, GitHub",
+      "url": "https://github.com/kuleshov-group/mdlm",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TECH-20260611-01"
+    },
+    {
+      "topic_id": "TECH-20260611-01",
+      "label": "Vaswani, Shazeer, Parmar, et al., \"Attention Is All You Need\", NeurIPS 2017",
+      "url": "https://arxiv.org/abs/1706.03762",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TECH-20260611-01"
+    },
+    {
+      "topic_id": "TECH-20260611-01",
+      "label": "Berglund, Tong, Kaufmann, et al., \"The Reversal Curse: LLMs trained on 'A is B' fail to learn 'B is A'\", arXiv 2023",
+      "url": "https://arxiv.org/abs/2309.12288",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TECH-20260611-01"
+    },
+    {
+      "topic_id": "TECH-20260611-01",
+      "label": "Han, Kumar, and Tsvetkov, \"SSD-LM: Semi-autoregressive Simplex-based Diffusion Language Model for Text Generation and Modular Control\", ACL 2023",
+      "url": "https://arxiv.org/abs/2210.17432",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TECH-20260611-01"
+    },
+    {
+      "topic_id": "TECH-20260611-01",
+      "label": "Lou, Meng, and Ermon, \"Discrete Diffusion Modeling by Estimating the Ratios of the Data Distribution\", ICML 2024",
+      "url": "https://arxiv.org/abs/2310.16834",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TECH-20260611-01"
+    },
+    {
+      "topic_id": "TECH-20260611-01",
+      "label": "Nie, Zhu, You, Zhang, Ou, Hu, Zhou, Lin, Wen, Li, \"Large Language Diffusion Models\", arXiv 2025",
+      "url": "https://arxiv.org/abs/2502.09992",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TECH-20260611-01"
+    },
+    {
+      "topic_id": "TECH-20260611-01",
+      "label": "Sahoo, Arriola, Schiff, Gokaslan, Marroquin, Chiu, Rush, and Kuleshov, \"Simple and Effective Masked Diffusion Language Models\", NeurIPS 2024",
+      "url": "https://arxiv.org/abs/2406.07524",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TECH-20260611-01"
+    },
+    {
+      "topic_id": "TECH-20260611-01",
+      "label": "Hoogeboom, Nielsen, Jaini, Forré, and Welling, \"Argmax Flows and Multinomial Diffusion: Learning Categorical Distributions\", NeurIPS 2021",
+      "url": "https://arxiv.org/abs/2102.05379",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TECH-20260611-01"
+    },
+    {
+      "topic_id": "TECH-20260611-01",
+      "label": "Austin, Johnson, Ho, Tarlow, and van den Berg, \"Structured Denoising Diffusion Models in Discrete State-Spaces\", NeurIPS 2021",
+      "url": "https://arxiv.org/abs/2107.03006",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TECH-20260611-01"
+    },
+    {
+      "topic_id": "TECH-20260611-01",
+      "label": "Ho, Jain, and Abbeel, \"Denoising Diffusion Probabilistic Models\", NeurIPS 2020",
+      "url": "https://arxiv.org/abs/2006.11239",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TECH-20260611-01"
+    },
+    {
+      "topic_id": "TOPIC-20260611-01",
+      "label": "Jiacheng Ye et al., \"dLLM: A Unified Framework for Diffusion Language Models\", arXiv:2602.22661, 2026",
+      "url": "https://arxiv.org/abs/2602.22661",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TOPIC-20260611-01"
+    },
+    {
+      "topic_id": "TOPIC-20260611-01",
+      "label": "Michael Fukuyama, \"NVIDIA Accelerates Google DeepMind's DiffusionGemma for Local AI\", NVIDIA Blog, 2026",
+      "url": "https://blogs.nvidia.com/blog/rtx-ai-garage-local-gemma-diffusion/",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TOPIC-20260611-01"
+    },
+    {
+      "topic_id": "TOPIC-20260611-01",
+      "label": "Zichen Wang et al., \"Diffusion LLMs Can Do Faster-Than-AR Inference via Discrete Diffusion Forcing\", arXiv:2508.09192, 2025",
+      "url": "https://arxiv.org/abs/2508.09192",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TOPIC-20260611-01"
+    },
+    {
+      "topic_id": "TOPIC-20260611-01",
+      "label": "Zhendong Wu et al., \"Fast-dLLM v2: Efficient Block-Diffusion LLM\", arXiv:2509.26328, 2025",
+      "url": "https://arxiv.org/abs/2509.26328",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TOPIC-20260611-01"
+    },
+    {
+      "topic_id": "TOPIC-20260611-01",
+      "label": "Marianne Arriola et al., \"Block Diffusion: Interpolating Between Autoregressive and Diffusion Language Models\", arXiv:2503.09573, ICLR 2025",
+      "url": "https://arxiv.org/abs/2503.09573",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TOPIC-20260611-01"
+    },
+    {
+      "topic_id": "TOPIC-20260611-01",
+      "label": "Google DeepMind, \"DiffusionGemma model card\", Google AI for Developers, 2026",
+      "url": "https://ai.google.dev/gemma/docs/diffusiongemma/model_card",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TOPIC-20260611-01"
+    },
+    {
+      "topic_id": "TOPIC-20260611-01",
+      "label": "Google DeepMind, \"DiffusionGemma model overview\", Google AI for Developers, 2026",
+      "url": "https://ai.google.dev/gemma/docs/diffusiongemma",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TOPIC-20260611-01"
+    },
+    {
+      "topic_id": "TOPIC-20260611-01",
+      "label": "Jiacheng Ye et al., \"Dream 7B: Diffusion Large Language Models\", arXiv:2508.15487, 2025",
+      "url": "https://arxiv.org/abs/2508.15487",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TOPIC-20260611-01"
+    },
+    {
+      "topic_id": "TOPIC-20260611-01",
+      "label": "Subham Sahoo et al., \"Simple and Effective Masked Diffusion Language Models\", NeurIPS 2024",
+      "url": "https://openreview.net/pdf?id=L4uaAR4ArM",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TOPIC-20260611-01"
+    },
+    {
+      "topic_id": "TOPIC-20260611-01",
+      "label": "Jacob Austin et al., \"Structured Denoising Diffusion Models in Discrete State-Spaces\", NeurIPS 2021",
+      "url": "https://arxiv.org/abs/2107.03006",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TOPIC-20260611-01"
+    },
+    {
+      "topic_id": "TOPIC-20260611-01",
+      "label": "Shen Nie et al., \"Large Language Diffusion Models\", arXiv:2502.09992, NeurIPS 2025",
+      "url": "https://arxiv.org/abs/2502.09992",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TOPIC-20260611-01"
+    },
+    {
+      "topic_id": "TOPIC-20260611-01",
+      "label": "Anu Srivastava, \"Run DiffusionGemma on NVIDIA for Developer-Ready, High-Throughput Text Generation\", NVIDIA Technical Blog, 2026",
+      "url": "https://developer.nvidia.com/blog/run-diffusiongemma-on-nvidia-for-developer-ready-high-throughput-text-generation/",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TOPIC-20260611-01"
+    },
     {
       "title": "Agentic AI in Industry: Adoption Level and Deployment Barriers",
       "url": "https://arxiv.org/abs/2605.14675",

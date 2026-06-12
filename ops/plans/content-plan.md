@@ -28,3 +28,26 @@
 - 2026-06-05：Headroom 实战：LLM 上下文压缩工具如何给 Agent 省 token。
 - 2026-06-05：AI 辅助代码安全工具链：Anthropic Defending Code Reference Harness 解析。
 - 2026-06-05：Q、K、V 投影共享：Transformer 注意力机制真的需要三个投影矩阵吗？
+
+
+## 2026-06-11 发布（三篇批量）
+
+### TOPIC-20260611-01: Diffusion LLM 架构解析
+- 类型: 深度文章（前沿调研/架构分析）
+- 分类: Topic / AI / LLM
+- 来源: 12
+- 状态: 已发布
+
+### TECH-20260611-01: 扩散语言模型的数学原理
+- 类型: 研究级技术点讲解（算法推导）
+- 分类: TECH / AI / LLM
+- 来源: 11
+- 公式: 28 KaTeX display blocks
+- 状态: 已发布
+
+### TECH-20260611-02: Constitutional AI 训练机制深度拆解
+- 类型: 研究级技术点讲解（算法推导）
+- 分类: TECH / AI / 强化学习
+- 来源: 13
+- 公式: 12 KaTeX display blocks
+- 状态: 已发布
