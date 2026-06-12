@@ -3,7 +3,6 @@ title: "扩散语言模型的数学原理：从连续扩散到离散文本生成
 date: 2026-06-11 08:00:00
 mathjax: true
 categories:
- - TECH
  - AI
  - LLM
 tags:
@@ -528,4 +527,3 @@ for step in range(1000):
 
 > 注：DiffusionGemma 技术报告在本文写作时（2026年6月）尚未在 arXiv 或 Google AI Blog 找到公开版本。本文的扩散语言模型核心推导基于 D3PM、MDLM 和 LLaDA 的一手论文。
 
-> 下一篇预告：TOPIC-20260611-01 将从架构级视角解读扩散语言模型的产业格局与模型谱系，与本文形成互补阅读。

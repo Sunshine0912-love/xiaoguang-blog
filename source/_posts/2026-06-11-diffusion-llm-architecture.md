@@ -2,7 +2,6 @@
 title: "Diffusion LLM 架构解析：当文本生成告别自回归解码"
 date: 2026-06-11 08:00:00
 categories:
-  - Topic
   - AI
   - LLM
 tags:

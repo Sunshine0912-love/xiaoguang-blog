@@ -195,7 +195,3 @@ OpenAI 的方向是对的，但这只是漫长道路的第一步。
 [4] [Lilian Weng, "LLM Powered Autonomous Agents", Lilian Weng's Blog, 2023-06-23](https://lilianweng.github.io/posts/2023-06-23-agent/)
 
 [5] [OpenAI, "ChatGPT Memory Improvements", OpenAI Blog, 2026-06-04](https://openai.com/index/)
-
-## 后续预告
-
-下一篇（TECH-20260606-01）将深入 Encoder-free 多模态 Transformer 的技术原理——图像、音频、文本如何在一个不含独立编码器的模型里统一建模，适合想从架构层面理解多模态 AI 的读者。
