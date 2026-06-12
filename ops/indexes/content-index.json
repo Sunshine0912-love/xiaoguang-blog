@@ -1,7 +1,136 @@
 {
   "version": 1,
-  "updated_at": "2026-06-12T08:28:13.676610",
+  "updated_at": "2026-06-12T08:59:39.670552",
   "items": [
+    {
+      "title": "连续批处理(Continuous Batching)机制详解：从静态 Padding 到 Iteration-Level 调度的 GPU 利用率优化",
+      "date": "2026-06-12",
+      "path": "source/_posts/2026-06-12-continuous-batching.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/12/2026-06-12-continuous-batching/",
+      "categories": [
+        "TECH",
+        "AI",
+        "AI Infra"
+      ],
+      "tags": [
+        "Continuous Batching",
+        "vLLM",
+        "LLM Inference",
+        "Scheduling",
+        "Throughput",
+        "GPU Utilization"
+      ],
+      "description": "从静态batching的padding浪费出发，系统拆解Continuous Batching的iteration-level调度机制、vLLM请求状态机。",
+      "topic_id": "TECH-20260612-03",
+      "series": null
+    },
+    {
+      "title": "ZeRO 优化器状态分片完全推导：从数据并行的显存瓶颈到三阶段分片的通信-显存权衡",
+      "date": "2026-06-12",
+      "path": "source/_posts/2026-06-12-zero-optimizer-sharding.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/12/2026-06-12-zero-optimizer-sharding/",
+      "categories": [
+        "TECH",
+        "AI",
+        "AI Infra"
+      ],
+      "tags": [
+        "ZeRO",
+        "DeepSpeed",
+        "FSDP",
+        "Distributed Training",
+        "Memory Optimization",
+        "Data Parallelism"
+      ],
+      "description": "从Ψ=20 bytes/param的显存冗余出发，完整推导ZeRO Stage 1/2/3的分片粒度、通信量公式和与FSDP的对比。",
+      "topic_id": "TECH-20260612-02",
+      "series": null
+    },
+    {
+      "title": "Natural Language Autoencoders (NLA) 机制拆解：如何通过逆向重建训练模型解释自身内部激活",
+      "date": "2026-06-12",
+      "path": "source/_posts/2026-06-12-nla-autoencoders.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/12/2026-06-12-nla-autoencoders/",
+      "categories": [
+        "TECH",
+        "AI",
+        "LLM"
+      ],
+      "tags": [
+        "Interpretability",
+        "Autoencoder",
+        "Activation",
+        "Mechanistic Interpretability",
+        "Anthropic"
+      ],
+      "description": "Anthropic 2026年最重要的可解释性研究：NLA通过三模型架构让模型用自然语言解释自己的内部激活。",
+      "topic_id": "TECH-20260612-01",
+      "series": null
+    },
+    {
+      "title": "NVIDIA TensorRT 模型量化工具链实战：从 FP8 Checkpoint 到生产级推理引擎的工程实践",
+      "date": "2026-06-12",
+      "path": "source/_posts/2026-06-12-tensorrt-quantization-toolchain.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/12/2026-06-12-tensorrt-quantization-toolchain/",
+      "categories": [
+        "Topic",
+        "AI",
+        "AI Infra"
+      ],
+      "tags": [
+        "TensorRT",
+        "Quantization",
+        "FP8",
+        "Inference",
+        "Deployment",
+        "Model Optimizer"
+      ],
+      "description": "NVIDIA 6月9日发布TensorRT模型量化工具链技术博客。本文从FP8 checkpoint出发，完整走通校准→引擎构建→性能调优的生产级推理部署全流程。",
+      "topic_id": "TOPIC-20260612-03",
+      "series": null
+    },
+    {
+      "title": "Hermes-Agent 19 万星现象：开源 AI Agent 框架的规模化竞赛与架构范式",
+      "date": "2026-06-12",
+      "path": "source/_posts/2026-06-12-hermes-agent-framework.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/12/2026-06-12-hermes-agent-framework/",
+      "categories": [
+        "Topic",
+        "AI",
+        "Agent"
+      ],
+      "tags": [
+        "Agent",
+        "Open Source",
+        "Hermes-Agent",
+        "Framework",
+        "NousResearch"
+      ],
+      "description": "NousResearch Hermes-Agent 以190K星成为GitHub增长最快的AI Agent项目。本文分析其架构设计和开源Agent框架的规模化竞争。",
+      "topic_id": "TOPIC-20260612-02",
+      "series": null
+    },
+    {
+      "title": "MiMo Code 开源：小米 AI 编程工具的技术架构与差异化定位",
+      "date": "2026-06-12",
+      "path": "source/_posts/2026-06-12-mimo-code-opensource.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/12/2026-06-12-mimo-code-opensource/",
+      "categories": [
+        "Topic",
+        "AI",
+        "Tools"
+      ],
+      "tags": [
+        "MiMo",
+        "Coding Agent",
+        "Open Source",
+        "CLI",
+        "Developer Tools"
+      ],
+      "description": "小米 MiMo Code 6月11日开源发布，HN 410 points。本文拆解其技术架构，对比 Claude Code/Goose/Copilot，分析中国厂商在 AI 编程工具赛道的差异化定位。",
+      "topic_id": "TOPIC-20260612-01",
+      "series": null
+    },
     {
       "title": "Constitutional AI 训练机制深度拆解：从监督微调到 AI 反馈强化学习的完整推导",
       "date": "2026-06-11",

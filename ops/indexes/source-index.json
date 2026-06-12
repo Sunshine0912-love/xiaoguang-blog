@@ -1,7 +1,511 @@
 {
   "version": 1,
-  "updated_at": "2026-06-12T08:28:36.762777",
+  "updated_at": "2026-06-12T08:59:39.670552",
   "sources": [
+    {
+      "topic_id": "TECH-20260612-03",
+      "label": "NVIDIA, \"FasterTransformer\", GitHub",
+      "url": "https://github.com/NVIDIA/FasterTransformer",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TECH-20260612-03"
+    },
+    {
+      "topic_id": "TECH-20260612-03",
+      "label": "vLLM v1/sched/scheduler.py",
+      "url": "https://github.com/vllm-project/vllm/blob/main/vllm/v1/core/sched/scheduler.py",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TECH-20260612-03"
+    },
+    {
+      "topic_id": "TECH-20260612-03",
+      "label": "NVIDIA, \"TensorRT-LLM In-flight Batching\", NVIDIA Docs",
+      "url": "https://nvidia.github.io/TensorRT-LLM/advanced/in-flight-batching.html",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TECH-20260612-03"
+    },
+    {
+      "topic_id": "TECH-20260612-03",
+      "label": "Woosuk Kwon et al., \"vLLM: Easy, Fast, and Cheap LLM Serving with PagedAttention\", vLLM Blog, 2023",
+      "url": "https://blog.vllm.ai/2023/06/20/vllm.html",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TECH-20260612-03"
+    },
+    {
+      "topic_id": "TECH-20260612-03",
+      "label": "vLLM Paged Attention 设计文档",
+      "url": "https://docs.vllm.ai/en/stable/design/paged_attention/",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TECH-20260612-03"
+    },
+    {
+      "topic_id": "TECH-20260612-03",
+      "label": "vLLM 官方架构文档",
+      "url": "https://docs.vllm.ai/en/stable/design/arch_overview/",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TECH-20260612-03"
+    },
+    {
+      "topic_id": "TECH-20260612-03",
+      "label": "Kwon et al., \"Efficient Memory Management for Large Language Model Serving with PagedAttention\", SOSP 2023",
+      "url": "https://arxiv.org/abs/2309.06180",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TECH-20260612-03"
+    },
+    {
+      "topic_id": "TECH-20260612-03",
+      "label": "Yu et al., \"Orca: A Distributed Serving System for Transformer-Based Generative Models\", OSDI 2022",
+      "url": "https://www.usenix.org/conference/osdi22/presentation/yu",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TECH-20260612-03"
+    },
+    {
+      "topic_id": "TECH-20260612-02",
+      "label": "DeepSpeed Team, \"ZeRO Tutorial\", DeepSpeed Documentation",
+      "url": "https://www.deepspeed.ai/tutorials/zero/",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TECH-20260612-02"
+    },
+    {
+      "topic_id": "TECH-20260612-02",
+      "label": "Rajbhandari et al., \"ZeRO-Infinity: Breaking the GPU Memory Wall for Extreme Scale Deep Learning\", SC'21",
+      "url": "https://arxiv.org/abs/2104.07857",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TECH-20260612-02"
+    },
+    {
+      "topic_id": "TECH-20260612-02",
+      "label": "DeepSpeed Team, \"ZeRO-Offload Tutorial\", DeepSpeed Documentation",
+      "url": "https://www.deepspeed.ai/tutorials/zero-offload/",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TECH-20260612-02"
+    },
+    {
+      "topic_id": "TECH-20260612-02",
+      "label": "Lim et al., \"From DeepSpeed to FSDP and Back Again with Hugging Face Accelerate\", 2024",
+      "url": "https://huggingface.co/blog/deepspeed-to-fsdp-and-back",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TECH-20260612-02"
+    },
+    {
+      "topic_id": "TECH-20260612-02",
+      "label": "PyTorch Team, \"Introducing PyTorch Fully Sharded Data Parallel (FSDP) API\", PyTorch Blog, 2022",
+      "url": "https://pytorch.org/blog/introducing-pytorch-fully-sharded-data-parallel-api/",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TECH-20260612-02"
+    },
+    {
+      "topic_id": "TECH-20260612-02",
+      "label": "DeepSpeed Team, \"ZeRO-3 Init and GatheredParameters\", DeepSpeed Documentation",
+      "url": "https://deepspeed.readthedocs.io/en/latest/zero3.html",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TECH-20260612-02"
+    },
+    {
+      "topic_id": "TECH-20260612-02",
+      "label": "Microsoft, DeepSpeed stage_1_and_2.py",
+      "url": "https://github.com/deepspeedai/DeepSpeed/blob/master/deepspeed/runtime/zero/stage_1_and_2.py",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TECH-20260612-02"
+    },
+    {
+      "topic_id": "TECH-20260612-02",
+      "label": "DeepSpeed Team, \"ZeRO & DeepSpeed: New system optimizations enable training models with over 100 billion parameters\", Microsoft Research Blog, 2020",
+      "url": "https://www.microsoft.com/en-us/research/blog/zero-deepspeed-new-system-optimizations-enable-training-models-with-over-100-billion-parameters/",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TECH-20260612-02"
+    },
+    {
+      "topic_id": "TECH-20260612-02",
+      "label": "Rajbhandari et al., \"ZeRO: Memory Optimizations Toward Training Trillion Parameter Models\", SC'20",
+      "url": "https://arxiv.org/abs/1910.02054",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TECH-20260612-02"
+    },
+    {
+      "topic_id": "TECH-20260612-01",
+      "label": "sgl-project/sglang, GitHub",
+      "url": "https://github.com/sgl-project/sglang",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TECH-20260612-01"
+    },
+    {
+      "topic_id": "TECH-20260612-01",
+      "label": "radixark/miles, GitHub",
+      "url": "https://github.com/radixark/miles",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TECH-20260612-01"
+    },
+    {
+      "topic_id": "TECH-20260612-01",
+      "label": "Anthropic Alignment, \"Automated Auditing of Language Models for Alignment\", 2025",
+      "url": "https://alignment.anthropic.com/2025/automated-auditing/",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TECH-20260612-01"
+    },
+    {
+      "topic_id": "TECH-20260612-01",
+      "label": "Marks et al., \"Attribution Graphs for Interpreting Language Model Components\", Transformer Circuits, 2025",
+      "url": "https://transformer-circuits.pub/2025/attribution-graphs/methods.html",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TECH-20260612-01"
+    },
+    {
+      "topic_id": "TECH-20260612-01",
+      "label": "Shao et al., \"DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models\", arXiv, 2024",
+      "url": "https://arxiv.org/abs/2402.03300",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TECH-20260612-01"
+    },
+    {
+      "topic_id": "TECH-20260612-01",
+      "label": "Templeton et al., \"Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet\", Transformer Circuits, 2024",
+      "url": "https://transformer-circuits.pub/2024/scaling-monosemanticity/",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TECH-20260612-01"
+    },
+    {
+      "topic_id": "TECH-20260612-01",
+      "label": "Bricken et al., \"Towards Monosemanticity: Decomposing Language Models With Dictionary Learning\", Transformer Circuits, 2023",
+      "url": "https://transformer-circuits.pub/2023/monosemantic-features",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TECH-20260612-01"
+    },
+    {
+      "topic_id": "TECH-20260612-01",
+      "label": "kitft/natural_language_autoencoders, GitHub, Apache-2.0",
+      "url": "https://github.com/kitft/natural_language_autoencoders",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TECH-20260612-01"
+    },
+    {
+      "topic_id": "TECH-20260612-01",
+      "label": "Anthropic, \"Natural Language Autoencoders\", 2026-05-07",
+      "url": "https://www.anthropic.com/research/natural-language-autoencoders",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TECH-20260612-01"
+    },
+    {
+      "topic_id": "TECH-20260612-01",
+      "label": "Fraser-Taliente, Kantamneni, Ong et al., \"Natural Language Autoencoders Produce Unsupervised Explanations of LLM Activations\", Transformer Circuits, 2026",
+      "url": "https://transformer-circuits.pub/2026/nla/index.html",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TECH-20260612-01"
+    },
+    {
+      "topic_id": "TOPIC-20260612-03",
+      "label": "NVIDIA, \"Quantization Configuration (quant_cfg)\", Model Optimizer Documentation",
+      "url": "https://nvidia.github.io/Model-Optimizer/guides/_quant_cfg.html",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-03"
+    },
+    {
+      "topic_id": "TOPIC-20260612-03",
+      "label": "NVIDIA, \"NVIDIA Model Optimizer\", GitHub",
+      "url": "https://github.com/NVIDIA/Model-Optimizer",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-03"
+    },
+    {
+      "topic_id": "TOPIC-20260612-03",
+      "label": "NVIDIA, \"Automating Inference Optimizations with NVIDIA TensorRT LLM AutoDeploy\", NVIDIA Technical Blog, 2026-02-09",
+      "url": "https://developer.nvidia.com/blog/automating-inference-optimizations-with-nvidia-tensorrt-llm-autodeploy/",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-03"
+    },
+    {
+      "topic_id": "TOPIC-20260612-03",
+      "label": "NVIDIA, \"Introducing NVFP4 for Efficient and Accurate Low-Precision Inference\", NVIDIA Technical Blog, 2025-06-24",
+      "url": "https://developer.nvidia.com/blog/introducing-nvfp4-for-efficient-and-accurate-low-precision-inference/",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-03"
+    },
+    {
+      "topic_id": "TOPIC-20260612-03",
+      "label": "NVIDIA, \"Triton Inference Server Quick Start\", Triton Documentation",
+      "url": "https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/getting_started/quickstart.html",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-03"
+    },
+    {
+      "topic_id": "TOPIC-20260612-03",
+      "label": "NVIDIA, \"How Quantization Aware Training Enables Low-Precision Accuracy Recovery\", NVIDIA Technical Blog, 2025-09-11",
+      "url": "https://developer.nvidia.com/blog/how-quantization-aware-training-enables-low-precision-accuracy-recovery/",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-03"
+    },
+    {
+      "topic_id": "TOPIC-20260612-03",
+      "label": "Xiao et al., \"SmoothQuant: Accurate and Efficient Post-Training Quantization for Large Language Models\", arXiv, 2022",
+      "url": "https://arxiv.org/abs/2211.10438",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-03"
+    },
+    {
+      "topic_id": "TOPIC-20260612-03",
+      "label": "NVIDIA, \"Optimizing LLMs for Performance and Accuracy with Post-Training Quantization\", NVIDIA Technical Blog, 2025-08-01",
+      "url": "https://developer.nvidia.com/blog/optimizing-llms-for-performance-and-accuracy-with-post-training-quantization/",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-03"
+    },
+    {
+      "topic_id": "TOPIC-20260612-03",
+      "label": "NVIDIA, \"Quantization Examples\", TensorRT-LLM GitHub",
+      "url": "https://github.com/NVIDIA/TensorRT-LLM/tree/main/examples/quantization",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-03"
+    },
+    {
+      "topic_id": "TOPIC-20260612-03",
+      "label": "NVIDIA, \"Model Quantization: Post-Training Quantization Using NVIDIA Model Optimizer\", NVIDIA Technical Blog, 2026-05-07",
+      "url": "https://developer.nvidia.com/blog/model-quantization-post-training-quantization-using-nvidia-model-optimizer/",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-03"
+    },
+    {
+      "topic_id": "TOPIC-20260612-03",
+      "label": "NVIDIA, \"Model Quantization: Turn FP8 Checkpoints into High-Performance Inference Engines with NVIDIA TensorRT\", NVIDIA Technical Blog, 2026-06-09",
+      "url": "https://developer.nvidia.com/blog/model-quantization-turn-fp8-checkpoints-into-high-performance-inference-engines-with-nvidia-tensorrt/",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-03"
+    },
+    {
+      "topic_id": "TOPIC-20260612-03",
+      "label": "NVIDIA, \"Working with Quantized Types\", TensorRT Documentation",
+      "url": "https://docs.nvidia.com/deeplearning/tensorrt/latest/inference-library/work-quantized-types.html",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-03"
+    },
+    {
+      "topic_id": "TOPIC-20260612-02",
+      "label": "NousResearch, \"Persistent Memory\", Hermes Agent Documentation, 2025-2026",
+      "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/memory",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-02"
+    },
+    {
+      "topic_id": "TOPIC-20260612-02",
+      "label": "Nous Research, \"Blog Archive\", Nous Research Blog, 2024-2026",
+      "url": "https://nousresearch.com/blog/",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-02"
+    },
+    {
+      "topic_id": "TOPIC-20260612-02",
+      "label": "Nous Research, \"Introducing Hermes 4.3: Local Intelligence Globally Trained\", Nous Research Blog, 2025-2026",
+      "url": "https://nousresearch.com/introducing-hermes-4-3/",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-02"
+    },
+    {
+      "topic_id": "TOPIC-20260612-02",
+      "label": "Significant Gravitas, \"AutoGPT: The vision of accessible AI for everyone\", GitHub, 2025-2026",
+      "url": "https://github.com/Significant-Gravitas/AutoGPT",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-02"
+    },
+    {
+      "topic_id": "TOPIC-20260612-02",
+      "label": "LangChain AI, \"Build resilient agents\", GitHub, 2025-2026",
+      "url": "https://github.com/langchain-ai/langgraph",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-02"
+    },
+    {
+      "topic_id": "TOPIC-20260612-02",
+      "label": "crewAIInc, \"Framework for orchestrating role-playing AI agents\", GitHub, 2025-2026",
+      "url": "https://github.com/crewAIInc/crewAI",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-02"
+    },
+    {
+      "topic_id": "TOPIC-20260612-02",
+      "label": "CopilotKit, \"The Frontend Stack for Agents & Generative UI\", GitHub, 2025-2026",
+      "url": "https://github.com/CopilotKit/CopilotKit",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-02"
+    },
+    {
+      "topic_id": "TOPIC-20260612-02",
+      "label": "agentskills.io, \"Agent Skills Overview\", agentskills.io, 2025-2026",
+      "url": "https://agentskills.io",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-02"
+    },
+    {
+      "topic_id": "TOPIC-20260612-02",
+      "label": "NousResearch, \"Skills System\", Hermes Agent Documentation, 2025-2026",
+      "url": "https://hermes-agent.nousresearch.com/docs/user-guide/features/skills",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-02"
+    },
+    {
+      "topic_id": "TOPIC-20260612-02",
+      "label": "NousResearch, \"Architecture\", Hermes Agent Documentation, 2025-2026",
+      "url": "https://hermes-agent.nousresearch.com/docs/developer-guide/architecture",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-02"
+    },
+    {
+      "topic_id": "TOPIC-20260612-02",
+      "label": "Aria, \"Freedom at the Frontier: Hermes 3\", Nous Research Blog, 2024",
+      "url": "https://nousresearch.com/freedom-at-the-frontier-hermes-3/",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-02"
+    },
+    {
+      "topic_id": "TOPIC-20260612-02",
+      "label": "NousResearch, \"Hermes-Agent: The agent that grows with you\", GitHub, 2025-2026",
+      "url": "https://github.com/NousResearch/Hermes-Agent",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-02"
+    },
+    {
+      "topic_id": "TOPIC-20260612-01",
+      "label": "Xiaomi MiMo V2.5 Pro: the free open-source coding model that surprised the benchmarks, NordSys, 2026-04-29",
+      "url": "https://nordsys.co.uk/ai-news/2026-04-29-xiaomi-mimo-v2-5-pro-coding-model.html",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-01"
+    },
+    {
+      "topic_id": "TOPIC-20260612-01",
+      "label": "Official Website — MiMo, 2026",
+      "url": "https://mimo.xiaomi.com",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-01"
+    },
+    {
+      "topic_id": "TOPIC-20260612-01",
+      "label": "Xiaomi announces new AI coding agent that actually remembers what it was doing, Gizmochina, 2026-06-11",
+      "url": "https://www.gizmochina.com/2026/06/11/xiaomi-mimo-code-open-source-terminal-ai-coding-agent/",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-01"
+    },
+    {
+      "topic_id": "TOPIC-20260612-01",
+      "label": "API Pricing — MiMo-V2.5 Series, 2026",
+      "url": "https://platform.xiaomimimo.com/docs/en-US/price/pay-as-you-go",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-01"
+    },
+    {
+      "topic_id": "TOPIC-20260612-01",
+      "label": "MiMo-Code GitHub Repository, MIT License, 2026",
+      "url": "https://github.com/XiaomiMiMo/MiMo-Code",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-01"
+    },
+    {
+      "topic_id": "TOPIC-20260612-01",
+      "label": "The open source coding agent, GitHub, 2026",
+      "url": "https://github.com/anomalyco/opencode",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-01"
+    },
+    {
+      "topic_id": "TOPIC-20260612-01",
+      "label": "MiMo Code is now released and open-source, HN, 2026-06-11, 364 points",
+      "url": "https://news.ycombinator.com/item?id=48490826",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-01"
+    },
+    {
+      "topic_id": "TOPIC-20260612-01",
+      "label": "Lost in the Middle: How Language Models Use Long Contexts, arXiv, 2023",
+      "url": "https://arxiv.org/abs/2307.03172",
+      "type": "primary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-01"
+    },
+    {
+      "topic_id": "TOPIC-20260612-01",
+      "label": "MiMo Code: Scaling Coding Agents to Long-Horizon Tasks, MiMo Blog, 2026",
+      "url": "https://mimo.xiaomi.com/blog/mimo-code-long-horizon",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-01"
+    },
+    {
+      "topic_id": "TOPIC-20260612-01",
+      "label": "Goose — An open source, extensible AI agent, Agentic AI Foundation / Linux Foundation, 2026",
+      "url": "https://github.com/aaif-goose/goose",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-01"
+    },
+    {
+      "topic_id": "TOPIC-20260612-01",
+      "label": "Anthropic business model discussion on MiMo Code thread, HN, 2026",
+      "url": "https://news.ycombinator.com/item?id=48490826",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-01"
+    },
+    {
+      "topic_id": "TOPIC-20260612-01",
+      "label": "Xiaomi's MiMo Code outperforms Claude Code in 200+ step tasks, CryptoBriefing, 2026",
+      "url": "https://cryptobriefing.com/xiaomi-mimo-code-outperforms-claude/",
+      "type": "secondary",
+      "grade": "A",
+      "used_in": "TOPIC-20260612-01"
+    },
     {
       "topic_id": "TECH-20260611-02",
       "label": "Anthropic, \"hh-rlhf\", Hugging Face Datasets, 2022",
