@@ -22,5 +22,7 @@
 
 <div class="sidebar-cat-tree">
   <div class="sidebar-cat-title">📂 文章分类</div>
-  {{ sidebar_cat_tree() | safe }}
+  {% if sidebar_cat_tree is defined %}
+    {{ sidebar_cat_tree() | safe }}
+  {% endif %}
 </div>

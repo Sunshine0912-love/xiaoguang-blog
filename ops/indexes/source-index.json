@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-12T08:59:39.670552",
+  "updated_at": "2026-06-26T00:59:53.712Z",
   "sources": [
     {
       "topic_id": "TECH-20260612-03",
@@ -1682,6 +1682,150 @@
       "tier": "A",
       "used_in": [
         "source/_posts/2026-06-06-moe-agentic-ai-architecture.md"
+      ]
+    },
+    {
+      "title": "Business Insider - Google loses two AI stars",
+      "url": "https://www.businessinsider.com/google-ai-talent-wars-anthropic-jumper-shazeer-karpathy-openai-2026-6",
+      "type": "media",
+      "tier": "B",
+      "used_in": [
+        "source/_posts/2026-06-25-ai-lab-talent-flow.md"
+      ]
+    },
+    {
+      "title": "Business Insider - Why is Google suddenly losing AI talent",
+      "url": "https://www.businessinsider.com/google-suddenly-losing-ai-talent-anthropic-openai-pre-ipo-equity-2026-6",
+      "type": "media",
+      "tier": "B",
+      "used_in": [
+        "source/_posts/2026-06-25-ai-lab-talent-flow.md"
+      ]
+    },
+    {
+      "title": "Axios - AI lab musical chairs hits Google the hardest",
+      "url": "https://www.axios.com/2026/06/23/ai-lab-agi-google-deepmind-departures",
+      "type": "media",
+      "tier": "B",
+      "used_in": [
+        "source/_posts/2026-06-25-ai-lab-talent-flow.md"
+      ]
+    },
+    {
+      "title": "Google Blog - Introducing computer use in Gemini 3.5 Flash",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-computer-use-gemini-3-5-flash/",
+      "type": "official_blog",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-25-gemini-flash-computer-use.md"
+      ]
+    },
+    {
+      "title": "Google DeepMind - Gemini 3.5 Flash",
+      "url": "https://deepmind.google/models/gemini/flash/",
+      "type": "official_docs",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-25-gemini-flash-computer-use.md"
+      ]
+    },
+    {
+      "title": "ReAct paper",
+      "url": "https://arxiv.org/abs/2210.03629",
+      "type": "paper",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-25-long-horizon-agent-planning.md"
+      ]
+    },
+    {
+      "title": "Tree of Thoughts paper",
+      "url": "https://arxiv.org/abs/2305.10601",
+      "type": "paper",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-25-long-horizon-agent-planning.md"
+      ]
+    },
+    {
+      "title": "Reflexion paper",
+      "url": "https://arxiv.org/abs/2303.11366",
+      "type": "paper",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-25-long-horizon-agent-planning.md"
+      ]
+    },
+    {
+      "title": "LATS paper",
+      "url": "https://arxiv.org/abs/2310.04406",
+      "type": "paper",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-25-long-horizon-agent-planning.md"
+      ]
+    },
+    {
+      "title": "Hugging Face - Shipping huggingface_hub every week with AI",
+      "url": "https://huggingface.co/blog/huggingface-hub-release-ci",
+      "type": "official_blog",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-26-huggingface-hub-release-ci.md"
+      ]
+    },
+    {
+      "title": "GitHub Docs - OpenID Connect",
+      "url": "https://docs.github.com/en/actions/concepts/security/openid-connect",
+      "type": "official_docs",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-26-huggingface-hub-release-ci.md"
+      ]
+    },
+    {
+      "title": "Hugging Face Docs - Trusted Publishers",
+      "url": "https://huggingface.co/docs/hub/en/trusted-publishers",
+      "type": "official_docs",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-26-huggingface-hub-release-ci.md"
+      ]
+    },
+    {
+      "title": "vLLM documentation",
+      "url": "https://docs.vllm.ai/",
+      "type": "official_docs",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-26-vllm-pagedattention-continuous-batching.md"
+      ]
+    },
+    {
+      "title": "PagedAttention paper",
+      "url": "https://arxiv.org/abs/2309.06180",
+      "type": "paper",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-26-vllm-pagedattention-continuous-batching.md"
+      ]
+    },
+    {
+      "title": "vLLM Paged Attention docs",
+      "url": "https://docs.vllm.ai/en/latest/design/paged_attention/",
+      "type": "official_docs",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-26-vllm-pagedattention-continuous-batching.md"
+      ]
+    },
+    {
+      "title": "Hugging Face - Run a vLLM Server on HF Jobs",
+      "url": "https://huggingface.co/blog/vllm-jobs",
+      "type": "official_blog",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-26-vllm-pagedattention-continuous-batching.md"
       ]
     }
   ]

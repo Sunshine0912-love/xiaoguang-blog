@@ -51,3 +51,37 @@
 - 来源: 13
 - 公式: 12 KaTeX display blocks
 - 状态: 已发布
+
+## 2026-06-26 发布（五篇批量）
+
+### TOPIC-20260625-02: AI 大厂人才流动
+- 类型: 产业观察
+- 分类: AI / Industry
+- 来源: 6
+- 状态: 已发布
+
+### TOPIC-20260625-03: Gemini 3.5 Flash computer use
+- 类型: 工程解读
+- 分类: AI / Agent
+- 来源: 6
+- 状态: 已发布
+
+### TECH-20260625-02: 长程 Agent 规划机制
+- 类型: 研究级技术点讲解（系统机制）
+- 分类: TECH / AI / Agent
+- 来源: 6
+- 公式: 状态空间、价值函数
+- 状态: 已发布
+
+### TOPIC-20260626-03: huggingface_hub release CI
+- 类型: 短篇技术札记 / MLOps
+- 分类: AI / MLOps
+- 来源: 6
+- 状态: 已发布
+
+### TECH-20260626-01: vLLM PagedAttention 与连续批处理
+- 类型: 研究级技术点讲解（工程优化）
+- 分类: TECH / AI / AI Infra
+- 来源: 7
+- 公式: KV cache 显存复杂度、block table
+- 状态: 已发布

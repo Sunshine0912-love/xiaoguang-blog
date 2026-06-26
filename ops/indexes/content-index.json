@@ -1,7 +1,102 @@
 {
   "version": 1,
-  "updated_at": "2026-06-12T10:29:52.077780",
+  "updated_at": "2026-06-26T00:59:53.712Z",
   "items": [
+    {
+      "title": "vLLM 连续批处理与 PagedAttention：为什么 LLM Serving 不能只看“单请求延迟”",
+      "date": "2026-06-26",
+      "path": "source/_posts/2026-06-26-vllm-pagedattention-continuous-batching.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/26/2026-06-26-vllm-pagedattention-continuous-batching/",
+      "categories": [
+        "AI",
+        "AI Infra"
+      ],
+      "tags": [
+        "vLLM",
+        "PagedAttention",
+        "Continuous Batching",
+        "KV Cache",
+        "LLM Serving"
+      ],
+      "description": "从吞吐/延迟指标、KV cache 显存复杂度、PagedAttention block table 和 vLLM 调度器出发，解释生产级 LLM Serving 为什么不是把 generate API 包一层 HTTP。",
+      "topic_id": "TECH-20260626-01"
+    },
+    {
+      "title": "用 AI 每周发布 huggingface_hub：开源项目 release 工具链的自动化样板",
+      "date": "2026-06-26",
+      "path": "source/_posts/2026-06-26-huggingface-hub-release-ci.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/26/2026-06-26-huggingface-hub-release-ci/",
+      "categories": [
+        "AI",
+        "MLOps"
+      ],
+      "tags": [
+        "Release Automation",
+        "GitHub Actions",
+        "Human-in-the-loop",
+        "OIDC",
+        "Sigstore"
+      ],
+      "description": "Hugging Face 的 huggingface_hub 周发布流程展示了一个务实范式：LLM 负责草稿和协作信息，确定性 CI 负责验证，人类保留最终发布权。",
+      "topic_id": "TOPIC-20260626-03"
+    },
+    {
+      "title": "长程 Agent 的规划机制：ReAct、Tree Search、Verifier 和 Memory 如何组合？",
+      "date": "2026-06-25",
+      "path": "source/_posts/2026-06-25-long-horizon-agent-planning.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/25/2026-06-25-long-horizon-agent-planning/",
+      "categories": [
+        "AI",
+        "Agent"
+      ],
+      "tags": [
+        "Agent Planning",
+        "ReAct",
+        "Tree Search",
+        "Verifier",
+        "Memory"
+      ],
+      "description": "从状态空间和搜索视角拆解长程 Agent：ReAct 负责边想边做，Tree Search 负责探索，Verifier 负责评估，Memory 负责复用经验。",
+      "topic_id": "TECH-20260625-02"
+    },
+    {
+      "title": "Gemini 3.5 Flash 的 computer use 与工具调用：模型会操作电脑意味着什么？",
+      "date": "2026-06-25",
+      "path": "source/_posts/2026-06-25-gemini-flash-computer-use.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/25/2026-06-25-gemini-flash-computer-use/",
+      "categories": [
+        "AI",
+        "Agent"
+      ],
+      "tags": [
+        "Gemini",
+        "Computer Use",
+        "Tool Calling",
+        "Agent Safety",
+        "Browser Automation"
+      ],
+      "description": "从 Gemini 3.5 Flash 内置 computer use 出发，分析 GUI 操作型 Agent 为什么是产品化关键一步，以及它带来的环境反馈、安全和评测问题。",
+      "topic_id": "TOPIC-20260625-03"
+    },
+    {
+      "title": "AI 大厂人才流动，为什么顶级研究员正在重新选择阵营？",
+      "date": "2026-06-25",
+      "path": "source/_posts/2026-06-25-ai-lab-talent-flow.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/25/2026-06-25-ai-lab-talent-flow/",
+      "categories": [
+        "AI",
+        "Industry"
+      ],
+      "tags": [
+        "AI Talent",
+        "AI Labs",
+        "Google DeepMind",
+        "OpenAI",
+        "Anthropic"
+      ],
+      "description": "从近期 AI 研究员流动出发，分析顶级实验室竞争力为什么不只取决于薪酬，而取决于研究方向、算力、产品闭环和组织授权。",
+      "topic_id": "TOPIC-20260625-02"
+    },
     {
       "title": "【ML 2026 Spring 第9讲】模型的自我成长（二）：从 Self-Improving 到 AI 的自主进化",
       "date": "2026-06-12",

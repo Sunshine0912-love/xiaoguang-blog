@@ -1,7 +1,1376 @@
 {
   "version": 1,
-  "updated_at": "2026-06-12T08:59:39.670552",
+  "updated_at": "2026-06-26T00:59:53.712Z",
   "topics": [
+    {
+      "id": "TECH-20260604-01",
+      "date": "2026-06-04",
+      "slot": "technical_explainer",
+      "title": "MLA 注意力机制拆解：DeepSeek 如何用低秩潜变量压缩 KV Cache",
+      "category": [
+        "AI",
+        "LLM"
+      ],
+      "tags": [
+        "MLA",
+        "Attention",
+        "KV Cache",
+        "DeepSeek",
+        "Inference Optimization"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "架构解析",
+      "reader_takeaway": "理解 MHA、MQA、GQA 到 MLA 的演进，掌握 MLA 如何通过潜变量压缩 KV Cache，以及它对解码阶段带宽、算力和硬件执行策略的影响。",
+      "reason": "MLA 是 DeepSeek 系列模型中最值得拆解的架构创新之一，既连接 Transformer 注意力基础，又直接影响推理成本和硬件友好性；近期还有硬件视角分析与 NVIDIA Megatron-Core 文档可交叉参考。",
+      "source_plan": [
+        "DeepSeek-V2 Technical Report / DeepSeek-V3 Technical Report",
+        "Hardware-Centric Analysis of DeepSeek's Multi-Head Latent Attention, arXiv:2506.02523",
+        "NVIDIA Megatron-Core Multi-Latent Attention documentation",
+        "Attention Is All You Need",
+        "Multi-Query Attention / Grouped-Query Attention 相关论文或技术资料"
+      ],
+      "status": "published",
+      "confirmed": true,
+      "confirmed_at": "2026-06-04T09:28:08+08:00",
+      "published": true,
+      "published_at": "2026-06-04T09:28:08+08:00",
+      "article_path": "source/_posts/2026-06-04-mla-attention-kv-cache.md",
+      "notification_status": "pending_wechat_notification",
+      "notification_prepared_at": "2026-06-04T09:10:00+08:00",
+      "user_instruction": "用户要求按新版 TECH 标准重写：更关注技术点，更专业，使用更多公式由浅入深，让 AI 专业研究生也能看懂并真正学到知识。",
+      "updated_at": "2026-06-04T10:48:00+08:00"
+    },
+    {
+      "id": "TECH-20260604-02",
+      "date": "2026-06-04",
+      "slot": "technical_explainer",
+      "title": "从 PPO 到 GRPO：为什么大模型推理强化学习开始弱化 critic",
+      "category": [
+        "AI",
+        "强化学习"
+      ],
+      "tags": [
+        "PPO",
+        "GRPO",
+        "RLHF",
+        "Reasoning Models",
+        "DeepSeek"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "算法推导",
+      "reader_takeaway": "理解 PPO 的 actor-critic 框架、GRPO 的 group relative reward 思路、为什么省掉 value model 会影响显存与训练流程，以及它在 reasoning model 训练中的适用边界。",
+      "reason": "GRPO 已成为 reasoning model 后训练的高频关键词，但很多解读停留在“省掉 critic”。这篇可以把 PPO、reward normalization、group sampling、优势估计和稳定性风险讲清楚。",
+      "source_plan": [
+        "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models, arXiv:2402.03300",
+        "Demystifying Group Relative Policy Optimization: Its Policy Gradient is a U-Statistic, arXiv:2603.01162",
+        "Proximal Policy Optimization Algorithms, arXiv:1707.06347",
+        "DeepSeek-R1 technical report",
+        "TRL / verl / OpenRLHF 等开源 RLHF 框架文档"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "notification_status": "prepared_for_openclaw_route",
+      "notification_prepared_at": "2026-06-04T09:10:00+08:00"
+    },
+    {
+      "id": "TECH-20260604-03",
+      "date": "2026-06-04",
+      "slot": "technical_explainer",
+      "title": "FlashAttention-3 与算子优化：从 IO-aware attention 到 Hopper 异步流水线",
+      "category": [
+        "AI",
+        "AI Infra"
+      ],
+      "tags": [
+        "FlashAttention",
+        "CUDA",
+        "H100",
+        "Attention Kernel",
+        "Operator Optimization"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "工程优化",
+      "reader_takeaway": "理解标准 attention 为什么受 HBM 读写限制，FlashAttention 如何用 tiling 降低 IO，FlashAttention-3 如何利用 Hopper 的 TMA、warp specialization、FP8 和异步流水线继续提升吞吐。",
+      "reason": "FlashAttention 是现代 Transformer 训练和推理的基础优化之一，FlashAttention-3 又把问题推进到硬件特性与 CUDA kernel 设计层，适合写给希望理解底层性能瓶颈的工程师。",
+      "source_plan": [
+        "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+        "FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning",
+        "FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision, arXiv:2407.08608 / NeurIPS 2024",
+        "NVIDIA Hopper Architecture / TMA / FP8 官方资料",
+        "flash-attention GitHub repository"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "notification_status": "prepared_for_openclaw_route",
+      "notification_prepared_at": "2026-06-04T09:10:00+08:00"
+    },
+    {
+      "id": "TECH-20260605-01",
+      "date": "2026-06-05",
+      "slot": "technical_explainer",
+      "title": "Q、K、V 投影共享：Transformer 注意力机制真的需要三个投影矩阵吗？（ICML 2026 论文精讲）",
+      "category": [
+        "AI",
+        "基础模型"
+      ],
+      "tags": [
+        "Transformer",
+        "Attention",
+        "QKV",
+        "Weight Tying",
+        "KV Cache",
+        "ICML 2026"
+      ],
+      "type": "论文精读",
+      "reason": "ICML 2026 正式接收论文，系统研究三种 QKV 投影共享方案。Q-K=V 可达到 50% KV Cache 缩减（质量损失仅 3.1%），叠加 GQA/MQA 可达 87.5%~96.9% 极致压缩。与 MLA 形成 attention 优化的双视角互补。",
+      "source_plan": [
+        "arXiv 2606.04032 论文全文",
+        "GitHub 开源代码",
+        "MQA/GQA 原论文",
+        "DeepSeek MLA 技术报告"
+      ],
+      "status": "published",
+      "confirmed": true,
+      "confirmed_at": "2026-06-05T08:58:00+08:00",
+      "published": true,
+      "published_at": "2026-06-05T11:45:00+08:00",
+      "article_path": "source/_posts/2026-06-05-qkv-projection-sharing-attention.md",
+      "technical_level": "架构解析",
+      "reader_takeaway": "理解 Q、K、V 三投影各自的功能与冗余性；掌握三种投影共享方案的数学形式和注意力计算含义；理解 Q-K=V 为什么效果好且可与 GQA/MQA 叠加达到极致压缩；掌握注意力低秩性与投影共享的理论联系。",
+      "notification_status": "pending_wechat_notification",
+      "notification_prepared_at": "2026-06-05T08:50:00+08:00",
+      "user_instruction": "用户明确确认；等待三篇 TOPIC 完成后再写。",
+      "updated_at": "2026-06-05T11:45:00+08:00"
+    },
+    {
+      "id": "TECH-20260605-02",
+      "date": "2026-06-05",
+      "slot": "technical_explainer",
+      "title": "KV Cache 量化技术解析：从均匀量化到方差归一化，如何在保持精度的同时扩大 4 倍上下文",
+      "category": [
+        "AI",
+        "推理优化"
+      ],
+      "tags": [
+        "KV Cache",
+        "Quantization",
+        "LLM Inference",
+        "KVarN",
+        "TurboQuant",
+        "SmoothQuant"
+      ],
+      "type": "深度文章",
+      "reason": "系统梳理 KV Cache 量化方案演进（均匀量化 → Per-Channel/Per-Token → SmoothQuant → TurboQuant → KVarN），讲清误差累积机制与方差归一化直觉。对推理部署工程师有直接实用价值。",
+      "source_plan": [
+        "KVarN 论文（arXiv 2606.03458）",
+        "KVarN GitHub",
+        "vLLM TurboQuant 博客",
+        "SmoothQuant 论文",
+        "FlexGen 论文"
+      ],
+      "status": "published",
+      "confirmed": true,
+      "confirmed_at": "2026-06-05T08:58:00+08:00",
+      "published": true,
+      "published_at": "2026-06-05T10:07:34+08:00",
+      "article_path": "source/_posts/2026-06-05-kv-cache-quantization-varn.md",
+      "technical_level": "工程优化",
+      "reader_takeaway": "理解 KV Cache 量化中误差累积的数学模型；掌握 Hadamard 旋转消除 outlier 和方差归一化抑制误差的原理；能够评估不同量化方案在精度、吞吐、容量间的权衡。",
+      "notification_status": "wechat_delivered",
+      "notification_prepared_at": "2026-06-05T08:50:00+08:00",
+      "user_instruction": "用户明确继续发布；等待 TECH-20260605-01 完成后再写。"
+    },
+    {
+      "id": "TECH-20260605-03",
+      "date": "2026-06-05",
+      "slot": "technical_explainer",
+      "title": "投机采样（Speculative Decoding）原理与工程实现：如何用小模型加速大模型的自回归解码",
+      "category": [
+        "AI",
+        "推理优化"
+      ],
+      "tags": [
+        "Speculative Decoding",
+        "LLM Inference",
+        "Draft Model",
+        "Self-Speculation",
+        "vLLM",
+        "TensorRT-LLM"
+      ],
+      "type": "深度文章",
+      "reason": "投机采样是 LLM 推理加速的经典优雅技术，vLLM/TensorRT-LLM/SGLang 均已集成。概念优雅（严格无损加速）、数学简洁（拒绝采样）、工程价值高（2-3x 加速）。适合作为 LLM 推理系统解析系列的基础算法篇。",
+      "source_plan": [
+        "Leviathan et al. 2023 原论文",
+        "Medusa/EAGLE 论文",
+        "vLLM speculative decoding 文档与源码",
+        "TensorRT-LLM speculative decoding 文档"
+      ],
+      "status": "published",
+      "confirmed": true,
+      "confirmed_at": "2026-06-05T08:58:00+08:00",
+      "published": true,
+      "published_at": "2026-06-05T10:12:01+08:00",
+      "article_path": "source/_posts/2026-06-05-speculative-decoding-principles.md",
+      "technical_level": "算法推导",
+      "reader_takeaway": "掌握投机采样的 draft-verify 两阶段框架和接受/拒绝采样的数学保证；理解 draft model 选择的最优 trade-off；了解 vLLM 生产级实现和自投机解码变体（Medusa/EAGLE）。",
+      "notification_status": "wechat_delivered",
+      "notification_prepared_at": "2026-06-05T08:50:00+08:00",
+      "user_instruction": "用户明确继续发布；等待 TECH-20260605-02 完成后再写。"
+    },
+    {
+      "id": "TECH-20260606-01",
+      "date": "2026-06-06",
+      "title": "Encoder-free 多模态 Transformer：图像、音频、文本如何在一个模型里统一建模？",
+      "category": [
+        "AI",
+        "Multimodal"
+      ],
+      "tags": [
+        "Transformer",
+        "Multimodal",
+        "Encoder-free",
+        "Tokenization"
+      ],
+      "type": "TECH 技术点",
+      "reason": "适合研究生和工程师从架构层真正理解多模态模型",
+      "source_plan": [
+        "arXiv",
+        "Gemma 4 技术报告",
+        "多模态 Transformer 原论文"
+      ],
+      "status": "published",
+      "confirmed": true,
+      "confirmed_at": "2026-06-06T12:00:00+08:00",
+      "published": true,
+      "published_at": "2026-06-06T13:00:00+08:00",
+      "article_path": "source/_posts/2026-06-06-encoder-free-multimodal-transformer.md"
+    },
+    {
+      "id": "TECH-20260606-02",
+      "date": "2026-06-06",
+      "title": "AI Agent 的长期记忆机制：从 RAG 到 Memory Synthesis",
+      "category": [
+        "AI",
+        "Agent"
+      ],
+      "tags": [
+        "Memory",
+        "RAG",
+        "Agent",
+        "Memory Synthesis"
+      ],
+      "type": "TECH 技术点",
+      "reason": "和 OpenAI 新 memory 更新强相关，技术与产品都能讲深",
+      "source_plan": [
+        "OpenAI Memory Research",
+        "RAG 原论文",
+        "MemGPT 等记忆系统论文"
+      ],
+      "status": "published",
+      "confirmed": true,
+      "confirmed_at": "2026-06-06T12:00:00+08:00",
+      "published": true,
+      "published_at": "2026-06-06T13:15:00+08:00",
+      "article_path": "source/_posts/2026-06-06-agent-long-term-memory-mechanisms.md"
+    },
+    {
+      "id": "TECH-20260606-03",
+      "date": "2026-06-06",
+      "title": "MoE 模型为什么适合 Agentic AI：路由、激活参数与推理吞吐的底层逻辑",
+      "category": [
+        "AI",
+        "AI Infra"
+      ],
+      "tags": [
+        "MoE",
+        "Agent",
+        "Inference",
+        "Routing",
+        "Throughput"
+      ],
+      "type": "TECH 技术点",
+      "reason": "适合写成硬核技术科普",
+      "source_plan": [
+        "Switch Transformer",
+        "Mixtral 技术报告",
+        "DeepSeek MoE 论文"
+      ],
+      "status": "published",
+      "confirmed": true,
+      "confirmed_at": "2026-06-06T12:00:00+08:00",
+      "published": true,
+      "published_at": "2026-06-06T13:30:00+08:00",
+      "article_path": "source/_posts/2026-06-06-moe-agentic-ai-architecture.md"
+    },
+    {
+      "id": "TECH-20260607-01",
+      "date": "2026-06-07",
+      "slot": "technical_explainer",
+      "title": "LoRA 低秩适配原理深度拆解：为什么两个小矩阵就能微调千亿参数大模型",
+      "category": [
+        "AI",
+        "LLM"
+      ],
+      "tags": [
+        "LoRA",
+        "Fine-tuning",
+        "Low-Rank",
+        "PEFT",
+        "QLoRA",
+        "DoRA",
+        "SVD"
+      ],
+      "type": "技术点讲解",
+      "reason": "LoRA 是 PEFT 事实标准，数学路径清晰（SVD→低秩→前向传播），HuggingFace PEFT 官方实现成熟",
+      "source_plan": [
+        "LoRA 原论文 (Hu et al., ICLR 2022)",
+        "QLoRA 论文 (Dettmers et al., NeurIPS 2023)",
+        "DoRA 论文 (Liu et al., ICML 2024)",
+        "HuggingFace PEFT 源码",
+        "LoRA+ 论文"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "technical_level": "算法推导",
+      "reader_takeaway": "理解 LoRA 为何只需要两个低秩矩阵就能高效微调大模型；掌握矩阵低秩分解的数学直觉和 LoRA 前向/反向传播公式；了解 QLoRA/DoRA 改进；能判断何时用 LoRA",
+      "notification_status": "prepared_for_openclaw_route",
+      "notification_prepared_at": "2026-06-07T08:36:00+08:00"
+    },
+    {
+      "id": "TECH-20260607-02",
+      "date": "2026-06-07",
+      "slot": "technical_explainer",
+      "title": "RoPE 旋转位置编码完全解析：从绝对位置到相对位置编码的数学之美",
+      "category": [
+        "AI",
+        "LLM"
+      ],
+      "tags": [
+        "RoPE",
+        "Position Encoding",
+        "Transformer",
+        "YaRN",
+        "Length Extrapolation"
+      ],
+      "type": "技术点讲解",
+      "reason": "RoPE 是 Llama/Mistral/Qwen/DeepSeek/Gemma 的通用位置编码方案，数学优美，与外推和长上下文直接相关",
+      "source_plan": [
+        "RoPE 原论文 (Su et al., arXiv:2104.09864)",
+        "YaRN 论文 (Peng et al., arXiv:2309.00071)",
+        "ALiBi 论文",
+        "HuggingFace LlamaRotaryEmbedding 源码"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "technical_level": "算法推导",
+      "reader_takeaway": "掌握 RoPE 复指数旋转公式、频率分层的物理含义、相对位置性质的数学证明、YaRN 长度外推原理",
+      "notification_status": "prepared_for_openclaw_route",
+      "notification_prepared_at": "2026-06-07T08:36:00+08:00"
+    },
+    {
+      "id": "TECH-20260607-03",
+      "date": "2026-06-07",
+      "slot": "technical_explainer",
+      "title": "Flow Matching 生成模型原理：从概率流 ODE 到现代文生图/视频的统一生成框架",
+      "category": [
+        "AI",
+        "Multimodal"
+      ],
+      "tags": [
+        "Flow Matching",
+        "Diffusion",
+        "Rectified Flow",
+        "Generative Models",
+        "DiT"
+      ],
+      "type": "技术点讲解",
+      "reason": "Flow Matching 正在取代 DDPM 成为生成模型主流训练范式（SD3/Flux/Sora 均基于此），中文系统讲解稀缺，填补博客多模态生成技术线空白",
+      "source_plan": [
+        "Flow Matching 原论文 (Lipman et al., ICLR 2023)",
+        "Rectified Flow 论文 (Liu et al., ICLR 2023)",
+        "Stochastic Interpolants 论文",
+        "SD3 技术报告",
+        "Flux 技术报告",
+        "Diffusers Flow Matching 源码"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "technical_level": "算法推导",
+      "reader_takeaway": "理解 Flow Matching 作为扩散模型泛化框架的数学动机；掌握从概率路径到向量场再到 ODE 采样的完整推导；理解 Conditional Flow Matching 和 Rectified Flow 的核心思想",
+      "notification_status": "prepared_for_openclaw_route",
+      "notification_prepared_at": "2026-06-07T08:36:00+08:00"
+    },
+    {
+      "id": "TECH-20260611-01",
+      "date": "2026-06-11",
+      "slot": "technical_explainer",
+      "title": "扩散语言模型的数学原理：从连续扩散到离散文本生成的完整推导",
+      "category": [
+        "AI",
+        "LLM"
+      ],
+      "tags": [
+        "Diffusion",
+        "Language Model",
+        "Discrete Diffusion",
+        "Masked Diffusion",
+        "LLaDA"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "算法推导",
+      "reader_takeaway": "理解扩散模型从连续到离散空间的数学迁移；掌握吸收态扩散的核心公式与采样策略；理解CMLM的损失函数和去噪过程；能对比自回归与扩散生成的概率分解差异",
+      "reason": "扩散文本模型是LLM架构最具颠覆性的方向，中文系统性讲解稀缺；与主选题形成双篇组合",
+      "source_plan": [
+        "DiffusionGemma 技术报告",
+        "MDLM 论文",
+        "LLaDA 论文",
+        "DDPM 论文",
+        "D3PM 论文"
+      ],
+      "status": "published",
+      "confirmed": true,
+      "confirmed_at": "2026-06-12T08:22:39+08:00",
+      "published": true,
+      "published_at": "2026-06-12T08:28:13.676610",
+      "article_path": "source/_posts/2026-06-11-diffusion-lm-math.md"
+    },
+    {
+      "id": "TECH-20260611-02",
+      "date": "2026-06-11",
+      "slot": "technical_explainer",
+      "title": "Constitutional AI 训练机制深度拆解：从监督微调到 AI 反馈强化学习的完整推导",
+      "category": [
+        "AI",
+        "强化学习"
+      ],
+      "tags": [
+        "Constitutional AI",
+        "RLHF",
+        "RLAIF",
+        "Alignment",
+        "Anthropic"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "算法推导",
+      "reader_takeaway": "理解CAI两阶段训练的完整流程和数学形式；掌握宪法在生成对比数据中的角色；理解RLAIF与RLHF的核心差异及trade-off；能分析宪法设计如何影响模型行为边界",
+      "reason": "CAI是Anthropic对齐方法论核心，本周Fable/Mythos安全护栏争议的技术基础；中文系统讲解稀缺",
+      "source_plan": [
+        "CAI原论文 (Bai et al. 2022)",
+        "HH-RLHF论文",
+        "Anthropic后续CAI研究",
+        "TRL/OpenRLHF框架"
+      ],
+      "status": "published",
+      "confirmed": true,
+      "confirmed_at": "2026-06-12T08:22:39+08:00",
+      "published": true,
+      "published_at": "2026-06-12T08:28:13.676610",
+      "article_path": "source/_posts/2026-06-11-constitutional-ai.md"
+    },
+    {
+      "id": "TECH-20260611-03",
+      "date": "2026-06-11",
+      "slot": "technical_explainer",
+      "title": "混合精度训练中的数值稳定性：从 FP32 到 FP4 的量化误差传播与补偿策略",
+      "category": [
+        "AI",
+        "AI Infra"
+      ],
+      "tags": [
+        "Mixed Precision",
+        "FP4",
+        "NVFP4",
+        "Training",
+        "Numerical Stability",
+        "Blackwell"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "工程优化",
+      "reader_takeaway": "理解浮点格式的数值表示差异和动态范围；掌握混合精度训练中精度分配策略；理解loss scaling的原理和自动loss scaling算法；了解NVFP4格式设计和Blackwell训练实践",
+      "reason": "训练精度正从BF16→FP8→FP4快速演进，NVIDIA 6/8发布NVFP4博客；与KV Cache量化形成完整低精度全景",
+      "source_plan": [
+        "Mixed Precision Training (Micikevicius 2018)",
+        "NVIDIA FP8白皮书",
+        "NVIDIA NVFP4 blog",
+        "Transformer Engine 文档",
+        "PyTorch AMP"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null
+    },
+    {
+      "id": "TECH-20260612-01",
+      "date": "2026-06-12",
+      "slot": "technical_explainer",
+      "title": "Natural Language Autoencoders (NLA) 机制拆解：如何通过逆向重建训练模型解释自身内部激活",
+      "category": [
+        "AI",
+        "LLM"
+      ],
+      "tags": [
+        "Interpretability",
+        "Autoencoder",
+        "Activation",
+        "Mechanistic Interpretability",
+        "Anthropic"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "算法推导",
+      "reader_takeaway": "理解 NLA 的三模型架构（Target→AV→AR）和端到端训练目标；掌握用重构质量作为解释保真度的评估框架；理解可解释性中保真度 vs 可读性的核心 trade-off。",
+      "reason": "Anthropic 2026 年最重要的可解释性研究成果，将机械可解释性推进到自然语言层面。中文社区几乎没有系统讲解，填补空白。",
+      "source_plan": [
+        "Anthropic NLA Research Blog 2026-05-07",
+        "NLA 论文",
+        "GitHub.com/kitft/natural_language_autoencoders",
+        "Neuronpedia NLA 交互界面",
+        "SAE 相关论文"
+      ],
+      "status": "published",
+      "confirmed": true,
+      "confirmed_at": "2026-06-12T08:53:38+08:00",
+      "published": true,
+      "published_at": "2026-06-12T08:59:39.670552",
+      "article_path": "source/_posts/2026-06-12-nla-autoencoders.md"
+    },
+    {
+      "id": "TECH-20260612-02",
+      "date": "2026-06-12",
+      "slot": "technical_explainer",
+      "title": "ZeRO 优化器状态分片完全推导：从数据并行的显存瓶颈到三阶段分片的通信-显存权衡",
+      "category": [
+        "AI",
+        "AI Infra"
+      ],
+      "tags": [
+        "ZeRO",
+        "DeepSpeed",
+        "FSDP",
+        "Distributed Training",
+        "Memory Optimization",
+        "Data Parallelism"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "算法推导",
+      "reader_takeaway": "理解数据并行的显存冗余问题及 Ψ=20 bytes/param 的精确分解；掌握 ZeRO Stage 1/2/3 的分片粒度和通信量推导；对比 ZeRO-3 与 FSDP 的异同。",
+      "reason": "ZeRO 是训练千亿参数模型的基础设施，但多数人只停留在经验层面不理解原理。Ψ bytes/param→三阶段递推→通信量公式的推导路径极其清晰，是理想的 TECH 选题。",
+      "source_plan": [
+        "ZeRO 原论文 Rajbhandari et al. SC20",
+        "DeepSpeed 官方文档",
+        "PyTorch FSDP 文档",
+        "Megatron-LM 混合并行文档",
+        "DeepSpeed GitHub 源码"
+      ],
+      "status": "published",
+      "confirmed": true,
+      "confirmed_at": "2026-06-12T08:53:38+08:00",
+      "published": true,
+      "published_at": "2026-06-12T08:59:39.670552",
+      "article_path": "source/_posts/2026-06-12-zero-optimizer-sharding.md"
+    },
+    {
+      "id": "TECH-20260612-03",
+      "date": "2026-06-12",
+      "slot": "technical_explainer",
+      "title": "连续批处理(Continuous Batching)机制详解：从静态 Padding 到 Iteration-Level 调度的 GPU 利用率优化",
+      "category": [
+        "AI",
+        "AI Infra"
+      ],
+      "tags": [
+        "Continuous Batching",
+        "vLLM",
+        "LLM Inference",
+        "Scheduling",
+        "Throughput",
+        "GPU Utilization"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "工程优化",
+      "reader_takeaway": "理解静态 batching 的 GPU 浪费（短序列等长序列的 padding 问题）；掌握 iteration-level scheduling 的核心思想和请求级别状态机；理解 CB 如何将吞吐提升 2-10x。",
+      "reason": "Continuous batching 是现代 LLM 推理服务的基础调度机制。概念清晰、数学简洁、工程价值极高，与已有推理优化系列构成完整知识图谱。",
+      "source_plan": [
+        "Orca 论文 Yu et al. OSDI22",
+        "vLLM 原论文 Kwon et al. SOSP23",
+        "vLLM scheduler.py 源码",
+        "TensorRT-LLM inflight batching 文档",
+        "SGLang RadixAttention 调度文档"
+      ],
+      "status": "published",
+      "confirmed": true,
+      "confirmed_at": "2026-06-12T08:53:38+08:00",
+      "published": true,
+      "published_at": "2026-06-12T08:59:39.670552",
+      "article_path": "source/_posts/2026-06-12-continuous-batching.md"
+    },
+    {
+      "id": "TECH-20260614-01",
+      "date": "2026-06-14",
+      "slot": "technical_explainer",
+      "title": "DPO、SimPO 与 ORPO：直接偏好优化的三种概率形式、等价性分析与长度偏差问题",
+      "category": [
+        "AI",
+        "强化学习"
+      ],
+      "tags": [
+        "DPO",
+        "SimPO",
+        "ORPO",
+        "Preference Optimization",
+        "RLHF",
+        "Alignment",
+        "Bradley-Terry"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "算法推导",
+      "reader_takeaway": "理解RLHF到DPO的理论动机；掌握DPO的Bradley-Terry偏好建模与封闭解推导；理解SimPO如何消除reference model依赖；理解ORPO的单阶段合并训练；掌握长度偏差的数学根源。",
+      "reason": "DPO系列是LLM对齐的事实标准之一，完整推导链（BT→封闭解→loss）在中文资料中稀缺，与GRPO/CAI形成对齐方法三部曲。",
+      "source_plan": [
+        "DPO原论文 arXiv:2305.18290",
+        "SimPO原论文 arXiv:2405.14734",
+        "ORPO原论文",
+        "TRL DPOTrainer源码",
+        "Bradley-Terry模型相关文献"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null
+    },
+    {
+      "id": "TECH-20260614-02",
+      "date": "2026-06-14",
+      "slot": "technical_explainer",
+      "title": "Transformer 归一化层完全解析：LayerNorm、RMSNorm 与 Pre/Post-LN 的数值机理与训练稳定性",
+      "category": [
+        "AI",
+        "基础模型"
+      ],
+      "tags": [
+        "Transformer",
+        "Layer Normalization",
+        "RMSNorm",
+        "Pre-LN",
+        "Post-LN",
+        "DeepNorm",
+        "Training Stability"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "架构解析",
+      "reader_takeaway": "理解BN为何不适用于Transformer；掌握LayerNorm和RMSNorm的完整数学定义与梯度缩放不变性；理解Pre-LN如何解决Post-LN的warmup问题；了解DeepNorm的极限深度归一化。",
+      "reason": "归一化层是Transformer最被忽视的沉默英雄，有干净的数学故事（方差→去均值→梯度流），完美适合从零到懂的研究生级教程。",
+      "source_plan": [
+        "LayerNorm原论文 arXiv:1607.06450",
+        "RMSNorm原论文 NeurIPS2019",
+        "Pre-LN论文 ICML2020",
+        "DeepNet论文",
+        "PyTorch/HuggingFace RMSNorm源码"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null
+    },
+    {
+      "id": "TECH-20260614-03",
+      "date": "2026-06-14",
+      "slot": "technical_explainer",
+      "title": "Transformer 中的残差连接：从深度网络的梯度消失到 Pre-Norm 架构的数学原理与视觉化直观",
+      "category": [
+        "AI",
+        "基础模型"
+      ],
+      "tags": [
+        "Residual Connection",
+        "Transformer",
+        "Gradient Flow",
+        "Skip Connection",
+        "Pre-Norm",
+        "Deep Learning Fundamentals"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "基础原理",
+      "reader_takeaway": "理解残差连接解决的核心问题及前向/反向传播中的数学作用；掌握$+x$梯度捷径的意义；了解ResNet/Ensemble/ODE三种理论视角；理解Transformer中残差与LN的协同。",
+      "reason": "残差连接是深度学习最重要的架构创新之一，$+x$背后的数学美常被忽视，多个跨领域视角可拓展研究生学术视野。",
+      "source_plan": [
+        "ResNet原论文 CVPR2016",
+        "Attention Is All You Need",
+        "Identity Mappings论文 ECCV2016",
+        "Ensemble视角论文 NeurIPS2016",
+        "Neural ODE论文 NeurIPS2018"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null
+    },
+    {
+      "id": "TECH-20260617-01",
+      "date": "2026-06-17",
+      "slot": "technical_explainer",
+      "title": "Deployment Simulation 技术拆解：如何用真实上下文重放预测模型上线后的失败率",
+      "category": [
+        "AI",
+        "Evaluation"
+      ],
+      "tags": [
+        "Deployment Simulation",
+        "Model Evaluation",
+        "Risk Assessment",
+        "Agent",
+        "Tool Simulation"
+      ],
+      "type": "技术点讲解",
+      "reason": "它是今天最新且最适合研究级拆解的技术点，可以写出公式、伪代码、系统流程和工程 trade-off，不只是新闻。",
+      "source_plan": [
+        "OpenAI 论文 PDF",
+        "OpenAI Deployment Simulation 研究文章",
+        "GPT-5.5 system card",
+        "WildChat 外部审计材料",
+        "传统 eval / red-team / benchmark 资料"
+      ],
+      "technical_level": "前沿调研",
+      "reader_takeaway": "理解 pre-deployment risk assessment 如何从静态测试集转向分布重采样；学会把 failure rate 估计、calibration、evaluation awareness 和 tool simulation 放进统一评测框架。",
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "notification_status": "prepared_for_openclaw_route",
+      "notification_prepared_at": "2026-06-17T08:30:00+08:00"
+    },
+    {
+      "id": "TECH-20260617-02",
+      "date": "2026-06-17",
+      "slot": "technical_explainer",
+      "title": "Workflow-Atomic Scheduling 原理：Agent 推理为什么要从“请求级调度”升级到“任务级调度”",
+      "category": [
+        "AI",
+        "AI Infra"
+      ],
+      "tags": [
+        "Agent Inference",
+        "Scheduling",
+        "KV Cache",
+        "SAGA",
+        "GPU Cluster"
+      ],
+      "type": "技术点讲解",
+      "reason": "这是 LLM 推理系统系列的自然进阶，能把 Continuous Batching、Prefill/Decode、KV Cache 内容升级到 agent workload 场景。",
+      "source_plan": [
+        "arXiv:2605.00528 SAGA 论文",
+        "vLLM scheduling/prefix caching 文档",
+        "SGLang / TensorRT-LLM 相关调度资料",
+        "SWE-bench / WebArena workload 描述"
+      ],
+      "technical_level": "工程优化",
+      "reader_takeaway": "理解多轮 agent workload 与传统单请求 LLM serving 的本质差异；掌握 workflow graph、session affinity batching、KV cache reuse 和公平性指标的设计思路。",
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "notification_status": "prepared_for_openclaw_route",
+      "notification_prepared_at": "2026-06-17T08:30:00+08:00"
+    },
+    {
+      "id": "TECH-20260617-03",
+      "date": "2026-06-17",
+      "slot": "technical_explainer",
+      "title": "Fused MLP 与 CUDA Profiling：从 nn.Linear 到 Kernel Fusion 的性能优化路径",
+      "category": [
+        "AI",
+        "CUDA"
+      ],
+      "tags": [
+        "CUDA Profiling",
+        "PyTorch",
+        "Kernel Fusion",
+        "Fused MLP",
+        "Torch Profiler"
+      ],
+      "type": "技术点讲解",
+      "reason": "算子优化是 TECH 线缺口，且 Hugging Face 近期刚有教程型材料，适合写成可操作的高质量科普。",
+      "source_plan": [
+        "Hugging Face CUDA Profiling in PyTorch Part 1/2",
+        "PyTorch profiler docs",
+        "Triton tutorials",
+        "torch.compile docs",
+        "CUDA Best Practices"
+      ],
+      "technical_level": "工程优化",
+      "reader_takeaway": "从 PyTorch profiler 出发理解 Linear/GELU/MLP 中的 kernel launch、memory bandwidth、算子融合和 GPU 利用率瓶颈，建立 profile-driven optimization 路径。",
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "notification_status": "prepared_for_openclaw_route",
+      "notification_prepared_at": "2026-06-17T08:30:00+08:00"
+    },
+    {
+      "id": "TECH-20260619-01",
+      "date": "2026-06-19",
+      "slot": "technical_explainer",
+      "title": "Agentic Resource Discovery 技术拆解：ai-catalog.json、注册表搜索与 Agent 工具选择机制",
+      "category": [
+        "AI",
+        "Agent"
+      ],
+      "tags": [
+        "Agentic Resource Discovery",
+        "MCP",
+        "Agent Tools",
+        "Resource Registry",
+        "Capability Search"
+      ],
+      "type": "架构解析",
+      "reason": "ARD 是最新 agent 工具体系的基础设施技术点，既有系统结构又有工程实现，适合写成从协议到伪代码的研究级科普。",
+      "source_plan": [
+        "ARD spec",
+        "HF Discover GitHub",
+        "GitHub Agent finder docs",
+        "MCP spec",
+        "A2A docs",
+        "Hugging Face Hub agent skills docs"
+      ],
+      "technical_level": "架构解析",
+      "reader_takeaway": "理解 Agent 工具发现层为什么需要从 prompt context 中移出；掌握静态 manifest、动态 registry、自然语言搜索、ranked capability selection 和企业治理之间的系统关系。",
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null
+    },
+    {
+      "id": "TECH-20260619-02",
+      "date": "2026-06-19",
+      "slot": "technical_explainer",
+      "title": "Helion 与 vLLM FP8 推理内核：从 scaled_mm 到 fused_qk_norm_rope 的可移植 Kernel 优化",
+      "category": [
+        "AI",
+        "AI Infra"
+      ],
+      "tags": [
+        "Helion",
+        "vLLM",
+        "FP8",
+        "Kernel Fusion",
+        "Qwen3",
+        "CUDA"
+      ],
+      "type": "工程优化",
+      "reason": "这是 LLM 推理系统系列从调度/架构继续下探到 kernel 层的好题目，能训练读者把模型结构、张量形状和 GPU kernel 性能联系起来。",
+      "source_plan": [
+        "PyTorch Helion blog",
+        "Helion docs / GitHub",
+        "vLLM PR / docs",
+        "Qwen3 FP8 checkpoint 说明",
+        "CUDA/Triton 对照资料"
+      ],
+      "technical_level": "工程优化",
+      "reader_takeaway": "理解 LLM FP8 推理中 small kernels、scaled matrix multiplication、QK norm + RoPE fusion 与动态量化为什么会影响端到端吞吐。",
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null
+    },
+    {
+      "id": "TECH-20260619-03",
+      "date": "2026-06-19",
+      "slot": "technical_explainer",
+      "title": "Muon Optimizer 原理推导：Newton-Schulz 正交化为什么能加速 Transformer 预训练",
+      "category": [
+        "AI",
+        "Training"
+      ],
+      "tags": [
+        "Muon Optimizer",
+        "DeepSpeed",
+        "Newton-Schulz",
+        "Optimizer",
+        "Transformer Training"
+      ],
+      "type": "算法推导",
+      "reason": "优化器是 TECH 系列的缺口，Muon 又是近期训练工具链里的高价值技术点；它能写出公式、伪代码和工程实现，而不只是介绍工具。",
+      "source_plan": [
+        "PyTorch DeepSpeed Muon blog",
+        "Muon 原始材料",
+        "DeepSpeed demo/config",
+        "nanoGPT speedrunning benchmark",
+        "相关模型技术报告"
+      ],
+      "technical_level": "算法推导",
+      "reader_takeaway": "理解 Muon 与 AdamW 的状态差异、为什么只作用于 2D hidden weights、Newton-Schulz 迭代如何近似正交化 momentum，以及 DeepSpeed/ZeRO 中实现 Muon 的工程约束。",
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null
+    },
+    {
+      "id": "TECH-20260620-01",
+      "date": "2026-06-20",
+      "slot": "technical_explainer",
+      "title": "Deployment Simulation 技术拆解：如何用生产分布重采样预测模型上线后的风险率",
+      "category": [
+        "TECH",
+        "AI",
+        "Evaluation"
+      ],
+      "tags": [
+        "Deployment Simulation",
+        "Model Evaluation",
+        "Risk Rate",
+        "Resampling",
+        "Tool Simulation",
+        "AI Safety"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "前沿调研",
+      "reader_takeaway": "理解部署前评测的分布偏差，掌握 production-prefix resampling、候选模型补全、自动审计、风险率校准和 agentic tool simulation 的技术流程。",
+      "reason": "该方法能写出概率定义、pipeline 伪代码、误差来源和系统 trade-off，是高价值模型评测方法论选题。",
+      "source_plan": [
+        "OpenAI Deployment Simulation 文章与论文：https://openai.com/index/deployment-simulation/",
+        "GPT-5.5 system card",
+        "WildChat companion blog",
+        "evaluation awareness 相关论文"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null
+    },
+    {
+      "id": "TECH-20260620-02",
+      "date": "2026-06-20",
+      "slot": "technical_explainer",
+      "title": "MosaicLeaks 与 PA-DR 原理拆解：多跳研究 Agent 如何在搜索查询中泄露私有信息",
+      "category": [
+        "TECH",
+        "AI",
+        "Agent Safety"
+      ],
+      "tags": [
+        "MosaicLeaks",
+        "PA-DR",
+        "Research Agent",
+        "Privacy",
+        "Reinforcement Learning",
+        "Multi-hop Retrieval"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "算法推导",
+      "reader_takeaway": "理解 query log adversary model、intent/answer/full-information leakage 三种泄漏指标，以及 situational reward 与 privacy reward 如何给多步 agent 行为分配信用。",
+      "reason": "该题能把 Agent 安全落到可测 benchmark、奖励设计、泄漏指标和伪代码，适合研究级讲解。",
+      "source_plan": [
+        "arXiv:2605.30727 MosaicLeaks paper：https://arxiv.org/abs/2605.30727",
+        "Hugging Face / ServiceNow MosaicLeaks 文章：https://huggingface.co/blog/ServiceNow/mosaicleaks",
+        "DRBench / BrowseComp-Plus 相关资料",
+        "RAG leakage / Agent privacy 相关论文"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null
+    },
+    {
+      "id": "TECH-20260620-03",
+      "date": "2026-06-20",
+      "slot": "technical_explainer",
+      "title": "从 nn.Linear 到 Fused MLP：用 PyTorch Profiler 读懂 GEMM、算子融合与 Triton Kernel 性能",
+      "category": [
+        "TECH",
+        "AI",
+        "AI Infra"
+      ],
+      "tags": [
+        "PyTorch Profiler",
+        "Fused MLP",
+        "GEMM",
+        "Triton",
+        "Liger Kernel",
+        "torch.compile",
+        "CUDA"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "工程优化",
+      "reader_takeaway": "从 profiler trace 读懂 Linear/MLP 的 CPU dispatch、GPU kernel、GEMM layout、torch.compile fusion 与预编译 Triton kernel 的差异。",
+      "reason": "算子与 profiling 是 AI Infra 技术读者必须补的基础能力，能从 trace 逐步讲到 kernel fusion。",
+      "source_plan": [
+        "Hugging Face Profiling in PyTorch Part 2：https://huggingface.co/blog/torch-mlp-fusion",
+        "Hugging Face Profiling in PyTorch Part 1：https://huggingface.co/blog/torch-profiler",
+        "PyTorch profiler docs / torch.compile docs",
+        "Liger Kernel / kernels-community 资料"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null
+    },
+    {
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "notification_status": "prepared_for_openclaw_route",
+      "notification_prepared_at": "2026-06-23T23:24:00+08:00",
+      "id": "TECH-20260623-01",
+      "date": "2026-06-23",
+      "slot": "technical_explainer",
+      "title": "KV Cache-Aware Routing 原理：为什么 LLM 负载均衡不能只看 GPU 空闲率",
+      "category": [
+        "TECH",
+        "AI",
+        "AI Infra"
+      ],
+      "tags": [
+        "KV Cache",
+        "Routing",
+        "LLM Inference",
+        "vLLM",
+        "Dynamo"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "工程优化",
+      "reader_takeaway": "从 prefix 复用、KV cache 命中率、prefill 成本和 GPU 调度目标函数理解生产级 LLM router 的核心机制。",
+      "reason": "它补上已发布推理系统文章中“请求应该被送到哪台 GPU/哪个 worker”的关键缺口，是长上下文和 Agentic inference 的底层机制。",
+      "source_plan": [
+        "vLLM prefix caching / scheduler 源码",
+        "NVIDIA Dynamo 文档",
+        "llm-d routing 文档",
+        "SGLang serving 文档"
+      ]
+    },
+    {
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "notification_status": "prepared_for_openclaw_route",
+      "notification_prepared_at": "2026-06-23T23:24:00+08:00",
+      "id": "TECH-20260623-02",
+      "date": "2026-06-23",
+      "slot": "technical_explainer",
+      "title": "Agent 评测 Harness 原理：从任务轨迹到 cost-normalized success rate 的指标设计",
+      "category": [
+        "TECH",
+        "AI",
+        "Evaluation"
+      ],
+      "tags": [
+        "Agent Evaluation",
+        "Harness",
+        "Tool Use",
+        "Metrics",
+        "Benchmark"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "工程优化",
+      "reader_takeaway": "如何把 Agent 的工具调用轨迹、最终结果、成本、延迟和失败类别变成可复现评测指标。",
+      "reason": "Agent 能力评测会长期存在，读者学完能自己搭建一个小型、可复现、可比较的 Agent eval pipeline。",
+      "source_plan": [
+        "OpenAI Evals 官方仓库",
+        "Inspect AI 文档",
+        "SWE-bench / TAU-bench / BrowserGym 论文或仓库",
+        "HF 相关博客"
+      ]
+    },
+    {
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "notification_status": "prepared_for_openclaw_route",
+      "notification_prepared_at": "2026-06-23T23:24:00+08:00",
+      "id": "TECH-20260623-03",
+      "date": "2026-06-23",
+      "slot": "technical_explainer",
+      "title": "Agent Runtime 权限模型拆解：Capability、Sandbox、Human Approval 如何防止工具调用越界",
+      "category": [
+        "TECH",
+        "AI",
+        "Agent"
+      ],
+      "tags": [
+        "Agent Runtime",
+        "Sandbox",
+        "Capability Security",
+        "Tool Calling",
+        "Governance"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "系统机制",
+      "reader_takeaway": "理解 Agent 调工具时为什么需要 capability 边界、沙箱、人工确认点和审计日志，以及如何把它们组织成运行时状态机。",
+      "reason": "Agent 从 demo 走向生产时，权限模型是比 prompt 更硬的边界，值得系统讲清。",
+      "source_plan": [
+        "GitHub Actions permission docs",
+        "Copilot coding agent docs",
+        "MCP specification",
+        "OpenAI / Anthropic tool safety docs"
+      ]
+    },
+    {
+      "id": "TECH-20260625-01",
+      "date": "2026-06-25",
+      "slot": "technical_explainer",
+      "title": "Diffusion Language Model：为什么文本生成不一定只能自回归？",
+      "category": [
+        "TECH",
+        "AI",
+        "LLM"
+      ],
+      "tags": [
+        "Diffusion Language Model",
+        "DiffusionGemma",
+        "Masked Diffusion",
+        "Autoregressive LM",
+        "Text Generation"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "算法机制",
+      "reader_takeaway": "理解扩散建模、去噪目标、mask/latent token、并行生成，以及与 autoregressive LM 的复杂度和质量权衡。",
+      "reason": "适合写成一篇有公式、有机制图的技术文，且能承接 DiffusionGemma 话题。",
+      "source_plan": [
+        "Google DeepMind DiffusionGemma 资料",
+        "MDLM / LLaDA / diffusion language model 论文",
+        "相关非自回归文本生成资料"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "notification_status": "recovered_from_cron_run",
+      "notification_prepared_at": "2026-06-26T08:55:00+08:00"
+    },
+    {
+      "id": "TECH-20260625-02",
+      "date": "2026-06-25",
+      "slot": "technical_explainer",
+      "title": "长程 Agent 的规划机制：ReAct、Tree Search、Verifier 和 Memory 如何组合？",
+      "category": [
+        "TECH",
+        "AI",
+        "Agent"
+      ],
+      "tags": [
+        "Agent Planning",
+        "ReAct",
+        "Tree Search",
+        "Verifier",
+        "Memory"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "系统机制",
+      "reader_takeaway": "理解长程 Agent 的状态空间、动作选择、价值评估、轨迹回放和失败恢复，并能用伪代码复现一个规划 loop。",
+      "reason": "适合 AI 工程师和研究生读者，可用伪代码讲清楚 Agent loop。",
+      "source_plan": [
+        "ReAct paper",
+        "Tree-of-Thoughts / search-based reasoning 论文",
+        "Reflexion / verifier / memory 相关论文",
+        "OpenAI / Anthropic / agent framework 文档"
+      ],
+      "status": "published",
+      "confirmed": true,
+      "confirmed_at": "2026-06-26T08:58:00+08:00",
+      "published": true,
+      "published_at": "2026-06-26T10:40:00+08:00",
+      "article_path": "source/_posts/2026-06-25-long-horizon-agent-planning.md",
+      "notification_status": "recovered_from_cron_run",
+      "notification_prepared_at": "2026-06-26T08:55:00+08:00",
+      "user_instruction": "主人确认：昨天的选题发布主2、主3和技2；今天发布 topic3 和 tech1。2026-06-25 候选由 cron history 恢复。"
+    },
+    {
+      "id": "TECH-20260625-03",
+      "date": "2026-06-25",
+      "slot": "technical_explainer",
+      "title": "Conformal Prediction 在多模态模型不确定性估计中的作用",
+      "category": [
+        "TECH",
+        "AI",
+        "Research"
+      ],
+      "tags": [
+        "Conformal Prediction",
+        "Uncertainty Estimation",
+        "Multimodal",
+        "Calibration",
+        "VLM"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "学术机制",
+      "reader_takeaway": "理解 coverage guarantee、calibration set、prediction set、VLM 置信度为什么不可靠，以及如何校准。",
+      "reason": "偏学术，可复用知识密度高。",
+      "source_plan": [
+        "Conformal prediction 经典资料",
+        "多模态/VLM calibration 论文",
+        "不确定性估计与 coverage guarantee 相关资料"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "notification_status": "recovered_from_cron_run",
+      "notification_prepared_at": "2026-06-26T08:55:00+08:00"
+    },
+    {
+      "id": "TECH-20260626-01",
+      "date": "2026-06-26",
+      "slot": "technical_explainer",
+      "title": "vLLM 连续批处理与 PagedAttention：为什么 LLM Serving 不能只看“单请求延迟”",
+      "category": [
+        "TECH",
+        "AI",
+        "AI Infra"
+      ],
+      "tags": [
+        "vLLM",
+        "PagedAttention",
+        "Continuous Batching",
+        "KV Cache",
+        "LLM Serving",
+        "Inference"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "工程优化",
+      "reader_takeaway": "理解 LLM serving 的吞吐/延迟权衡、KV cache block 管理、连续批处理调度，以及为什么服务端推理不是把单机 generate API 包一层 HTTP。",
+      "reason": "能做公式、伪代码、系统图和源码映射，且和今日 HF Jobs/vLLM 工具热点形成“主文 + 技术点”的强组合。",
+      "source_plan": [
+        "vLLM docs/GitHub",
+        "PagedAttention paper",
+        "Hugging Face vLLM Jobs：https://huggingface.co/blog/vllm-jobs",
+        "相关 LLM serving benchmark 资料"
+      ],
+      "status": "published",
+      "confirmed": true,
+      "confirmed_at": "2026-06-26T08:58:00+08:00",
+      "published": true,
+      "published_at": "2026-06-26T10:40:00+08:00",
+      "article_path": "source/_posts/2026-06-26-vllm-pagedattention-continuous-batching.md",
+      "user_instruction": "主人确认：昨天的选题发布主2、主3和技2；今天发布 topic3 和 tech1。2026-06-25 候选由 cron history 恢复。"
+    },
+    {
+      "id": "TECH-20260626-02",
+      "date": "2026-06-26",
+      "slot": "technical_explainer",
+      "title": "Hybrid Token Prediction：Attention 与 Recurrence 在不同 token 上各擅长什么",
+      "category": [
+        "TECH",
+        "AI",
+        "LLM"
+      ],
+      "tags": [
+        "Hybrid Models",
+        "Attention",
+        "Recurrence",
+        "OLMo",
+        "Token Prediction",
+        "Architecture Analysis"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "前沿调研",
+      "reader_takeaway": "理解如何从 token-level loss/log-prob 角度分析混合架构，区分 attention 与 recurrence 对实体、语法、长程依赖、局部模式的能力差异。",
+      "reason": "不是泛泛模型新闻，而是可讲清“如何诊断架构差异”的方法论，对研究生和模型研究员有复用价值。",
+      "source_plan": [
+        "Ai2/Hugging Face 文章：https://huggingface.co/blog/allenai/hybrid-token-prediction",
+        "arXiv:2606.20936 技术报告",
+        "OLMo Hybrid 模型卡/代码",
+        "相关 hybrid architecture 论文"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null
+    },
+    {
+      "id": "TECH-20260626-03",
+      "date": "2026-06-26",
+      "slot": "technical_explainer",
+      "title": "Expert Parallelism 与 DeepEP：MoE 微调为什么不是普通 DDP 放大版",
+      "category": [
+        "TECH",
+        "AI",
+        "AI Infra"
+      ],
+      "tags": [
+        "MoE",
+        "Expert Parallelism",
+        "DeepEP",
+        "NeMo",
+        "Distributed Training",
+        "Fine-tuning"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "工程优化",
+      "reader_takeaway": "理解 MoE 训练中的 token-to-expert routing、all-to-all 通信、专家并行和 DeepEP 优化点，知道为什么 MoE 微调瓶颈与 dense model 不同。",
+      "reason": "能把热门工具文章拆成可复用的分布式训练知识，适合 AI Infra 技术读者。",
+      "source_plan": [
+        "HF/NVIDIA NeMo AutoModel：https://huggingface.co/blog/nvidia/accelerating-fine-tuning-nvidia-nemo-automodel",
+        "NeMo docs/GitHub",
+        "DeepEP docs/GitHub",
+        "Switch Transformer/MoE 论文"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null
+    },
     {
       "id": "TOPIC-20260603-01",
       "date": "2026-06-03",
@@ -203,116 +1572,6 @@
       "slot": "daily_main"
     },
     {
-      "id": "TECH-20260604-01",
-      "date": "2026-06-04",
-      "slot": "technical_explainer",
-      "title": "MLA 注意力机制拆解：DeepSeek 如何用低秩潜变量压缩 KV Cache",
-      "category": [
-        "AI",
-        "LLM"
-      ],
-      "tags": [
-        "MLA",
-        "Attention",
-        "KV Cache",
-        "DeepSeek",
-        "Inference Optimization"
-      ],
-      "type": "技术点讲解",
-      "technical_level": "架构解析",
-      "reader_takeaway": "理解 MHA、MQA、GQA 到 MLA 的演进，掌握 MLA 如何通过潜变量压缩 KV Cache，以及它对解码阶段带宽、算力和硬件执行策略的影响。",
-      "reason": "MLA 是 DeepSeek 系列模型中最值得拆解的架构创新之一，既连接 Transformer 注意力基础，又直接影响推理成本和硬件友好性；近期还有硬件视角分析与 NVIDIA Megatron-Core 文档可交叉参考。",
-      "source_plan": [
-        "DeepSeek-V2 Technical Report / DeepSeek-V3 Technical Report",
-        "Hardware-Centric Analysis of DeepSeek's Multi-Head Latent Attention, arXiv:2506.02523",
-        "NVIDIA Megatron-Core Multi-Latent Attention documentation",
-        "Attention Is All You Need",
-        "Multi-Query Attention / Grouped-Query Attention 相关论文或技术资料"
-      ],
-      "status": "published",
-      "confirmed": true,
-      "confirmed_at": "2026-06-04T09:28:08+08:00",
-      "published": true,
-      "published_at": "2026-06-04T09:28:08+08:00",
-      "article_path": "source/_posts/2026-06-04-mla-attention-kv-cache.md",
-      "notification_status": "pending_wechat_notification",
-      "notification_prepared_at": "2026-06-04T09:10:00+08:00",
-      "user_instruction": "用户要求按新版 TECH 标准重写：更关注技术点，更专业，使用更多公式由浅入深，让 AI 专业研究生也能看懂并真正学到知识。",
-      "updated_at": "2026-06-04T10:48:00+08:00"
-    },
-    {
-      "id": "TECH-20260604-02",
-      "date": "2026-06-04",
-      "slot": "technical_explainer",
-      "title": "从 PPO 到 GRPO：为什么大模型推理强化学习开始弱化 critic",
-      "category": [
-        "AI",
-        "强化学习"
-      ],
-      "tags": [
-        "PPO",
-        "GRPO",
-        "RLHF",
-        "Reasoning Models",
-        "DeepSeek"
-      ],
-      "type": "技术点讲解",
-      "technical_level": "算法推导",
-      "reader_takeaway": "理解 PPO 的 actor-critic 框架、GRPO 的 group relative reward 思路、为什么省掉 value model 会影响显存与训练流程，以及它在 reasoning model 训练中的适用边界。",
-      "reason": "GRPO 已成为 reasoning model 后训练的高频关键词，但很多解读停留在“省掉 critic”。这篇可以把 PPO、reward normalization、group sampling、优势估计和稳定性风险讲清楚。",
-      "source_plan": [
-        "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models, arXiv:2402.03300",
-        "Demystifying Group Relative Policy Optimization: Its Policy Gradient is a U-Statistic, arXiv:2603.01162",
-        "Proximal Policy Optimization Algorithms, arXiv:1707.06347",
-        "DeepSeek-R1 technical report",
-        "TRL / verl / OpenRLHF 等开源 RLHF 框架文档"
-      ],
-      "status": "pending_confirmation",
-      "confirmed": false,
-      "confirmed_at": null,
-      "published": false,
-      "published_at": null,
-      "article_path": null,
-      "notification_status": "prepared_for_openclaw_route",
-      "notification_prepared_at": "2026-06-04T09:10:00+08:00"
-    },
-    {
-      "id": "TECH-20260604-03",
-      "date": "2026-06-04",
-      "slot": "technical_explainer",
-      "title": "FlashAttention-3 与算子优化：从 IO-aware attention 到 Hopper 异步流水线",
-      "category": [
-        "AI",
-        "AI Infra"
-      ],
-      "tags": [
-        "FlashAttention",
-        "CUDA",
-        "H100",
-        "Attention Kernel",
-        "Operator Optimization"
-      ],
-      "type": "技术点讲解",
-      "technical_level": "工程优化",
-      "reader_takeaway": "理解标准 attention 为什么受 HBM 读写限制，FlashAttention 如何用 tiling 降低 IO，FlashAttention-3 如何利用 Hopper 的 TMA、warp specialization、FP8 和异步流水线继续提升吞吐。",
-      "reason": "FlashAttention 是现代 Transformer 训练和推理的基础优化之一，FlashAttention-3 又把问题推进到硬件特性与 CUDA kernel 设计层，适合写给希望理解底层性能瓶颈的工程师。",
-      "source_plan": [
-        "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
-        "FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning",
-        "FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision, arXiv:2407.08608 / NeurIPS 2024",
-        "NVIDIA Hopper Architecture / TMA / FP8 官方资料",
-        "flash-attention GitHub repository"
-      ],
-      "status": "pending_confirmation",
-      "confirmed": false,
-      "confirmed_at": null,
-      "published": false,
-      "published_at": null,
-      "article_path": null,
-      "notification_status": "prepared_for_openclaw_route",
-      "notification_prepared_at": "2026-06-04T09:10:00+08:00"
-    },
-    {
       "id": "TOPIC-20260605-01",
       "date": "2026-06-05",
       "slot": "daily_main",
@@ -421,119 +1680,6 @@
       "updated_at": "2026-06-05T11:00:00+08:00"
     },
     {
-      "id": "TECH-20260605-01",
-      "date": "2026-06-05",
-      "slot": "technical_explainer",
-      "title": "Q、K、V 投影共享：Transformer 注意力机制真的需要三个投影矩阵吗？（ICML 2026 论文精讲）",
-      "category": [
-        "AI",
-        "基础模型"
-      ],
-      "tags": [
-        "Transformer",
-        "Attention",
-        "QKV",
-        "Weight Tying",
-        "KV Cache",
-        "ICML 2026"
-      ],
-      "type": "论文精读",
-      "reason": "ICML 2026 正式接收论文，系统研究三种 QKV 投影共享方案。Q-K=V 可达到 50% KV Cache 缩减（质量损失仅 3.1%），叠加 GQA/MQA 可达 87.5%~96.9% 极致压缩。与 MLA 形成 attention 优化的双视角互补。",
-      "source_plan": [
-        "arXiv 2606.04032 论文全文",
-        "GitHub 开源代码",
-        "MQA/GQA 原论文",
-        "DeepSeek MLA 技术报告"
-      ],
-      "status": "published",
-      "confirmed": true,
-      "confirmed_at": "2026-06-05T08:58:00+08:00",
-      "published": true,
-      "published_at": "2026-06-05T11:45:00+08:00",
-      "article_path": "source/_posts/2026-06-05-qkv-projection-sharing-attention.md",
-      "technical_level": "架构解析",
-      "reader_takeaway": "理解 Q、K、V 三投影各自的功能与冗余性；掌握三种投影共享方案的数学形式和注意力计算含义；理解 Q-K=V 为什么效果好且可与 GQA/MQA 叠加达到极致压缩；掌握注意力低秩性与投影共享的理论联系。",
-      "notification_status": "pending_wechat_notification",
-      "notification_prepared_at": "2026-06-05T08:50:00+08:00",
-      "user_instruction": "用户明确确认；等待三篇 TOPIC 完成后再写。",
-      "updated_at": "2026-06-05T11:45:00+08:00"
-    },
-    {
-      "id": "TECH-20260605-02",
-      "date": "2026-06-05",
-      "slot": "technical_explainer",
-      "title": "KV Cache 量化技术解析：从均匀量化到方差归一化，如何在保持精度的同时扩大 4 倍上下文",
-      "category": [
-        "AI",
-        "推理优化"
-      ],
-      "tags": [
-        "KV Cache",
-        "Quantization",
-        "LLM Inference",
-        "KVarN",
-        "TurboQuant",
-        "SmoothQuant"
-      ],
-      "type": "深度文章",
-      "reason": "系统梳理 KV Cache 量化方案演进（均匀量化 → Per-Channel/Per-Token → SmoothQuant → TurboQuant → KVarN），讲清误差累积机制与方差归一化直觉。对推理部署工程师有直接实用价值。",
-      "source_plan": [
-        "KVarN 论文（arXiv 2606.03458）",
-        "KVarN GitHub",
-        "vLLM TurboQuant 博客",
-        "SmoothQuant 论文",
-        "FlexGen 论文"
-      ],
-      "status": "published",
-      "confirmed": true,
-      "confirmed_at": "2026-06-05T08:58:00+08:00",
-      "published": true,
-      "published_at": "2026-06-05T10:07:34+08:00",
-      "article_path": "source/_posts/2026-06-05-kv-cache-quantization-varn.md",
-      "technical_level": "工程优化",
-      "reader_takeaway": "理解 KV Cache 量化中误差累积的数学模型；掌握 Hadamard 旋转消除 outlier 和方差归一化抑制误差的原理；能够评估不同量化方案在精度、吞吐、容量间的权衡。",
-      "notification_status": "wechat_delivered",
-      "notification_prepared_at": "2026-06-05T08:50:00+08:00",
-      "user_instruction": "用户明确继续发布；等待 TECH-20260605-01 完成后再写。"
-    },
-    {
-      "id": "TECH-20260605-03",
-      "date": "2026-06-05",
-      "slot": "technical_explainer",
-      "title": "投机采样（Speculative Decoding）原理与工程实现：如何用小模型加速大模型的自回归解码",
-      "category": [
-        "AI",
-        "推理优化"
-      ],
-      "tags": [
-        "Speculative Decoding",
-        "LLM Inference",
-        "Draft Model",
-        "Self-Speculation",
-        "vLLM",
-        "TensorRT-LLM"
-      ],
-      "type": "深度文章",
-      "reason": "投机采样是 LLM 推理加速的经典优雅技术，vLLM/TensorRT-LLM/SGLang 均已集成。概念优雅（严格无损加速）、数学简洁（拒绝采样）、工程价值高（2-3x 加速）。适合作为 LLM 推理系统解析系列的基础算法篇。",
-      "source_plan": [
-        "Leviathan et al. 2023 原论文",
-        "Medusa/EAGLE 论文",
-        "vLLM speculative decoding 文档与源码",
-        "TensorRT-LLM speculative decoding 文档"
-      ],
-      "status": "published",
-      "confirmed": true,
-      "confirmed_at": "2026-06-05T08:58:00+08:00",
-      "published": true,
-      "published_at": "2026-06-05T10:12:01+08:00",
-      "article_path": "source/_posts/2026-06-05-speculative-decoding-principles.md",
-      "technical_level": "算法推导",
-      "reader_takeaway": "掌握投机采样的 draft-verify 两阶段框架和接受/拒绝采样的数学保证；理解 draft model 选择的最优 trade-off；了解 vLLM 生产级实现和自投机解码变体（Medusa/EAGLE）。",
-      "notification_status": "wechat_delivered",
-      "notification_prepared_at": "2026-06-05T08:50:00+08:00",
-      "user_instruction": "用户明确继续发布；等待 TECH-20260605-02 完成后再写。"
-    },
-    {
       "id": "TOPIC-20260606-01",
       "date": "2026-06-06",
       "title": "从 Microsoft Build 2026 看 Agentic Developer Stack：AI 编程从「补全工具」变成「并行工程系统」",
@@ -618,91 +1764,6 @@
       "published": true,
       "published_at": "2026-06-06T12:45:00+08:00",
       "article_path": "source/_posts/2026-06-06-chatgpt-memory-agent-infrastructure.md"
-    },
-    {
-      "id": "TECH-20260606-01",
-      "date": "2026-06-06",
-      "title": "Encoder-free 多模态 Transformer：图像、音频、文本如何在一个模型里统一建模？",
-      "category": [
-        "AI",
-        "Multimodal"
-      ],
-      "tags": [
-        "Transformer",
-        "Multimodal",
-        "Encoder-free",
-        "Tokenization"
-      ],
-      "type": "TECH 技术点",
-      "reason": "适合研究生和工程师从架构层真正理解多模态模型",
-      "source_plan": [
-        "arXiv",
-        "Gemma 4 技术报告",
-        "多模态 Transformer 原论文"
-      ],
-      "status": "published",
-      "confirmed": true,
-      "confirmed_at": "2026-06-06T12:00:00+08:00",
-      "published": true,
-      "published_at": "2026-06-06T13:00:00+08:00",
-      "article_path": "source/_posts/2026-06-06-encoder-free-multimodal-transformer.md"
-    },
-    {
-      "id": "TECH-20260606-02",
-      "date": "2026-06-06",
-      "title": "AI Agent 的长期记忆机制：从 RAG 到 Memory Synthesis",
-      "category": [
-        "AI",
-        "Agent"
-      ],
-      "tags": [
-        "Memory",
-        "RAG",
-        "Agent",
-        "Memory Synthesis"
-      ],
-      "type": "TECH 技术点",
-      "reason": "和 OpenAI 新 memory 更新强相关，技术与产品都能讲深",
-      "source_plan": [
-        "OpenAI Memory Research",
-        "RAG 原论文",
-        "MemGPT 等记忆系统论文"
-      ],
-      "status": "published",
-      "confirmed": true,
-      "confirmed_at": "2026-06-06T12:00:00+08:00",
-      "published": true,
-      "published_at": "2026-06-06T13:15:00+08:00",
-      "article_path": "source/_posts/2026-06-06-agent-long-term-memory-mechanisms.md"
-    },
-    {
-      "id": "TECH-20260606-03",
-      "date": "2026-06-06",
-      "title": "MoE 模型为什么适合 Agentic AI：路由、激活参数与推理吞吐的底层逻辑",
-      "category": [
-        "AI",
-        "AI Infra"
-      ],
-      "tags": [
-        "MoE",
-        "Agent",
-        "Inference",
-        "Routing",
-        "Throughput"
-      ],
-      "type": "TECH 技术点",
-      "reason": "适合写成硬核技术科普",
-      "source_plan": [
-        "Switch Transformer",
-        "Mixtral 技术报告",
-        "DeepSeek MoE 论文"
-      ],
-      "status": "published",
-      "confirmed": true,
-      "confirmed_at": "2026-06-06T12:00:00+08:00",
-      "published": true,
-      "published_at": "2026-06-06T13:30:00+08:00",
-      "article_path": "source/_posts/2026-06-06-moe-agentic-ai-architecture.md"
     },
     {
       "id": "TOPIC-20260607-01",
@@ -809,116 +1870,6 @@
       "notification_prepared_at": "2026-06-07T08:36:00+08:00"
     },
     {
-      "id": "TECH-20260607-01",
-      "date": "2026-06-07",
-      "slot": "technical_explainer",
-      "title": "LoRA 低秩适配原理深度拆解：为什么两个小矩阵就能微调千亿参数大模型",
-      "category": [
-        "AI",
-        "LLM"
-      ],
-      "tags": [
-        "LoRA",
-        "Fine-tuning",
-        "Low-Rank",
-        "PEFT",
-        "QLoRA",
-        "DoRA",
-        "SVD"
-      ],
-      "type": "技术点讲解",
-      "reason": "LoRA 是 PEFT 事实标准，数学路径清晰（SVD→低秩→前向传播），HuggingFace PEFT 官方实现成熟",
-      "source_plan": [
-        "LoRA 原论文 (Hu et al., ICLR 2022)",
-        "QLoRA 论文 (Dettmers et al., NeurIPS 2023)",
-        "DoRA 论文 (Liu et al., ICML 2024)",
-        "HuggingFace PEFT 源码",
-        "LoRA+ 论文"
-      ],
-      "status": "pending_confirmation",
-      "confirmed": false,
-      "confirmed_at": null,
-      "published": false,
-      "published_at": null,
-      "article_path": null,
-      "technical_level": "算法推导",
-      "reader_takeaway": "理解 LoRA 为何只需要两个低秩矩阵就能高效微调大模型；掌握矩阵低秩分解的数学直觉和 LoRA 前向/反向传播公式；了解 QLoRA/DoRA 改进；能判断何时用 LoRA",
-      "notification_status": "prepared_for_openclaw_route",
-      "notification_prepared_at": "2026-06-07T08:36:00+08:00"
-    },
-    {
-      "id": "TECH-20260607-02",
-      "date": "2026-06-07",
-      "slot": "technical_explainer",
-      "title": "RoPE 旋转位置编码完全解析：从绝对位置到相对位置编码的数学之美",
-      "category": [
-        "AI",
-        "LLM"
-      ],
-      "tags": [
-        "RoPE",
-        "Position Encoding",
-        "Transformer",
-        "YaRN",
-        "Length Extrapolation"
-      ],
-      "type": "技术点讲解",
-      "reason": "RoPE 是 Llama/Mistral/Qwen/DeepSeek/Gemma 的通用位置编码方案，数学优美，与外推和长上下文直接相关",
-      "source_plan": [
-        "RoPE 原论文 (Su et al., arXiv:2104.09864)",
-        "YaRN 论文 (Peng et al., arXiv:2309.00071)",
-        "ALiBi 论文",
-        "HuggingFace LlamaRotaryEmbedding 源码"
-      ],
-      "status": "pending_confirmation",
-      "confirmed": false,
-      "confirmed_at": null,
-      "published": false,
-      "published_at": null,
-      "article_path": null,
-      "technical_level": "算法推导",
-      "reader_takeaway": "掌握 RoPE 复指数旋转公式、频率分层的物理含义、相对位置性质的数学证明、YaRN 长度外推原理",
-      "notification_status": "prepared_for_openclaw_route",
-      "notification_prepared_at": "2026-06-07T08:36:00+08:00"
-    },
-    {
-      "id": "TECH-20260607-03",
-      "date": "2026-06-07",
-      "slot": "technical_explainer",
-      "title": "Flow Matching 生成模型原理：从概率流 ODE 到现代文生图/视频的统一生成框架",
-      "category": [
-        "AI",
-        "Multimodal"
-      ],
-      "tags": [
-        "Flow Matching",
-        "Diffusion",
-        "Rectified Flow",
-        "Generative Models",
-        "DiT"
-      ],
-      "type": "技术点讲解",
-      "reason": "Flow Matching 正在取代 DDPM 成为生成模型主流训练范式（SD3/Flux/Sora 均基于此），中文系统讲解稀缺，填补博客多模态生成技术线空白",
-      "source_plan": [
-        "Flow Matching 原论文 (Lipman et al., ICLR 2023)",
-        "Rectified Flow 论文 (Liu et al., ICLR 2023)",
-        "Stochastic Interpolants 论文",
-        "SD3 技术报告",
-        "Flux 技术报告",
-        "Diffusers Flow Matching 源码"
-      ],
-      "status": "pending_confirmation",
-      "confirmed": false,
-      "confirmed_at": null,
-      "published": false,
-      "published_at": null,
-      "article_path": null,
-      "technical_level": "算法推导",
-      "reader_takeaway": "理解 Flow Matching 作为扩散模型泛化框架的数学动机；掌握从概率路径到向量场再到 ODE 采样的完整推导；理解 Conditional Flow Matching 和 Rectified Flow 的核心思想",
-      "notification_status": "prepared_for_openclaw_route",
-      "notification_prepared_at": "2026-06-07T08:36:00+08:00"
-    },
-    {
       "id": "TOPIC-20260611-01",
       "date": "2026-06-11",
       "slot": "daily_main",
@@ -1003,108 +1954,6 @@
         "NVIDIA BESS blog",
         "AI Factory 参考架构",
         "数据中心PUE文献"
-      ],
-      "status": "pending_confirmation",
-      "confirmed": false,
-      "confirmed_at": null,
-      "published": false,
-      "published_at": null,
-      "article_path": null
-    },
-    {
-      "id": "TECH-20260611-01",
-      "date": "2026-06-11",
-      "slot": "technical_explainer",
-      "title": "扩散语言模型的数学原理：从连续扩散到离散文本生成的完整推导",
-      "category": [
-        "AI",
-        "LLM"
-      ],
-      "tags": [
-        "Diffusion",
-        "Language Model",
-        "Discrete Diffusion",
-        "Masked Diffusion",
-        "LLaDA"
-      ],
-      "type": "技术点讲解",
-      "technical_level": "算法推导",
-      "reader_takeaway": "理解扩散模型从连续到离散空间的数学迁移；掌握吸收态扩散的核心公式与采样策略；理解CMLM的损失函数和去噪过程；能对比自回归与扩散生成的概率分解差异",
-      "reason": "扩散文本模型是LLM架构最具颠覆性的方向，中文系统性讲解稀缺；与主选题形成双篇组合",
-      "source_plan": [
-        "DiffusionGemma 技术报告",
-        "MDLM 论文",
-        "LLaDA 论文",
-        "DDPM 论文",
-        "D3PM 论文"
-      ],
-      "status": "published",
-      "confirmed": true,
-      "confirmed_at": "2026-06-12T08:22:39+08:00",
-      "published": true,
-      "published_at": "2026-06-12T08:28:13.676610",
-      "article_path": "source/_posts/2026-06-11-diffusion-lm-math.md"
-    },
-    {
-      "id": "TECH-20260611-02",
-      "date": "2026-06-11",
-      "slot": "technical_explainer",
-      "title": "Constitutional AI 训练机制深度拆解：从监督微调到 AI 反馈强化学习的完整推导",
-      "category": [
-        "AI",
-        "强化学习"
-      ],
-      "tags": [
-        "Constitutional AI",
-        "RLHF",
-        "RLAIF",
-        "Alignment",
-        "Anthropic"
-      ],
-      "type": "技术点讲解",
-      "technical_level": "算法推导",
-      "reader_takeaway": "理解CAI两阶段训练的完整流程和数学形式；掌握宪法在生成对比数据中的角色；理解RLAIF与RLHF的核心差异及trade-off；能分析宪法设计如何影响模型行为边界",
-      "reason": "CAI是Anthropic对齐方法论核心，本周Fable/Mythos安全护栏争议的技术基础；中文系统讲解稀缺",
-      "source_plan": [
-        "CAI原论文 (Bai et al. 2022)",
-        "HH-RLHF论文",
-        "Anthropic后续CAI研究",
-        "TRL/OpenRLHF框架"
-      ],
-      "status": "published",
-      "confirmed": true,
-      "confirmed_at": "2026-06-12T08:22:39+08:00",
-      "published": true,
-      "published_at": "2026-06-12T08:28:13.676610",
-      "article_path": "source/_posts/2026-06-11-constitutional-ai.md"
-    },
-    {
-      "id": "TECH-20260611-03",
-      "date": "2026-06-11",
-      "slot": "technical_explainer",
-      "title": "混合精度训练中的数值稳定性：从 FP32 到 FP4 的量化误差传播与补偿策略",
-      "category": [
-        "AI",
-        "AI Infra"
-      ],
-      "tags": [
-        "Mixed Precision",
-        "FP4",
-        "NVFP4",
-        "Training",
-        "Numerical Stability",
-        "Blackwell"
-      ],
-      "type": "技术点讲解",
-      "technical_level": "工程优化",
-      "reader_takeaway": "理解浮点格式的数值表示差异和动态范围；掌握混合精度训练中精度分配策略；理解loss scaling的原理和自动loss scaling算法；了解NVFP4格式设计和Blackwell训练实践",
-      "reason": "训练精度正从BF16→FP8→FP4快速演进，NVIDIA 6/8发布NVFP4博客；与KV Cache量化形成完整低精度全景",
-      "source_plan": [
-        "Mixed Precision Training (Micikevicius 2018)",
-        "NVIDIA FP8白皮书",
-        "NVIDIA NVFP4 blog",
-        "Transformer Engine 文档",
-        "PyTorch AMP"
       ],
       "status": "pending_confirmation",
       "confirmed": false,
@@ -1209,108 +2058,691 @@
       "article_path": "source/_posts/2026-06-12-tensorrt-quantization-toolchain.md"
     },
     {
-      "id": "TECH-20260612-01",
-      "date": "2026-06-12",
-      "slot": "technical_explainer",
-      "title": "Natural Language Autoencoders (NLA) 机制拆解：如何通过逆向重建训练模型解释自身内部激活",
+      "id": "TOPIC-20260614-01",
+      "date": "2026-06-14",
+      "slot": "daily_main",
+      "title": "AI 周回顾 2026W24：Anthropic 出口管制风暴、GLM 5.2 发布与全球 AI 治理加速",
       "category": [
         "AI",
-        "LLM"
+        "Weekly"
       ],
       "tags": [
-        "Interpretability",
-        "Autoencoder",
-        "Activation",
-        "Mechanistic Interpretability",
-        "Anthropic"
+        "Weekly Review",
+        "AI Governance",
+        "Anthropic",
+        "GLM",
+        "Export Control",
+        "Regulation"
       ],
-      "type": "技术点讲解",
-      "technical_level": "算法推导",
-      "reader_takeaway": "理解 NLA 的三模型架构（Target→AV→AR）和端到端训练目标；掌握用重构质量作为解释保真度的评估框架；理解可解释性中保真度 vs 可读性的核心 trade-off。",
-      "reason": "Anthropic 2026 年最重要的可解释性研究成果，将机械可解释性推进到自然语言层面。中文社区几乎没有系统讲解，填补空白。",
+      "type": "周报",
+      "reason": "本周 Anthropic 出口管制标志 AI 进入地缘政治管制时代；GLM 5.2 发布；SpaceX Colossus $15B租赁展示算力金融化。三线索交织，事件密度高，适合周日周报。",
       "source_plan": [
-        "Anthropic NLA Research Blog 2026-05-07",
-        "NLA 论文",
-        "GitHub.com/kitft/natural_language_autoencoders",
-        "Neuronpedia NLA 交互界面",
-        "SAE 相关论文"
+        "WSJ Anthropic/Amazon 原文",
+        "GLM 5.2 官方博客/技术报告",
+        "Bloomberg SpaceX Colossus 报道",
+        "NYT OpenAI 调查报道",
+        "Sky News AI伪造证据报道"
       ],
-      "status": "published",
-      "confirmed": true,
-      "confirmed_at": "2026-06-12T08:53:38+08:00",
-      "published": true,
-      "published_at": "2026-06-12T08:59:39.670552",
-      "article_path": "source/_posts/2026-06-12-nla-autoencoders.md"
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null
     },
     {
-      "id": "TECH-20260612-02",
-      "date": "2026-06-12",
-      "slot": "technical_explainer",
-      "title": "ZeRO 优化器状态分片完全推导：从数据并行的显存瓶颈到三阶段分片的通信-显存权衡",
+      "id": "TOPIC-20260614-02",
+      "date": "2026-06-14",
+      "slot": "daily_main",
+      "title": "下周看点 2026W25：WWDC 端侧 AI 生态落地、AI 立法密集表决与算力基础设施新秩序",
+      "category": [
+        "AI",
+        "Industry"
+      ],
+      "tags": [
+        "Next Week Preview",
+        "WWDC",
+        "On-Device AI",
+        "AI Regulation",
+        "Compute Market",
+        "Apple Intelligence"
+      ],
+      "type": "深度文章",
+      "reason": "WWDC尾波中Apple Intelligence落地、AI立法加速、SpaceX IPO后算力市场重塑，可作为主人下周选题预警。",
+      "source_plan": [
+        "WWDC 2026 Keynote",
+        "Apple Developer 文档更新",
+        "美国国会 AI 法案进展",
+        "SpaceX S-1 招股书相关内容"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null
+    },
+    {
+      "id": "TOPIC-20260614-03",
+      "date": "2026-06-14",
+      "slot": "daily_main",
+      "title": "AI 的出口管制时代：从 Anthropic 模型限制案看技术主权、安全审查与开源路线的三重博弈",
+      "category": [
+        "AI",
+        "Industry"
+      ],
+      "tags": [
+        "AI Governance",
+        "Export Control",
+        "Anthropic",
+        "National Security",
+        "Open Source",
+        "AI Policy"
+      ],
+      "type": "深度文章",
+      "reason": "Anthropic出口管制是AI斯普特尼克时刻。深度分析技术主权边界、安全审查机制、开源路线命运三重博弈。",
+      "source_plan": [
+        "WSJ 原文",
+        "BIS 出口管制法规",
+        "Anthropic声明",
+        "Meta/Google开源政策",
+        "中国AI产业回应"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null
+    },
+    {
+      "id": "TOPIC-20260617-01",
+      "date": "2026-06-17",
+      "slot": "daily_main",
+      "title": "Deployment Simulation 会成为新模型上线前的安全标配吗：从静态评测到真实流量重放的行业拐点",
+      "category": [
+        "AI",
+        "Industry"
+      ],
+      "tags": [
+        "Deployment Simulation",
+        "AI Safety",
+        "Evaluation",
+        "Agent",
+        "Model Release"
+      ],
+      "type": "深度文章",
+      "reason": "OpenAI 6 月 16 日发布 Deployment Simulation，把模型发布前风险评估从静态 benchmark 推向真实上下文重放、分布估计和 agentic tool trajectory 模拟，切中模型发布治理升级。",
+      "source_plan": [
+        "OpenAI Deployment Simulation 文章与论文",
+        "GPT-5.5 system card",
+        "OpenAI alignment blog calculator hacking 相关说明",
+        "WildChat / external auditing 资料",
+        "传统 eval 与 red-team 资料"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "notification_status": "prepared_for_openclaw_route",
+      "notification_prepared_at": "2026-06-17T08:30:00+08:00"
+    },
+    {
+      "id": "TOPIC-20260617-02",
+      "date": "2026-06-17",
+      "slot": "daily_main",
+      "title": "Agentic Coding 进入容量规划时代：从 Gartner 魔力象限到 AA-AgentPerf，看企业 AI 编程的下一场竞争",
+      "category": [
+        "AI",
+        "Agent"
+      ],
+      "tags": [
+        "Coding Agent",
+        "Codex",
+        "AA-AgentPerf",
+        "Enterprise AI",
+        "AI Infra"
+      ],
+      "type": "深度文章",
+      "reason": "OpenAI 的企业 coding agent 叙事和 NVIDIA/Artificial Analysis 的 AA-AgentPerf 都指向同一变化：AI 编程竞争开始从模型能力扩展到并发 agent、SLO、吞吐、电力效率和治理。",
+      "source_plan": [
+        "OpenAI Gartner enterprise coding agents 文章",
+        "NVIDIA AA-AgentPerf 技术博客",
+        "Artificial Analysis AgentPerf 页面",
+        "Codex / Claude Code / JetBrains 等官方资料",
+        "相关 benchmark 方法说明"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "notification_status": "prepared_for_openclaw_route",
+      "notification_prepared_at": "2026-06-17T08:30:00+08:00"
+    },
+    {
+      "id": "TOPIC-20260617-03",
+      "date": "2026-06-17",
+      "slot": "daily_main",
+      "title": "AI 评测正在变成算力瓶颈：为什么下一代 Agent 公司必须先解决 eval economics",
+      "category": [
+        "AI",
+        "Evaluation"
+      ],
+      "tags": [
+        "AI Evaluation",
+        "Agent Benchmark",
+        "Eval Cost",
+        "Reliability",
+        "Governance"
+      ],
+      "type": "深度文章",
+      "reason": "Hugging Face / EvalEval 近期指出 agent eval 成本正在跨过临界点，HAL、GAIA、科学 ML 评测都出现高成本和高方差问题，适合解释评测基础设施的行业护城河。",
+      "source_plan": [
+        "Hugging Face EvalEval 文章",
+        "Holistic Agent Leaderboard paper",
+        "GAIA / HAL / PaperBench / RE-Bench",
+        "UK AISI inference scaling 资料",
+        "OpenAI Deployment Simulation 作为对照"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "notification_status": "prepared_for_openclaw_route",
+      "notification_prepared_at": "2026-06-17T08:30:00+08:00"
+    },
+    {
+      "id": "TOPIC-20260619-01",
+      "date": "2026-06-19",
+      "slot": "daily_main",
+      "title": "Agentic Resource Discovery 爆发：AI Agent 如何从“手动接工具”走向“按意图找能力”",
+      "category": [
+        "AI",
+        "Agent"
+      ],
+      "tags": [
+        "Agentic Resource Discovery",
+        "MCP",
+        "A2A",
+        "Agent Tools",
+        "GitHub Copilot",
+        "Hugging Face"
+      ],
+      "type": "深度文章",
+      "reason": "Hugging Face 与 GitHub 同周推动 ARD / Agent finder，把 agent 工具生态从预安装工具列表推进到可搜索、可治理、可联邦发现的能力目录。",
+      "source_plan": [
+        "Hugging Face ARD 文章",
+        "GitHub Agent finder changelog",
+        "ARD specification",
+        "GitHub catalog / docs",
+        "MCP / A2A / Skills 官方资料"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null
+    },
+    {
+      "id": "TOPIC-20260619-02",
+      "date": "2026-06-19",
+      "slot": "daily_main",
+      "title": "GitHub Copilot 正在变成 Agent 平台：从 Agent Apps、Copilot SDK 到自动化任务的工具生态重构",
+      "category": [
+        "AI",
+        "Developer Tools"
+      ],
+      "tags": [
+        "GitHub Copilot",
+        "Agent Apps",
+        "Copilot SDK",
+        "Coding Agent",
+        "Developer Tools"
+      ],
+      "type": "深度文章",
+      "reason": "GitHub 近期连续推出 Agent Apps、Copilot SDK、Agent finder 和 cloud agent automations，说明 AI 编程工具正在从单一助手变成可扩展平台。",
+      "source_plan": [
+        "GitHub Agent Apps changelog",
+        "Copilot SDK GA changelog",
+        "Copilot Automations changelog",
+        "Agent finder docs",
+        "GitHub Copilot enterprise docs"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null
+    },
+    {
+      "id": "TOPIC-20260619-03",
+      "date": "2026-06-19",
+      "slot": "daily_main",
+      "title": "PyTorch AI Infra 工具链新信号：Helion、torch.compile 与 Muon/DeepSpeed 如何改变大模型训练推理优化",
       "category": [
         "AI",
         "AI Infra"
       ],
       "tags": [
-        "ZeRO",
-        "DeepSpeed",
-        "FSDP",
-        "Distributed Training",
-        "Memory Optimization",
-        "Data Parallelism"
-      ],
-      "type": "技术点讲解",
-      "technical_level": "算法推导",
-      "reader_takeaway": "理解数据并行的显存冗余问题及 Ψ=20 bytes/param 的精确分解；掌握 ZeRO Stage 1/2/3 的分片粒度和通信量推导；对比 ZeRO-3 与 FSDP 的异同。",
-      "reason": "ZeRO 是训练千亿参数模型的基础设施，但多数人只停留在经验层面不理解原理。Ψ bytes/param→三阶段递推→通信量公式的推导路径极其清晰，是理想的 TECH 选题。",
-      "source_plan": [
-        "ZeRO 原论文 Rajbhandari et al. SC20",
-        "DeepSpeed 官方文档",
-        "PyTorch FSDP 文档",
-        "Megatron-LM 混合并行文档",
-        "DeepSpeed GitHub 源码"
-      ],
-      "status": "published",
-      "confirmed": true,
-      "confirmed_at": "2026-06-12T08:53:38+08:00",
-      "published": true,
-      "published_at": "2026-06-12T08:59:39.670552",
-      "article_path": "source/_posts/2026-06-12-zero-optimizer-sharding.md"
-    },
-    {
-      "id": "TECH-20260612-03",
-      "date": "2026-06-12",
-      "slot": "technical_explainer",
-      "title": "连续批处理(Continuous Batching)机制详解：从静态 Padding 到 Iteration-Level 调度的 GPU 利用率优化",
-      "category": [
-        "AI",
-        "AI Infra"
-      ],
-      "tags": [
-        "Continuous Batching",
+        "PyTorch",
+        "Helion",
         "vLLM",
-        "LLM Inference",
-        "Scheduling",
-        "Throughput",
-        "GPU Utilization"
+        "torch.compile",
+        "DeepSpeed",
+        "Muon"
       ],
-      "type": "技术点讲解",
-      "technical_level": "工程优化",
-      "reader_takeaway": "理解静态 batching 的 GPU 浪费（短序列等长序列的 padding 问题）；掌握 iteration-level scheduling 的核心思想和请求级别状态机；理解 CB 如何将吞吐提升 2-10x。",
-      "reason": "Continuous batching 是现代 LLM 推理服务的基础调度机制。概念清晰、数学简洁、工程价值极高，与已有推理优化系列构成完整知识图谱。",
+      "type": "工具资源",
+      "reason": "PyTorch 近期连续出现 Helion vLLM kernel、torch.compile kernel fusion、DeepSpeed Muon 支持等工具链内容，指向 Python 原生 + 编译器 + kernel DSL + 分布式训练框架的组合趋势。",
       "source_plan": [
-        "Orca 论文 Yu et al. OSDI22",
-        "vLLM 原论文 Kwon et al. SOSP23",
-        "vLLM scheduler.py 源码",
-        "TensorRT-LLM inflight batching 文档",
-        "SGLang RadixAttention 调度文档"
+        "PyTorch Helion vLLM blog",
+        "PyTorch torch.compile kernel fusion blog",
+        "PyTorch DeepSpeed Muon blog",
+        "Helion docs / GitHub",
+        "DeepSpeed Muon PR 或文档"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null
+    },
+    {
+      "id": "TOPIC-20260620-01",
+      "date": "2026-06-20",
+      "slot": "daily_main",
+      "title": "部署前模拟正在取代静态基准？从 OpenAI Deployment Simulation 看模型风险评估的新范式",
+      "category": [
+        "AI",
+        "Evaluation"
+      ],
+      "tags": [
+        "Deployment Simulation",
+        "Model Evaluation",
+        "AI Safety",
+        "Agentic Rollouts",
+        "Risk Assessment"
+      ],
+      "type": "深度文章",
+      "reason": "OpenAI 近期公开的 Deployment Simulation 把模型评估从静态 prompt 集推进到用真实部署分布重采样、上线前预测行为率的体系，尤其覆盖工具调用和 agentic trajectories。",
+      "source_plan": [
+        "OpenAI Deployment Simulation 文章与论文：https://openai.com/index/deployment-simulation/",
+        "GPT-5.5 system card / OpenAI deployment safety materials",
+        "WildChat / external auditing companion material",
+        "传统模型评测、红队与 evaluation awareness 相关论文"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null
+    },
+    {
+      "id": "TOPIC-20260620-02",
+      "date": "2026-06-20",
+      "slot": "daily_main",
+      "title": "研究型 Agent 的隐私悖论：为什么越会搜索的 Agent 越容易泄密",
+      "category": [
+        "AI",
+        "Agent Safety"
+      ],
+      "tags": [
+        "Research Agent",
+        "Privacy",
+        "MosaicLeaks",
+        "PA-DR",
+        "Tool Use",
+        "Agent Safety"
+      ],
+      "type": "深度文章",
+      "reason": "MosaicLeaks 把 Deep Research Agent 的风险从回答错或幻觉推进到外部查询日志泄露私有信息，适合从系统安全和企业部署边界做深度分析。",
+      "source_plan": [
+        "Hugging Face / ServiceNow MosaicLeaks 文章：https://huggingface.co/blog/ServiceNow/mosaicleaks",
+        "arXiv:2605.30727 MosaicLeaks paper：https://arxiv.org/abs/2605.30727",
+        "DRBench / BrowseComp-Plus 相关资料",
+        "Agent privacy / RAG leakage 相关论文"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null
+    },
+    {
+      "id": "TOPIC-20260620-03",
+      "date": "2026-06-20",
+      "slot": "daily_main",
+      "title": "软件要开始为 Agent 设计了：从“人类可用 API”到“Agent 可驱动系统”的工程转向",
+      "category": [
+        "AI",
+        "Developer Experience"
+      ],
+      "tags": [
+        "Agentic Software",
+        "Tooling",
+        "Evaluation",
+        "API Design",
+        "Developer Experience",
+        "Open Models"
+      ],
+      "type": "深度文章",
+      "reason": "Hugging Face 的 agentic-use benchmark 案例说明软件库质量正在从正确性、速度和文档扩展到 Agent 能否高效驱动。",
+      "source_plan": [
+        "Hugging Face Is it agentic enough?：https://huggingface.co/blog/is-it-agentic-enough",
+        "相关 GitHub benchmark harness / HF Jobs 资料",
+        "Agent 工具评测和软件可用性相关论文",
+        "近期 agent-ready CLI / SDK 设计案例"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null
+    },
+    {
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "notification_status": "prepared_for_openclaw_route",
+      "notification_prepared_at": "2026-06-23T23:24:00+08:00",
+      "id": "TOPIC-20260623-01",
+      "date": "2026-06-23",
+      "slot": "daily_main",
+      "title": "把 AI Agent 放进 GitHub Actions：Agentic Workflows 的工程实践、权限边界与审计链路",
+      "category": [
+        "AI",
+        "Agent"
+      ],
+      "tags": [
+        "Agentic Workflow",
+        "GitHub Actions",
+        "Copilot",
+        "DevSecOps",
+        "Automation"
+      ],
+      "type": "工程实战",
+      "reason": "GitHub 官方近期持续推进 Agentic Workflows、Copilot Coding Agent 与 Workflow Firewall，适合写成“如何把 AI Agent 纳入 CI/CD 自动化”的实战文章。",
+      "source_plan": [
+        "GitHub Agentic Workflows 官方 changelog",
+        "GitHub Copilot Coding Agent 文档",
+        "GitHub Actions 权限模型",
+        "Workflow Firewall 官方说明"
+      ]
+    },
+    {
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "notification_status": "prepared_for_openclaw_route",
+      "notification_prepared_at": "2026-06-23T23:24:00+08:00",
+      "id": "TOPIC-20260623-02",
+      "date": "2026-06-23",
+      "slot": "daily_main",
+      "title": "长上下文推理部署实战：用 Dynamo / vLLM 思路理解 Prefill 路由、KV 缓存复用与弹性扩缩",
+      "category": [
+        "AI",
+        "AI Infra"
+      ],
+      "tags": [
+        "LLM Inference",
+        "Dynamo",
+        "vLLM",
+        "KV Cache",
+        "Long Context"
+      ],
+      "type": "工程实战",
+      "reason": "长上下文模型部署的真正难点不是“能不能跑”，而是 prefill 成本、KV 传输、缓存命中和扩缩容。这个选题能把近期推理系统热点落到工程操作层。",
+      "source_plan": [
+        "NVIDIA Dynamo 官方文档/技术博客",
+        "vLLM disaggregated serving 文档",
+        "SGLang PD disaggregation 文档",
+        "llm-d / Kubernetes 推理网关资料"
+      ]
+    },
+    {
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "notification_status": "prepared_for_openclaw_route",
+      "notification_prepared_at": "2026-06-23T23:24:00+08:00",
+      "id": "TOPIC-20260623-03",
+      "date": "2026-06-23",
+      "slot": "daily_main",
+      "title": "开源 Agent 评测实战：如何用自定义工具环境判断一个模型是否真的“会干活”",
+      "category": [
+        "AI",
+        "Evaluation"
+      ],
+      "tags": [
+        "Agent Evaluation",
+        "Tool Use",
+        "Hugging Face",
+        "Benchmark",
+        "MLOps"
+      ],
+      "type": "工程实战",
+      "reason": "Agent 评测正在从静态问答转向真实工具环境、任务轨迹和成本/延迟约束，适合写一篇可复用的评测 harness 实战。",
+      "source_plan": [
+        "Hugging Face Agent / evaluation 相关官方博客",
+        "OpenAI Evals / SWE-bench / TAU-bench 等公开评测资料",
+        "LangChain / Inspect AI / BrowserGym 等工具文档"
+      ]
+    },
+    {
+      "id": "TOPIC-20260625-01",
+      "date": "2026-06-25",
+      "slot": "daily_main",
+      "title": "Gemini 3.5 Pro 延期背后，长任务 Agent 到底卡在哪里？",
+      "category": [
+        "AI",
+        "Agent"
+      ],
+      "tags": [
+        "Gemini",
+        "Long-horizon Agent",
+        "Tool Use",
+        "Long Context",
+        "Agent Reliability"
+      ],
+      "type": "产业观察",
+      "reason": "从长上下文、工具调用、token 消耗、任务稳定性拆解下一代 Agent 模型的工程瓶颈。",
+      "source_plan": [
+        "Google DeepMind 模型更新",
+        "Business Insider 关于 Gemini 3.5 Pro 延期",
+        "Apple reasoning models 研究",
+        "长任务 Agent 与工具调用相关资料"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "notification_status": "recovered_from_cron_run",
+      "notification_prepared_at": "2026-06-26T08:55:00+08:00"
+    },
+    {
+      "id": "TOPIC-20260625-02",
+      "date": "2026-06-25",
+      "slot": "daily_main",
+      "title": "AI 大厂人才流动，为什么顶级研究员正在重新选择阵营？",
+      "category": [
+        "AI",
+        "Industry"
+      ],
+      "tags": [
+        "AI Talent",
+        "AI Labs",
+        "Research Organization",
+        "Foundation Models",
+        "Industry"
+      ],
+      "type": "产业观察",
+      "reason": "不写八卦，写组织能力、研究方向、算力/产品闭环、模型路线如何影响 AI 实验室竞争力。",
+      "source_plan": [
+        "近期 AI 人才流动报道",
+        "OpenAI / Meta / Google DeepMind / Anthropic 官方资料",
+        "AI 实验室组织与产品路线相关权威报道"
       ],
       "status": "published",
       "confirmed": true,
-      "confirmed_at": "2026-06-12T08:53:38+08:00",
+      "confirmed_at": "2026-06-26T08:58:00+08:00",
       "published": true,
-      "published_at": "2026-06-12T08:59:39.670552",
-      "article_path": "source/_posts/2026-06-12-continuous-batching.md"
+      "published_at": "2026-06-26T10:40:00+08:00",
+      "article_path": "source/_posts/2026-06-25-ai-lab-talent-flow.md",
+      "notification_status": "recovered_from_cron_run",
+      "notification_prepared_at": "2026-06-26T08:55:00+08:00",
+      "user_instruction": "主人确认：昨天的选题发布主2、主3和技2；今天发布 topic3 和 tech1。2026-06-25 候选由 cron history 恢复。"
+    },
+    {
+      "id": "TOPIC-20260625-03",
+      "date": "2026-06-25",
+      "slot": "daily_main",
+      "title": "Gemini 3.5 Flash 的 computer use 与工具调用：模型会操作电脑意味着什么？",
+      "category": [
+        "AI",
+        "Agent"
+      ],
+      "tags": [
+        "Gemini",
+        "Computer Use",
+        "Tool Calling",
+        "Agent Safety",
+        "Browser Automation"
+      ],
+      "type": "工程解读",
+      "reason": "从浏览器/桌面操作、环境反馈、任务规划、安全边界讲 Agent 产品化。",
+      "source_plan": [
+        "Google DeepMind / Google Gemini 模型更新",
+        "computer use / browser use 官方资料",
+        "Agent tool use 与安全边界相关资料"
+      ],
+      "status": "published",
+      "confirmed": true,
+      "confirmed_at": "2026-06-26T08:58:00+08:00",
+      "published": true,
+      "published_at": "2026-06-26T10:40:00+08:00",
+      "article_path": "source/_posts/2026-06-25-gemini-flash-computer-use.md",
+      "notification_status": "recovered_from_cron_run",
+      "notification_prepared_at": "2026-06-26T08:55:00+08:00",
+      "user_instruction": "主人确认：昨天的选题发布主2、主3和技2；今天发布 topic3 和 tech1。2026-06-25 候选由 cron history 恢复。"
+    },
+    {
+      "id": "TOPIC-20260626-01",
+      "date": "2026-06-26",
+      "slot": "daily_main",
+      "title": "一条命令起 vLLM：HF Jobs 如何把临时推理端点变成 AI 工程师的工具资源",
+      "category": [
+        "AI",
+        "Tools"
+      ],
+      "tags": [
+        "HF Jobs",
+        "vLLM",
+        "OpenAI API",
+        "Inference",
+        "LLM Serving",
+        "Tools"
+      ],
+      "type": "工程实战",
+      "reason": "Hugging Face 2026-06-26 发布官方实操文章，展示用 hf jobs run 启动私有 OpenAI-compatible vLLM endpoint，特别适合周五“工具与资源”。",
+      "source_plan": [
+        "Hugging Face vLLM Jobs 官方文章：https://huggingface.co/blog/vllm-jobs",
+        "HF Jobs 官方文档",
+        "vLLM 官方文档与 GitHub",
+        "HF Inference Endpoints 文档"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null
+    },
+    {
+      "id": "TOPIC-20260626-02",
+      "date": "2026-06-26",
+      "slot": "daily_main",
+      "title": "NeMo AutoModel：当 Transformers API 遇到多节点 MoE 微调加速",
+      "category": [
+        "AI",
+        "AI Infra"
+      ],
+      "tags": [
+        "NVIDIA NeMo",
+        "AutoModel",
+        "Transformers",
+        "MoE",
+        "Fine-tuning",
+        "DeepEP"
+      ],
+      "type": "工程实战",
+      "reason": "NVIDIA/Hugging Face 2026-06-24 文章把 Transformers 兼容 API、Expert Backends、Expert Parallelism、DeepEP 和 MoE 微调性能连起来，是高价值工具栈选题。",
+      "source_plan": [
+        "HF/NVIDIA NeMo AutoModel 文章：https://huggingface.co/blog/nvidia/accelerating-fine-tuning-nvidia-nemo-automodel",
+        "NeMo AutoModel 官方文档/仓库",
+        "Transformers v5 相关资料",
+        "DeepEP 资料"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null
+    },
+    {
+      "id": "TOPIC-20260626-03",
+      "date": "2026-06-26",
+      "slot": "daily_main",
+      "title": "用 AI 每周发布 huggingface_hub：开源项目 release 工具链的自动化样板",
+      "category": [
+        "AI",
+        "MLOps"
+      ],
+      "tags": [
+        "Release Automation",
+        "GitHub Actions",
+        "Human-in-the-loop",
+        "OIDC",
+        "Sigstore",
+        "Open Source"
+      ],
+      "type": "短篇技术札记",
+      "reason": "Hugging Face 官方文章展示了用开源工具和开放模型把 release notes、下游 CI、人工确认和供应链安全串成一条可复用工作流。",
+      "source_plan": [
+        "Hugging Face release CI 文章：https://huggingface.co/blog/huggingface-hub-release-ci",
+        "GitHub Actions OIDC 文档",
+        "PyPI Trusted Publishing",
+        "Sigstore/PEP 740 资料"
+      ],
+      "status": "published",
+      "confirmed": true,
+      "confirmed_at": "2026-06-26T08:58:00+08:00",
+      "published": true,
+      "published_at": "2026-06-26T10:40:00+08:00",
+      "article_path": "source/_posts/2026-06-26-huggingface-hub-release-ci.md",
+      "user_instruction": "主人确认：昨天的选题发布主2、主3和技2；今天发布 topic3 和 tech1。2026-06-25 候选由 cron history 恢复。"
     }
   ]
 }

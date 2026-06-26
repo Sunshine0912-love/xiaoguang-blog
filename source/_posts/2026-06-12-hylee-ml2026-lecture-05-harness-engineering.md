@@ -70,7 +70,7 @@ You are done ONLY when the specific success criteria mentioned in the task are
 met, and the expected artifacts exist.
 ```
 
-结果：模型先 `ls -R` 查看目录结构，再 `cat parser.py` 读取源文件，修改正则表达式，最后运行 `verify.py` 验证——完全正确的修复流程。
+结果：模型先运行查看目录结构的命令，再读取 `parser.py` 源文件，修改正则表达式，最后运行 `verify.py` 验证——完全正确的修复流程。
 
 > 💡 <strong>核心洞见</strong>：同一个模型，同样的能力，只是因为它知道了「当前环境是什么」「应该怎么工作」「怎么样算完成」，表现就天差地别。
 
@@ -160,7 +160,7 @@ Claude Code / Codex CLI：
 
 李宏毅提到 SWE-agent 的 <strong>ACI（Agent-Computer Interface）</strong> 概念（[论文](https://arxiv.org/abs/2405.15793)），以及一篇有趣的博客：[Rewrite your CLI for AI Agents](https://justin.poehnelt.com/posts/rewrite-your-cli-for-ai-agents/)。
 
-核心观点：<strong>为人类设计的 CLI 不一定适合 AI Agent</strong>。人类习惯 `ls -la` 的输出格式，但 Agent 可能需要更结构化的 JSON 输出；人类可以容忍 `git status` 的彩色文本，但 LLM 解析起来会多消耗 tokens。
+核心观点：<strong>为人类设计的 CLI 不一定适合 AI Agent</strong>。人类习惯终端列表命令的输出格式，但 Agent 可能需要更结构化的 JSON 输出；人类可以容忍 Git 状态命令的彩色文本，但 LLM 解析起来会多消耗 tokens。
 
 > 这是一个被低估的设计问题：在 Agent 时代，我们可能需要为「机器用户」重新设计一批接口。
 
