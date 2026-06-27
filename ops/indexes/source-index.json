@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-26T00:59:53.712Z",
+  "updated_at": "2026-06-27T00:41:58.498Z",
   "sources": [
     {
       "topic_id": "TECH-20260612-03",
@@ -984,7 +984,8 @@
       "used_in": [
         "source/_posts/2026-06-04-prefill-decode-disaggregation.md",
         "source/_posts/2026-06-04-mla-attention-kv-cache.md",
-        "source/_posts/2026-06-05-qkv-projection-sharing-attention.md"
+        "source/_posts/2026-06-05-qkv-projection-sharing-attention.md",
+        "source/_posts/2026-06-27-kv-cache-mqa-gqa-long-context.md"
       ]
     },
     {
@@ -995,7 +996,8 @@
       "used_in": [
         "source/_posts/2026-06-04-prefill-decode-disaggregation.md",
         "source/_posts/2026-06-04-mla-attention-kv-cache.md",
-        "source/_posts/2026-06-05-qkv-projection-sharing-attention.md"
+        "source/_posts/2026-06-05-qkv-projection-sharing-attention.md",
+        "source/_posts/2026-06-27-kv-cache-mqa-gqa-long-context.md"
       ]
     },
     {
@@ -1826,6 +1828,87 @@
       "tier": "A",
       "used_in": [
         "source/_posts/2026-06-26-vllm-pagedattention-continuous-batching.md"
+      ]
+    },
+    {
+      "title": "OpenAI - Introducing LifeSciBench",
+      "url": "https://openai.com/index/introducing-life-sci-bench/",
+      "type": "official_blog",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-27-life-science-agent-workflow.md"
+      ]
+    },
+    {
+      "title": "OpenAI - Introducing GPT-Rosalind for life sciences research",
+      "url": "https://openai.com/index/introducing-gpt-rosalind/",
+      "type": "official_blog",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-27-life-science-agent-workflow.md"
+      ]
+    },
+    {
+      "title": "OpenAI - Introducing new capabilities to GPT-Rosalind",
+      "url": "https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind/",
+      "type": "official_blog",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-27-life-science-agent-workflow.md"
+      ]
+    },
+    {
+      "title": "SciAgentArena paper",
+      "url": "https://arxiv.org/abs/2606.12736",
+      "type": "paper",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-27-life-science-agent-workflow.md"
+      ]
+    },
+    {
+      "title": "RareBench paper",
+      "url": "https://arxiv.org/html/2402.06341v2",
+      "type": "paper",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-27-life-science-agent-workflow.md"
+      ]
+    },
+    {
+      "title": "NVIDIA - Mastering LLM Techniques: Inference Optimization",
+      "url": "https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/",
+      "type": "technical_blog",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-27-kv-cache-mqa-gqa-long-context.md"
+      ]
+    },
+    {
+      "title": "Hugging Face Transformers Llama 2 docs",
+      "url": "https://huggingface.co/docs/transformers/en/model_doc/llama2",
+      "type": "official_docs",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-27-kv-cache-mqa-gqa-long-context.md"
+      ]
+    },
+    {
+      "title": "PyTorch scaled_dot_product_attention docs",
+      "url": "https://docs.pytorch.org/docs/2.12/generated/torch.nn.functional.scaled_dot_product_attention.html",
+      "type": "official_docs",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-27-kv-cache-mqa-gqa-long-context.md"
+      ]
+    },
+    {
+      "title": "Meta Llama 3.1 model card",
+      "url": "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct",
+      "type": "model_card",
+      "tier": "A",
+      "used_in": [
+        "source/_posts/2026-06-27-kv-cache-mqa-gqa-long-context.md"
       ]
     }
   ]

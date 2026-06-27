@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-06-26T00:59:53.712Z",
+  "updated_at": "2026-06-27T00:41:58.500Z",
   "topics": [
     {
       "id": "TECH-20260604-01",
@@ -2743,6 +2743,209 @@
       "published_at": "2026-06-26T10:40:00+08:00",
       "article_path": "source/_posts/2026-06-26-huggingface-hub-release-ci.md",
       "user_instruction": "主人确认：昨天的选题发布主2、主3和技2；今天发布 topic3 和 tech1。2026-06-25 候选由 cron history 恢复。"
+    },
+    {
+      "id": "TOPIC-20260627-01",
+      "date": "2026-06-27",
+      "slot": "daily_main",
+      "title": "从聊天机器人到工作代理：AI Agent 为什么正在变成“组织协作层”",
+      "category": [
+        "AI",
+        "Agent"
+      ],
+      "tags": [
+        "Agent",
+        "Enterprise AI",
+        "Collaboration",
+        "Tool Use",
+        "Workflow"
+      ],
+      "type": "趋势判断",
+      "reason": "从 Claude Tag、企业工具上下文接入和内部 agent 使用增长切入，讨论 Agent 如何进入组织协作流程。",
+      "source_plan": [
+        "Anthropic / OpenAI 官方资料",
+        "企业 Agent 工具与协作上下文资料",
+        "Agent workflow 评测资料"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "notification_status": "recovered_from_cron_run",
+      "notification_prepared_at": "2026-06-27T08:40:00+08:00"
+    },
+    {
+      "id": "TOPIC-20260627-02",
+      "date": "2026-06-27",
+      "slot": "daily_main",
+      "title": "模型发布前的“模拟部署”：大模型安全评测正在从 benchmark 走向真实场景",
+      "category": [
+        "AI",
+        "Research"
+      ],
+      "tags": [
+        "Model Evaluation",
+        "Safety",
+        "Deployment Simulation",
+        "Benchmark",
+        "Agent Risk"
+      ],
+      "type": "前沿调研",
+      "reason": "从 OpenAI Deployment Simulation 切入，讨论模型上线前评测从静态 benchmark 转向真实任务/风险场景。",
+      "source_plan": [
+        "OpenAI Deployment Simulation 资料",
+        "模型安全评测论文",
+        "Agent 风险评估资料"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "notification_status": "recovered_from_cron_run",
+      "notification_prepared_at": "2026-06-27T08:40:00+08:00"
+    },
+    {
+      "id": "TOPIC-20260627-03",
+      "date": "2026-06-27",
+      "slot": "daily_main",
+      "title": "生命科学 Agent：AI 如何从答题工具进入科研工作流",
+      "category": [
+        "AI",
+        "Research"
+      ],
+      "tags": [
+        "AI for Science",
+        "Life Sciences",
+        "Agent",
+        "GPT-Rosalind",
+        "Benchmark"
+      ],
+      "type": "前沿调研",
+      "reason": "LifeSciBench、GPT-Rosalind 和科学 Agent 评测共同说明：生命科学场景正在从问答 benchmark 走向证据处理、实验设计、数据分析与工作流执行。",
+      "source_plan": [
+        "OpenAI LifeSciBench 官方说明",
+        "OpenAI GPT-Rosalind 官方说明",
+        "SciAgentArena arXiv 论文",
+        "RareBench 论文"
+      ],
+      "status": "published",
+      "confirmed": true,
+      "confirmed_at": "2026-06-27T08:40:00+08:00",
+      "published": true,
+      "published_at": "2026-06-27T09:05:00+08:00",
+      "article_path": "source/_posts/2026-06-27-life-science-agent-workflow.md",
+      "notification_status": "recovered_from_cron_run",
+      "notification_prepared_at": "2026-06-27T08:40:00+08:00",
+      "user_instruction": "主人回复：C，T2。映射 C -> TOPIC-20260627-03。"
+    },
+    {
+      "id": "TECH-20260627-01",
+      "date": "2026-06-27",
+      "slot": "technical_explainer",
+      "title": "Agent 任务成功率为什么会指数衰减：从 p^n 到轨迹级评测",
+      "category": [
+        "AI",
+        "Agent"
+      ],
+      "tags": [
+        "Agent Evaluation",
+        "Trajectory",
+        "Reliability",
+        "Benchmark",
+        "Tool Use"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "评测机制",
+      "reader_takeaway": "理解多步任务中单步成功率如何累积成轨迹失败，学习轨迹级评测、失败归因和置信区间设计。",
+      "reason": "多步 Agent 的可靠性不是静态问答分数能解释的，适合写成评测机制文章。",
+      "source_plan": [
+        "Agent eval 论文",
+        "OpenAI Evals / Inspect AI / SWE-bench / TAU-bench",
+        "轨迹评测资料"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "notification_status": "recovered_from_cron_run",
+      "notification_prepared_at": "2026-06-27T08:40:00+08:00"
+    },
+    {
+      "id": "TECH-20260627-02",
+      "date": "2026-06-27",
+      "slot": "technical_explainer",
+      "title": "KV Cache、MQA/GQA 与长上下文推理成本：为什么 LLM 推理真正卡在显存",
+      "category": [
+        "AI",
+        "AI Infra"
+      ],
+      "tags": [
+        "KV Cache",
+        "MQA",
+        "GQA",
+        "LLM Inference",
+        "Long Context"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "工程优化",
+      "reader_takeaway": "理解 KV cache 显存公式、MHA/MQA/GQA 的头数关系、长上下文推理中的显存与带宽瓶颈，以及实现中 num_key_value_heads 如何落到代码。",
+      "reason": "KV cache 是长上下文推理的核心成本项，MQA/GQA 是现代 LLM 架构最实用的显存缩减机制之一。",
+      "source_plan": [
+        "Shazeer MQA 原论文",
+        "Ainslie et al. GQA 原论文",
+        "NVIDIA Inference Optimization 技术博客",
+        "Hugging Face Transformers Llama 文档",
+        "PyTorch SDPA 文档"
+      ],
+      "status": "published",
+      "confirmed": true,
+      "confirmed_at": "2026-06-27T08:40:00+08:00",
+      "published": true,
+      "published_at": "2026-06-27T09:05:00+08:00",
+      "article_path": "source/_posts/2026-06-27-kv-cache-mqa-gqa-long-context.md",
+      "notification_status": "recovered_from_cron_run",
+      "notification_prepared_at": "2026-06-27T08:40:00+08:00",
+      "user_instruction": "主人回复：C，T2。映射 T2 -> TECH-20260627-02。"
+    },
+    {
+      "id": "TECH-20260627-03",
+      "date": "2026-06-27",
+      "slot": "technical_explainer",
+      "title": "RAG 评测到底该怎么做：从 Recall@K 到 groundedness 与端到端答案质量",
+      "category": [
+        "AI",
+        "MLOps"
+      ],
+      "tags": [
+        "RAG",
+        "Evaluation",
+        "Groundedness",
+        "Retrieval",
+        "LLM-as-Judge"
+      ],
+      "type": "技术点讲解",
+      "technical_level": "评测机制",
+      "reader_takeaway": "理解 RAG 评测需要同时覆盖检索召回、重排、引用一致性、答案质量和失败归因。",
+      "reason": "RAG 项目常见问题是只看检索指标或只看最终答案，适合写成工程评测方法论。",
+      "source_plan": [
+        "RAG 评测论文与框架",
+        "LangChain / LlamaIndex / Ragas 文档",
+        "Groundedness 评测资料"
+      ],
+      "status": "pending_confirmation",
+      "confirmed": false,
+      "confirmed_at": null,
+      "published": false,
+      "published_at": null,
+      "article_path": null,
+      "notification_status": "recovered_from_cron_run",
+      "notification_prepared_at": "2026-06-27T08:40:00+08:00"
     }
   ]
 }

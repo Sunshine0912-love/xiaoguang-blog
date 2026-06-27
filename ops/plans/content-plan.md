@@ -85,3 +85,18 @@
 - 来源: 7
 - 公式: KV cache 显存复杂度、block table
 - 状态: 已发布
+
+## 2026-06-27 发布（两篇）
+
+### TOPIC-20260627-03: 生命科学 Agent
+- 类型: 前沿调研 / AI for Science
+- 分类: AI / Research
+- 来源: 5
+- 状态: 已发布
+
+### TECH-20260627-02: KV Cache、MQA/GQA 与长上下文推理成本
+- 类型: 研究级技术点讲解（工程优化）
+- 分类: AI / AI Infra
+- 来源: 6
+- 公式: KV cache 显存复杂度、MQA/GQA 显存比例、最小显存例子
+- 状态: 已发布

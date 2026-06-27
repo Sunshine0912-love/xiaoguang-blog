@@ -1,7 +1,45 @@
 {
   "version": 1,
-  "updated_at": "2026-06-26T00:59:53.712Z",
+  "updated_at": "2026-06-27T00:41:58.496Z",
   "items": [
+    {
+      "title": "生命科学 Agent：AI 如何从答题工具进入科研工作流",
+      "date": "2026-06-27",
+      "path": "source/_posts/2026-06-27-life-science-agent-workflow.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/27/2026-06-27-life-science-agent-workflow/",
+      "categories": [
+        "AI",
+        "Research"
+      ],
+      "tags": [
+        "AI for Science",
+        "Life Sciences",
+        "Agent",
+        "GPT-Rosalind",
+        "Benchmark"
+      ],
+      "description": "从 LifeSciBench、GPT-Rosalind、SciAgentArena 和 RareBench 出发，理解生命科学 AI 正在从生物问答走向证据处理、实验设计、数据分析和可追溯科研工作流。",
+      "topic_id": "TOPIC-20260627-03"
+    },
+    {
+      "title": "KV Cache、MQA/GQA 与长上下文推理成本：为什么 LLM 推理真正卡在显存",
+      "date": "2026-06-27",
+      "path": "source/_posts/2026-06-27-kv-cache-mqa-gqa-long-context.md",
+      "url": "https://sunshine0912-love.github.io/xiaoguang-blog/2026/06/27/2026-06-27-kv-cache-mqa-gqa-long-context/",
+      "categories": [
+        "AI",
+        "AI Infra"
+      ],
+      "tags": [
+        "KV Cache",
+        "MQA",
+        "GQA",
+        "LLM Inference",
+        "Long Context"
+      ],
+      "description": "从 KV cache 显存公式出发，推导 MHA、MQA、GQA 的头数关系，解释长上下文推理为什么常常受显存容量和 HBM 带宽限制，并映射到 PyTorch 与 Hugging Face 的实现接口。",
+      "topic_id": "TECH-20260627-02"
+    },
     {
       "title": "vLLM 连续批处理与 PagedAttention：为什么 LLM Serving 不能只看“单请求延迟”",
       "date": "2026-06-26",
